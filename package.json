@@ -1,0 +1,21 @@
+{
+  "name": "cutscene",
+  "version": "0.1.0",
+  "description": "Record real web app flows as pixel-exact product videos, scripted like Playwright tests.",
+  "license": "MIT",
+  "author": "Pavlo Nekrasov",
+  "repository": "github:pavlonekrasov/cutscene",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "example": "playwright test -c examples/basic/cutscene.config.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.19.1",
+    "typescript": "^5.9.0"
+  }
+}
