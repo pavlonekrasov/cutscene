@@ -193,7 +193,7 @@ export function createScene<Extra extends object = Record<never, never>>(
           throw new Error(problem);
         }
         console.log(
-          `\n  ${info.title}: ${video} (${timeline.duration.toFixed(1)} s, ${match.decoded ? `PSNR ${match.psnr} dB` : "fidelity not checked: no H.264 in this browser"})\n`,
+          `\n  ${info.title}: ${video} (${timeline.duration.toFixed(1)} s, ${match.decoded ? `PSNR ${match.psnr} dB, decoded by ${match.decoder}` : "fidelity not checked: the video didn't decode"})\n`,
         );
       } finally {
         if (!process.env.CUTSCENE_KEEP) await rm(workDir, { recursive: true, force: true });

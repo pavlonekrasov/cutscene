@@ -1,87 +1,45 @@
-# cutscene: agent runbook
+# cutscene: working on it
 
-You were pointed here to make product videos of a web app, or to work on cutscene itself. Read
-[README.md](README.md) first; this file is the procedure.
+To **use** cutscene in a project, follow the skill: [skills/cutscene/SKILL.md](skills/cutscene/SKILL.md)
+(or `npx @pavlonekrasov/cutscene skill` to install it). This file is for changing cutscene itself.
+Read [README.md](README.md) first.
 
-## Make videos for a project
+## Layout
 
-### 1. Check the machine
+| Path               | What                                                                         |
+| ------------------ | ---------------------------------------------------------------------------- |
+| `src/`             | The library (TypeScript). Built to `dist/` (CommonJS + types) on `npm pack`. |
+| `bin/cutscene.mjs` | The `npx` command: `init`, `skill`, `doctor`. Plain Node, no dependencies.   |
+| `templates/`       | What `init` writes into a project: adapter, config, a first scene.           |
+| `skills/cutscene/` | The agent skill, shipped in the package and found by `npx skills add`.       |
+| `examples/basic/`  | A static app with its adapter, config and a scene; imports `src/` directly.  |
 
-- `ffmpeg -version` and `ffprobe -version` work.
-- Google Chrome is installed (Playwright's `chrome` channel; `npx playwright install chrome` if
-  not). Plain Chromium can't decode H.264, so the fidelity check would be skipped.
-- The project has `@playwright/test` (add it as a dev dependency if not).
+## Checks before a commit
 
-### 2. Copy cutscene in
+```sh
+npm install
+npm run typecheck
+npm run build
+npm run example                         # desktop and phone, light, Playwright's Chromium
+CUTSCENE_THEME=dark npm run example     # dark
+CUTSCENE_BROWSER=msedge npm run example -- --project=desktop   # another Chromium, if installed
+```
 
-Copy this repo's `src/` to `<app>/demo/cutscene/`. Don't edit the copy: a fix belongs in this
-repo, then copy again. Note the commit you copied in a `demo/cutscene/VERSION` line or the
-project's docs.
+All must pass. Read the example's `check/contact.jpg` and mark stills before committing. A change
+to the pipeline (capture, timeline, encode, frame, check) needs the example to still pass the
+fidelity gate; give the numbers in the commit message.
 
-### 3. Write the adapter (`demo/app.ts`)
+A change to `bin/`, `templates/` or the package shape: `npm pack`, install the tarball into a
+fresh project in a temp folder, run `npx @pavlonekrasov/cutscene init` there and record its first
+scene against a static page.
 
-Find out, from the app's code, before writing it:
+## Rules
 
-- **When a page is settled.** A hydration flag, a loading state that clears, a known element.
-  Prefer a signal the app already sets; add a tiny one (`data-hydrated` on `<html>`) only with the
-  owner's OK. Never wait with fixed sleeps.
-- **What must not be filmed.** Dev badges (`NEXT_DEV_TOOLS` for Next.js), debug toolbars, cookie
-  banners, a "view as" switcher: list them in `hide`. If the app has a dev-only role or user
-  switcher, keep it clickable but hidden and switch users off camera with `act.offstage`.
-- **What a shared cut may need to blur.** A logo, a client's name, people's names: list their
-  selectors in `blur`. They stay sharp normally; `CUTSCENE_BLUR=1` records a separate `…-blurred`
-  version with them blurred for the whole video. Prefer a stable hook (`data-slot`, a test id).
-- **How to get the state a scene starts from.** Seeded demo data, a dev login, a cookie. Do it in
-  `setup` (before the first load) or `offstage`. Use fictional people and `example.com` addresses.
-- **The frame colours.** Read the app's outer canvas colour and its main panel's corner and inset
-  from computed styles (`getComputedStyle(document.querySelector("main"))`). Set
-  `bar.background` to the canvas colour, `backdrop` a step from it, and `windowRadius` to the
-  panel's corner plus its inset (12 for a full-bleed app). Keep shadows pure black/white.
-- **Project verbs.** A role switch, a translator for UI strings (so locators match the language
-  you record in): put them in `extend`.
-
-### 4. Config and script
-
-`demo/cutscene.config.ts` with `cutsceneConfig({ baseURL, webServer, use })`, and a
-`"demo": "playwright test -c demo/cutscene.config.ts"` script. Set `outDir` (or `CUTSCENE_OUT`)
-outside the repo: videos are never committed.
-
-### 5. Write scenes (`demo/scenes/<flow>.scene.ts`)
-
-- One flow per scene, 15–30 seconds. Start with `act.visit` (off camera), end on the result.
-- Locate by role and accessible name, as in e2e specs. Assert each result with `expect` before
-  moving on, so a broken flow fails instead of filming a wrong state.
-- Captions say who acts and what happens, in a few words. Clear them (`caption(null)`) when the
-  screen speaks for itself.
-- `mark()` every beat a reviewer should see; `wait()` where a viewer needs time to read.
-- Record in the language the owner asks for; put every caption in that language too.
-
-### 6. Run and verify (don't skip)
-
-`npm run demo` (add `-- <scene> --project=desktop` to narrow). `CUTSCENE_THEME=dark` for dark.
-Then, for every video:
-
-- Read `check/contact.jpg` and each mark still. Is every beat on screen, every caption whole, no
-  dev UI, no half-loaded state?
-- `manifest.json`: `motionFps` ≥ 60 and `fidelity.decoded` true with `psnr` ≥ 38.
-- Report the path, duration and PSNR. Delete probe files you made.
-
-### 7. When a run fails, name the layer
-
-| Symptom                               | Layer and fix                                                                                                                                                                  |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| "Captured W×H, expected …"            | Capture density. Use `cutsceneConfig` (it passes `--force-device-scale-factor`).                                                                                               |
-| Fidelity fails, big colour shift      | Encode or decode. Don't change the encode flags; check the browser is Chrome.                                                                                                  |
-| Fidelity fails, low PSNR, small shift | Content. Open `check/reference.png` beside the last mark still: an animation still running at the end, a toast, text antialiasing. End the scene on a settled screen (`wait`). |
-| Frame drawn wrong (half size, offset) | The frame page picked up project options; `renderFrame` must keep `isMobile: false`.                                                                                           |
-| `motionFps` under 60                  | Pace. Keep `CUTSCENE_PACE` at 2+; close heavy apps; one worker only.                                                                                                           |
-| A locator times out                   | The app. Read Playwright's error context; fix the scene or ask the owner about the app.                                                                                        |
-
-## Work on cutscene itself
-
-- `npm install`, then `npm run typecheck` and `npm run example` (desktop and phone; also
-  `CUTSCENE_THEME=dark`). Both must pass, and read the example's check stills before committing.
-- Runtime dependencies: `@playwright/test` and Node built-ins only. ffmpeg runs as a process.
+- Runtime dependencies: `ffmpeg-static` and Node built-ins. `@playwright/test` is a peer
+  dependency, so a project has one copy of it.
+- Chromium only, any build: never rely on Google Chrome specifically. The fidelity check decodes
+  in the browser and falls back to ffmpeg when that build has no H.264.
+- Functions passed to `addInitScript` (`installOverlay`, `installPace`) run in the page: they may
+  not reference anything outside themselves.
 - Colours in OKLCH. Comments say why, not what.
-- A change to the pipeline (capture, timeline, encode, frame, check) needs a recorded example
-  that still passes the fidelity gate; say the numbers in the commit message.
+- Publishing: bump `version`, `npm publish` (the scope publishes public). Only when the owner asks.

@@ -1,4 +1,5 @@
-import { mkdir, readFile } from "node:fs/promises";
+import { mkdir, readFile, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import type { Browser } from "@playwright/test";
 import { ffmpeg } from "./edit";
@@ -35,18 +36,24 @@ export type Fidelity = {
   shift: [number, number, number];
   /** Share of pixels off by more than 16 in any channel. */
   off: number;
-  /** Whether Chrome could decode the video (no H.264 in plain Chromium). */
+  /** Whether a frame of the video was decoded and compared. */
   decoded: boolean;
+  /**
+   * Who decoded it: the browser (`<video>`, as a viewer's browser would) or, when this Chromium has
+   * no H.264, ffmpeg with the BT.709 limited-range matrix the video is tagged with.
+   */
+  decoder?: "browser" | "ffmpeg";
 };
 
 /** Below this the video no longer reads as the app: text softens, colours drift. */
 export const FIDELITY_MIN = { psnr: 38, shift: 1.5, off: 0.005 };
 
 /**
- * Proves the video shows the app as Chrome painted it: decodes a frame of the finished MP4 the way
- * a viewer's browser does (`<video>` → canvas) and compares the app region with a lossless
- * screenshot of the same moment, pixel by pixel. Only the pixels the frame leaves open count: a
- * rounded window or screen corner covers the app's corner on purpose.
+ * Proves the video shows the app as the browser painted it: decodes a frame of the finished MP4 the
+ * way a viewer's browser does (`<video>` → canvas; ffmpeg when this Chromium build has no H.264) and
+ * compares the app region with a lossless screenshot of the same moment, pixel by pixel. Only the
+ * pixels the frame leaves open count: a rounded window or screen corner covers the app's corner on
+ * purpose.
  */
 export async function fidelity(
   browser: Browser,
@@ -77,24 +84,45 @@ export async function fidelity(
     return route.fulfill({ body: "<!doctype html><title>check</title>", contentType: "text/html" });
   });
   await page.goto(`${origin}/`);
+  const h264 = await page.evaluate(() =>
+    document.createElement("video").canPlayType('video/mp4; codecs="avc1.640033"'),
+  );
+  let decodedPng: Buffer | null = null;
+  if (!h264) {
+    const file = join(tmpdir(), `cutscene-decoded-${Date.now()}.png`);
+    ffmpeg([
+      ...["-ss", at.toFixed(3), "-i", video, "-frames:v", "1"],
+      ...["-vf", "scale=in_color_matrix=bt709:in_range=tv:flags=accurate_rnd+full_chroma_int"],
+      ...["-pix_fmt", "rgb24", file],
+    ]);
+    decodedPng = await readFile(file);
+    await rm(file, { force: true });
+    await page.route(`${origin}/decoded.png`, (route) =>
+      route.fulfill({ body: decodedPng!, contentType: "image/png" }),
+    );
+  }
   try {
     return await page.evaluate(
-      async ({ at, rect, framed }) => {
-        const video = document.createElement("video");
-        video.muted = true;
-        video.src = URL.createObjectURL(await (await fetch("/video.mp4")).blob());
-        const loaded = await new Promise<boolean>((done) => {
-          video.onloadeddata = () => done(true);
-          video.onerror = () => done(false);
-        });
-        if (!loaded) return { psnr: 0, shift: [0, 0, 0], off: 0, decoded: false };
-        video.currentTime = at;
-        await new Promise((done) => (video.onseeked = done));
+      async ({ at, rect, framed, browserDecodes }) => {
+        let source: CanvasImageSource;
+        if (browserDecodes) {
+          const video = document.createElement("video");
+          video.muted = true;
+          video.src = URL.createObjectURL(await (await fetch("/video.mp4")).blob());
+          const loaded = await new Promise<boolean>((done) => {
+            video.onloadeddata = () => done(true);
+            video.onerror = () => done(false);
+          });
+          if (!loaded) return { psnr: 0, shift: [0, 0, 0], off: 0, decoded: false };
+          video.currentTime = at;
+          await new Promise((done) => (video.onseeked = done));
+          source = video;
+        } else source = await createImageBitmap(await (await fetch("/decoded.png")).blob());
         const image = await createImageBitmap(await (await fetch("/reference.png")).blob());
         const canvas = new OffscreenCanvas(rect.width, rect.height);
         const context = canvas.getContext("2d", { willReadFrequently: true })!;
         context.drawImage(
-          video,
+          source,
           rect.x,
           rect.y,
           rect.width,
@@ -137,9 +165,10 @@ export async function fidelity(
           shift: shift.map((sum) => Number((sum / pixels).toFixed(2))) as [number, number, number],
           off: Number((off / pixels).toFixed(4)),
           decoded: true,
+          decoder: browserDecodes ? "browser" : "ffmpeg",
         };
       },
-      { at, rect, framed: Boolean(frame) },
+      { at, rect, framed: Boolean(frame), browserDecodes: Boolean(h264) },
     );
   } finally {
     await context.close();

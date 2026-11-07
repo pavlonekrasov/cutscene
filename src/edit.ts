@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { Frame } from "./capture";
@@ -67,30 +68,65 @@ export function buildTimeline(
   return { entries, duration: out, map };
 }
 
-export function ffmpeg(args: string[], tool = "ffmpeg") {
-  const run = spawnSync(
-    tool,
-    tool === "ffmpeg" ? ["-hide_banner", "-loglevel", "error", "-y", ...args] : args,
-    {
-      encoding: "utf8",
-      maxBuffer: 64 * 1024 * 1024,
-    },
+let resolved: string | undefined;
+
+/**
+ * The ffmpeg to run: `CUTSCENE_FFMPEG`, else one on `PATH`, else the build `ffmpeg-static`
+ * downloaded at install (an npm dependency of cutscene), so a machine without ffmpeg still records.
+ */
+export function ffmpegPath() {
+  if (resolved) return resolved;
+  const candidates = [process.env.CUTSCENE_FFMPEG, "ffmpeg", bundledFfmpeg()].filter(
+    (path): path is string => Boolean(path),
   );
-  if (run.error) throw new Error(`${tool} didn't start (is it on PATH?): ${run.error.message}`);
-  if (run.status !== 0) throw new Error(`${tool} failed:\n${run.stderr}`);
+  for (const path of candidates)
+    if (spawnSync(path, ["-version"], { stdio: "ignore" }).status === 0) return (resolved = path);
+  throw new Error(
+    "No ffmpeg: set CUTSCENE_FFMPEG, put ffmpeg on PATH, or reinstall cutscene (it brings ffmpeg-static).",
+  );
+}
+
+function bundledFfmpeg(): string | null {
+  try {
+    // A plain require: in a copied-in src/ without ffmpeg-static, this just finds nothing.
+    return require("ffmpeg-static") as string | null;
+  } catch {
+    return null;
+  }
+}
+
+export function ffmpeg(args: string[]) {
+  const run = spawnSync(ffmpegPath(), ["-hide_banner", "-loglevel", "error", "-y", ...args], {
+    encoding: "utf8",
+    maxBuffer: 64 * 1024 * 1024,
+  });
+  if (run.error) throw new Error(`ffmpeg didn't start: ${run.error.message}`);
+  if (run.status !== 0)
+    throw new Error(`ffmpeg failed:
+${run.stderr}`);
   return run.stdout;
 }
 
-/** A captured frame's size, to prove the capture is the app's device size before anything is cut. */
+/**
+ * A captured frame's size, read from its header (PNG or JPEG), to prove the capture is the app's
+ * device size before anything is cut.
+ */
 export function frameSize(file: string) {
-  const [width, height] = ffmpeg(
-    ["-v", "error", "-show_entries", "stream=width,height", "-of", "csv=p=0", file],
-    "ffprobe",
-  )
-    .trim()
-    .split(",")
-    .map(Number);
-  return { width: width!, height: height! };
+  const data = readFileSync(file);
+  // PNG: the IHDR chunk follows the 8-byte signature; width and height are big-endian.
+  if (data.readUInt32BE(0) === 0x89504e47)
+    return { width: data.readUInt32BE(16), height: data.readUInt32BE(20) };
+  // JPEG: walk the segments to a start-of-frame marker (SOF0–SOF15, except DHT, JPG and DAC).
+  let at = 2;
+  while (at + 9 < data.length) {
+    if (data[at] !== 0xff) break;
+    const marker = data[at + 1]!;
+    const length = data.readUInt16BE(at + 2);
+    if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker))
+      return { height: data.readUInt16BE(at + 5), width: data.readUInt16BE(at + 7) };
+    at += 2 + length;
+  }
+  throw new Error(`Can't read the size of ${file}.`);
 }
 
 /**

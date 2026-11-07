@@ -1,6 +1,6 @@
 export { expect } from "@playwright/test";
 export { Act, type Stage } from "./act";
-export { cutsceneConfig, chromeArgs, type CutsceneConfig } from "./config";
+export { browserOptions, chromeArgs, cutsceneConfig, type CutsceneConfig } from "./config";
 export {
   createScene,
   NEXT_DEV_TOOLS,

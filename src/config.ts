@@ -3,7 +3,7 @@ import { FORMATS, type Format } from "./formats";
 import type { CutsceneFixtures } from "./scene";
 
 /**
- * Chrome's screencast streams at the screen's density, not the emulated one: without the first flag
+ * Chromium's screencast streams at the screen's density, not the emulated one: without the first flag
  * a 2× page arrives as 1× frames and the video is an upscale. With it, each frame is the device
  * pixels a screenshot shows. The second keeps text grayscale antialiased: Windows Chrome switches
  * ClearType fringes on and off per paint (off while a layer scrolls), and colour fringes don't
@@ -26,12 +26,26 @@ export type CutsceneConfig = {
   use?: PlaywrightTestConfig["use"];
   /** Playwright's own output (traces of a failed scene). */
   outputDir?: string;
+  /**
+   * Which Chromium browser records. Default: Playwright's own Chromium (`npx playwright install
+   * chromium`). A channel name uses that installed browser (`"chrome"`, `"msedge"`,
+   * `"chrome-beta"`); a path runs any Chromium-based executable (Brave, Vivaldi, Arc). Not Firefox
+   * or Safari: the recorder speaks Chromium's DevTools protocol. `CUTSCENE_BROWSER` wins.
+   */
+  browser?: string;
 };
+
+/** A browser setting as Playwright options: a channel, or an executable path. */
+export function browserOptions(browser = process.env.CUTSCENE_BROWSER) {
+  if (!browser || browser === "chromium") return {};
+  if (/[\\/]/.test(browser) || /\.(exe|app)$/i.test(browser)) return { executablePath: browser };
+  return { channel: browser };
+}
 
 /**
  * A Playwright config for recording: one worker (a recording never shares the machine and keeps
- * its frame rate), real Chrome (H.264 for the fidelity check), each project a format with the
- * Chrome flags that keep its pixels exact. `CUTSCENE_THEME=dark` records the dark theme.
+ * its frame rate), a Chromium browser, each project a format with the flags that keep its pixels
+ * exact. `CUTSCENE_THEME=dark` records the dark theme.
  */
 export function cutsceneConfig({
   testDir = "./scenes",
@@ -40,8 +54,10 @@ export function cutsceneConfig({
   formats = ["desktop", "phone"],
   use,
   outputDir,
+  browser,
 }: CutsceneConfig) {
   const theme = process.env.CUTSCENE_THEME === "dark" ? "dark" : "light";
+  const { channel, executablePath } = browserOptions(process.env.CUTSCENE_BROWSER ?? browser);
   return defineConfig<CutsceneFixtures>({
     testDir,
     testMatch: "**/*.scene.ts",
@@ -52,7 +68,7 @@ export function cutsceneConfig({
     use: {
       baseURL: process.env.CUTSCENE_URL ?? baseURL,
       colorScheme: theme,
-      ...(process.env.CI ? {} : { channel: "chrome" }),
+      ...(channel ? { channel } : {}),
       ...use,
     },
     projects: formats.map((entry) => {
@@ -65,7 +81,7 @@ export function cutsceneConfig({
           format,
           viewport: format.viewport,
           deviceScaleFactor: format.scale,
-          launchOptions: { args: chromeArgs(format.scale) },
+          launchOptions: { args: chromeArgs(format.scale), executablePath },
           ...(touch ? { isMobile: true, hasTouch: true } : {}),
         },
       };

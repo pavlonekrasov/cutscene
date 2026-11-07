@@ -3,7 +3,7 @@
 Record real web app flows as pixel-exact product videos, scripted like Playwright tests.
 
 You write a scene (`click`, `type`, `caption`, `wait`) against your running app. cutscene drives
-Chrome through it with a hand-like cursor, records every paint, cuts loads and idle time, puts the
+a Chromium browser through it with a hand-like cursor, records every paint, cuts loads and idle time, puts the
 app in a window or phone frame, and encodes a 4K, 60 fps MP4. Then it **proves the video is your
 app**: it decodes the last frame the way a viewer's browser does and fails the scene if it drifts
 from a lossless screenshot.
@@ -19,11 +19,16 @@ scene("Add a task", async ({ act }) => {
 });
 ```
 
+```sh
+npx @pavlonekrasov/cutscene init     # set a project up
+npx @pavlonekrasov/cutscene skill    # teach your agent to use it
+```
+
 It started as the recorder for a case study of an admin panel, and borrows from two tools:
 [showtime](https://github.com/mishanaer/showtime) (an agent records the real app, trims it, frames
 it, checks it; it needs a Mac and the iOS Simulator) and
 [stageshow](https://github.com/benjitaylor/skills/tree/main/stageshow) (a short script of beats;
-it draws mock UI). cutscene records the real web app, in Chrome, on any OS.
+it draws mock UI). cutscene records the real web app, in any Chromium browser, on any OS.
 
 ## What you get
 
@@ -34,50 +39,60 @@ it draws mock UI). cutscene records the real web app, in Chrome, on any OS.
 | `check/`                              | A frame at every `act.mark()` and `contact.jpg`, a 4×4 sheet of the whole video.                               |
 | `manifest.json`                       | Duration, marks, `motionFps` (60 or more is every frame of the video), the fidelity numbers.                   |
 
-## Requirements
+## Install
 
-- Node 20+ and `@playwright/test`.
-- Google Chrome (Playwright's `chrome` channel). Plain Chromium has no H.264, so the fidelity check
-  is skipped there.
-- `ffmpeg` and `ffprobe` on `PATH`.
-
-## Try it
+In your app's root:
 
 ```sh
-npm install
-npm run example                       # desktop and phone, light
-CUTSCENE_THEME=dark npm run example   # dark
+npx @pavlonekrasov/cutscene init
 ```
 
-Videos land in `examples/basic/out/`. The example is a static page (`examples/basic/site/`) with
-its adapter (`app.ts`), config and one scene.
-
-## Use it in a project
-
-cutscene is copied in, not installed: its source goes into your project, next to your scenes.
-Playwright runs TypeScript directly, so there is no build step.
+That installs `@pavlonekrasov/cutscene` and `@playwright/test` (if the project doesn't have it),
+downloads Playwright's Chromium, and writes a starting point next to your code:
 
 ```
 your-app/
   demo/
-    cutscene/           ← this repo's src/, copied
-    app.ts              ← your adapter: what cutscene needs to know about your app
-    cutscene.config.ts
-    scenes/*.scene.ts
+    app.ts                     ← the adapter: what cutscene needs to know about your app
+    cutscene.config.ts         ← where the app runs, which browser
+    scenes/first-look.scene.ts ← a first scene; replace it with real flows
 ```
 
+plus a `"demo": "playwright test -c demo/cutscene.config.ts"` script. Existing files are never
+overwritten. `npx @pavlonekrasov/cutscene doctor` checks the machine.
+
+**What comes with it:** Node 20+ is the one thing you bring. `@playwright/test` is a peer
+dependency, installed with cutscene when the project doesn't have it. ffmpeg comes from
+[`ffmpeg-static`](https://www.npmjs.com/package/ffmpeg-static) (a GPL build, downloaded at
+install) unless one is on `PATH` or in `CUTSCENE_FFMPEG`.
+
+**Browser:** any Chromium. Playwright's own Chromium is the default; set `browser` in the config to
+an installed channel (`"chrome"`, `"msedge"`, `"chrome-beta"`) or to the path of any
+Chromium-based executable (Brave, Vivaldi, Arc). `CUTSCENE_BROWSER` overrides it for a run.
+Firefox and Safari can't record: cutscene uses Chromium's DevTools protocol.
+
+## Agent skill
+
+cutscene ships a skill: the runbook an agent follows to adopt it, write scenes, verify each video
+and fix a failed run.
+
 ```sh
-git clone https://github.com/pavlonekrasov/cutscene /tmp/cutscene
-cp -r /tmp/cutscene/src your-app/demo/cutscene
+npx @pavlonekrasov/cutscene skill            # Claude Code, for every project (~/.claude/skills)
+npx @pavlonekrasov/cutscene skill --project  # this project only (.claude/skills)
+npx skills add pavlonekrasov/cutscene        # any agent the skills CLI supports
 ```
+
+Then ask your agent for "a product video of the invite flow".
+
+## Set it up by hand
 
 **The adapter** (`demo/app.ts`) creates the `scene` your scenes import:
 
 ```ts
-import { createScene, DEFAULT_FRAME, expect, NEXT_DEV_TOOLS } from "./cutscene";
+import { createScene, DEFAULT_FRAME, expect, NEXT_DEV_TOOLS } from "@pavlonekrasov/cutscene";
 
 export const scene = createScene({
-  outDir: "/path/outside/the/repo", // or CUTSCENE_OUT
+  outDir: "/path/outside/the/repo", // or CUTSCENE_OUT; default ~/Videos/cutscene
   // Before the first load: cookies, auth, locale, a recording mode.
   setup: async (context, { baseURL }) => {
     await context.addCookies([{ name: "locale", value: "en", url: baseURL }]);
@@ -104,17 +119,19 @@ export { expect };
 **The config** (`demo/cutscene.config.ts`):
 
 ```ts
-import { cutsceneConfig } from "./cutscene";
+import { cutsceneConfig } from "@pavlonekrasov/cutscene";
 
 export default cutsceneConfig({
   baseURL: "http://localhost:3000",
   webServer: { command: "npm run dev", url: "http://localhost:3000", reuseExistingServer: true },
   use: { locale: "en-US", timezoneId: "Europe/London" },
+  browser: "chrome", // optional: any Chromium channel or executable path
 });
 ```
 
-Add `"demo": "playwright test -c demo/cutscene.config.ts"` to your scripts. To update cutscene
-later, copy `src/` again.
+**Without npm:** copy this repo's `src/` into your project (say `demo/cutscene/`) and import from
+there; Playwright runs the TypeScript directly. Note the commit you copied, and copy again to
+update rather than editing the copy.
 
 ## Scenes
 
@@ -135,54 +152,58 @@ A scene is a Playwright test, so targets are locators and checks are `expect`, a
 Durations are the video's. Off-camera time is cut; any other still stretch is shortened to
 `idleCap` (1.2 s) so a slow fetch never looks frozen; `wait` is kept in full.
 
-| Switch                  | Does                                                                                     |
-| ----------------------- | ---------------------------------------------------------------------------------------- |
-| `CUTSCENE_THEME=dark`   | Records the dark theme (`prefers-color-scheme`); the frame follows.                      |
-| `CUTSCENE_PACE=<n>`     | Records `n` times slower than life (default 2) and plays at 1×. 1 turns slow motion off. |
-| `CUTSCENE_FRAME=none`   | No frame: the app's own pixels, edge to edge.                                            |
-| `CUTSCENE_BLUR=1`       | The blurred version: the adapter's `blur` selectors blurred throughout, in `…-blurred/`. |
-| `CUTSCENE_CAPTURE=jpeg` | Lossy capture, if PNG frames are too slow on a machine; the check shows the cost.        |
-| `CUTSCENE_OUT=<dir>`    | Where videos go.                                                                         |
-| `CUTSCENE_URL=<url>`    | Another server.                                                                          |
-| `CUTSCENE_KEEP=1`       | Keeps the raw frames in the temp folder.                                                 |
+| Switch                   | Does                                                                                     |
+| ------------------------ | ---------------------------------------------------------------------------------------- |
+| `CUTSCENE_THEME=dark`    | Records the dark theme (`prefers-color-scheme`); the frame follows.                      |
+| `CUTSCENE_PACE=<n>`      | Records `n` times slower than life (default 2) and plays at 1×. 1 turns slow motion off. |
+| `CUTSCENE_BROWSER=<b>`   | Another Chromium: a channel (`chrome`, `msedge`) or an executable path.                  |
+| `CUTSCENE_FFMPEG=<path>` | A specific ffmpeg.                                                                       |
+| `CUTSCENE_FRAME=none`    | No frame: the app's own pixels, edge to edge.                                            |
+| `CUTSCENE_BLUR=1`        | The blurred version: the adapter's `blur` selectors blurred throughout, in `…-blurred/`. |
+| `CUTSCENE_CAPTURE=jpeg`  | Lossy capture, if PNG frames are too slow on a machine; the check shows the cost.        |
+| `CUTSCENE_OUT=<dir>`     | Where videos go.                                                                         |
+| `CUTSCENE_URL=<url>`     | Another server.                                                                          |
+| `CUTSCENE_KEEP=1`        | Keeps the raw frames in the temp folder.                                                 |
 
 ## Fidelity
 
 After the last beat cutscene takes a lossless `page.screenshot()`. Once the MP4 is encoded it
-decodes the last frame **in Chrome** (a `<video>` drawn to a canvas) and compares every app pixel
+decodes the last frame **in the browser** (a `<video>` drawn to a canvas, as a viewer's browser
+would; with ffmpeg and the video's BT.709 matrix when that Chromium build has no H.264) and
+compares every app pixel
 the frame leaves visible with that screenshot. A scene fails below 38 dB PSNR, above ±1.5 mean
 shift in any channel, or with more than 0.5% of pixels off by more than 16, and saves the
 screenshot as `check/reference.png`. Typical runs land at 44–55 dB.
 
 ## How it works
 
-- **Native pixels.** Chrome's screencast streams at the screen's density, not the emulated one, so
-  each project launches Chrome with `--force-device-scale-factor` equal to its `deviceScaleFactor`.
+- **Native pixels.** Chromium's screencast streams at the screen's density, not the emulated one, so
+  each project launches the browser with `--force-device-scale-factor` equal to its `deviceScaleFactor`.
   Frames are lossless PNGs at 2×, placed on the canvas 1:1. A frame of the wrong size fails the
   scene.
-- **Grayscale text.** Chrome runs with `--disable-lcd-text`: Windows turns ClearType colour
+- **Grayscale text.** The browser runs with `--disable-lcd-text`: Windows turns ClearType colour
   fringes on and off per paint, and they don't survive 4:2:0 or scaling anyway.
-- **Slow motion for smoothness.** Chrome streams 2× frames at about 30 per second. `pace.ts` slows
+- **Slow motion for smoothness.** Chromium streams 2× frames at about 30 per second. `pace.ts` slows
   the page's JS clock (timers, rAF, `performance.now`; `Date.now` stays real), CDP slows CSS
   animations (`Animation.setPlaybackRate`), and every beat stretches by the same factor. The
   editor speeds it back up: motion lands at 60 fps.
 - **Colour.** App and frame are composited in RGB and converted to YUV once, BT.709 limited range,
-  tagged BT.709 / sRGB / tv: the combination browsers decode back to what Chrome painted.
+  tagged BT.709 / sRGB / tv: the combination browsers decode back to what was painted.
 - **The overlay** (cursor, ripples, taps, caption, paced scrolls) is drawn inside the page, so it
   lands in the same frames as the UI.
 
-| File         | Role                                                                        |
-| ------------ | --------------------------------------------------------------------------- |
-| `scene.ts`   | `createScene`: the fixture that records, edits, frames, encodes and checks. |
-| `act.ts`     | The `act` API.                                                              |
-| `config.ts`  | `cutsceneConfig`: Playwright projects per format, with the Chrome flags.    |
-| `capture.ts` | The CDP screencast recorder.                                                |
-| `edit.ts`    | The timeline (cuts, holds, idle cap, pace) and the ffmpeg encode.           |
-| `frame.ts`   | The window and phone frame, and where the app sits on the canvas.           |
-| `check.ts`   | Mark stills, the contact sheet and the fidelity check.                      |
-| `overlay.ts` | Cursor, ripples, taps, caption and paced scrolls, inside the page.          |
-| `pace.ts`    | The slowed page clock.                                                      |
-| `formats.ts` | Viewports, densities and canvases.                                          |
+| File         | Role                                                                         |
+| ------------ | ---------------------------------------------------------------------------- |
+| `scene.ts`   | `createScene`: the fixture that records, edits, frames, encodes and checks.  |
+| `act.ts`     | The `act` API.                                                               |
+| `config.ts`  | `cutsceneConfig`: Playwright projects per format, the browser and its flags. |
+| `capture.ts` | The CDP screencast recorder.                                                 |
+| `edit.ts`    | The timeline (cuts, holds, idle cap, pace) and the ffmpeg encode.            |
+| `frame.ts`   | The window and phone frame, and where the app sits on the canvas.            |
+| `check.ts`   | Mark stills, the contact sheet and the fidelity check.                       |
+| `overlay.ts` | Cursor, ripples, taps, caption and paced scrolls, inside the page.           |
+| `pace.ts`    | The slowed page clock.                                                       |
+| `formats.ts` | Viewports, densities and canvases.                                           |
 
 ## The frame
 
@@ -199,8 +220,8 @@ transparent hole where the app plays. Defaults are neutral; tune them to your ap
 
 ## For agents
 
-[AGENTS.md](AGENTS.md) is the runbook: adopting cutscene in a project, writing scenes, reading the
-checks, and fixing a failed run.
+The [skill](skills/cutscene/SKILL.md) is the runbook for using cutscene in a project.
+[AGENTS.md](AGENTS.md) is for working on cutscene itself.
 
 ## License
 

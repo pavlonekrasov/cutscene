@@ -1,18 +1,64 @@
 {
-  "name": "cutscene",
-  "version": "0.1.0",
-  "description": "Record real web app flows as pixel-exact product videos, scripted like Playwright tests.",
+  "name": "@pavlonekrasov/cutscene",
+  "version": "0.2.0",
+  "description": "Record real web app flows as pixel-exact product videos, scripted like Playwright tests. Comes with an agent skill.",
+  "keywords": [
+    "playwright",
+    "video",
+    "product-video",
+    "demo",
+    "screen-recording",
+    "walkthrough",
+    "agent-skill",
+    "claude-code"
+  ],
   "license": "MIT",
   "author": "Pavlo Nekrasov",
-  "repository": "github:pavlonekrasov/cutscene",
-  "private": true,
+  "homepage": "https://github.com/pavlonekrasov/cutscene#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavlonekrasov/cutscene.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pavlonekrasov/cutscene/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "cutscene": "bin/cutscene.mjs"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "skills",
+    "templates",
+    "AGENTS.md"
+  ],
   "engines": {
     "node": ">=20"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
     "example": "playwright test -c examples/basic/cutscene.config.ts",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write src examples README.md AGENTS.md"
+    "format": "prettier --write src examples templates bin skills README.md AGENTS.md",
+    "prepack": "npm run typecheck && npm run build"
+  },
+  "peerDependencies": {
+    "@playwright/test": ">=1.50.0"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
