@@ -14,14 +14,7 @@
   ],
   "license": "MIT",
   "author": "Pavlo Nekrasov",
-  "homepage": "https://github.com/pavlonekrasov/cutscene#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pavlonekrasov/cutscene.git"
-  },
-  "bugs": {
-    "url": "https://github.com/pavlonekrasov/cutscene/issues"
-  },
+  "homepage": "https://www.npmjs.com/package/@pavlonekrasov/cutscene",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {

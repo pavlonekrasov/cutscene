@@ -8,7 +8,7 @@ description: Record a web app's real flows as pixel-exact product videos (4K des
 cutscene drives a Chromium browser through a scripted flow in the real, running app, records every
 paint at 2×, cuts loads and idle time, frames the app in a window or phone, encodes a 60 fps MP4,
 and **fails the run if the video drifts from the app** (a decoded frame vs a lossless screenshot).
-Package: `@pavlonekrasov/cutscene`. Docs: https://github.com/pavlonekrasov/cutscene
+Package and docs: https://www.npmjs.com/package/@pavlonekrasov/cutscene
 
 ## 1. Set the project up
 

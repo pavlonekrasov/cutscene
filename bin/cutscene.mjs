@@ -161,9 +161,7 @@ function skill() {
   mkdirSync(dest, { recursive: true });
   cpSync(join(root, "skills", "cutscene"), dest, { recursive: true });
   say(`✓ Installed the cutscene skill to ${dest}`);
-  say(
-    "  Other agents: npx skills add pavlonekrasov/cutscene, or --dir <their skills folder>/cutscene",
-  );
+  say("  Another agent: add --dir <its skills folder>/cutscene");
 }
 
 function doctor() {

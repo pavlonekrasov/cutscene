@@ -11,7 +11,7 @@ Read [README.md](README.md) first.
 | `src/`             | The library (TypeScript). Built to `dist/` (CommonJS + types) on `npm pack`. |
 | `bin/cutscene.mjs` | The `npx` command: `init`, `skill`, `doctor`. Plain Node, no dependencies.   |
 | `templates/`       | What `init` writes into a project: adapter, config, a first scene.           |
-| `skills/cutscene/` | The agent skill, shipped in the package and found by `npx skills add`.       |
+| `skills/cutscene/` | The agent skill, shipped in the package; `npx … skill` installs it.          |
 | `examples/basic/`  | A static app with its adapter, config and a scene; imports `src/` directly.  |
 
 ## Checks before a commit

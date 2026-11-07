@@ -79,7 +79,7 @@ and fix a failed run.
 ```sh
 npx @pavlonekrasov/cutscene skill            # Claude Code, for every project (~/.claude/skills)
 npx @pavlonekrasov/cutscene skill --project  # this project only (.claude/skills)
-npx skills add pavlonekrasov/cutscene        # any agent the skills CLI supports
+npx @pavlonekrasov/cutscene skill --dir <another agent's skills folder>/cutscene
 ```
 
 Then ask your agent for "a product video of the invite flow".
