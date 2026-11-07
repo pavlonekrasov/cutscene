@@ -14,8 +14,14 @@ export const scene = createScene({
   // panel (12px corner, 8px in).
   frame: {
     ...DEFAULT_FRAME,
-    light: { ...DEFAULT_FRAME.light, bar: { ...DEFAULT_FRAME.light.bar, background: "oklch(0.965 0 0)" } },
-    dark: { ...DEFAULT_FRAME.dark, bar: { ...DEFAULT_FRAME.dark.bar, background: "oklch(0.18 0 0)" } },
+    light: {
+      ...DEFAULT_FRAME.light,
+      bar: { ...DEFAULT_FRAME.light.bar, background: "oklch(0.965 0 0)" },
+    },
+    dark: {
+      ...DEFAULT_FRAME.dark,
+      bar: { ...DEFAULT_FRAME.dark.bar, background: "oklch(0.18 0 0)" },
+    },
     windowRadius: 20,
   },
 });

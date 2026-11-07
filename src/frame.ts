@@ -75,9 +75,11 @@ export const DEFAULT_FRAME: FrameStyle = {
   dark: {
     backdrop: "oklch(0.13 0 0)",
     // Dark separates by the white ring; a wide blur over a dark backdrop bands in 8 bits.
-    shadow: [`0 0 0 1px ${white(0.1)}`, `0 2px 4px ${black(0.3)}`, `0 24px 56px -12px ${black(0.5)}`].join(
-      ", ",
-    ),
+    shadow: [
+      `0 0 0 1px ${white(0.1)}`,
+      `0 2px 4px ${black(0.3)}`,
+      `0 24px 56px -12px ${black(0.5)}`,
+    ].join(", "),
     bar: { background: "oklch(0.18 0 0)", dots: "oklch(0.3 0 0)" },
     bezel: { color: "oklch(0.09 0 0)", rim: "oklch(0.3 0 0)" },
   },

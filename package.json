@@ -11,11 +11,13 @@
   },
   "scripts": {
     "example": "playwright test -c examples/basic/cutscene.config.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write src examples README.md AGENTS.md"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "@types/node": "^24.19.1",
+    "prettier": "^3.9.10",
     "typescript": "^5.9.0"
   }
 }

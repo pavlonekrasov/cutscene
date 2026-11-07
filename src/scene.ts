@@ -76,7 +76,11 @@ export function createScene<Extra extends object = Record<never, never>>(
     pace: [Number(process.env.CUTSCENE_PACE) || 2, { option: true }],
     idleCap: [1.2, { option: true }],
 
-    act: async ({ page, context, browser, format: projectFormat, pace, colorScheme, idleCap, baseURL }, run, info) => {
+    act: async (
+      { page, context, browser, format: projectFormat, pace, colorScheme, idleCap, baseURL },
+      run,
+      info,
+    ) => {
       const format: Format = { ...projectFormat };
       if (process.env.CUTSCENE_FRAME === "none") format.frame = "none";
       const theme: Theme = colorScheme === "dark" ? "dark" : "light";
