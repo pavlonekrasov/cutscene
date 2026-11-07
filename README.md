@@ -27,7 +27,7 @@ it draws mock UI). cutscene records the real web app, in Chrome, on any OS.
 
 ## What you get
 
-| In `<out>/<scene>-<project>-<theme>/` | What                                                                                                          |
+| In `<out>/<scene>-<project>-<theme>/` | What                                                                                                           |
 | ------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `<scene>.mp4`                         | H.264, 60 fps, BT.709, faststart. Desktop 3840×2160 (the 1440×810 app at 2×), phone 1080×1920 (390×844 at 2×). |
 | `stills/*.png`                        | Lossless shots from `act.shot()`, without the cursor.                                                          |
@@ -87,6 +87,7 @@ export const scene = createScene({
     await page.waitForFunction(() => document.documentElement.dataset.hydrated === "true");
   },
   hide: NEXT_DEV_TOOLS, // dev-only badges never reach the video
+  blur: ["[data-slot=logo]"], // blurred in the CUTSCENE_BLUR=1 version only
   frame: { ...DEFAULT_FRAME, windowRadius: 20 }, // see "The frame"
   // Your own verbs on `act`.
   extend: (act) => ({
@@ -119,30 +120,31 @@ later, copy `src/` again.
 
 A scene is a Playwright test, so targets are locators and checks are `expect`, as in an e2e spec.
 
-| `act.`                                         | Camera | Does                                                                                                 |
-| ---------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------- |
-| `visit(path)`                                  | off    | Loads a page and waits for `ready`. The video starts on the settled page.                            |
-| `offstage(work)`                               | off    | Work the viewer shouldn't see: seeding, switching user. Follow a navigation in it with `ready()`.    |
-| `ready()`                                      | off    | The adapter's `ready`, fonts, the paced clock; for your own off-camera verbs.                        |
-| `move / hover / click / type / press / scroll` | on     | A hand-like pointer: eased, slightly arced, timed by distance, a press ripple. Phone uses taps.     |
-| `wait(ms)`                                     | on     | A held beat at full length.                                                                          |
-| `caption(text \| null)`                        | on     | A pill at the bottom of the frame: who acts, what happens.                                          |
-| `mark(label)`                                  | —      | A named beat; `check/` gets a still there.                                                           |
-| `shot(name, locator?)`                         | cut    | A lossless PNG without the overlay.                                                                  |
-| `page`, `main`, `format`                       | —      | The Playwright page, the main region (the adapter's `main`), the format.                             |
+| `act.`                                         | Camera | Does                                                                                              |
+| ---------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------- |
+| `visit(path)`                                  | off    | Loads a page and waits for `ready`. The video starts on the settled page.                         |
+| `offstage(work)`                               | off    | Work the viewer shouldn't see: seeding, switching user. Follow a navigation in it with `ready()`. |
+| `ready()`                                      | off    | The adapter's `ready`, fonts, the paced clock; for your own off-camera verbs.                     |
+| `move / hover / click / type / press / scroll` | on     | A hand-like pointer: eased, slightly arced, timed by distance, a press ripple. Phone uses taps.   |
+| `wait(ms)`                                     | on     | A held beat at full length.                                                                       |
+| `caption(text \| null)`                        | on     | A pill at the bottom of the frame: who acts, what happens.                                        |
+| `mark(label)`                                  | —      | A named beat; `check/` gets a still there.                                                        |
+| `shot(name, locator?)`                         | cut    | A lossless PNG without the overlay.                                                               |
+| `page`, `main`, `format`                       | —      | The Playwright page, the main region (the adapter's `main`), the format.                          |
 
 Durations are the video's. Off-camera time is cut; any other still stretch is shortened to
 `idleCap` (1.2 s) so a slow fetch never looks frozen; `wait` is kept in full.
 
-| Switch                  | Does                                                                                      |
-| ----------------------- | ----------------------------------------------------------------------------------------- |
+| Switch                  | Does                                                                                     |
+| ----------------------- | ---------------------------------------------------------------------------------------- |
 | `CUTSCENE_THEME=dark`   | Records the dark theme (`prefers-color-scheme`); the frame follows.                      |
 | `CUTSCENE_PACE=<n>`     | Records `n` times slower than life (default 2) and plays at 1×. 1 turns slow motion off. |
-| `CUTSCENE_FRAME=none`   | No frame: the app's own pixels, edge to edge.                                             |
+| `CUTSCENE_FRAME=none`   | No frame: the app's own pixels, edge to edge.                                            |
+| `CUTSCENE_BLUR=1`       | The blurred version: the adapter's `blur` selectors blurred throughout, in `…-blurred/`. |
 | `CUTSCENE_CAPTURE=jpeg` | Lossy capture, if PNG frames are too slow on a machine; the check shows the cost.        |
-| `CUTSCENE_OUT=<dir>`    | Where videos go.                                                                          |
-| `CUTSCENE_URL=<url>`    | Another server.                                                                           |
-| `CUTSCENE_KEEP=1`       | Keeps the raw frames in the temp folder.                                                  |
+| `CUTSCENE_OUT=<dir>`    | Where videos go.                                                                         |
+| `CUTSCENE_URL=<url>`    | Another server.                                                                          |
+| `CUTSCENE_KEEP=1`       | Keeps the raw frames in the temp folder.                                                 |
 
 ## Fidelity
 
@@ -169,18 +171,18 @@ screenshot as `check/reference.png`. Typical runs land at 44–55 dB.
 - **The overlay** (cursor, ripples, taps, caption, paced scrolls) is drawn inside the page, so it
   lands in the same frames as the UI.
 
-| File           | Role                                                                             |
-| -------------- | -------------------------------------------------------------------------------- |
-| `scene.ts`     | `createScene`: the fixture that records, edits, frames, encodes and checks.      |
-| `act.ts`       | The `act` API.                                                                   |
-| `config.ts`    | `cutsceneConfig`: Playwright projects per format, with the Chrome flags.         |
-| `capture.ts`   | The CDP screencast recorder.                                                     |
-| `edit.ts`      | The timeline (cuts, holds, idle cap, pace) and the ffmpeg encode.                |
-| `frame.ts`     | The window and phone frame, and where the app sits on the canvas.                |
-| `check.ts`     | Mark stills, the contact sheet and the fidelity check.                           |
-| `overlay.ts`   | Cursor, ripples, taps, caption and paced scrolls, inside the page.               |
-| `pace.ts`      | The slowed page clock.                                                           |
-| `formats.ts`   | Viewports, densities and canvases.                                               |
+| File         | Role                                                                        |
+| ------------ | --------------------------------------------------------------------------- |
+| `scene.ts`   | `createScene`: the fixture that records, edits, frames, encodes and checks. |
+| `act.ts`     | The `act` API.                                                              |
+| `config.ts`  | `cutsceneConfig`: Playwright projects per format, with the Chrome flags.    |
+| `capture.ts` | The CDP screencast recorder.                                                |
+| `edit.ts`    | The timeline (cuts, holds, idle cap, pace) and the ffmpeg encode.           |
+| `frame.ts`   | The window and phone frame, and where the app sits on the canvas.           |
+| `check.ts`   | Mark stills, the contact sheet and the fidelity check.                      |
+| `overlay.ts` | Cursor, ripples, taps, caption and paced scrolls, inside the page.          |
+| `pace.ts`    | The slowed page clock.                                                      |
+| `formats.ts` | Viewports, densities and canvases.                                          |
 
 ## The frame
 

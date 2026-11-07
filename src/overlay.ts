@@ -8,6 +8,8 @@ export type OverlayOptions = {
   pointer: "mouse" | "touch";
   /** CSS selectors hidden while recording: dev-only badges, toolbars, cookie banners. */
   hide: string[];
+  /** CSS selectors blurred for the whole recording (the blurred version): a logo, names. */
+  blur: string[];
   /** The page's main region (CSS selector): `scroll(distance)` scrolls its container. */
   main: string;
 };
@@ -24,12 +26,15 @@ export type Hooks = {
 
 export type Page$ = typeof window & { __cutscene: Hooks };
 
-export function installOverlay({ pointer, hide, main }: OverlayOptions) {
+export function installOverlay({ pointer, hide, blur, main }: OverlayOptions) {
   const KEY = "cutscene-cursor";
   const ns = "http://www.w3.org/2000/svg";
   const hidden = hide.length ? `${hide.join(", ")} { display: none !important; }` : "";
+  // Strong enough that a 20px mark or a line of text can't be read back, at any density.
+  const blurred = blur.length ? `${blur.join(", ")} { filter: blur(6px) !important; }` : "";
   const style = `
     ${hidden}
+    ${blurred}
     #cutscene-layer { position: fixed; inset: 0; pointer-events: none; z-index: 2147483647; }
     #cutscene-cursor { position: absolute; left: 0; top: 0; width: 26px; height: 26px;
       transform-origin: 3px 3px; transition: scale 90ms ease-out, opacity 160ms ease-out;

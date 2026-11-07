@@ -28,6 +28,9 @@ Find out, from the app's code, before writing it:
 - **What must not be filmed.** Dev badges (`NEXT_DEV_TOOLS` for Next.js), debug toolbars, cookie
   banners, a "view as" switcher: list them in `hide`. If the app has a dev-only role or user
   switcher, keep it clickable but hidden and switch users off camera with `act.offstage`.
+- **What a shared cut may need to blur.** A logo, a client's name, people's names: list their
+  selectors in `blur`. They stay sharp normally; `CUTSCENE_BLUR=1` records a separate `…-blurred`
+  version with them blurred for the whole video. Prefer a stable hook (`data-slot`, a test id).
 - **How to get the state a scene starts from.** Seeded demo data, a dev login, a cookie. Do it in
   `setup` (before the first load) or `offstage`. Use fictional people and `example.com` addresses.
 - **The frame colours.** Read the app's outer canvas colour and its main panel's corner and inset
@@ -65,14 +68,14 @@ Then, for every video:
 
 ### 7. When a run fails, name the layer
 
-| Symptom                                       | Layer and fix                                                                                                       |
-| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| "Captured W×H, expected …"                    | Capture density. Use `cutsceneConfig` (it passes `--force-device-scale-factor`).                                     |
-| Fidelity fails, big colour shift              | Encode or decode. Don't change the encode flags; check the browser is Chrome.                                        |
-| Fidelity fails, low PSNR, small shift         | Content. Open `check/reference.png` beside the last mark still: an animation still running at the end, a toast, text antialiasing. End the scene on a settled screen (`wait`). |
-| Frame drawn wrong (half size, offset)         | The frame page picked up project options; `renderFrame` must keep `isMobile: false`.                                 |
-| `motionFps` under 60                          | Pace. Keep `CUTSCENE_PACE` at 2+; close heavy apps; one worker only.                                                 |
-| A locator times out                           | The app. Read Playwright's error context; fix the scene or ask the owner about the app.                              |
+| Symptom                               | Layer and fix                                                                                                                                                                  |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| "Captured W×H, expected …"            | Capture density. Use `cutsceneConfig` (it passes `--force-device-scale-factor`).                                                                                               |
+| Fidelity fails, big colour shift      | Encode or decode. Don't change the encode flags; check the browser is Chrome.                                                                                                  |
+| Fidelity fails, low PSNR, small shift | Content. Open `check/reference.png` beside the last mark still: an animation still running at the end, a toast, text antialiasing. End the scene on a settled screen (`wait`). |
+| Frame drawn wrong (half size, offset) | The frame page picked up project options; `renderFrame` must keep `isMobile: false`.                                                                                           |
+| `motionFps` under 60                  | Pace. Keep `CUTSCENE_PACE` at 2+; close heavy apps; one worker only.                                                                                                           |
+| A locator times out                   | The app. Read Playwright's error context; fix the scene or ask the owner about the app.                                                                                        |
 
 ## Work on cutscene itself
 

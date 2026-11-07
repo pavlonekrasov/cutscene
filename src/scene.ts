@@ -27,6 +27,12 @@ export type SceneOptions<Extra extends object> = {
   main?: string;
   /** CSS selectors hidden while recording: dev-only badges, toolbars, cookie banners. */
   hide?: string[];
+  /**
+   * CSS selectors blurred in the blurred version, recorded with `CUTSCENE_BLUR=1` into its own
+   * `…-blurred` folder: a logo, names, anything a shared cut mustn't show. Blurred in the page for
+   * the whole recording, so the fidelity check holds.
+   */
+  blur?: string[];
   /** The frame's look: backdrop, shadow, title bar, phone bezel, corners. */
   frame?: FrameStyle;
   /** Project helpers merged onto `act` (a role switch, translations); can't shadow Act's own. */
@@ -83,18 +89,23 @@ export function createScene<Extra extends object = Record<never, never>>(
     ) => {
       const format: Format = { ...projectFormat };
       if (process.env.CUTSCENE_FRAME === "none") format.frame = "none";
+      const blur = process.env.CUTSCENE_BLUR === "1" ? (options.blur ?? []) : [];
+      if (process.env.CUTSCENE_BLUR === "1" && !blur.length)
+        throw new Error("CUTSCENE_BLUR=1, but the adapter lists nothing to blur (`blur`).");
       const theme: Theme = colorScheme === "dark" ? "dark" : "light";
       const slug = info.title
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/^-|-$/g, "");
-      const outDir = join(OUT, `${slug}-${info.project.name}-${theme}`);
+      const variant = blur.length ? "-blurred" : "";
+      const outDir = join(OUT, `${slug}-${info.project.name}-${theme}${variant}`);
       const workDir = join(tmpdir(), "cutscene", `${slug}-${Date.now()}`);
       await options.setup?.(context, { baseURL: baseURL ?? "", theme });
       await context.addInitScript(installPace, pace);
       await context.addInitScript(installOverlay, {
         pointer: format.pointer,
         hide: options.hide ?? [],
+        blur,
         main,
       });
       const cdp = await context.newCDPSession(page);
@@ -155,6 +166,7 @@ export function createScene<Extra extends object = Record<never, never>>(
               file: info.file,
               project: info.project.name,
               theme,
+              blurred: blur,
               canvas: rect.canvas,
               app: { ...app, x: rect.x, y: rect.y, scale: format.scale },
               capture: image,
