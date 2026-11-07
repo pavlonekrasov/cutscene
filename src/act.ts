@@ -12,6 +12,12 @@ const ease = (k: number) => (k < 0.5 ? 4 * k * k * k : 1 - (-2 * k + 2) ** 3 / 2
 /** The caption's fade in `overlay.ts` (240 ms) plus a paint. */
 const CAPTION_FADE_MS = 280;
 
+/**
+ * Whether the camera keeps what happens: on stage it does; off stage the time from `since` is cut
+ * once the scene is back on stage. A scene starts off stage (the first load is never shown).
+ */
+type Camera = { on: true } | { on: false; since: number };
+
 /** What the app needs from the director: when a page is settled, and where its content lives. */
 export type Stage = {
   /** Resolves once the page is settled after a load or an off-camera navigation. */
@@ -34,7 +40,8 @@ export class Act {
   readonly cuts: Span[] = [];
   readonly holds: Span[] = [];
   readonly marks: Mark[] = [];
-  private cutFrom: number | null = now();
+  private camera: Camera = { on: false, since: now() };
+  /** Where the pointer is; null until its first move, which enters from the right edge. */
   private pos: { x: number; y: number } | null = null;
   private stills = 0;
 
@@ -72,12 +79,6 @@ export class Act {
       throw new Error(
         `${path} has no <meta name="viewport">, so a phone shows it as a shrunken desktop page. Add the tag, or record desktop only (formats: ["desktop"] in the config, or --project=desktop).`,
       );
-    // The pointer comes in from the right edge on its first move, so nothing shows a hover the
-    // viewer didn't see it reach (the overlay keeps it hidden until then).
-    if (!this.pos && this.format.pointer === "mouse") {
-      const { width, height } = this.format.viewport;
-      this.pos = { x: width - 4, y: Math.round(height * 0.72) };
-    }
   }
 
   /** Runs work the viewer shouldn't see (seeding a state, switching a user, a slow load). Follow a
@@ -90,7 +91,8 @@ export class Act {
   /** The app settled (the stage's `ready`), fonts in, the paced clock back on, motion done. */
   async ready() {
     await this.stage.ready(this.page);
-    // A load starts a new document timeline at full speed: slow it to the pace again.
+    // Chromium keeps the rate across loads today (same-site and cross-site); set it again anyway,
+    // so a build that resets it on a new document can't play CSS motion at full speed.
     await this.cdp.send("Animation.setPlaybackRate", { playbackRate: 1 / this.pace });
     await this.page.evaluate(() => document.fonts.ready);
     await this.beat(600);
@@ -185,16 +187,19 @@ export class Act {
   /** A lossless PNG of the page (or one element), without the overlay. Cut from the video. */
   async shot(name: string, target?: Locator) {
     const from = now();
-    await this.overlay(false);
     const file = join(
       this.outDir,
       "stills",
       `${String(++this.stills).padStart(2, "0")}-${name}.png`,
     );
     await mkdir(join(this.outDir, "stills"), { recursive: true });
-    if (target) await target.screenshot({ path: file, animations: "disabled" });
-    else await this.page.screenshot({ path: file });
-    await this.overlay(true);
+    await this.overlay(false);
+    try {
+      if (target) await target.screenshot({ path: file, animations: "disabled" });
+      else await this.page.screenshot({ path: file });
+    } finally {
+      await this.overlay(true);
+    }
     await this.recorder.settle();
     this.cuts.push([from, now()]);
   }
@@ -211,15 +216,16 @@ export class Act {
   }
 
   private offstageStart() {
-    this.cutFrom ??= now();
+    if (this.camera.on) this.camera = { on: false, since: now() };
   }
 
   /** Ends an off-stage stretch once the screen shows its result. */
   private async onstage() {
-    if (this.cutFrom === null) return;
+    if (this.camera.on) return;
+    const { since } = this.camera;
     await this.recorder.settle();
-    this.cuts.push([this.cutFrom, now()]);
-    this.cutFrom = null;
+    this.cuts.push([since, now()]);
+    this.camera = { on: true };
   }
 
   /** Scrolls a target into view, as one paced motion, when it's off screen or under the edge. */
@@ -232,7 +238,10 @@ export class Act {
   }
 
   private async glide(to: { x: number; y: number }, duration?: number) {
-    const from = this.pos ?? to;
+    // The first move comes in from the right edge, so nothing shows a hover the viewer didn't see
+    // the pointer reach (the overlay keeps it hidden until then), however the page was loaded.
+    const { width, height } = this.format.viewport;
+    const from = this.pos ?? { x: width - 4, y: Math.round(height * 0.72) };
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const distance = Math.hypot(dx, dy);

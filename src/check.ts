@@ -1,4 +1,5 @@
-import { mkdir, readFile, rm } from "node:fs/promises";
+import { readFileSync, rmSync } from "node:fs";
+import { mkdir, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import type { Browser } from "@playwright/test";
@@ -30,19 +31,18 @@ export async function review(
 }
 
 export type Fidelity = {
+  /**
+   * Who decoded the frame: the browser (`<video>`, as a viewer's browser would) or, when this
+   * Chromium has no H.264 or can't play the file, ffmpeg with the BT.709 limited-range matrix the
+   * video is tagged with. A frame is always decoded: a video neither can read fails the scene.
+   */
+  decoder: "browser" | "ffmpeg";
   /** Peak signal-to-noise ratio of the app region against the lossless screenshot, in dB. */
   psnr: number;
   /** Mean signed difference per channel (R, G, B), 0–255: a colour shift shows here. */
   shift: [number, number, number];
   /** Share of pixels off by more than 16 in any channel. */
   off: number;
-  /** Whether a frame of the video was decoded and compared. */
-  decoded: boolean;
-  /**
-   * Who decoded it: the browser (`<video>`, as a viewer's browser would) or, when this Chromium has
-   * no H.264, ffmpeg with the BT.709 limited-range matrix the video is tagged with.
-   */
-  decoder?: "browser" | "ffmpeg";
 };
 
 /** Below this the video no longer reads as the app: text softens, colours drift. */
@@ -74,6 +74,7 @@ export async function fidelity(
   const page = await context.newPage();
   const origin = "http://fidelity.check";
   const bytes = await readFile(video);
+  let decoded: Buffer | null = null;
   await page.route(`${origin}/**`, (route) => {
     const { pathname } = new URL(route.request().url());
     if (pathname === "/video.mp4") return route.fulfill({ body: bytes, contentType: "video/mp4" });
@@ -81,102 +82,122 @@ export async function fidelity(
       return route.fulfill({ body: reference, contentType: "image/png" });
     if (pathname === "/frame.png" && frame)
       return route.fulfill({ body: frame, contentType: "image/png" });
+    if (pathname === "/decoded.png" && decoded)
+      return route.fulfill({ body: decoded, contentType: "image/png" });
     return route.fulfill({ body: "<!doctype html><title>check</title>", contentType: "text/html" });
   });
-  await page.goto(`${origin}/`);
-  const h264 = await page.evaluate(() =>
-    document.createElement("video").canPlayType('video/mp4; codecs="avc1.640033"'),
-  );
-  let decodedPng: Buffer | null = null;
-  if (!h264) {
-    const file = join(tmpdir(), `cutscene-decoded-${Date.now()}.png`);
-    ffmpeg([
-      ...["-ss", at.toFixed(3), "-i", video, "-frames:v", "1"],
-      ...["-vf", "scale=in_color_matrix=bt709:in_range=tv:flags=accurate_rnd+full_chroma_int"],
-      ...["-pix_fmt", "rgb24", file],
-    ]);
-    decodedPng = await readFile(file);
-    await rm(file, { force: true });
-    await page.route(`${origin}/decoded.png`, (route) =>
-      route.fulfill({ body: decodedPng!, contentType: "image/png" }),
-    );
-  }
   try {
-    return await page.evaluate(
-      async ({ at, rect, framed, browserDecodes }) => {
-        let source: CanvasImageSource;
-        if (browserDecodes) {
-          const video = document.createElement("video");
-          video.muted = true;
-          video.src = URL.createObjectURL(await (await fetch("/video.mp4")).blob());
-          const loaded = await new Promise<boolean>((done) => {
-            video.onloadeddata = () => done(true);
-            video.onerror = () => done(false);
-          });
-          if (!loaded) return { psnr: 0, shift: [0, 0, 0], off: 0, decoded: false };
-          video.currentTime = at;
-          await new Promise((done) => (video.onseeked = done));
-          source = video;
-        } else source = await createImageBitmap(await (await fetch("/decoded.png")).blob());
-        const image = await createImageBitmap(await (await fetch("/reference.png")).blob());
-        const canvas = new OffscreenCanvas(rect.width, rect.height);
-        const context = canvas.getContext("2d", { willReadFrequently: true })!;
-        context.drawImage(
-          source,
-          rect.x,
-          rect.y,
-          rect.width,
-          rect.height,
-          0,
-          0,
-          rect.width,
-          rect.height,
-        );
-        const got = context.getImageData(0, 0, rect.width, rect.height).data;
-        context.clearRect(0, 0, rect.width, rect.height);
-        context.drawImage(image, 0, 0);
-        const want = context.getImageData(0, 0, rect.width, rect.height).data;
-        let open: Uint8ClampedArray | null = null;
-        if (framed) {
-          context.clearRect(0, 0, rect.width, rect.height);
-          const frame = await createImageBitmap(await (await fetch("/frame.png")).blob());
-          context.drawImage(frame, -rect.x, -rect.y);
-          open = context.getImageData(0, 0, rect.width, rect.height).data;
-        }
-        let squared = 0;
-        let off = 0;
-        let pixels = 0;
-        const shift = [0, 0, 0];
-        for (let i = 0; i < got.length; i += 4) {
-          if (open && open[i + 3] !== 0) continue;
-          pixels++;
-          let worst = 0;
-          for (let c = 0; c < 3; c++) {
-            const d = got[i + c]! - want[i + c]!;
-            squared += d * d;
-            shift[c]! += d;
-            worst = Math.max(worst, Math.abs(d));
-          }
-          if (worst > 16) off++;
-        }
-        const mse = squared / (pixels * 3);
-        return {
-          psnr: Number((mse ? 10 * Math.log10((255 * 255) / mse) : 99).toFixed(1)),
-          shift: shift.map((sum) => Number((sum / pixels).toFixed(2))) as [number, number, number],
-          off: Number((off / pixels).toFixed(4)),
-          decoded: true,
-          decoder: browserDecodes ? "browser" : "ffmpeg",
-        };
-      },
-      { at, rect, framed: Boolean(frame), browserDecodes: Boolean(h264) },
+    await page.goto(`${origin}/`);
+    const h264 = await page.evaluate(() =>
+      document.createElement("video").canPlayType('video/mp4; codecs="avc1.640033"'),
     );
+    // The browser first, as a viewer would see it; ffmpeg when it can't, which throws on a video
+    // it can't read either.
+    for (const decoder of h264 ? (["browser", "ffmpeg"] as const) : (["ffmpeg"] as const)) {
+      if (decoder === "ffmpeg") decoded = decodeFrame(video, at);
+      const result = await page.evaluate(compare, { at, rect, framed: Boolean(frame), decoder });
+      if (result) return result;
+    }
+    throw new Error(`Neither the browser nor ffmpeg decoded ${video}.`);
   } finally {
     await context.close();
   }
 }
 
+/** A frame of the video as a PNG, decoded by ffmpeg with the matrix and range it's tagged with. */
+function decodeFrame(video: string, at: number) {
+  const file = join(tmpdir(), `cutscene-decoded-${process.pid}-${Date.now()}.png`);
+  try {
+    ffmpeg([
+      ...["-ss", at.toFixed(3), "-i", video, "-frames:v", "1"],
+      ...["-vf", "scale=in_color_matrix=bt709:in_range=tv:flags=accurate_rnd+full_chroma_int"],
+      ...["-pix_fmt", "rgb24", file],
+    ]);
+    return readFileSync(file);
+  } finally {
+    rmSync(file, { force: true });
+  }
+}
+
+/**
+ * In the check page: the decoded frame's app region against the screenshot. `null` when the
+ * browser can't load or seek the video (within 20 s), so the caller falls back to ffmpeg.
+ */
+async function compare({
+  at,
+  rect,
+  framed,
+  decoder,
+}: {
+  at: number;
+  rect: { x: number; y: number; width: number; height: number };
+  framed: boolean;
+  decoder: "browser" | "ffmpeg";
+}): Promise<Fidelity | null> {
+  const within = <T>(work: Promise<T>, fallback: T) =>
+    Promise.race([work, new Promise<T>((done) => setTimeout(() => done(fallback), 20_000))]);
+  let source: CanvasImageSource;
+  if (decoder === "browser") {
+    const video = document.createElement("video");
+    video.muted = true;
+    video.src = URL.createObjectURL(await (await fetch("/video.mp4")).blob());
+    const loaded = await within(
+      new Promise<boolean>((done) => {
+        video.onloadeddata = () => done(true);
+        video.onerror = () => done(false);
+      }),
+      false,
+    );
+    if (!loaded) return null;
+    const seeked = within(
+      new Promise<boolean>((done) => (video.onseeked = () => done(true))),
+      false,
+    );
+    video.currentTime = at;
+    if (!(await seeked)) return null;
+    source = video;
+  } else source = await createImageBitmap(await (await fetch("/decoded.png")).blob());
+  const image = await createImageBitmap(await (await fetch("/reference.png")).blob());
+  const canvas = new OffscreenCanvas(rect.width, rect.height);
+  const context = canvas.getContext("2d", { willReadFrequently: true })!;
+  context.drawImage(source, rect.x, rect.y, rect.width, rect.height, 0, 0, rect.width, rect.height);
+  const got = context.getImageData(0, 0, rect.width, rect.height).data;
+  context.clearRect(0, 0, rect.width, rect.height);
+  context.drawImage(image, 0, 0);
+  const want = context.getImageData(0, 0, rect.width, rect.height).data;
+  let open: Uint8ClampedArray | null = null;
+  if (framed) {
+    context.clearRect(0, 0, rect.width, rect.height);
+    const frame = await createImageBitmap(await (await fetch("/frame.png")).blob());
+    context.drawImage(frame, -rect.x, -rect.y);
+    open = context.getImageData(0, 0, rect.width, rect.height).data;
+  }
+  let squared = 0;
+  let off = 0;
+  let pixels = 0;
+  const shift = [0, 0, 0];
+  for (let i = 0; i < got.length; i += 4) {
+    if (open && open[i + 3] !== 0) continue;
+    pixels++;
+    let worst = 0;
+    for (let c = 0; c < 3; c++) {
+      const d = got[i + c]! - want[i + c]!;
+      squared += d * d;
+      shift[c]! += d;
+      worst = Math.max(worst, Math.abs(d));
+    }
+    if (worst > 16) off++;
+  }
+  const mse = squared / (pixels * 3);
+  return {
+    decoder,
+    psnr: Number((mse ? 10 * Math.log10((255 * 255) / mse) : 99).toFixed(1)),
+    shift: shift.map((sum) => Number((sum / pixels).toFixed(2))) as [number, number, number],
+    off: Number((off / pixels).toFixed(4)),
+  };
+}
+
 export function fidelityProblem(result: Fidelity) {
-  if (!result.decoded) return null;
   const shift = Math.max(...result.shift.map(Math.abs));
   if (
     result.psnr < FIDELITY_MIN.psnr ||

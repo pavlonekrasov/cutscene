@@ -22,9 +22,13 @@ const cwd = process.cwd();
 const [command = "help", ...rest] = process.argv.slice(2);
 const flags = new Set(rest.filter((arg) => arg.startsWith("--")));
 const args = rest.filter((arg) => !arg.startsWith("--"));
+/** A flag's value: undefined when the flag isn't there; fails when it's there without one. */
 const option = (name) => {
   const at = rest.indexOf(`--${name}`);
-  return at >= 0 ? rest[at + 1] : undefined;
+  if (at < 0) return undefined;
+  const value = rest[at + 1];
+  if (!value || value.startsWith("--")) fail(`--${name} needs a value.`);
+  return value;
 };
 
 const say = (line = "") => console.log(line);
@@ -123,13 +127,18 @@ function init() {
   };
   copy(join(root, "templates"), target);
 
-  // 4. A script to run it, and Playwright's run output kept out of git.
+  // 4. A script to run it (the one already there, else "demo" or "cutscene", never over a
+  // script of the project's own), and Playwright's run output kept out of git.
   const fresh = JSON.parse(readFileSync(pkg.file, "utf8"));
   const script = `playwright test -c ${dir}/cutscene.config.ts`;
-  const name = fresh.scripts?.demo && fresh.scripts.demo !== script ? "cutscene" : "demo";
-  if (fresh.scripts?.[name] === script) say(`✓ "${name}" script is there`);
+  const scripts = fresh.scripts ?? {};
+  const names = ["demo", "cutscene"];
+  const name =
+    names.find((key) => scripts[key] === script) ?? names.find((key) => !(key in scripts));
+  if (!name) say(`· Kept your "demo" and "cutscene" scripts; run it with npx ${script}`);
+  else if (scripts[name] === script) say(`✓ "${name}" script is there`);
   else {
-    fresh.scripts = { ...fresh.scripts, [name]: script };
+    fresh.scripts = { ...scripts, [name]: script };
     writeFileSync(pkg.file, `${JSON.stringify(fresh, null, pkg.indent)}\n`);
     say(`✓ Added the "${name}" script`);
   }
@@ -146,7 +155,7 @@ function init() {
     `  1. Fill in ${dir}/app.ts (when a page is settled, what to hide) and the baseURL in ${dir}/cutscene.config.ts.`,
   );
   say(
-    `  2. Write flows in ${dir}/scenes/*.scene.ts, then: ${pm.name === "npm" ? "npm run" : pm.name} ${name}`,
+    `  2. Write flows in ${dir}/scenes/*.scene.ts, then: ${name ? `${pm.name === "npm" ? "npm run" : pm.name} ${name}` : `npx ${script}`}`,
   );
   say(
     "  3. Videos land in ~/Videos/cutscene (CUTSCENE_OUT to change). Read each check/contact.jpg.",

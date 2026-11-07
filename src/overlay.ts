@@ -40,7 +40,8 @@ export function installOverlay({ pointer, hide, blur, main }: OverlayOptions) {
       transform-origin: 3px 3px; transition: scale 90ms ease-out, opacity 160ms ease-out;
       will-change: translate;
       filter: drop-shadow(0 1px 1.5px oklch(0 0 0 / 0.35)); }
-    #cutscene-cursor[data-down] { scale: 0.86; }
+    #cutscene-cursor[data-state="hidden"] { opacity: 0; }
+    #cutscene-cursor[data-state="down"] { scale: 0.86; }
     .cutscene-ripple { position: absolute; width: 40px; height: 40px; margin: -20px 0 0 -20px;
       border-radius: 50%; background: oklch(0.62 0.19 264 / 0.28);
       box-shadow: 0 0 0 1.5px oklch(0.62 0.19 264 / 0.55);
@@ -74,7 +75,11 @@ export function installOverlay({ pointer, hide, blur, main }: OverlayOptions) {
     document.documentElement.append(layer);
 
     const saved = JSON.parse(sessionStorage.getItem(KEY) ?? "null") as [number, number] | null;
+    // The cursor is hidden until the pointer first moves (a new page shows it where the last one
+    // left it), then up or down; a press shows it too, so a ripple never appears without it.
+    type Cursor = "hidden" | "up" | "down";
     let cursor: SVGSVGElement | null = null;
+    const set = (state: Cursor) => cursor?.setAttribute("data-state", state);
     if (pointer === "mouse") {
       cursor = document.createElementNS(ns, "svg");
       cursor.id = "cutscene-cursor";
@@ -88,14 +93,14 @@ export function installOverlay({ pointer, hide, blur, main }: OverlayOptions) {
       cursor.append(path);
       layer.append(cursor);
       if (saved) cursor.style.translate = `${saved[0] - 3}px ${saved[1] - 3}px`;
-      else cursor.style.opacity = "0";
+      set(saved ? "up" : "hidden");
     }
 
     addEventListener(
       "mousemove",
       (event) => {
         if (!cursor) return;
-        cursor.style.opacity = "1";
+        if (cursor.getAttribute("data-state") === "hidden") set("up");
         cursor.style.translate = `${event.clientX - 3}px ${event.clientY - 3}px`;
         sessionStorage.setItem(KEY, JSON.stringify([event.clientX, event.clientY]));
       },
@@ -113,12 +118,13 @@ export function installOverlay({ pointer, hide, blur, main }: OverlayOptions) {
       "mousedown",
       (event) => {
         if (!cursor) return;
-        cursor.toggleAttribute("data-down", true);
+        cursor.style.translate = `${event.clientX - 3}px ${event.clientY - 3}px`;
+        set("down");
         mark("cutscene-ripple", event.clientX, event.clientY);
       },
       { capture: true, passive: true },
     );
-    addEventListener("mouseup", () => cursor?.removeAttribute("data-down"), {
+    addEventListener("mouseup", () => cursor && set("up"), {
       capture: true,
       passive: true,
     });

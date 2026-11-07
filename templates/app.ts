@@ -1,5 +1,6 @@
 // The adapter: everything cutscene needs to know about this app. Scenes import `scene` from here.
-// The cutscene skill, or the README's "The adapter", says how to fill in each part.
+// How to fill in each part: the cutscene skill ("Fill in the adapter"), or "Set it up by hand" in
+// GUIDE.md (node_modules/@pavlonekrasov/cutscene).
 import { createScene, DEFAULT_FRAME, expect } from "@pavlonekrasov/cutscene";
 
 export const scene = createScene({

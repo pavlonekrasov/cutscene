@@ -37,7 +37,10 @@ it draws mock UI). cutscene records the real web app, in any Chromium browser, o
 | `<scene>.mp4`                         | H.264, 60 fps, BT.709, faststart. Desktop 3840×2160 (the 1440×810 app at 2×), phone 1080×1920 (390×844 at 2×). |
 | `stills/*.png`                        | Lossless shots from `act.shot()`, without the cursor.                                                          |
 | `check/`                              | A frame at every `act.mark()` and `contact.jpg`, a 4×4 sheet of the whole video.                               |
-| `manifest.json`                       | Duration, marks, `motionFps` (60 or more is every frame of the video), the fidelity numbers.                   |
+| `manifest.json`                       | Duration, marks, `motionFps` (60 or more is every frame of the video), the fidelity numbers, `passed`.         |
+
+A scene builds in `<folder>.partial` and replaces the last video only once the new one is encoded. A
+scene that fails or stops halfway leaves the last video as it was.
 
 ## Install
 
@@ -169,11 +172,13 @@ Durations are the video's. Off-camera time is cut; any other still stretch is sh
 
 After the last beat cutscene takes a lossless `page.screenshot()`. Once the MP4 is encoded it
 decodes the last frame **in the browser** (a `<video>` drawn to a canvas, as a viewer's browser
-would; with ffmpeg and the video's BT.709 matrix when that Chromium build has no H.264) and
+would; with ffmpeg and the video's BT.709 matrix when that Chromium build has no H.264 or can't play
+the file) and
 compares every app pixel
 the frame leaves visible with that screenshot. A scene fails below 38 dB PSNR, above ±1.5 mean
 shift in any channel, or with more than 0.5% of pixels off by more than 16, and saves the
-screenshot as `check/reference.png`. Typical runs land at 44–55 dB.
+screenshot as `check/reference.png`. A video neither the browser nor ffmpeg can decode fails the
+scene too. Typical runs land at 44–55 dB.
 
 ## How it works
 

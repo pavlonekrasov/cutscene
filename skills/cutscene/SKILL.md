@@ -106,7 +106,7 @@ For every video, in `<out>/<scene>-<format>-<theme>[-blurred]/`:
 
 - Read `check/contact.jpg` and each mark still: every beat on screen, captions whole and not over
   UI, no dev UI, no half-loaded or blank state.
-- `manifest.json`: `motionFps` ≥ 60; `fidelity.decoded` true and `psnr` ≥ 38.
+- `manifest.json`: `motionFps` ≥ 60; `passed` true and `fidelity.psnr` ≥ 38.
 - Something on screen for a split second (a flash, a jump) shows in the contact sheet only by
   luck: extract frames around a suspect moment with ffmpeg and look.
 - Report the path, duration and PSNR. Delete probe files you made.

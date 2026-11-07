@@ -5,6 +5,18 @@ import type { CDPSession, Page } from "@playwright/test";
 /** One captured frame: the file and when it reached the screen (seconds, wall clock). */
 export type Frame = { file: string; t: number };
 
+/** A finished recording: its frames, all on disk, and the moment it stopped. */
+export type Recording = { frames: Frame[]; end: number };
+
+/**
+ * Where a recorder is. Only `recording` takes frames; `stopped` holds the result, so stopping twice
+ * returns the same recording and a paint Chrome sends after the stop never lands in it.
+ */
+type State =
+  | { name: "idle" }
+  | { name: "recording"; session: CDPSession }
+  | { name: "stopped"; recording: Promise<Recording> };
+
 /**
  * Records the page through Chrome's screencast: an image each time the compositor paints, stamped
  * with its time, at the page's full device resolution. Nothing paints while the page is still, so a frame
@@ -12,9 +24,10 @@ export type Frame = { file: string; t: number };
  * real browser, so what the video shows is what the app did.
  */
 export class Recorder {
-  readonly frames: Frame[] = [];
-  private session?: CDPSession;
-  private writes: Promise<void>[] = [];
+  private state: State = { name: "idle" };
+  private readonly frames: Frame[] = [];
+  private readonly writes: Promise<void>[] = [];
+  private writeError: unknown = null;
 
   constructor(
     private readonly page: Page,
@@ -25,19 +38,29 @@ export class Recorder {
   ) {}
 
   async start() {
+    if (this.state.name !== "idle")
+      throw new Error(`The recorder is ${this.state.name}: start it once.`);
     await mkdir(this.dir, { recursive: true });
-    this.session = await this.page.context().newCDPSession(this.page);
-    this.session.on("Page.screencastFrame", ({ data, metadata, sessionId }) => {
+    const session = await this.page.context().newCDPSession(this.page);
+    session.on("Page.screencastFrame", ({ data, metadata, sessionId }) => {
+      if (this.state.name !== "recording") return;
       const now = Date.now() / 1000;
       // The paint time when Chrome reports one on the same clock; else the arrival time.
       const stamp = metadata.timestamp;
       const t = stamp && Math.abs(stamp - now) < 2 ? stamp : now;
       const file = join(this.dir, `${String(this.frames.length).padStart(6, "0")}.${this.image}`);
       this.frames.push({ file, t });
-      this.writes.push(writeFile(file, Buffer.from(data, "base64")));
-      void this.session?.send("Page.screencastFrameAck", { sessionId }).catch(() => {});
+      // Caught here and rethrown by `stop()`: a write that fails mid-scene mustn't crash the run
+      // as an unhandled rejection before anything awaits it.
+      this.writes.push(
+        writeFile(file, Buffer.from(data, "base64")).catch((error: unknown) => {
+          this.writeError ??= error;
+        }),
+      );
+      void session.send("Page.screencastFrameAck", { sessionId }).catch(() => {});
     });
-    await this.session.send("Page.startScreencast", {
+    this.state = { name: "recording", session };
+    await session.send("Page.startScreencast", {
       format: this.image,
       ...(this.image === "jpeg" ? { quality: 100 } : {}),
       maxWidth: this.size.width,
@@ -48,6 +71,8 @@ export class Recorder {
 
   /** Waits for a fresh paint, so a scene's first or last moment is on record. */
   async settle(timeout = 1500) {
+    if (this.state.name !== "recording")
+      throw new Error(`The recorder is ${this.state.name}: settle() needs it recording.`);
     const count = this.frames.length;
     // A still page sends nothing: nudge one paint, then wait for it.
     await this.page.evaluate(
@@ -58,10 +83,23 @@ export class Recorder {
       await new Promise((done) => setTimeout(done, 30));
   }
 
-  async stop() {
-    await this.session?.send("Page.stopScreencast").catch(() => {});
-    await Promise.all(this.writes);
-    await this.session?.detach().catch(() => {});
-    return { frames: this.frames, end: Date.now() / 1000 };
+  /** Ends the recording now. Safe to call again (or before `start`): it returns the same result. */
+  stop(): Promise<Recording> {
+    if (this.state.name === "stopped") return this.state.recording;
+    const session = this.state.name === "recording" ? this.state.session : null;
+    // The state changes before anything is awaited, so the frame list and its writes are final.
+    const recording = this.finish(session, Date.now() / 1000);
+    this.state = { name: "stopped", recording };
+    return recording;
+  }
+
+  private async finish(session: CDPSession | null, end: number): Promise<Recording> {
+    if (session) {
+      await session.send("Page.stopScreencast").catch(() => {});
+      await Promise.all(this.writes);
+      await session.detach().catch(() => {});
+    }
+    if (this.writeError) throw this.writeError;
+    return { frames: this.frames, end };
   }
 }
