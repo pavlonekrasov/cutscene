@@ -1,6 +1,6 @@
 {
   "name": "@pavlonekrasov/cutscene",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Record real web app flows as pixel-exact product videos, scripted like Playwright tests. Comes with an agent skill.",
   "keywords": [
     "playwright",
@@ -32,7 +32,8 @@
     "bin",
     "skills",
     "templates",
-    "AGENTS.md"
+    "AGENTS.md",
+    "GUIDE.md"
   ],
   "engines": {
     "node": ">=20"
@@ -44,7 +45,7 @@
     "build": "tsc -p tsconfig.build.json",
     "example": "playwright test -c examples/basic/cutscene.config.ts",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write src examples templates bin skills README.md AGENTS.md",
+    "format": "prettier --write src examples templates bin skills README.md GUIDE.md AGENTS.md",
     "prepack": "npm run typecheck && npm run build"
   },
   "peerDependencies": {

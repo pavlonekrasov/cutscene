@@ -2,7 +2,7 @@
 
 To **use** cutscene in a project, follow the skill: [skills/cutscene/SKILL.md](skills/cutscene/SKILL.md)
 (or `npx @pavlonekrasov/cutscene skill` to install it). This file is for changing cutscene itself.
-Read [README.md](README.md) first.
+Read [GUIDE.md](GUIDE.md) first.
 
 ## Layout
 
