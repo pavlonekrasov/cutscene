@@ -63,6 +63,15 @@ export class Act {
     this.offstageStart();
     await this.page.goto(path);
     await this.ready();
+    // Without a viewport tag a phone lays the page out at 980px and shrinks it: the video would
+    // show an unreadable desktop page, and its raster never matches the check's screenshot.
+    if (
+      this.format.pointer === "touch" &&
+      !(await this.page.evaluate(() => Boolean(document.querySelector("meta[name=viewport]"))))
+    )
+      throw new Error(
+        `${path} has no <meta name="viewport">, so a phone shows it as a shrunken desktop page. Add the tag, or record desktop only (formats: ["desktop"] in the config, or --project=desktop).`,
+      );
     // The pointer comes in from the right edge on its first move, so nothing shows a hover the
     // viewer didn't see it reach (the overlay keeps it hidden until then).
     if (!this.pos && this.format.pointer === "mouse") {

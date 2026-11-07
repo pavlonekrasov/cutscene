@@ -120,6 +120,7 @@ For every video, in `<out>/<scene>-<format>-<theme>[-blurred]/`:
 | Fidelity fails, low PSNR, small shift  | Content: compare `check/reference.png` with the last still. End on a settled screen (`wait`). |
 | Frame drawn wrong (half size, offset)  | The frame page took project options; `renderFrame` keeps `isMobile: false`.                   |
 | `motionFps` under 60                   | Keep `CUTSCENE_PACE` at 2+, close heavy apps, one worker.                                     |
+| "has no <meta name=\"viewport\">"      | The app isn't mobile-ready: add the tag, or record desktop only (`formats: ["desktop"]`).     |
 | Browser won't launch                   | `npx playwright install chromium`, or set `browser` to an installed Chromium.                 |
 | A locator times out                    | The app: read Playwright's error context; fix the scene or ask the owner about the app.       |
 | A flash or glitch the app really shows | It's the app, not the recorder: report it to the owner rather than hiding it in the scene.    |
