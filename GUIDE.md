@@ -181,8 +181,10 @@ would; with ffmpeg and the video's BT.709 matrix when that Chromium build has no
 the file) and
 compares every app pixel
 the frame leaves visible with that screenshot. A scene fails below 38 dB PSNR, above ±1.5 mean
-shift in any channel, or with more than 0.5% of pixels off by more than 16, and saves the
-screenshot as `check/reference.png`. A video neither the browser nor ffmpeg can decode fails the
+shift in any channel, or with more than 0.5% of pixels off in brightness (BT.709 luma) by more
+than 16, and saves the screenshot as `check/reference.png`. That last test is brightness only: 4:2:0
+keeps colour at half resolution, and a browser's decode smears it across saturated edges (a bright
+chart bar on a dark track) in any faithful take; a colour drift still shows in the shift and PSNR. A video neither the browser nor ffmpeg can decode fails the
 scene too. Typical runs land at 44–55 dB.
 
 ## How it works

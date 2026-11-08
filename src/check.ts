@@ -41,7 +41,12 @@ export type Fidelity = {
   psnr: number;
   /** Mean signed difference per channel (R, G, B), 0–255: a colour shift shows here. */
   shift: [number, number, number];
-  /** Share of pixels off by more than 16 in any channel. */
+  /**
+   * Share of pixels whose brightness (BT.709 luma, 0–255) is off by more than 16. Brightness only:
+   * 4:2:0 keeps colour at half resolution, and a browser's decode smears it a pixel or two across a
+   * saturated edge (a bright bar on a dark track), which no faithful H.264 take avoids. A colour
+   * drift still fails on `shift` and `psnr`.
+   */
   off: number;
 };
 
@@ -179,14 +184,16 @@ async function compare({
   for (let i = 0; i < got.length; i += 4) {
     if (open && open[i + 3] !== 0) continue;
     pixels++;
-    let worst = 0;
     for (let c = 0; c < 3; c++) {
       const d = got[i + c]! - want[i + c]!;
       squared += d * d;
       shift[c]! += d;
-      worst = Math.max(worst, Math.abs(d));
     }
-    if (worst > 16) off++;
+    const luma =
+      0.2126 * (got[i]! - want[i]!) +
+      0.7152 * (got[i + 1]! - want[i + 1]!) +
+      0.0722 * (got[i + 2]! - want[i + 2]!);
+    if (Math.abs(luma) > 16) off++;
   }
   const mse = squared / (pixels * 3);
   return {
@@ -204,6 +211,6 @@ export function fidelityProblem(result: Fidelity) {
     shift > FIDELITY_MIN.shift ||
     result.off > FIDELITY_MIN.off
   )
-    return `The video drifts from the app: PSNR ${result.psnr} dB (min ${FIDELITY_MIN.psnr}), colour shift ${result.shift.join(" / ")} (max ±${FIDELITY_MIN.shift}), ${(result.off * 100).toFixed(2)}% of pixels off by more than 16.`;
+    return `The video drifts from the app: PSNR ${result.psnr} dB (min ${FIDELITY_MIN.psnr}), colour shift ${result.shift.join(" / ")} (max ±${FIDELITY_MIN.shift}), ${(result.off * 100).toFixed(2)}% of pixels off in brightness by more than 16.`;
   return null;
 }
