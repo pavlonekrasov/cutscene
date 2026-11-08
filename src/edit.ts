@@ -1,6 +1,7 @@
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import { join } from "node:path";
 import type { Frame } from "./capture";
 import { layout } from "./frame";
@@ -88,8 +89,11 @@ export function ffmpegPath() {
 
 function bundledFfmpeg(): string | null {
   try {
-    // A plain require: in a copied-in src/ without ffmpeg-static, this just finds nothing.
-    return require("ffmpeg-static") as string | null;
+    // Resolved from this file (the package's own dependency), or from the project when the source is
+    // loaded as ESM; in a copied-in src/ without ffmpeg-static it just finds nothing. `createRequire`,
+    // not a bare `require`: projects that vendor src/ often lint against `require()` imports.
+    const from = typeof __filename === "string" ? __filename : join(process.cwd(), "package.json");
+    return createRequire(from)("ffmpeg-static") as string | null;
   } catch {
     return null;
   }
