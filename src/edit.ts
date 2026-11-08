@@ -155,8 +155,11 @@ export async function encode({
   const lines = ["ffconcat version 1.0"];
   for (const entry of entries)
     lines.push(`file ${quote(entry.file)}`, `duration ${entry.duration.toFixed(4)}`);
-  // The concat demuxer drops the last duration unless the last file is listed once more.
+  // The concat demuxer drops the last duration unless the last file is listed once more. How long
+  // that repeat then plays depends on the ffmpeg build (a 2026 nightly plays it as long as the entry
+  // before it, doubling a held end), so the output is cut at the timeline's own length below.
   lines.push(`file ${quote(entries.at(-1)!.file)}`);
+  const length = entries.reduce((sum, entry) => sum + Number(entry.duration.toFixed(4)), 0);
   const list = join(workDir, "frames.ffconcat");
   await writeFile(list, lines.join("\n"));
 
@@ -171,7 +174,7 @@ export async function encode({
     ...["-f", "concat", "-safe", "0", "-i", list],
     ...(framePng ? ["-i", framePng] : []),
     ...["-filter_complex", filter, "-map", "[out]"],
-    ...["-c:v", "libx264", "-preset", "slow", "-crf", "16", "-r", "60"],
+    ...["-c:v", "libx264", "-preset", "slow", "-crf", "16", "-r", "60", "-t", length.toFixed(4)],
     ...["-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "iec61966-2-1"],
     ...["-color_range", "tv", "-movflags", "+faststart", file],
   ]);
