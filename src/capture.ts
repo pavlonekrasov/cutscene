@@ -60,26 +60,37 @@ export class Recorder {
       void session.send("Page.screencastFrameAck", { sessionId }).catch(() => {});
     });
     this.state = { name: "recording", session };
-    await session.send("Page.startScreencast", {
+    await session.send("Page.startScreencast", this.screencast());
+  }
+
+  /** The screencast's settings: the app's full device size, every frame. */
+  private screencast() {
+    return {
       format: this.image,
       ...(this.image === "jpeg" ? { quality: 100 } : {}),
       maxWidth: this.size.width,
       maxHeight: this.size.height,
       everyNthFrame: 1,
-    });
+    };
   }
 
-  /** Waits for a fresh paint, so a scene's first or last moment is on record. */
+  /**
+   * Waits for a frame of what the screen shows now, so a scene's first or last moment is on record.
+   * Chrome drops a paint that lands while the last frame's ack is in flight and never sends it later,
+   * and a still page paints nothing more (an animation frame doesn't count: nothing changed). So a
+   * pulsing placeholder's last frame stood in for the page that replaced it, until the pointer moved.
+   * Restarting the screencast makes Chrome redraw and send the screen as it is.
+   */
   async settle(timeout = 1500) {
     if (this.state.name !== "recording")
       throw new Error(`The recorder is ${this.state.name}: settle() needs it recording.`);
-    const count = this.frames.length;
-    // A still page sends nothing: nudge one paint, then wait for it.
-    await this.page.evaluate(
-      () => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))),
-    );
+    const { session } = this.state;
+    const from = Date.now() / 1000;
+    await session.send("Page.stopScreencast");
+    await session.send("Page.startScreencast", this.screencast());
+    // A frame painted before the restart can still arrive; only one painted after it counts.
     const until = Date.now() + timeout;
-    while (this.frames.length === count && Date.now() < until)
+    while ((this.frames.at(-1)?.t ?? 0) < from && Date.now() < until)
       await new Promise((done) => setTimeout(done, 30));
   }
 

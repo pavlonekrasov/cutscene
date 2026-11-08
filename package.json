@@ -1,6 +1,6 @@
 {
   "name": "@pavlonekrasov/cutscene",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Record real web app flows as pixel-exact product videos, scripted like Playwright tests. Comes with an agent skill.",
   "keywords": [
     "playwright",
