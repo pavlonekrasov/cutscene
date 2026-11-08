@@ -120,11 +120,15 @@ export class Act {
     await this.glide(point, duration);
   }
 
-  async click(target: Locator, { after = 450 }: { after?: number } = {}) {
-    await this.move(target);
+  /** Clicks a target where `move` aims, or at `at` (CSS px from its top-left, inside it). */
+  async click(
+    target: Locator,
+    { after = 450, at }: { after?: number; at?: { x: number; y: number } } = {},
+  ) {
+    await this.move(target, { at });
     if (this.format.pointer === "touch") {
       await this.beat(320);
-      await target.tap();
+      await target.tap(at ? { position: at } : undefined);
     } else {
       await this.beat(80);
       await this.page.mouse.down();
@@ -134,8 +138,12 @@ export class Act {
     await this.beat(after);
   }
 
-  async hover(target: Locator, { after = 500 }: { after?: number } = {}) {
-    await this.move(target);
+  /** Rests the pointer on a target, where `move` aims or at `at`, so its hover state shows. */
+  async hover(
+    target: Locator,
+    { after = 500, at }: { after?: number; at?: { x: number; y: number } } = {},
+  ) {
+    await this.move(target, { at });
     await this.beat(after);
   }
 

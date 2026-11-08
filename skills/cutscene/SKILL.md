@@ -83,6 +83,7 @@ scene("Invite a teammate", async ({ act }) => {
 - One flow per scene, 15–30 s. Start with `visit`, end on the result, held with `wait`.
 - Leave the pointer off what the viewer reads: after a click, `move` it beside the result
   (`act.move(row, { at: { x, y } })`, CSS px from the target's top-left), not on a label.
+  `hover` and `click` take the same `at`: click a row in its empty space, off its words.
 - Locate by role and accessible name. `expect` each result before moving on, so a broken flow
   fails instead of filming a wrong state.
 - `act.type` clicks its field first; type a newline (`"\n"`) for Enter inside one field.

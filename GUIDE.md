@@ -154,6 +154,8 @@ A scene is a Playwright test, so targets are locators and checks are `expect`, a
 
 `move(target, { at: { x, y } })` rests the pointer at a point of the target's box (CSS px from its
 top-left, outside it too) instead of near its start: beside a result rather than on its text.
+`hover` and `click` take the same `at` (inside the target, for a click): a row clicked in its empty
+space, so the hover before it doesn't cover the row's words.
 
 Durations are the video's. Off-camera time is cut; any other still stretch is shortened to
 `idleCap` (1.2 s) so a slow fetch never looks frozen; `wait` is kept in full.
