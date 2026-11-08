@@ -100,17 +100,24 @@ export class Act {
 
   // ── On stage ─────────────────────────────────────────────────────────────────────────────────
 
-  /** Glides the pointer to a target (no-op for touch, which has no pointer between taps). */
-  async move(target: Locator, { duration }: { duration?: number } = {}) {
+  /**
+   * Glides the pointer to a target (no-op for touch, which has no pointer between taps). `at` picks
+   * the point instead, in CSS px from the target's top-left corner (it may lie outside the box):
+   * a place to rest beside a result rather than on its text.
+   */
+  async move(
+    target: Locator,
+    { duration, at }: { duration?: number; at?: { x: number; y: number } } = {},
+  ) {
     await this.onstage();
     await this.reveal(target);
     if (this.format.pointer === "touch") return;
     const box = (await target.boundingBox())!;
     // Wide targets (rows, fields) are aimed near their start, where the eye reads them.
-    await this.glide(
-      { x: box.x + Math.min(box.width / 2, 64), y: box.y + box.height / 2 },
-      duration,
-    );
+    const point = at
+      ? { x: box.x + at.x, y: box.y + at.y }
+      : { x: box.x + Math.min(box.width / 2, 64), y: box.y + box.height / 2 };
+    await this.glide(point, duration);
   }
 
   async click(target: Locator, { after = 450 }: { after?: number } = {}) {

@@ -152,6 +152,9 @@ A scene is a Playwright test, so targets are locators and checks are `expect`, a
 | `shot(name, locator?)`                         | cut    | A lossless PNG without the overlay.                                                               |
 | `page`, `main`, `format`                       | —      | The Playwright page, the main region (the adapter's `main`), the format.                          |
 
+`move(target, { at: { x, y } })` rests the pointer at a point of the target's box (CSS px from its
+top-left, outside it too) instead of near its start: beside a result rather than on its text.
+
 Durations are the video's. Off-camera time is cut; any other still stretch is shortened to
 `idleCap` (1.2 s) so a slow fetch never looks frozen; `wait` is kept in full.
 
