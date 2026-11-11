@@ -5,6 +5,7 @@ import type { Recorder } from "./capture";
 import type { Mark, Span } from "./edit";
 import type { Format } from "./formats";
 import type { Page$ } from "./overlay";
+import type { Box, TakeLog } from "./reel/take";
 
 const sleep = (ms: number) => new Promise((done) => setTimeout(done, ms));
 const now = () => Date.now() / 1000;
@@ -53,6 +54,8 @@ export class Act {
     private readonly outDir: string,
     private readonly cdp: CDPSession,
     private readonly pace: number,
+    /** Set in a reel take only (`reel/take.ts`): what the camera and the ramps are planned from. */
+    private readonly log?: TakeLog,
   ) {
     this.page = page;
     this.format = format;
@@ -109,15 +112,17 @@ export class Act {
     target: Locator,
     { duration, at }: { duration?: number; at?: { x: number; y: number } } = {},
   ) {
+    const t0 = now();
     await this.onstage();
     await this.reveal(target);
-    if (this.format.pointer === "touch") return;
+    if (this.format.pointer === "touch") return this.called(t0);
     const box = (await target.boundingBox())!;
     // Wide targets (rows, fields) are aimed near their start, where the eye reads them.
     const point = at
       ? { x: box.x + at.x, y: box.y + at.y }
       : { x: box.x + Math.min(box.width / 2, 64), y: box.y + box.height / 2 };
     await this.glide(point, duration);
+    this.called(t0);
   }
 
   /** Clicks a target where `move` aims, or at `at` (CSS px from its top-left, inside it). */
@@ -125,17 +130,22 @@ export class Act {
     target: Locator,
     { after = 450, at }: { after?: number; at?: { x: number; y: number } } = {},
   ) {
+    const t0 = now();
     await this.move(target, { at });
+    const aim = this.log && (await this.aim(target, at));
     if (this.format.pointer === "touch") {
       await this.beat(320);
+      if (aim) this.log?.push({ kind: "click", t: now(), ...aim });
       await target.tap(at ? { position: at } : undefined);
     } else {
       await this.beat(80);
+      if (aim) this.log?.push({ kind: "click", t: now(), ...aim });
       await this.page.mouse.down();
       await this.beat(90);
       await this.page.mouse.up();
     }
     await this.beat(after);
+    this.called(t0);
   }
 
   /** Rests the pointer on a target, where `move` aims or at `at`, so its hover state shows. */
@@ -143,30 +153,42 @@ export class Act {
     target: Locator,
     { after = 500, at }: { after?: number; at?: { x: number; y: number } } = {},
   ) {
+    const t0 = now();
     await this.move(target, { at });
+    const aim = this.log && (await this.aim(target, at));
+    if (aim) this.log?.push({ kind: "hover", t: now(), ...aim });
     await this.beat(after);
+    this.called(t0);
   }
 
   /** Clicks a field and types into it at a human rhythm. */
   async type(target: Locator, text: string, { after = 350, perChar = 55 } = {}) {
+    const t0 = now();
     await this.click(target, { after: 180 });
+    const box = this.log && (await target.boundingBox());
+    const first = now();
     let i = 0;
     for (const char of text) {
       await this.page.keyboard.type(char);
       // A steady rhythm with a little variation, the same on every run.
       await this.beat(perChar * (0.7 + ((i++ * 7919) % 11) / 18) + (char === " " ? 40 : 0));
     }
+    if (box) this.log?.push({ kind: "type", t0: first, t1: now(), box });
     await this.beat(after);
+    this.called(t0);
   }
 
   async press(key: string, { after = 400 }: { after?: number } = {}) {
+    const t0 = now();
     await this.onstage();
     await this.page.keyboard.press(key);
     await this.beat(after);
+    this.called(t0);
   }
 
   /** Scrolls smoothly, by a distance or until a target is in the middle of the view. */
   async scroll(target: Locator | number, { after = 300 }: { after?: number } = {}) {
+    const t0 = now();
     await this.onstage();
     if (typeof target === "number")
       await this.page.evaluate(
@@ -174,7 +196,9 @@ export class Act {
         target,
       );
     else await target.evaluate((node) => (window as Page$).__cutscene.scrollTo(node));
+    this.log?.push({ kind: "scroll", t0, t1: now() });
     await this.beat(after);
+    this.called(t0);
   }
 
   /** A held beat: kept at full length, never shortened as idle. */
@@ -183,15 +207,36 @@ export class Act {
     const from = now();
     await this.beat(ms);
     this.holds.push([from, now()]);
+    this.log?.push({ kind: "hold", t0: from, t1: now() });
+    this.called(from);
   }
 
   /** A caption at the bottom of the frame (who is acting, what happens); null clears it. A new
    *  caption finishes fading in (240 ms, `overlay.ts`) before the scene moves on, so a mark right
    *  after it shows the whole line; clearing fades out alongside the next beat. */
   async caption(text: string | null) {
+    const t0 = now();
     await this.onstage();
     await this.page.evaluate((value) => (window as Page$).__cutscene.caption(value), text);
     if (text) await this.beat(CAPTION_FADE_MS);
+    this.called(t0);
+  }
+
+  /**
+   * A camera hint for a reel (`cutscene reel`): frame this target, at `zoom` when given (1 is the
+   * whole window; the reel caps it at what its takes keep sharp). The camera holds the framing
+   * until an action outside it. Does nothing when a scene records on its own.
+   */
+  async focus(target: Locator, zoom?: number) {
+    if (!this.log) return;
+    await this.onstage();
+    const box = await target.boundingBox();
+    if (box) this.log.push({ kind: "focus", t: now(), box, zoom });
+  }
+
+  /** A camera hint for a reel: pull back to the whole window. Does nothing outside a reel take. */
+  wide() {
+    this.log?.push({ kind: "wide", t: now() });
   }
 
   /** A named beat: the self-check pulls a still from the video here. */
@@ -249,7 +294,9 @@ export class Act {
     const box = await target.boundingBox();
     const { height } = this.format.viewport;
     if (box && box.y >= 64 && box.y + box.height <= height - 32) return;
+    const t0 = now();
     await target.evaluate((node) => (window as Page$).__cutscene.scrollTo(node));
+    this.log?.push({ kind: "scroll", t0, t1: now() });
   }
 
   private async glide(to: { x: number; y: number }, duration?: number) {
@@ -265,6 +312,7 @@ export class Act {
     const bend = Math.min(distance * 0.12, 60);
     const cx = (from.x + to.x) / 2 - (dy / (distance || 1)) * bend;
     const cy = (from.y + to.y) / 2 + (dx / (distance || 1)) * bend;
+    const t0 = now();
     const start = performance.now();
     for (;;) {
       const k = Math.min(1, (performance.now() - start) / ms);
@@ -276,5 +324,23 @@ export class Act {
       await sleep(6);
     }
     this.pos = to;
+    this.log?.push({ kind: "glide", t0, t1: now(), from, to });
+  }
+
+  /** A reel take's note that an `act` call ran from `t0` to now. */
+  private called(t0: number) {
+    this.log?.push({ kind: "call", t0, t1: now() });
+  }
+
+  /** Where a click or hover lands, for a reel take's log. */
+  private async aim(target: Locator, at?: { x: number; y: number }) {
+    const box: Box | null = await target.boundingBox();
+    if (!box) return null;
+    const point = at
+      ? { x: box.x + at.x, y: box.y + at.y }
+      : this.format.pointer === "mouse" && this.pos
+        ? this.pos
+        : { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+    return { box, point };
   }
 }

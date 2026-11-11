@@ -1,5 +1,7 @@
 import { defineConfig, type PlaywrightTestConfig } from "@playwright/test";
+import { basename, dirname } from "node:path";
 import { FORMATS, type Format } from "./formats";
+import { denseFormat, reelJob } from "./reel/take";
 import type { CutsceneFixtures } from "./scene";
 
 /**
@@ -58,6 +60,22 @@ export function cutsceneConfig({
 }: CutsceneConfig) {
   const theme = process.env.CUTSCENE_THEME === "dark" ? "dark" : "light";
   const { channel, executablePath } = browserOptions(process.env.CUTSCENE_BROWSER ?? browser);
+  // `cutscene reel` only. A reel file is the one test of its run: it records its takes through
+  // this same config (a child run, which starts the app) and renders them in a plain browser.
+  const reel = process.env.CUTSCENE_REEL_FILE;
+  if (reel)
+    return defineConfig<CutsceneFixtures>({
+      testDir: dirname(reel),
+      testMatch: `**/${basename(reel)}`,
+      outputDir,
+      workers: 1,
+      timeout: 0,
+      reporter: "list",
+      use: { colorScheme: theme, ...(channel ? { channel } : {}) },
+      projects: [{ name: "reel", use: { launchOptions: { executablePath } } }],
+    });
+  // A reel's takes record at its density (`reel/take.ts`); every other run has no job.
+  const job = reelJob();
   return defineConfig<CutsceneFixtures>({
     testDir,
     testMatch: "**/*.scene.ts",
@@ -72,8 +90,9 @@ export function cutsceneConfig({
       ...use,
     },
     projects: formats.map((entry) => {
-      const { name, format } =
+      const { name, format: plain } =
         typeof entry === "string" ? { name: entry, format: FORMATS[entry] } : entry;
+      const format = job ? denseFormat(plain, job.density) : plain;
       const touch = format.pointer === "touch";
       return {
         name,

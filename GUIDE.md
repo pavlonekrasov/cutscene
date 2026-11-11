@@ -230,6 +230,90 @@ transparent hole where the app plays. Defaults are neutral; tune them to your ap
   layered shadow (ring, contact, mid, ambient); dark separates with a white ring, because a wide
   blur over a dark backdrop bands in 8 bits.
 
+## Reels
+
+A reel is a second pass over your scenes: a 60 fps showreel with a camera that pushes in on where
+the work happens, typing and waits sped through, hard cuts between clips and a card at each end.
+It's opt-in. Scenes record exactly as above; a reel records **its own takes** of them, denser, and
+never touches a scene's video.
+
+```ts
+// demo/reels/tour.reel.ts
+import { reel } from "@pavlonekrasov/cutscene/reel";
+
+reel("Tour", {
+  cards: {
+    open: ["Acme", "Invoices that send themselves"],
+    close: ["Acme", "A concept by Sam Lee"],
+  },
+  clips: [
+    { scene: "../scenes/invite.scene.ts", to: "sent" }, // from the start to 1.2 s after the mark
+    { scene: "../scenes/report.scene.ts", from: "open", open: "wide" },
+  ],
+});
+```
+
+```sh
+npx cutscene reel demo/reels/tour.reel.ts            # record the takes, then render
+npx cutscene reel demo/reels/tour.reel.ts --reuse    # cut again from the last takes
+CUTSCENE_THEME=dark npx cutscene reel demo/reels/tour.reel.ts
+```
+
+The reel lands in `<out>/<reel>-reel-<theme>/`: `<reel>.mp4`, `check/` (a still at each clip, shot
+and card, and `contact.jpg`) and `manifest.json` (every clip, shot and ramp with its time, the
+fidelity numbers, `passed`). `--config <path>` names the cutscene config when it isn't above the
+reel file; `--project <name>` shoots another format. `CUTSCENE_THEME`, `CUTSCENE_BLUR`,
+`CUTSCENE_OUT` and `CUTSCENE_BROWSER` work as for scenes.
+
+| `reel(title, { … })`        | Does                                                                                                                                                                                                              |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `clips`                     | In order: `scene` (file, relative to the reel), `from` / `to` (marks), `tail` (seconds held after `to`, 1.2), `hold` (extra seconds on the last frame), `open` (`"working"` or `"wide"`), `shots`, `auto: false`. |
+| `cards`                     | `open` and `close`: lines of text; the first is the name. Set in the app's own typeface on the frame's backdrop.                                                                                                  |
+| `density`                   | The takes' density. The deepest sharp zoom is `density / 2`: 3 (default) for 1.5, 4 for 2.                                                                                                                        |
+| `camera`, `speed`           | The defaults below, overridden.                                                                                                                                                                                   |
+| `project`, `pace`, `outDir` | The format (default `desktop`), the takes' slow motion, where the reel goes.                                                                                                                                      |
+
+**The camera** is planned from what the scene did. A clip opens on its first action at the working
+zoom (1.5). For each click, hover or typed field outside the middle 60% of the shot it glides just
+far enough to bring the action in, starting 300 ms before the pointer sets off and still when the
+press lands. It never moves while the page scrolls, and never overshoots
+(`cubic-bezier(0.65, 0, 0.35, 1)`; push-in 500 ms, pull-back 600 ms, pans 500–800 ms). A reframe
+beyond ×1.8, or across more than half the shot, is a cut. Between clips it's always a hard cut.
+
+Where the automatic camera isn't what you want, say so in the scene. Both do nothing when a scene
+records on its own:
+
+| `act.`                  | In a reel                                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------- |
+| `focus(locator, zoom?)` | Frames that element, at `zoom` if given (the working zoom otherwise), until an action outside it. |
+| `wide()`                | Pulls back to the whole window, until the next action.                                            |
+
+Or set a shot in the reel file: `shots: [{ at: "sent", zoom: 2, x: 0.3, y: 0.4, over: 600 }]`
+(`at` is a mark or seconds into the clip; `x`, `y` are the centre as a share of the canvas).
+
+**Speed.** Typing plays at 2× and waits on the app at 3.5×, easing in and out over 200 ms. The
+pointer's approach, the click and every `act.wait` stay at 1×.
+
+**Sharpness.** A zoom must not soften the app, so takes are recorded denser than the reel shows
+them (3× for a 1.5 zoom, 4× for 2) and the camera only ever picks from real pixels; a zoom past
+`density / 2` is capped. Denser frames paint slower, so takes also record slower (pace 4 at 3×, 6
+at 4×) and still land at 60 fps. Frames are drawn in a Chromium canvas at fractional positions, so
+a slow push moves between whole pixels instead of stepping across them.
+
+**Fidelity.** For each take, its last frame goes the way every frame of the reel goes (the camera,
+the encode, a browser's decode) at the whole frame and at the reel's deepest zoom, and is compared
+with a lossless screenshot resampled the same way. The same limits as a scene: 38 dB PSNR.
+
+| File (`src/reel/`) | Role                                                                     |
+| ------------------ | ------------------------------------------------------------------------ |
+| `index.ts`         | `reel`: records the takes, edits, renders, encodes and checks.           |
+| `take.ts`          | What a take saves, and the hooks a scene run reads (off without a reel). |
+| `camera.ts`        | Shots from clicks, typing and hints.                                     |
+| `ramp.ts`          | The speed map.                                                           |
+| `cards.ts`         | Card text, drawn in the app's page; how a card plays.                    |
+| `render.ts`        | The canvas compositor and the encode.                                    |
+| `gate.ts`          | The fidelity gate under the camera.                                      |
+
 ## For agents
 
 The [skill](skills/cutscene/SKILL.md) is the runbook for using cutscene in a project.

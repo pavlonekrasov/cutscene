@@ -202,6 +202,40 @@ function doctor() {
   if (rows.some(([ok]) => !ok)) process.exitCode = 1;
 }
 
+/** Renders a reel file: its takes, then the camera, ramps and cards (src/reel). */
+function reel() {
+  const file = args.find((arg) => /\.reel\.[cm]?[jt]s$/.test(arg));
+  if (!file) fail("which reel? cutscene reel <file.reel.ts> [--config <cutscene.config.ts>]");
+  const path = resolve(cwd, file);
+  if (!existsSync(path)) fail(`${file} isn't there.`);
+  // The config the reel's scenes record through: the one given, else the nearest above the file.
+  let config = option("config") ? resolve(cwd, option("config")) : null;
+  for (let dir = dirname(path); !config; dir = dirname(dir)) {
+    const found = ["ts", "mts", "js", "mjs"]
+      .map((ext) => join(dir, `cutscene.config.${ext}`))
+      .find((candidate) => existsSync(candidate));
+    if (found) config = found;
+    else if (dirname(dir) === dir)
+      fail("no cutscene.config.ts above the reel file. Pass --config.");
+  }
+  if (!existsSync(config)) fail(`${config} isn't there.`);
+  let cli;
+  try {
+    cli = createRequire(config).resolve("@playwright/test/cli");
+  } catch {
+    fail("@playwright/test isn't installed here. Run: npx @pavlonekrasov/cutscene init");
+  }
+  const env = { ...process.env, CUTSCENE_REEL_FILE: path };
+  if (flags.has("--reuse")) env.CUTSCENE_REEL_REUSE = "1";
+  if (option("project")) env.CUTSCENE_REEL_PROJECT = option("project");
+  const run = spawnSync(process.execPath, [cli, "test", "-c", config], {
+    cwd,
+    stdio: "inherit",
+    env,
+  });
+  process.exitCode = run.status ?? 1;
+}
+
 function help() {
   say(`cutscene ${own.version}: record real web app flows as pixel-exact product videos.
 
@@ -215,10 +249,15 @@ Usage: npx ${own.name} <command>
     --project     into ./.claude/skills/cutscene instead
     --dir <path>  into any folder (another agent's skills)
   doctor          check Node, Playwright, a Chromium browser and ffmpeg
+  reel <file>     render a showreel from a .reel.ts file: records its own takes of the
+                  scenes it lists, then adds the camera, speed ramps and cards
+    --config <path>   the cutscene config (default: the nearest above the file)
+    --reuse           cut again from the last takes instead of recording them
+    --project <name>  the format to shoot in (default: desktop)
 
 Docs: ${own.homepage}`);
 }
 
-const commands = { init, skill, doctor, help, "--help": help, "-h": help };
+const commands = { init, skill, doctor, reel, help, "--help": help, "-h": help };
 if (!commands[command]) fail(`unknown command "${command}". Try: npx ${own.name} help`);
 commands[command]();

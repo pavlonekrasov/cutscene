@@ -6,13 +6,14 @@ Read [GUIDE.md](GUIDE.md) first.
 
 ## Layout
 
-| Path               | What                                                                         |
-| ------------------ | ---------------------------------------------------------------------------- |
-| `src/`             | The library (TypeScript). Built to `dist/` (CommonJS + types) on `npm pack`. |
-| `bin/cutscene.mjs` | The `npx` command: `init`, `skill`, `doctor`. Plain Node, no dependencies.   |
-| `templates/`       | What `init` writes into a project: adapter, config, a first scene.           |
-| `skills/cutscene/` | The agent skill, shipped in the package; `npx … skill` installs it.          |
-| `examples/basic/`  | A static app with its adapter, config and a scene; imports `src/` directly.  |
+| Path               | What                                                                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `src/`             | The library (TypeScript). Built to `dist/` (CommonJS + types) on `npm pack`.                                                         |
+| `src/reel/`        | `cutscene reel`: the opt-in second pass (camera, ramps, cards). Its hooks in `act`, `config` and `scene` are off unless a reel runs. |
+| `bin/cutscene.mjs` | The `npx` command: `init`, `skill`, `doctor`, `reel`. Plain Node, no dependencies.                                                   |
+| `templates/`       | What `init` writes into a project: adapter, config, a first scene.                                                                   |
+| `skills/cutscene/` | The agent skill, shipped in the package; `npx … skill` installs it.                                                                  |
+| `examples/basic/`  | A static app with its adapter, config and a scene; imports `src/` directly.                                                          |
 
 ## Checks before a commit
 
@@ -24,6 +25,11 @@ npm run example                         # desktop and phone, light, Playwright's
 CUTSCENE_THEME=dark npm run example     # dark
 CUTSCENE_BROWSER=msedge npm run example -- --project=desktop   # another Chromium, if installed
 ```
+
+A change to `src/reel/`, or to the hooks it reads: also `npm run reel` (the example's reel) and,
+for the camera or the renderer, `node bin/cutscene.mjs reel examples/basic/reels/pan-test.reel.ts`
+(a 4 s pan and push: look at consecutive frames, no stepping). The example's own numbers must not
+move: a reel never changes what a scene records.
 
 All must pass. Read the example's `check/contact.jpg` and mark stills before committing. A change
 to the pipeline (capture, timeline, encode, frame, check) needs the example to still pass the

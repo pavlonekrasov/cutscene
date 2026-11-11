@@ -16,9 +16,13 @@ scene("Add a task", async ({ act }) => {
   await act.wait(900);
 
   await act.caption("Tick it off");
+  // Camera hints for the reel (reels/tour.reel.ts); they do nothing in this scene's own video.
+  await act.focus(main.getByRole("list"));
   await act.click(main.getByRole("checkbox").first());
   await expect(main.getByRole("checkbox").first()).toBeChecked();
+  await act.focus(main.getByRole("listitem").first(), 2);
   act.mark("done");
   await act.wait(800);
   await act.caption(null);
+  act.wide();
 });

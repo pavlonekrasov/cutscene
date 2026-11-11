@@ -1,4 +1,4 @@
-import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { homedir, tmpdir } from "node:os";
 import { join } from "node:path";
 import { test as base, type BrowserContext, type Page } from "@playwright/test";
@@ -10,6 +10,8 @@ import { appSize, FORMATS, type Format } from "./formats";
 import { DEFAULT_FRAME, layout, renderFrame, type FrameStyle } from "./frame";
 import { installOverlay } from "./overlay";
 import { installPace } from "./pace";
+import { rasteriseCards } from "./reel/cards";
+import { onVideoClock, reelJob, saveTake, TakeLog } from "./reel/take";
 
 export type Theme = "light" | "dark";
 
@@ -104,7 +106,10 @@ export function createScene<Extra extends object = Record<never, never>>(
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/^-|-$/g, "");
       const variant = blur.length ? "-blurred" : "";
-      const outDir = join(OUT, `${slug}-${info.project.name}-${theme}${variant}`);
+      // A reel's take (`cutscene reel` only) goes to the reel's own folder: the scene's video and
+      // its folder stay as they are.
+      const job = reelJob();
+      const outDir = join(job?.takes ?? OUT, `${slug}-${info.project.name}-${theme}${variant}`);
       const draft = `${outDir}.partial`;
       const workDir = join(tmpdir(), "cutscene", `${slug}-${Date.now()}`);
       await options.setup?.(context, { baseURL: baseURL ?? "", theme });
@@ -126,7 +131,8 @@ export function createScene<Extra extends object = Record<never, never>>(
       let output: Output = "building";
       await recorder.start();
       try {
-        const act = new Act(page, format, recorder, { ready, main }, draft, cdp, pace);
+        const log = job ? new TakeLog() : undefined;
+        const act = new Act(page, format, recorder, { ready, main }, draft, cdp, pace, log);
         const extra = options.extend?.(act) ?? ({} as Extra);
         for (const key of Object.keys(extra))
           if (key in act) throw new Error(`extend: "${key}" would shadow act.${key}.`);
@@ -153,6 +159,52 @@ export function createScene<Extra extends object = Record<never, never>>(
         });
         const framePng = format.frame === "none" ? null : join(workDir, "frame.png");
         if (framePng) await renderFrame(browser, format, style[theme], style, framePng);
+        if (job && log) {
+          // A take for a reel: the frames and what happened in them, not a video.
+          const rect = layout(format);
+          const cards = await rasteriseCards(
+            page,
+            job.cards,
+            format,
+            style[theme],
+            theme,
+            draft,
+            job.scale,
+          );
+          if (framePng) await copyFile(framePng, join(draft, "frame.png"));
+          await saveTake(
+            draft,
+            {
+              scene: info.title,
+              file: info.file,
+              project: info.project.name,
+              theme,
+              blurred: blur,
+              density: format.scale,
+              pace,
+              format,
+              layout: {
+                x: rect.x,
+                y: rect.y,
+                width: rect.width,
+                height: rect.height,
+                canvas: rect.canvas,
+              },
+              duration: timeline.duration,
+              motionFps: Number((motionFps(frames.map((frame) => frame.t)) * pace).toFixed(1)),
+              entries: timeline.entries,
+              marks: act.marks.map((mark) => ({ label: mark.label, at: timeline.map(mark.t) })),
+              events: onVideoClock(log.events, timeline.map),
+              frame: framePng ? "frame.png" : null,
+              cards,
+            },
+            reference,
+          );
+          await rm(outDir, { recursive: true, force: true });
+          await rename(draft, outDir);
+          output = "published";
+          return;
+        }
         const file = `${slug}.mp4`;
         await encode({
           entries: timeline.entries,

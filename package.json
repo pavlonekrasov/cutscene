@@ -1,6 +1,6 @@
 {
   "name": "@pavlonekrasov/cutscene",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "Record real web app flows as pixel-exact product videos, scripted like Playwright tests. Comes with an agent skill.",
   "keywords": [
     "playwright",
@@ -21,6 +21,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./reel": {
+      "types": "./dist/reel/index.d.ts",
+      "default": "./dist/reel/index.js"
     },
     "./package.json": "./package.json"
   },
@@ -44,6 +48,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "example": "playwright test -c examples/basic/cutscene.config.ts",
+    "reel": "node bin/cutscene.mjs reel examples/basic/reels/tour.reel.ts",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write src examples templates bin skills README.md GUIDE.md AGENTS.md",
     "prepack": "npm run typecheck && npm run build"

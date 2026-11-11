@@ -127,3 +127,38 @@ For every video, in `<out>/<scene>-<format>-<theme>[-blurred]/`:
 | Browser won't launch                   | `npx playwright install chromium`, or set `browser` to an installed Chromium.                 |
 | A locator times out                    | The app: read Playwright's error context; fix the scene or ask the owner about the app.       |
 | A flash or glitch the app really shows | It's the app, not the recorder: report it to the owner rather than hiding it in the scene.    |
+
+## 6. A showreel (`cutscene reel`)
+
+Only when asked for a reel, showreel or launch-style cut of several flows. It's a second pass:
+scenes and their videos stay as they are.
+
+```ts
+// demo/reels/tour.reel.ts
+import { reel } from "@pavlonekrasov/cutscene/reel";
+
+reel("Tour", {
+  cards: { open: ["Product", "One honest line"], close: ["Product", "A concept by …"] },
+  clips: [
+    { scene: "../scenes/invite.scene.ts", to: "sent" },
+    { scene: "../scenes/report.scene.ts", from: "open" },
+  ],
+});
+```
+
+```sh
+npx cutscene reel demo/reels/tour.reel.ts           # records its own takes, then renders
+npx cutscene reel demo/reels/tour.reel.ts --reuse   # re-cut without recording again
+```
+
+- Get the flows right as scenes first; a reel only cuts them. Clips run `from` a mark `to` a mark
+  (plus a 1.2 s hold on the result), so mark each scene where a clip should start and end.
+- The camera follows clicks and typing by itself. Where it frames the wrong thing, add a hint in
+  the scene: `await act.focus(locator, zoom?)` (frame this region) or `act.wide()` (pull back).
+  They do nothing in the scene's own video. Use a detail zoom (2, needs `density: 4`) once or
+  twice, not in every clip.
+- Card copy is the owner's call: propose options, keep them honest (whose work it is).
+- Verify like a scene: read `check/contact.jpg` and each still in
+  `<out>/<reel>-reel-<theme>/check/`; in `manifest.json`, `passed` true, `fidelity.wide.psnr` and
+  `fidelity.deepest.psnr` ≥ 38, each clip's `take.motionFps` ≥ 60 (raise `pace` if not). For a
+  move that looks wrong, extract its frames with ffmpeg and look at them one by one.

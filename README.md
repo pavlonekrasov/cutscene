@@ -8,6 +8,9 @@ npx @pavlonekrasov/cutscene init    # set your project up
 npx @pavlonekrasov/cutscene skill   # give your agent the cutscene skill
 ```
 
+A showreel of several flows, with a camera, speed ramps and cards: `npx cutscene reel <file>`
+("Reels" in the guide).
+
 ## What comes with it
 
 - `@playwright/test`: a peer dependency, installed with cutscene if your project doesn't have it.
