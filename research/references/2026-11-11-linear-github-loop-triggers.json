@@ -1,0 +1,209 @@
+{
+  "slug": "linear-github-loop-triggers",
+  "title": "Linear: GitHub loop triggers",
+  "source": {
+    "video": "https://webassets.linear.app/files/ornj730p/production/9e1278d821662e7bea1b814dc3cbb89f28671943.mp4",
+    "foundOn": "https://linear.app/changelog",
+    "maker": "Linear (motion-designed, not a screen recording)"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "showreel",
+  "whyTopTier": "Restraint: the UI is rebuilt at about 2.5× its size on a near-black canvas and the camera never moves; every motion is the product's own (typing, posting, scrolling), and each new line gets 1.6–2.0 s to be read before anything else moves.",
+  "instrument": "Cut candidates over-count: a message appearing or the composer growing reads as a cut. The scrolls bring in new content and the title exits fade and blur, so neither fits a camera model.",
+  "byEye": {
+    "zoom": "one UI fragment at a time, about 2.5× native size; the composer spans ~85% of the frame width",
+    "cards": "3: 'GitHub loop triggers' 2.0 s, 'Now available' 1.4 s, the Linear logo 4.2 s (14% of the runtime); white type centred on near-black",
+    "cursor": "none; typing shows by its caret",
+    "frame": "full-bleed near-black canvas, no window chrome",
+    "aspect": "16:9, 1920×1080, 60 fps",
+    "sound": "an audio track with sparse onsets (11 in 30 s); 2 of 14 cuts within 50 ms of its beat grid (chance 16%); the logo cut lands 34 ms from an onset"
+  },
+  "curveFits": [],
+  "grammar": {
+    "duration": 29.67,
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "shots": 15,
+    "shotLength": {
+      "mean": 1.98,
+      "median": 2.22
+    },
+    "cuts": [
+      {
+        "t": 0.32,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 3.43,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.78,
+        "kind": "dissolve",
+        "over": 0.08
+      },
+      {
+        "t": 10.12,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 12.93,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 15.15,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 17.47,
+        "kind": "dissolve",
+        "over": 0.13
+      },
+      {
+        "t": 19.87,
+        "kind": "dissolve",
+        "over": 0.05
+      },
+      {
+        "t": 20.52,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 20.98,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 22.55,
+        "kind": "dissolve",
+        "over": 0.15
+      },
+      {
+        "t": 23.45,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 24.88,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 25.45,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 4.77,
+        "over": 0.02,
+        "core": 0.01,
+        "zoom": 1.001,
+        "pan": [
+          0,
+          2.7
+        ],
+        "peak": 0,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 12.15,
+        "over": 0.44,
+        "core": 0.28,
+        "zoom": 0.997,
+        "pan": [
+          0,
+          43.6
+        ],
+        "peak": 0.5,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 14.5,
+        "over": 0.44,
+        "core": 0.29,
+        "zoom": 0.945,
+        "pan": [
+          1.3,
+          53
+        ],
+        "peak": 0.49,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 17.11,
+        "over": 0.32,
+        "core": 0.22,
+        "zoom": 1.002,
+        "pan": [
+          0,
+          41.9
+        ],
+        "peak": 0.71,
+        "overshoot": 0.05
+      },
+      {
+        "kind": "pull",
+        "at": 22.1,
+        "over": 0.4,
+        "core": 0.26,
+        "zoom": 0.953,
+        "pan": [
+          0,
+          0.1
+        ],
+        "peak": 0.92,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 24.4,
+        "over": 0.45,
+        "core": 0.25,
+        "zoom": 0.945,
+        "pan": [
+          -0.1,
+          0.1
+        ],
+        "peak": 0.7,
+        "overshoot": 0.09
+      }
+    ],
+    "still": 0.93,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        0.32,
+        3.11,
+        4.35,
+        2.34,
+        2.81,
+        2.22,
+        2.32,
+        2.4,
+        0.65,
+        0.46,
+        1.57,
+        0.9,
+        1.43,
+        0.57,
+        4.22
+      ],
+      "trend": -0.44,
+      "accelerates": true
+    }
+  }
+}

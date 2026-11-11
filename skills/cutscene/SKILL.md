@@ -162,3 +162,5 @@ npx cutscene reel demo/reels/tour.reel.ts --reuse   # re-cut without recording a
   `<out>/<reel>-reel-<theme>/check/`; in `manifest.json`, `passed` true, `fidelity.wide.psnr` and
   `fidelity.deepest.psnr` ≥ 38, each clip's `take.motionFps` ≥ 60 (raise `pace` if not). For a
   move that looks wrong, extract its frames with ffmpeg and look at them one by one.
+- `npx cutscene measure <reel.mp4>` reads the finished reel's cuts and camera moves: compare them
+  with what measured references do, in [craft.md](craft.md).

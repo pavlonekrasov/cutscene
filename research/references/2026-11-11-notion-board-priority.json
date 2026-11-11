@@ -1,0 +1,193 @@
+{
+  "slug": "notion-board-priority",
+  "title": "Notion: setting a priority on a board",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/1882057099418476544/pu/vid/avc1/1280x720/adiuHrc53Fu2hqt5.mp4?tag=12",
+    "foundOn": "https://screen.studio (the showcase wall on the home page)",
+    "maker": "Notion, made with Screen Studio"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "showreel",
+  "whyTopTier": "A shallow push (×1.24) and follow-pans that keep each card in the middle as the pointer works across the board; it ends wide on the List view.",
+  "instrument": "Good on the pans; the dropdown opening reads as a cut candidate.",
+  "byEye": {
+    "zoom": "working ×1.24, the shallowest in the set",
+    "cards": "none",
+    "cursor": "enlarged pointer",
+    "frame": "window on a light grey backdrop",
+    "aspect": "16:9, 1280×720, 24 fps",
+    "sound": "none"
+  },
+  "curveFits": [
+    {
+      "move": "follow-pan 13.7% at 5.80",
+      "best": "out-quint (0.22,1,0.36,1), 1351 ms (0.29%)",
+      "others": "spring ζ 1, ω 7.2/s, settles 0.81 s (1.26%)",
+      "cutscene030": "7.48%"
+    }
+  ],
+  "grammar": {
+    "duration": 12.87,
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "shots": 9,
+    "shotLength": {
+      "mean": 1.43,
+      "median": 1.71
+    },
+    "cuts": [
+      {
+        "t": 0.88,
+        "kind": "dissolve",
+        "over": 0.17
+      },
+      {
+        "t": 2.75,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 3.04,
+        "kind": "dissolve",
+        "over": 0.21
+      },
+      {
+        "t": 4.83,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 5.58,
+        "kind": "dissolve",
+        "over": 0.21
+      },
+      {
+        "t": 7.29,
+        "kind": "dissolve",
+        "over": 0.42
+      },
+      {
+        "t": 8.25,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.38,
+        "kind": "dissolve",
+        "over": 0.37
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 0.63,
+        "over": 0.28,
+        "core": 0.22,
+        "zoom": 1,
+        "pan": [
+          0,
+          9.9
+        ],
+        "peak": 0.87,
+        "overshoot": 0.25
+      },
+      {
+        "kind": "pan",
+        "at": 1.04,
+        "over": 0.36,
+        "core": 0.29,
+        "zoom": 1.001,
+        "pan": [
+          0,
+          6.7
+        ],
+        "peak": 0.23,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 2.8,
+        "over": 0.31,
+        "core": 0.25,
+        "zoom": 1.24,
+        "pan": [
+          -1.9,
+          6.6
+        ],
+        "peak": 0.25,
+        "overshoot": 0.06
+      },
+      {
+        "kind": "pan",
+        "at": 3.25,
+        "over": 0.82,
+        "core": 0.47,
+        "zoom": 1.037,
+        "pan": [
+          -0.4,
+          1.2
+        ],
+        "peak": 0.1,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 5.8,
+        "over": 0.85,
+        "core": 0.49,
+        "zoom": 1,
+        "pan": [
+          4.5,
+          -12
+        ],
+        "peak": 0.09,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 9,
+        "over": 1.16,
+        "core": 0.83,
+        "zoom": 1,
+        "pan": [
+          -6.7,
+          -12.6
+        ],
+        "peak": 0.15,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 11.45,
+        "over": 0.92,
+        "core": 0.55,
+        "zoom": 0.715,
+        "pan": [
+          4.5,
+          15.9
+        ],
+        "peak": 0.19,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.63,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        0.88,
+        1.87,
+        0.29,
+        1.79,
+        0.75,
+        1.71,
+        0.96,
+        2.13,
+        2.49
+      ],
+      "trend": 0.79,
+      "accelerates": false
+    }
+  }
+}

@@ -304,6 +304,34 @@ a slow push moves between whole pixels instead of stepping across them.
 the encode, a browser's decode) at the whole frame and at the reel's deepest zoom, and is compared
 with a lossless screenshot resampled the same way. The same limits as a scene: 38 dB PSNR.
 
+### Measuring a video
+
+`cutscene measure` reads what a video's camera and cuts do: the instrument cutscene's reels and the
+references they learn from are both measured with, so their numbers compare directly.
+
+```sh
+npx cutscene measure demo/out/tour-reel-light/tour.mp4           # a few lines to read
+npx cutscene measure tour.mp4 --json --out tour.grammar.json     # the numbers
+npx cutscene measure --page                                      # the in-page version
+```
+
+It reports the shots and their lengths, each cut (hard or dissolve), and each camera move: push,
+pull or pan, its zoom ratio and travel, how long it takes from 2% to 98% of the way and from 10% to
+90%, where it's fastest, and how far it overshoots. It also gives the share of time the camera is
+still, the share of frames inside moves that repeat the one before (stepped motion), and the
+rhythm of the cutting. A zoom is measured by ratio, as the reel's camera moves.
+
+`--page` prints a script for a browser page: paste it with an agent's page tool, then
+`await __cutsceneMeasure("video")` plays the page's video muted at half speed, tracks every frame
+it shows and returns the same numbers. Nothing is downloaded. A video served cross-origin without
+CORS can't be read this way; the call says so.
+
+Read the numbers as an instrument, not the truth. A strongly eased move spends a long time at its
+ends: from 2% to 98% of the way is about 70% of its nominal length (a 500 ms push reads 360 ms).
+At the slow ends of a long move, a reading 1% off in distance is several frames off in time, so
+compare the 10–90% figure when the ends matter. An in-app page change can read as a cut; check
+the frames.
+
 | File (`src/reel/`) | Role                                                                     |
 | ------------------ | ------------------------------------------------------------------------ |
 | `index.ts`         | `reel`: records the takes, edits, renders, encodes and checks.           |
@@ -313,6 +341,7 @@ with a lossless screenshot resampled the same way. The same limits as a scene: 3
 | `cards.ts`         | Card text, drawn in the app's page; how a card plays.                    |
 | `render.ts`        | The canvas compositor and the encode.                                    |
 | `gate.ts`          | The fidelity gate under the camera.                                      |
+| `measure.ts`       | The instrument: a video's shots, cuts and camera moves.                  |
 
 ## For agents
 

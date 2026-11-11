@@ -1,0 +1,131 @@
+{
+  "slug": "stripe-next-day-settlement",
+  "title": "Stripe: next-day settlement",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2001632047442341888/vid/avc1/1276x720/hrjeGLBkauMU71YZ.mp4",
+    "foundOn": "https://screen.studio (the showcase wall on the home page)",
+    "maker": "Stripe, made with Screen Studio"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "showreel",
+  "whyTopTier": "Timing: the push settles on the frame the modal opens, the camera holds while the choice is made, and it pulls out as the confirmation toast arrives, so the clip ends on the result. 6.3 s, loops.",
+  "instrument": "Good on the push; the pull-out at the end is split into short pieces by motion blur.",
+  "byEye": {
+    "zoom": "wide shows the whole window; working ×1.64 (the settings section fills the frame)",
+    "cards": "none",
+    "cursor": "enlarged macOS pointer, smoothed",
+    "frame": "window with rounded corners and a soft shadow on a pink-to-violet gradient, ~10% margins",
+    "aspect": "16:9, 1276×720, 60 fps",
+    "sound": "none"
+  },
+  "curveFits": [
+    {
+      "move": "push ×1.62 at 1.84",
+      "best": "spring ζ 0.9, ω 9.1/s, settles 98% in 0.52 s (1.42%)",
+      "others": "spring ζ 1, ω 10.2/s (1.99%); out-quint 909 ms (2.62%)",
+      "cutscene030": "3.28%"
+    }
+  ],
+  "grammar": {
+    "duration": 6.32,
+    "width": 1276,
+    "height": 720,
+    "fps": 60,
+    "shots": 3,
+    "shotLength": {
+      "mean": 2.11,
+      "median": 2.38
+    },
+    "cuts": [
+      {
+        "t": 2.38,
+        "kind": "dissolve",
+        "over": 0.28
+      },
+      {
+        "t": 5.3,
+        "kind": "dissolve",
+        "over": 0.42
+      }
+    ],
+    "moves": [
+      {
+        "kind": "push",
+        "at": 1.87,
+        "over": 0.45,
+        "core": 0.33,
+        "zoom": 1.643,
+        "pan": [
+          -0.1,
+          -0.1
+        ],
+        "peak": 0.22,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "pull",
+        "at": 5.27,
+        "over": 0.07,
+        "core": 0.05,
+        "zoom": 0.953,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.79,
+        "overshoot": 0.36
+      },
+      {
+        "kind": "pull",
+        "at": 5.4,
+        "over": 0.06,
+        "core": 0.05,
+        "zoom": 0.921,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.76,
+        "overshoot": 0.26
+      },
+      {
+        "kind": "pull",
+        "at": 5.57,
+        "over": 0.1,
+        "core": 0.08,
+        "zoom": 0.916,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.33,
+        "overshoot": 0.16
+      },
+      {
+        "kind": "pull",
+        "at": 5.72,
+        "over": 0.52,
+        "core": 0.38,
+        "zoom": 0.873,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.06,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.81,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        2.38,
+        2.92,
+        1.02
+      ],
+      "trend": -0.65,
+      "accelerates": false
+    }
+  }
+}

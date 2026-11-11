@@ -1,0 +1,129 @@
+{
+  "slug": "v0-code-edit",
+  "title": "v0: editing a component",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/1880359983336013824/vid/avc1/1252x720/bwJwxJMSocVCTkUX.mp4?tag=14",
+    "foundOn": "https://screen.studio (the showcase wall on the home page)",
+    "maker": "v0 (Vercel), made with Screen Studio"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "showreel",
+  "whyTopTier": "A ×2 push onto the line being typed, held for 15.8 s while autocomplete does the work, then one pull out to the whole editor.",
+  "instrument": "Good; edits inside the editor read as cut candidates.",
+  "byEye": {
+    "zoom": "working ×2.03",
+    "cards": "none",
+    "cursor": "text caret; pointer enlarged",
+    "frame": "full window, dark",
+    "aspect": "~1.74:1, 1252×720, 60 fps",
+    "sound": "none"
+  },
+  "curveFits": [
+    {
+      "move": "push ×2.03 at 1.04",
+      "best": "spring ζ 1 on linear scale, ω 6.6/s, settles 0.88 s (0.51%)",
+      "others": "out-quint 1351 ms (0.57%); spring ζ 1, ω 7.5/s (0.98%)",
+      "cutscene030": "4.79%"
+    },
+    {
+      "move": "pull ×0.49 at 16.81",
+      "best": "spring ζ 1, ω 5.7/s, settles 98% in 1.03 s (0.17%)",
+      "others": "out-quint 1714 ms (0.81%)",
+      "cutscene030": "4.69%"
+    }
+  ],
+  "grammar": {
+    "duration": 23.15,
+    "width": 1252,
+    "height": 720,
+    "fps": 60,
+    "shots": 6,
+    "shotLength": {
+      "mean": 3.86,
+      "median": 4.15
+    },
+    "cuts": [
+      {
+        "t": 2.33,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.32,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.07,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 16.78,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 20.93,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 0.13,
+        "over": 0.02,
+        "core": 0.01,
+        "zoom": 1.033,
+        "pan": [
+          0.2,
+          -1
+        ],
+        "peak": 0,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 1.04,
+        "over": 0.83,
+        "core": 0.47,
+        "zoom": 2.028,
+        "pan": [
+          2.8,
+          4.6
+        ],
+        "peak": 0.1,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 16.81,
+        "over": 0.97,
+        "core": 0.58,
+        "zoom": 0.512,
+        "pan": [
+          -5.5,
+          -9
+        ],
+        "peak": 0.11,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.92,
+    "held": 0.01,
+    "rhythm": {
+      "lengths": [
+        2.33,
+        4.99,
+        2.75,
+        6.71,
+        4.15,
+        2.22
+      ],
+      "trend": 0.03,
+      "accelerates": false
+    }
+  }
+}

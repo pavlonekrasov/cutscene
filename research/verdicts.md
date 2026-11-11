@@ -1,0 +1,12 @@
+# Verdicts
+
+Pavlo's calls on reels, shots and rules, one line each, newest last: the date, what it was about,
+his words (or the decision), and the rule it confirms or changes in `craft.md`. This is how the
+rulebook learns his eye; a rule his verdicts contradict gets changed, not argued for.
+
+| Date       | About                  | Verdict                                                                                                             | Rule                         |
+| ---------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| 2026-11-11 | 0.3.0 reel defaults    | Typing at 2× (not 3–4×), push-in 500 ms (not 700), a reframe over ×1.8 or half the shot cuts                        | typing speed; push; cut-over |
+| 2026-11-11 | The bar for every reel | "Not AI sloppy": what experts and high-performing reels do, for any product, not SC KPI only                        | the whole rulebook           |
+| 2026-11-11 | Learning               | Keep feeding references; each is broken down frame by frame and has to teach something                              | the routine                  |
+| 2026-11-11 | Nolan-style techniques | Asked for a fair trial: parallel action, non-linear time, Dutch angles, IMAX aspect, Shepard tone, practical motion | Part 2 verdicts (proposed)   |

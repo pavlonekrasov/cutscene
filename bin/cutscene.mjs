@@ -236,6 +236,29 @@ function reel() {
   process.exitCode = run.status ?? 1;
 }
 
+/**
+ * Measures a video's camera and cuts with the same instrument reels are judged by (src/reel/measure),
+ * or prints its in-page version for reading a reference in a browser without downloading it.
+ */
+function measure() {
+  const lib = join(root, "dist", "reel", "measure.js");
+  if (!existsSync(lib)) fail("cutscene isn't built here: run npm run build.");
+  const { describe, measureFile, pageSource } = createRequire(import.meta.url)(lib);
+  if (flags.has("--page")) return say(pageSource());
+  const file = args[0];
+  if (!file) fail("which video? cutscene measure <file.mp4> [--json] [--out <file.json>]");
+  const path = resolve(cwd, file);
+  if (!existsSync(path)) fail(`${file} isn't there.`);
+  const grammar = measureFile(path);
+  if (option("out"))
+    writeFileSync(
+      resolve(cwd, option("out")),
+      `${JSON.stringify(grammar, null, 2)}
+`,
+    );
+  say(flags.has("--json") ? JSON.stringify(grammar, null, 2) : describe(grammar));
+}
+
 function help() {
   say(`cutscene ${own.version}: record real web app flows as pixel-exact product videos.
 
@@ -254,10 +277,14 @@ Usage: npx ${own.name} <command>
     --config <path>   the cutscene config (default: the nearest above the file)
     --reuse           cut again from the last takes instead of recording them
     --project <name>  the format to shoot in (default: desktop)
+  measure <file>  a video's shots, cuts and camera moves, as reels are judged
+    --json            print the numbers as JSON
+    --out <file>      also write them to a JSON file
+    --page            print the in-page version, for a video playing in a browser
 
 Docs: ${own.homepage}`);
 }
 
-const commands = { init, skill, doctor, reel, help, "--help": help, "-h": help };
+const commands = { init, skill, doctor, reel, measure, help, "--help": help, "-h": help };
 if (!commands[command]) fail(`unknown command "${command}". Try: npx ${own.name} help`);
 commands[command]();

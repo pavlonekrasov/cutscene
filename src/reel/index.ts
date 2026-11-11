@@ -16,6 +16,17 @@ import { paceFor, type ReelJob, type Take } from "./take";
 export { CAMERA, type Cam, type CameraSettings, type Move, type Shot } from "./camera";
 export { SPEED, type Ramp, type SpeedSettings } from "./ramp";
 export type { ReelJob, Take, TakeEvent } from "./take";
+export {
+  describe,
+  grammar,
+  measureFile,
+  pageSource,
+  tracker,
+  type Cut,
+  type Grammar,
+  type MeasuredMove,
+  type Row,
+} from "./measure";
 
 /** A stretch of one scene in the reel. */
 export type Clip = {

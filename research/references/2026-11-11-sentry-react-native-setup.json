@@ -1,0 +1,515 @@
+{
+  "slug": "sentry-react-native-setup",
+  "title": "Sentry: React Native setup (tutorial)",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/1879270070742056961/pu/vid/avc1/1308x720/Hh9nXyTKYd7Rg-Bw.mp4?tag=12",
+    "foundOn": "https://screen.studio (the showcase wall on the home page)",
+    "maker": "Sentry, made with Screen Studio"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "tutorial: camera numbers only",
+  "whyTopTier": "Not a showreel (a 2:56 talk-through with a webcam), but it repeats the same push and pull six times, so it pins down the tool's camera curve.",
+  "instrument": "Good on the moves; IDE and simulator changes read as cuts.",
+  "byEye": {
+    "zoom": "working ×1.5–1.74",
+    "cards": "none",
+    "cursor": "enlarged pointer",
+    "frame": "full screen with a webcam bubble, lower left",
+    "aspect": "~1.82:1, 1308×720, 60 fps",
+    "sound": "voice"
+  },
+  "curveFits": [
+    {
+      "move": "push ×1.68 at 35.64",
+      "best": "out-quint 1351 ms (0.59%)",
+      "others": "out-expo (0.69%); spring ζ 1, ω 7.2/s (0.92%)",
+      "cutscene030": "3.65%"
+    },
+    {
+      "move": "push ×1.68 at 128.17",
+      "best": "out-expo 1615 ms (0.67%)",
+      "others": "out-quint (0.70%); spring ζ 1, ω 7.0/s (1.04%)",
+      "cutscene030": "4.17%"
+    },
+    {
+      "move": "pull ×0.60 at 42.39",
+      "best": "spring ζ 1, ω 6.0/s, settles 98% in 0.97 s (0.30%)",
+      "others": "spring ζ 1 on linear scale, ω 6.5/s (0.50%)",
+      "cutscene030": "3.65%"
+    }
+  ],
+  "grammar": {
+    "duration": 176.15,
+    "width": 1308,
+    "height": 720,
+    "fps": 60,
+    "shots": 26,
+    "shotLength": {
+      "mean": 6.77,
+      "median": 3.09
+    },
+    "cuts": [
+      {
+        "t": 24.4,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 27.12,
+        "kind": "dissolve",
+        "over": 0.4
+      },
+      {
+        "t": 28.32,
+        "kind": "dissolve",
+        "over": 0.17
+      },
+      {
+        "t": 29.17,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 30.7,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 35.58,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 40.85,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 90.02,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 97.9,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 105.88,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 108.42,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 110.45,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 111.45,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 112.45,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 114.52,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 117.78,
+        "kind": "dissolve",
+        "over": 0.08
+      },
+      {
+        "t": 126.12,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 145.43,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 146.92,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 150.33,
+        "kind": "dissolve",
+        "over": 0.32
+      },
+      {
+        "t": 153.42,
+        "kind": "dissolve",
+        "over": 0.22
+      },
+      {
+        "t": 154.55,
+        "kind": "dissolve",
+        "over": 0.05
+      },
+      {
+        "t": 154.87,
+        "kind": "dissolve",
+        "over": 0.13
+      },
+      {
+        "t": 165.13,
+        "kind": "dissolve",
+        "over": 0.57
+      },
+      {
+        "t": 165.98,
+        "kind": "dissolve",
+        "over": 0.22
+      }
+    ],
+    "moves": [
+      {
+        "kind": "push",
+        "at": 23,
+        "over": 0.79,
+        "core": 0.47,
+        "zoom": 1.671,
+        "pan": [
+          20.1,
+          -2.1
+        ],
+        "peak": 0.1,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 30.44,
+        "over": 0.17,
+        "core": 0.14,
+        "zoom": 0.927,
+        "pan": [
+          -13.2,
+          -0.5
+        ],
+        "peak": 0.84,
+        "overshoot": 0.14
+      },
+      {
+        "kind": "pull",
+        "at": 30.94,
+        "over": 0.84,
+        "core": 0.48,
+        "zoom": 0.905,
+        "pan": [
+          -5.3,
+          0.5
+        ],
+        "peak": 0.03,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 33.9,
+        "over": 0.02,
+        "core": 0.01,
+        "zoom": 1.094,
+        "pan": [
+          -3.1,
+          -0.7
+        ],
+        "peak": 0,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 35.64,
+        "over": 0.89,
+        "core": 0.48,
+        "zoom": 1.68,
+        "pan": [
+          -0.1,
+          -0.1
+        ],
+        "peak": 0.11,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 42.39,
+        "over": 0.93,
+        "core": 0.55,
+        "zoom": 0.597,
+        "pan": [
+          0.1,
+          0.1
+        ],
+        "peak": 0.18,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 70.9,
+        "over": 0.89,
+        "core": 0.49,
+        "zoom": 1.686,
+        "pan": [
+          -22.4,
+          7.1
+        ],
+        "peak": 0.09,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 95.47,
+        "over": 0.98,
+        "core": 0.57,
+        "zoom": 0.596,
+        "pan": [
+          22.3,
+          -7.4
+        ],
+        "peak": 0.16,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 117.87,
+        "over": 0.83,
+        "core": 0.47,
+        "zoom": 1.501,
+        "pan": [
+          -15.6,
+          15.9
+        ],
+        "peak": 0.03,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 121.32,
+        "over": 1,
+        "core": 0.59,
+        "zoom": 0.591,
+        "pan": [
+          21.6,
+          -22
+        ],
+        "peak": 0.13,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 128.17,
+        "over": 0.86,
+        "core": 0.48,
+        "zoom": 1.675,
+        "pan": [
+          7.8,
+          10.7
+        ],
+        "peak": 0.09,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 131.31,
+        "over": 0.97,
+        "core": 0.57,
+        "zoom": 0.596,
+        "pan": [
+          -7.8,
+          -10.7
+        ],
+        "peak": 0.13,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 147.04,
+        "over": 0.09,
+        "core": 0.01,
+        "zoom": 1.045,
+        "pan": [
+          -1.3,
+          -1.3
+        ],
+        "peak": 0.65,
+        "overshoot": 0.03
+      },
+      {
+        "kind": "pan",
+        "at": 149.95,
+        "over": 0.64,
+        "core": 0.56,
+        "zoom": 0.957,
+        "pan": [
+          1.4,
+          14.1
+        ],
+        "peak": 0.26,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pan",
+        "at": 150.81,
+        "over": 0.18,
+        "core": 0.12,
+        "zoom": 1.004,
+        "pan": [
+          0,
+          24.8
+        ],
+        "peak": 0.66,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 153.37,
+        "over": 0.21,
+        "core": 0.15,
+        "zoom": 1,
+        "pan": [
+          0,
+          3.9
+        ],
+        "peak": 0.92,
+        "overshoot": 0.2
+      },
+      {
+        "kind": "pan",
+        "at": 153.64,
+        "over": 0.65,
+        "core": 0.57,
+        "zoom": 1.004,
+        "pan": [
+          0,
+          30.7
+        ],
+        "peak": 0.91,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "pan",
+        "at": 154.62,
+        "over": 0.31,
+        "core": 0.24,
+        "zoom": 1.007,
+        "pan": [
+          0.1,
+          44.4
+        ],
+        "peak": 0.32,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "push",
+        "at": 155.01,
+        "over": 0.79,
+        "core": 0.46,
+        "zoom": 1.739,
+        "pan": [
+          -10.5,
+          12.3
+        ],
+        "peak": 0.07,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 156.29,
+        "over": 0.51,
+        "core": 0.36,
+        "zoom": 1.004,
+        "pan": [
+          0,
+          3
+        ],
+        "peak": 0.54,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 164.39,
+        "over": 1.15,
+        "core": 0.63,
+        "zoom": 0.593,
+        "pan": [
+          11.1,
+          -69.1
+        ],
+        "peak": 0.61,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 165.7,
+        "over": 0.04,
+        "core": 0.03,
+        "zoom": 1.052,
+        "pan": [
+          0,
+          -5.8
+        ],
+        "peak": 0.02,
+        "overshoot": 0.09
+      },
+      {
+        "kind": "pan",
+        "at": 166.04,
+        "over": 0.06,
+        "core": 0.04,
+        "zoom": 1.029,
+        "pan": [
+          0,
+          -8.2
+        ],
+        "peak": 0.95,
+        "overshoot": 0.49
+      }
+    ],
+    "still": 0.92,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        24.4,
+        2.72,
+        1.2,
+        0.85,
+        1.53,
+        4.88,
+        5.27,
+        49.17,
+        7.88,
+        7.98,
+        2.54,
+        2.03,
+        1,
+        1,
+        2.07,
+        3.26,
+        8.34,
+        19.31,
+        1.49,
+        3.41,
+        3.09,
+        1.13,
+        0.32,
+        10.26,
+        0.85,
+        10.17
+      ],
+      "trend": -0.87,
+      "accelerates": true
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "slug": "pitch-bullet-colour",
+  "title": "Pitch: styling a slide's bullets",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/1748333695126126593/pu/vid/avc1/1280x720/84p2CIC7kZa9Ldq5.mp4?tag=12",
+    "foundOn": "https://screen.studio (the showcase wall on the home page)",
+    "maker": "Pitch, made with Screen Studio"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "showreel",
+  "whyTopTier": "One push, one long hold, one pull: ×1.99 into the text panel, 8 s of work while zoomed, then out to the finished slide.",
+  "instrument": "Good. Motion blur on both moves makes the tracker see two dissolve candidates during the push.",
+  "byEye": {
+    "zoom": "working ×1.99 (the text panel and its options fill the frame)",
+    "cards": "none",
+    "cursor": "enlarged pointer",
+    "frame": "window on a violet backdrop",
+    "aspect": "16:9, 1280×720, 30 fps",
+    "sound": "none"
+  },
+  "curveFits": [
+    {
+      "move": "push ×1.98 at 0.81",
+      "best": "out-quint 1224 ms (0.49%)",
+      "others": "spring ζ 1 on linear scale, ω 7.0/s, settles 0.83 s (0.54%); spring ζ 1, ω 7.9/s (0.92%)",
+      "cutscene030": "4.55%"
+    },
+    {
+      "move": "pull ×0.50 at 9.74",
+      "best": "spring ζ 1, ω 5.7/s, settles 98% in 1.03 s (0.26%)",
+      "others": "spring ζ 0.9, ω 5.0/s (0.73%)",
+      "cutscene030": "3.92%"
+    }
+  ],
+  "grammar": {
+    "duration": 11.6,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 5,
+    "shotLength": {
+      "mean": 2.32,
+      "median": 2.13
+    },
+    "cuts": [
+      {
+        "t": 1.53,
+        "kind": "dissolve",
+        "over": 0.4
+      },
+      {
+        "t": 1.97,
+        "kind": "dissolve",
+        "over": 0.4
+      },
+      {
+        "t": 6.47,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 8.6,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "push",
+        "at": 0.81,
+        "over": 0.76,
+        "core": 0.45,
+        "zoom": 1.988,
+        "pan": [
+          16.9,
+          -4.1
+        ],
+        "peak": 0.16,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 9.74,
+        "over": 0.99,
+        "core": 0.58,
+        "zoom": 0.5,
+        "pan": [
+          -34.1,
+          8.2
+        ],
+        "peak": 0.16,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.85,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        1.53,
+        0.44,
+        4.5,
+        2.13,
+        3
+      ],
+      "trend": 0.8,
+      "accelerates": false
+    }
+  }
+}
