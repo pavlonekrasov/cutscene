@@ -40,14 +40,14 @@ Autofit left out 2 whose best fit was above 3% (the tracker, not a curve).
 
 ### Shot list
 
-| Time (s)    | Framing    | What happens                                                                                 | Out                   |
-| ----------- | ---------- | -------------------------------------------------------------------------------------------- | --------------------- |
-| 0.00–9.07   | graph      | branches labelled MOB-…, ENG-… drift and converge on one point; the camera tracks along them | hard cuts             |
-| 9.07–11.12  | card       | 'PLAN AND TRACK RELEASES' in mono                                                            | dissolve              |
-| 11.12–15.57 | panels     | release panels stacked in perspective; a 2.7 s pull over them                                | short dissolves, cuts |
-| 15.57–21.73 | graph      | the graph again, a 6 s pull                                                                  | hard cut              |
-| 21.73–26.50 | typewriter | 'RELEASES' and 'AVAILABLE NOW' typed with a block cursor                                     | hard cuts             |
-| 26.50–30.00 | logo       | the Linear mark and wordmark                                                                 | end                   |
+| Time (s)    | Length (s) | Framing    | What happens                                                                                 | Out                   |
+| ----------- | ---------- | ---------- | -------------------------------------------------------------------------------------------- | --------------------- |
+| 0.00–9.07   | 9.07       | graph      | branches labelled MOB-…, ENG-… drift and converge on one point; the camera tracks along them | hard cuts             |
+| 9.07–11.12  | 2.05       | card       | 'PLAN AND TRACK RELEASES' in mono                                                            | dissolve              |
+| 11.12–15.57 | 4.45       | panels     | release panels stacked in perspective; a 2.7 s pull over them                                | short dissolves, cuts |
+| 15.57–21.73 | 6.16       | graph      | the graph again, a 6 s pull                                                                  | hard cut              |
+| 21.73–26.50 | 4.77       | typewriter | 'RELEASES' and 'AVAILABLE NOW' typed with a block cursor                                     | hard cuts             |
+| 26.50–30.00 | 3.50       | logo       | the Linear mark and wordmark                                                                 | end                   |
 
 ### By eye
 
@@ -57,6 +57,18 @@ Autofit left out 2 whose best fit was above 3% (the tracker, not a curve).
 - **Frame:** black void, grey lines
 - **Aspect:** 2:1, 1440×720, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 1 move; 1 f = 16.7 ms at 60 fps. Low-contrast 3D, so only framing changes are countable.
+
+- **Three measured cuts are one drifting shot.** At 1.98 and 3.52 s the branch graph is the same framing 10 frames either side; the camera tracks along it by under 0.5% of the frame per frame. The instrument reads drift over thin bright lines as cuts.
+- **Close → wide on a hard cut, same subject.** At 4.68 s the graph at full frame cuts on frame 0 to the same graph laid on a tilted plane at about a third of the size, with a title row above it: the cut is the step back.
+- **The card is still on screen as the panels fade up.** 'PLAN AND TRACK RELEASES' dims over 10 frames while the stacked panels rise underneath it (11.12 s); for about 6 frames both are legible. The dissolve is long enough to read as a superimposition.
+- **A 2.7 s pull over three stacked panels** (12.79 s) at near-constant speed: no visible ease at either end within the strip. Each panel is offset up and right of the last, so the pull reads along a diagonal.
+- **Panels → graph → black → caret.** At 15.57 s the panels cut to a macro of the branches; at 21.73 s the plane cuts to black and a block caret appears 2 frames later, before any letter: the typewriter card starts with its cursor.
+
+**Eye at the cuts.** Graph close → wide (4.68 s): the convergence point moves from about 70% to about 45% of the width, 25%. Plane → caret (21.73 s): to the centre, about 10%. 4 of 7 measured cuts are true edits.
 
 ## 2. Classify
 

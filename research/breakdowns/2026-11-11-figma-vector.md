@@ -41,12 +41,12 @@ Autofit left out 3 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing   | What happens                                                                   | Out                   |
-| ----------- | --------- | ------------------------------------------------------------------------------ | --------------------- |
-| 0.00–10.33  | starburst | a red starburst; points dragged; long dissolves (1.1–1.8 s) between its states | dissolves             |
-| 10.33–14.71 | variants  | the starburst spins through variants in short cuts                             | short dissolves, cuts |
-| 14.71–22.79 | icon      | an eye-and-planet icon; its shapes edited in an 8 s take                       | hard cut              |
-| 22.79–30.62 | type      | 'Aa' outlined from a menu; the 'a' bent and rotated point by point             | cuts, short dissolves |
+| Time (s)    | Length (s) | Framing   | What happens                                                                   | Out                   |
+| ----------- | ---------- | --------- | ------------------------------------------------------------------------------ | --------------------- |
+| 0.00–10.33  | 10.33      | starburst | a red starburst; points dragged; long dissolves (1.1–1.8 s) between its states | dissolves             |
+| 10.33–14.71 | 4.38       | variants  | the starburst spins through variants in short cuts                             | short dissolves, cuts |
+| 14.71–22.79 | 8.08       | icon      | an eye-and-planet icon; its shapes edited in an 8 s take                       | hard cut              |
+| 22.79–30.62 | 7.83       | type      | 'Aa' outlined from a menu; the 'a' bent and rotated point by point             | cuts, short dissolves |
 
 ### By eye
 
@@ -56,6 +56,19 @@ Autofit left out 3 moves with a cut too close.
 - **Frame:** full-bleed lime canvas; a pink field for the icon
 - **Aspect:** 16:9, 1280×720, 24 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 6 cuts, 1 dissolve and 3 moves; 1 f = 41.7 ms at 24 fps.
+
+- **The push and the selection are one beat.** The first push (0.48 s, ×1.5 over about 1.4 s) starts as the starburst is selected (its fill darkens, its points show) and is still easing when the pointer reaches a point. The second (2.23 s, ×1.6) carries on in the same direction after a short hold. Two pushes of about ×1.5 instead of one of ×2.4.
+- **Edit close, judge wide.** At 7.71 s the starburst at about ×3, mid-drag, cuts on frame 0 to the whole shape at ×1, deselected: the edit is made in the close-up and its effect is read in the wide.
+- **A change of state shown by dissolve.** From 8.46 s the shape's spokes twist over 10 frames with no pointer on screen: the frames between two versions are skipped and blended, so the shape appears to grow rather than be edited.
+- **The icon take is one locked frame for 8 s** (14.71 s): only the pointer and the dragged star move. The picture is dense, so the camera stays out of it.
+- **Selection as a 3-frame flash.** 'Aa' is box-selected (a teal fill over it) for about 17 frames, then the context menu opens on the frame of the right-click (24.25 s).
+- **The push follows the menu.** As the menu opens the frame pushes ×2 over about 1.1 s (24.32 s), ending with the highlighted item ('Outline stroke') at the centre right; the press comes after the push settles, and the menu is gone on the next frame (25.58 s).
+
+**Eye at the cuts.** Starburst close → wide (7.71 s): centred both sides, under 5%. Icon → 'Aa' (22.79 s): centred both sides, 0–5%; only the backdrop colour (magenta → lime) changes. Every subject is centred on a full-bleed canvas, so no cut moves the eye more than 5%. The instrument places 5 of 6 hard cuts on the right frame.
 
 ## 2. Classify
 

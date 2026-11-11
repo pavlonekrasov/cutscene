@@ -26,12 +26,12 @@ Autofit left out 1 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing       | What happens                                                                               | Out                 |
-| ----------- | ------------- | ------------------------------------------------------------------------------------------ | ------------------- |
-| 0.00–7.37   | typed cards   | 'Cursor can now control your laptop'; 'Use it to drive apps like the iOS simulator'        | hard cut            |
-| 7.37–8.93   | composer ×2.5 | 'Computer Use add the ability to favorite trails and…' types                               | dissolve 0.47 s     |
-| 8.93–18.03  | two windows   | the agent's log beside the Simulator: trails list, a trail page, a heart tapped, Favorites | dissolves 0.1–1.2 s |
-| 18.03–21.03 | phone, logo   | the Favorites screen alone; logo on white                                                  | end                 |
+| Time (s)    | Length (s) | Framing       | What happens                                                                               | Out                 |
+| ----------- | ---------- | ------------- | ------------------------------------------------------------------------------------------ | ------------------- |
+| 0.00–7.37   | 7.37       | typed cards   | 'Cursor can now control your laptop'; 'Use it to drive apps like the iOS simulator'        | hard cut            |
+| 7.37–8.93   | 1.56       | composer ×2.5 | 'Computer Use add the ability to favorite trails and…' types                               | dissolve 0.47 s     |
+| 8.93–18.03  | 9.10       | two windows   | the agent's log beside the Simulator: trails list, a trail page, a heart tapped, Favorites | dissolves 0.1–1.2 s |
+| 18.03–21.03 | 3.00       | phone, logo   | the Favorites screen alone; logo on white                                                  | end                 |
 
 ### By eye
 
@@ -44,7 +44,17 @@ Autofit left out 1 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Frame-level beats
 
-- The window pair holds still for 9 s while only the Simulator's content changes, so the viewer watches the agent work, not the camera.
+Read from 10-frame strips around 1 cut, 1 dissolve and 2 moves; 1 f = 33 ms at 30 fps.
+
+- **The window pair holds still for 9 s** while only the Simulator's content changes, so the viewer watches the agent work, not the camera.
+- **The claim types a word at a time while the line re-centres.** 'Cursor can now' → 'control' → 'your' → 'laptop' arrive about 180 ms apart, and the line slides left as it grows to stay centred; the instrument reads that slide as a pan (0.03 s). Nothing else on the card moves.
+- **Card → composer on frame 0, already typing.** At about 5.9 s the white card cuts to the dark composer with the 'Computer Use' chip in place; characters arrive every 1–2 frames (about 20 a second).
+- **Dark → gradient is a hard cut with a settle.** At 7.37 s the composer cuts on frame 0 to the agent window on the orange gradient; over the next 5 frames the window shrinks about 10% and drifts up to its resting place. A scale-settle of 170 ms stands in for a camera move.
+- **The phone's screens change by scrolling**, 2–3 frames per screen (10.10 s): the Simulator is the only thing in motion and it moves fast, which is why the frame around it can stay locked.
+
+**Eye at the cuts.** Card → composer: the text's left edge moves from about 30% to 25% of the width (inside 10%). Composer → agent window (7.37 s): from the typed line at about 30% to the window's centre at about 50%, a 20% jump, softened by the settle. 1 true hard cut measured; it lands on the frame the instrument gives.
+
+## 2. Classify
 
 ## 2. Classify
 

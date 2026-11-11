@@ -47,17 +47,17 @@ Autofit left out 3 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing    | What happens                                                                                                | Out                        |
-| ----------- | ---------- | ----------------------------------------------------------------------------------------------------------- | -------------------------- |
-| 0.00–3.30   | title      | 'Introducing hybrid agentic' builds, then 'inference on Computer'; a colour shimmer passes over it          | hard cuts, short dissolves |
-| 3.30–12.00  | prompt     | 'I'm a PE associate on Project Falcon. Re-underwrite at a 1…' typed with bold keywords; the attachment menu | hard cuts                  |
-| 12.00–15.05 | card       | 'Sensitive data stays local. Frontier power stays available.'                                               | short dissolve             |
-| 15.05–24.50 | transcript | the agent's working text; the camera pushes ×1.76 to a line, then pulls ×0.54                               | hard cut                   |
-| 24.50–37.30 | desktop    | the app on a Windows desktop; a ×1.97 push over 2.3 s; a PII detection table                                | hard cuts, dissolves       |
-| 37.30–44.50 | burst      | eight report pages and tables, 0.3–1.4 s each                                                               | cuts and short dissolves   |
-| 44.50–48.50 | cards      | 'Maximum token efficiency'; 'with local and server orchestration.'                                          | hard cut                   |
-| 48.50–53.75 | payoff     | the desktop app; a notification: Project Falcon deliverables are complete; a push ×1.53                     | dissolve 1.15 s            |
-| 53.75–59.77 | logo       | the Perplexity logo                                                                                         | end                        |
+| Time (s)    | Length (s) | Framing    | What happens                                                                                                | Out                        |
+| ----------- | ---------- | ---------- | ----------------------------------------------------------------------------------------------------------- | -------------------------- |
+| 0.00–3.30   | 3.30       | title      | 'Introducing hybrid agentic' builds, then 'inference on Computer'; a colour shimmer passes over it          | hard cuts, short dissolves |
+| 3.30–12.00  | 8.70       | prompt     | 'I'm a PE associate on Project Falcon. Re-underwrite at a 1…' typed with bold keywords; the attachment menu | hard cuts                  |
+| 12.00–15.05 | 3.05       | card       | 'Sensitive data stays local. Frontier power stays available.'                                               | short dissolve             |
+| 15.05–24.50 | 9.45       | transcript | the agent's working text; the camera pushes ×1.76 to a line, then pulls ×0.54                               | hard cut                   |
+| 24.50–37.30 | 12.80      | desktop    | the app on a Windows desktop; a ×1.97 push over 2.3 s; a PII detection table                                | hard cuts, dissolves       |
+| 37.30–44.50 | 7.20       | burst      | eight report pages and tables, 0.3–1.4 s each                                                               | cuts and short dissolves   |
+| 44.50–48.50 | 4.00       | cards      | 'Maximum token efficiency'; 'with local and server orchestration.'                                          | hard cut                   |
+| 48.50–53.75 | 5.25       | payoff     | the desktop app; a notification: Project Falcon deliverables are complete; a push ×1.53                     | dissolve 1.15 s            |
+| 53.75–59.77 | 6.02       | logo       | the Perplexity logo                                                                                         | end                        |
 
 ### By eye
 
@@ -67,6 +67,19 @@ Autofit left out 3 moves with a cut too close and 2 whose best fit was above 3% 
 - **Frame:** cream for cards and prompt; a Windows desktop with a clouds wallpaper for the app
 - **Aspect:** 16:9, 1280×720, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 3 moves; 1 f = 16.7 ms at 60 fps.
+
+- **The second title line waits in grey.** 'Introducing hybrid agentic' is dark while 'inference on Computer' sits beneath it at low contrast for 10 frames or more (1.12 s) before darkening: the line break is a beat.
+- **A long prompt types in a locked composer.** The three 'cuts' at 5.60, 6.48 and 7.08 s are the composer gaining a line each; the frame doesn't move for 8.7 s, and the bold keywords are the only emphasis.
+- **Push to read, pull to place.** At 17.27 s the frame goes from the app window on the desktop wallpaper to the transcript filling the frame (×1.76) in about 0.5 s, most of it in the first 4 strip columns; it holds 3 s on the text, then pulls back (20.82 s, ×0.54) to show the sidebar and window again. The push is fast and front-loaded; the pull is slower.
+- **A cut to wide, then straight back in.** At 24.50 s the window cuts to the whole Windows desktop (the app at about 50% of the frame, on the wallpaper), and 0.8 s later a second push (×1.97 over 2.3 s) returns to the transcript. The wide shot is on screen for under a second: just long enough to say 'this is on a PC'.
+- **A dialog replaces the transcript's lower half on frame 0** (28.83 s): the PII table appears whole, with its primary button dark at the bottom right.
+- **Card → desktop on frame 0** (48.50 s), then the notification slides up at the bottom right and the frame pushes ×1.53 toward it; the logo dissolves in over about 6 frames, growing from a dot (53.75 s).
+
+**Eye at the cuts.** Card → desktop (48.50 s): centre to the window's centre, under 5%. Window → wide desktop (24.50 s): the transcript's text was at about 55%; the window in the wide shot is centred at about 48%, under 10%. Desktop → logo: from the notification at about 80% × 85% to the centre, 30%, across a dissolve. 3 of 7 measured cuts are typing.
 
 ## 2. Classify
 

@@ -32,12 +32,12 @@ Autofit left out 1 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing     | What happens                                                                       | Out       |
-| ----------- | ----------- | ---------------------------------------------------------------------------------- | --------- |
-| 0.00–5.07   | corner crop | the Calendar tab; the 'Weekly Brand Jam' event; 'Join'                             | hard cuts |
-| 5.07–9.97   | corner crop | Meet opens; the tab group forms; the speaker appears picture-in-picture            | hard cuts |
-| 9.97–20.93  | corner crop | notes, a Figma file and Linear join the group; '10m left — Google Meet' in the tab | hard cuts |
-| 20.93–22.22 | logo, URL   | Dia; 'diabrowser.com'                                                              | end       |
+| Time (s)    | Length (s) | Framing     | What happens                                                                       | Out       |
+| ----------- | ---------- | ----------- | ---------------------------------------------------------------------------------- | --------- |
+| 0.00–5.07   | 5.07       | corner crop | the Calendar tab; the 'Weekly Brand Jam' event; 'Join'                             | hard cuts |
+| 5.07–9.97   | 4.90       | corner crop | Meet opens; the tab group forms; the speaker appears picture-in-picture            | hard cuts |
+| 9.97–20.93  | 10.96      | corner crop | notes, a Figma file and Linear join the group; '10m left — Google Meet' in the tab | hard cuts |
+| 20.93–22.22 | 1.29       | logo, URL   | Dia; 'diabrowser.com'                                                              | end       |
 
 ### By eye
 
@@ -50,7 +50,15 @@ Autofit left out 1 moves with a cut too close.
 
 ### Frame-level beats
 
-- The pull at 2.7 s widens just enough to include the event's 'Join' button before it's pressed.
+Read from 10-frame strips around 6 cuts, 1 dissolve and 1 move; 1 f = 16.7 ms at 60 fps.
+
+- **The pull at 2.68 s settles before the page paints.** It goes from the tab strip at about ×2.5 to the corner crop in about 0.5 s (most of the travel in the first 3 strip columns), while the Meet page is still blank white: the camera uses the load as its cover.
+- **The pointer rests where the next thing appears.** The arrow holds at about 55% × 60% from 2.68 s through 3.80 s; the Meet page and the dark video tile then paint in under it over 2 frames.
+- **Every later 'cut' is one row arriving.** At 8.17, 9.97, 15.50 and 19.70 s a tab row (the group's title, 'Design Standup Notes', 'Sidebar Polish – Figma', 'Linear') appears in the sidebar within 1–2 frames while the crop holds: 5 of 6 measured cuts are in-UI changes. The film is one locked crop after the pull.
+- **The speaker's tile is the only continuous motion.** It keeps moving (a person talking) at the right edge, which keeps a locked frame alive for 15 s without competing with the sidebar on the left.
+- **Crop → logo on frame 0** (20.93 s), white on black, centred.
+
+**Eye at the cuts.** One true edit: sidebar (about 10% across) → centred logo, a 40% jump, bridged only by the change to black. Inside the crop the eye stays on the sidebar's left third throughout.
 
 ## 2. Classify
 

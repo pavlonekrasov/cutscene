@@ -34,16 +34,16 @@ Autofit left out 2 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing                               | What happens                                                                                  | Out                            |
-| ----------- | ------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------ |
-| 0.10–1.30   | card                                  | 'Don't worry'                                                                                 | hard cut                       |
-| 1.30–3.94   | detail: the sidebar on a forest photo | an untidy tab list; the list scrolls 20–27%                                                   | dissolve 0.47 s                |
-| 3.94–5.54   | card                                  | 'Tab'                                                                                         | hard cut                       |
-| 5.54–8.54   | detail → pull ×0.45                   | the list, then the page beside it                                                             | hard cut                       |
-| 8.54–9.68   | card                                  | 'Tidy Tabs'                                                                                   | hard cut                       |
-| 9.68–14.88  | detail, five shots                    | the broom 'Clear' control is pressed; tabs regroup under titled headings, across three themes | hard cuts, two short dissolves |
-| 14.88–16.05 | card                                  | 'Now available in Arc'                                                                        | hard cut                       |
-| 16.05–20.52 | detail, logo, URL                     | one last tidy on a mint theme; the Arc logo; 'arc.net'                                        | end                            |
+| Time (s)    | Length (s) | Framing                               | What happens                                                                                  | Out                            |
+| ----------- | ---------- | ------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------ |
+| 0.10–1.30   | 1.20       | card                                  | 'Don't worry'                                                                                 | hard cut                       |
+| 1.30–3.94   | 2.64       | detail: the sidebar on a forest photo | an untidy tab list; the list scrolls 20–27%                                                   | dissolve 0.47 s                |
+| 3.94–5.54   | 1.60       | card                                  | 'Tab'                                                                                         | hard cut                       |
+| 5.54–8.54   | 3.00       | detail → pull ×0.45                   | the list, then the page beside it                                                             | hard cut                       |
+| 8.54–9.68   | 1.14       | card                                  | 'Tidy Tabs'                                                                                   | hard cut                       |
+| 9.68–14.88  | 5.20       | detail, five shots                    | the broom 'Clear' control is pressed; tabs regroup under titled headings, across three themes | hard cuts, two short dissolves |
+| 14.88–16.05 | 1.17       | card                                  | 'Now available in Arc'                                                                        | hard cut                       |
+| 16.05–20.52 | 4.47       | detail, logo, URL                     | one last tidy on a mint theme; the Arc logo; 'arc.net'                                        | end                            |
 
 ### By eye
 
@@ -56,7 +56,15 @@ Autofit left out 2 moves with a cut too close.
 
 ### Frame-level beats
 
-- Cards and UI alternate at ~1.2 s each (median shot 1.17 s); the press on 'Clear' lands in the first frames of its shot, so the regrouping fills the rest of it.
+Read from 10-frame strips around 8 cuts, 1 dissolve and 1 move; 1 f = 33 ms at 30 fps.
+
+- **Cards and UI alternate at about 1.2 s** (median shot 1.17 s). Every card is complete on its first frame and holds still to its last; nothing on a card animates.
+- **A jump cut on the same framing.** At 2.64 s the sidebar keeps its crop and the list is one row longer on the next frame ('10 BEST San Diego Zoo' appears): time is skipped, the frame isn't.
+- **The pull opens toward the page.** The pull at 6.25 s (×0.45) keeps the sidebar on the left third and lets the page ('The Best…') enter from the right; most of the travel happens in its first 0.8 s, then it eases out for another 0.7 s.
+- **One empty brand-blue frame before a card's text.** At 8.54 s the cut lands on a plain blue frame and 'Tidy Tabs' appears on the next one (33 ms later).
+- **Cut away mid-sweep.** The last press on 'Clear' (17.35 s) starts the wavy sweep line under the pointer, and the logo cuts in on frame 0 before the tabs regroup: the payoff was already shown, so the reprise doesn't wait for it.
+
+**Eye at the cuts.** Card → sidebar (1.30 s, 5.54 s): from the centred card word to the sidebar or its 'Clear' control at about 65–75% of the width, a 15–25% jump; the saturated blue → photo change carries the cut. Logo → 'arc.net' (18.72 s): both centred, 0%. The instrument places 4 of 6 hard cuts one frame late (the new shot is already on frame −1).
 
 ## 2. Classify
 

@@ -29,15 +29,15 @@ Autofit left out 3 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing      | What happens                                                                                                                  | Out                |
-| ----------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| 0.00–4.33   | wide         | the site in Chrome on green; the page scrolls, the cursor hovers listing cards                                                | dissolves          |
-| 4.33–9.38   | toolbar crop | ×3 on the URL bar; the pointer travels right to the extension icon; the extension bar opens: 'Capture code', 'Capture design' | dissolves          |
-| 9.38–11.25  | status       | 'Capturing…' pill at ×3; the page with the pill, wide                                                                         | dissolve           |
-| 11.25–16.21 | into Figma   | an empty canvas; 'Importing project…'; a loading frame; the page lands as layers                                              | dissolves          |
-| 16.21–23.63 | inspect      | the captured page with the selection toolbar; a menu; ×3 on the cards; 'FeatureCard' tag; 400 × 200                           | cuts and dissolves |
-| 23.63–27.83 | payoff       | the FeatureCard alone, the pointer beside it                                                                                  | dissolve 2.1 s     |
-| 27.83–31.17 | logo         | the Figma logo assembles on black                                                                                             | end                |
+| Time (s)    | Length (s) | Framing      | What happens                                                                                                                  | Out                |
+| ----------- | ---------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| 0.00–4.33   | 4.33       | wide         | the site in Chrome on green; the page scrolls, the cursor hovers listing cards                                                | dissolves          |
+| 4.33–9.38   | 5.05       | toolbar crop | ×3 on the URL bar; the pointer travels right to the extension icon; the extension bar opens: 'Capture code', 'Capture design' | dissolves          |
+| 9.38–11.25  | 1.87       | status       | 'Capturing…' pill at ×3; the page with the pill, wide                                                                         | dissolve           |
+| 11.25–16.21 | 4.96       | into Figma   | an empty canvas; 'Importing project…'; a loading frame; the page lands as layers                                              | dissolves          |
+| 16.21–23.63 | 7.42       | inspect      | the captured page with the selection toolbar; a menu; ×3 on the cards; 'FeatureCard' tag; 400 × 200                           | cuts and dissolves |
+| 23.63–27.83 | 4.20       | payoff       | the FeatureCard alone, the pointer beside it                                                                                  | dissolve 2.1 s     |
+| 27.83–31.17 | 3.34       | logo         | the Figma logo assembles on black                                                                                             | end                |
 
 ### By eye
 
@@ -47,6 +47,19 @@ Autofit left out 3 moves with a cut too close.
 - **Frame:** a textured green backdrop around the browser; the Figma canvas on its own grey
 - **Aspect:** 16:9, 1280×720, 24 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 5 cuts, 1 dissolve and 2 moves; 1 f = 41.7 ms at 24 fps.
+
+- **Wide holds, then a cut-in of about ×4 to the address bar.** The browser window on a green backdrop holds with only the pointer moving (1.04 s); at about 5 s it cuts to the tab strip and URL ('pickup.figma.site') filling the frame, with the enlarged pointer already on the extension's place. Nothing between the two framings is shown.
+- **The status pill is framed with the page it is capturing.** 'Capturing… Cancel' sits at the top while the cards below ('Deals on electronics', 'The Y2K nostalgia edit') fill the lower half at about ×4 (9.91 s). The frame is chosen so the cause and its subject share a shot.
+- **A two-stage pull, 1.7 s in all.** ×4 → about ×2 over 0.8 s (9.91 s), a hold of a few frames, then on to the whole window and past its right edge, where Figma's canvas slides in (10.73 s, 0.9 s). The second stage is a pull and a pan together: it ends on the destination app.
+- **The pill persists across the app change.** 'Importing project… Cancel' sits at the same place in Figma (13.25 s) as 'Capturing…' did in Chrome, then is replaced on frame 0 by a grey placeholder frame on the canvas. One element carries the continuity from browser to canvas.
+- **Selection as the proof.** At 23.63 s the imported card is selected (blue bounds, a 'FeatureCard' label, '400 × 200') for 3 frames, then deselected: the bounds show the capture is real layers, in under 150 ms.
+- **Canvas → logo on a hard cut to black** (27.83 s): the Figma mark's shapes pop in one at a time, 2–3 frames apart.
+
+**Eye at the cuts.** Wide → address bar (about 5 s): the pointer was at about 60% × 70%; in the close-up it sits at about 50% × 55%, inside 10%. Canvas → logo: from the pointer at about 60% to the centre, 10%. The pulls do the large reframes, so no cut in the film moves the eye more than 10%.
 
 ## 2. Classify
 

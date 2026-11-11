@@ -42,13 +42,13 @@ Autofit left out 5 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing            | What happens                                                                       | Out             |
-| ----------- | ------------------ | ---------------------------------------------------------------------------------- | --------------- |
-| 0.00–7.65   | isolated bubbles   | a dot; 'Hello', 'How are you?', an emoji reaction, 'Great thanks!' pop in          | short dissolves |
-| 7.65–11.92  | voice note         | a recording ring, then waveforms                                                   | dissolves       |
-| 11.92–17.55 | media              | 'All your media'; a profile photo; a carousel of tiles                             | dissolves       |
-| 17.55–21.67 | transaction        | 'Transact in-chat'; '+'; '$0' ticks to '$100'; a 'Sent $100.00' card               | dissolves       |
-| 21.67–27.42 | phone, cards, logo | 'Customize easily'; the chat on a phone over coloured discs; 'Now in Family'; logo | end             |
+| Time (s)    | Length (s) | Framing            | What happens                                                                       | Out             |
+| ----------- | ---------- | ------------------ | ---------------------------------------------------------------------------------- | --------------- |
+| 0.00–7.65   | 7.65       | isolated bubbles   | a dot; 'Hello', 'How are you?', an emoji reaction, 'Great thanks!' pop in          | short dissolves |
+| 7.65–11.92  | 4.27       | voice note         | a recording ring, then waveforms                                                   | dissolves       |
+| 11.92–17.55 | 5.63       | media              | 'All your media'; a profile photo; a carousel of tiles                             | dissolves       |
+| 17.55–21.67 | 4.12       | transaction        | 'Transact in-chat'; '+'; '$0' ticks to '$100'; a 'Sent $100.00' card               | dissolves       |
+| 21.67–27.42 | 5.75       | phone, cards, logo | 'Customize easily'; the chat on a phone over coloured discs; 'Now in Family'; logo | end             |
 
 ### By eye
 
@@ -61,7 +61,17 @@ Autofit left out 5 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Frame-level beats
 
-- Bubbles enter about 0.3 s apart with a slight overshoot; the next bubble starts as the previous one settles.
+Read from 10-frame strips around 5 cuts, 1 dissolve and 1 move; 1 f = 16.7 ms at 60 fps. The film is vertical (9:16).
+
+- **Bubbles enter about 0.3 s apart with a slight overshoot**; the next bubble starts as the previous one settles.
+- **The dot becomes the bubble.** At 1.32 s the blue dot widens over 3 frames (50 ms) into a rounded bubble, and the text types into it a letter per 1–2 frames ('H', 'He', 'Hel'): the shape arrives first, the content second. A small tail dot follows at the bubble's lower right.
+- **The reaction is the last thing to land.** The emoji scales in on the bubble's corner over about 5 frames with a few degrees of rotation, after both bubbles are still (2.37 s).
+- **Two rows, two speeds.** In the voice-note shot (7.65 s) the sent waveform is static while the recording row's playhead moves: one moving element per shot.
+- **Carousel → card on frame 0.** The media tiles cut to the word 'Transact' at 15.20 s; the word starts grey and darkens over about 5 frames. Cards in this film fade their ink in; they never slide.
+- **Colour floods in as the card leaves.** At 21.67 s 'Customize easily' fades out over 2 frames and a pale blue rises to full strength over the next 4: the backdrop is the transition.
+- **The logo grows on a spring.** After 'Now in Family' the mark cuts in small and scales up about ×1.5 over about 1.7 s, fast at first and settling without overshoot (25.01 s).
+
+**Eye at the cuts.** Everything sits on the vertical centre line of a 9:16 frame, so sideways travel is 0–10% at every cut; vertical travel is larger (bubbles at 25%, cards at 50%). 2 of 5 measured cuts are in-shot changes (the bubble forming, the emoji).
 
 ## 2. Classify
 

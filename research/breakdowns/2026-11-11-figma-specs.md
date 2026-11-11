@@ -28,15 +28,15 @@ Autofit left out 2 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing          | What happens                                                                                                                                | Out                   |
-| ----------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
-| 0.00–0.92   | button           | 'Spec' on grey; the pointer hovers and it becomes '+ Spec'                                                                                  | dissolve              |
-| 0.92–5.63   | document         | 'PRD: Bundled delivery at checkout' with two named cursors; a table forms; ×3 on the format bar; 'Pull data from Hex into this table' typed | dissolves             |
-| 5.63–13.25  | fill             | the table fills with 30-day totals and scrolls; a flow diagram drops into the doc                                                           | dissolves             |
-| 13.25–21.17 | comment, reorder | 'Proposed tracking framework' code block; '@Brendon Gonna move this code section to the end.' typed; the section is dragged down            | dissolves up to 2.4 s |
-| 21.17–28.33 | canvas           | the spec beside mobile frames; collaborator cursors; 'Let's build this one'                                                                 | dissolves             |
-| 28.33–36.42 | agent            | 'Create an implementation plan for this bundling feature' typed; the plan doc; the spec card dragged into an agent prompt; its link sent    | dissolves             |
-| 36.42–40.75 | card, logo       | 'Structure your context. Ship your intent.'; the Figma logo                                                                                 | end                   |
+| Time (s)    | Length (s) | Framing          | What happens                                                                                                                                | Out                   |
+| ----------- | ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| 0.00–0.92   | 0.92       | button           | 'Spec' on grey; the pointer hovers and it becomes '+ Spec'                                                                                  | dissolve              |
+| 0.92–5.63   | 4.71       | document         | 'PRD: Bundled delivery at checkout' with two named cursors; a table forms; ×3 on the format bar; 'Pull data from Hex into this table' typed | dissolves             |
+| 5.63–13.25  | 7.62       | fill             | the table fills with 30-day totals and scrolls; a flow diagram drops into the doc                                                           | dissolves             |
+| 13.25–21.17 | 7.92       | comment, reorder | 'Proposed tracking framework' code block; '@Brendon Gonna move this code section to the end.' typed; the section is dragged down            | dissolves up to 2.4 s |
+| 21.17–28.33 | 7.16       | canvas           | the spec beside mobile frames; collaborator cursors; 'Let's build this one'                                                                 | dissolves             |
+| 28.33–36.42 | 8.09       | agent            | 'Create an implementation plan for this bundling feature' typed; the plan doc; the spec card dragged into an agent prompt; its link sent    | dissolves             |
+| 36.42–40.75 | 4.33       | card, logo       | 'Structure your context. Ship your intent.'; the Figma logo                                                                                 | end                   |
 
 ### By eye
 
@@ -46,6 +46,19 @@ Autofit left out 2 moves with a cut too close and 1 whose best fit was above 3% 
 - **Frame:** flat light grey; the app full frame
 - **Aspect:** 16:9, 1280×720, 24 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 3 cuts, 1 dissolve and 2 moves; 1 f = 41.7 ms at 24 fps.
+
+- **The table fills left to right, row by row, as the frame scrolls.** Labels fade in first and each '30-day total' value follows about 2 frames later (6.12 s); the frame scrolls down at the same rate the rows fill, so the newest row sits in the middle third.
+- **A scroll that ends on a heading at the left edge.** The pan at 10.81 s carries the flow diagram up and out and stops with 'Proposed tracking framework' at the top left, the pointer already beside it: the scroll's stopping point is the next action's target.
+- **The comment types at about 1 character a frame** (24 a second) in a popover anchored above the code block (14.13 s); the pointer rests under the popover and doesn't move while it types.
+- **A drag shown as a double exposure.** At 18.00 s the grab hand holds the heading; over 6 frames the section's ghost moves down the page while the old position fades, and both are on screen at once for about 4 frames. The 2.4 s dissolve the instrument reads is this drag.
+- **A named cursor types its own speech bubble.** 'Let's build this one' appears in a blue bubble attached to a collaborator's cursor, 1–2 characters a frame, on the canvas beside the mobile frames (26.38 s): the collaborator is a character with a line.
+- **The link pastes in as selected text**, a few characters a frame, in the agent's dark prompt (34.71 s); the outlined pointer waits below the line.
+
+**Eye at the cuts.** The film dissolves between framings, so few cuts carry the eye. Where it does cut (14.13 s, into the comment), the heading stays at the top left and the popover opens within 10% of the pointer. All 3 measured 'cuts' are typing arriving, not edits.
 
 ## 2. Classify
 

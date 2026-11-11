@@ -29,6 +29,20 @@ moves in the same terms as the references, so the two compare directly.
 - **Settle before news.** The camera comes to rest before a modal opens or a press lands
   (`CAMERA.lead` already does this).
 
+## Where the eye is (read frame by frame at 139 cuts)
+
+- **Keep the eye where it was.** At 101 of 139 cuts the point of interest (the pointer, the caret,
+  the one bright element) lands within 10% of the frame width of where it was before the cut. Frame
+  the next shot so its subject sits where the last one's did.
+- **Soften or lead a long jump.** When the subject must move more than a quarter of the frame, use a
+  short dissolve, a few blank frames, or send the pointer there before the cut.
+- **Camera and UI take turns.** Let the camera stop, then open the menu or land the press. Let a
+  typed line finish, wait about 0.4 s, then pull.
+- **One saturated element per frame.** It should be the control being pressed or the value that
+  changed; if the app's page has several, focus tighter.
+- **Text on screen:** typing reads at 12–30 characters a second in close-up; cards build at
+  80–180 ms a word.
+
 ## Camera numbers (two genres)
 
 |              | cutscene default | Screen Studio clips                       | Launch films on X (50)                                                   |

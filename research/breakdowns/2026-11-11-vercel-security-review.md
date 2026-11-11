@@ -42,12 +42,12 @@ Autofit left out 2 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing | What happens                                                                                         | Out                      |
-| ----------- | ------- | ---------------------------------------------------------------------------------------------------- | ------------------------ |
-| 0.00–3.75   | list    | 'Team Vulnerabilities'; push ×1.65 to 'Comment previews execute untrusted HTML'                      | hard cut, short dissolve |
-| 3.75–8.85   | detail  | the detail page opens; pull; Summary, Details, the vulnerable code; the suggested fix                | dissolves                |
-| 8.85–18.20  | fix     | one take: push ×1.42 to the code and 'Fix with Vercel Agent', pull ×0.8; the agent's comment appears | hard cut                 |
-| 18.20–24.65 | result  | the detail page, a pan across to the fix status                                                      | end                      |
+| Time (s)    | Length (s) | Framing | What happens                                                                                         | Out                      |
+| ----------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------- | ------------------------ |
+| 0.00–3.75   | 3.75       | list    | 'Team Vulnerabilities'; push ×1.65 to 'Comment previews execute untrusted HTML'                      | hard cut, short dissolve |
+| 3.75–8.85   | 5.10       | detail  | the detail page opens; pull; Summary, Details, the vulnerable code; the suggested fix                | dissolves                |
+| 8.85–18.20  | 9.35       | fix     | one take: push ×1.42 to the code and 'Fix with Vercel Agent', pull ×0.8; the agent's comment appears | hard cut                 |
+| 18.20–24.65 | 6.45       | result  | the detail page, a pan across to the fix status                                                      | end                      |
 
 ### By eye
 
@@ -57,6 +57,20 @@ Autofit left out 2 moves with a cut too close.
 - **Frame:** the app full frame, dark
 - **Aspect:** 16:9, 1280×720, 60 fps
 - **Sound:** none: no audio track
+
+### Frame-level beats
+
+Read from 10-frame strips around 1 cut, 1 dissolve and 3 moves; 1 f = 16.7 ms at 60 fps. Dark UI at full frame: row text isn't readable in the strips.
+
+- **The film opens already moving.** The push on the vulnerability list starts on frame 0 (0.58 s strip): the whole dashboard, sidebar included, is on screen for under 0.5 s before the table fills the frame at ×1.65. Travel is front-loaded: 4 of 10 columns do most of the scaling, the last 5 are nearly identical.
+- **The severity dots are the only colour in the table.** A column of red dots at the left edge of each row, on grey text; after the push they sit about 8% in from the left edge.
+- **The detail page arrives under a dissolve and keeps drifting.** At 5.92 s the page ('Comment previews execute untrusted HTML', Summary, a code block with one green line, the side panel with 'Fix with Vercel Agent') is complete and the frame is still creeping: about 1% of scale over 10 frames.
+- **The push to the button pans as it scales.** From 9.09 s the frame moves right and in for 1.1 s: the heading leaves at the left, the side panel moves from the right third to the centre, and the white 'Fix with Vercel Agent' button ends at about 50% across, 85% down. The button is the brightest element in the frame for the whole move.
+- **The pointer waits beside the button.** It is at rest about 5% left of the button through the move's last 4 columns; the click comes after the camera has stopped.
+- **The agent's reply arrives as the frame pulls.** From 11.09 s a comment card fades in at the top right over about 4 columns (0.5 s) while the frame pulls ×0.8 to include it: UI and camera overlap here, both ending in the same column.
+- **The comment grows a second panel on a cut-like change** (18.20 s): a block of text appears beside the side panel between two frames, with the frame still.
+
+**Eye at the cuts.** List → detail: from the pushed row at about 35% × 40% to the heading at about 10% × 15%: 25% sideways, softened by the dissolve. Button → comment: 25% right and 60% up, inside one shot, led by the pull. The 1 measured cut is the comment panel changing in place.
 
 ## 2. Classify
 

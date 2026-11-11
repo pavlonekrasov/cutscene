@@ -40,15 +40,15 @@ Autofit left out 2 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing      | What happens                                                                                                     | Out             |
-| ----------- | ------------ | ---------------------------------------------------------------------------------------------------------------- | --------------- |
-| 0.00–4.87   | app, wide    | the Linear app tilted, a push toward 'Project spec'; a fade through an empty plane                               | hard cuts       |
-| 4.87–11.25  | query        | 'Find issues …' typed in the Ask Linear bar, on the plane                                                        | hard cut        |
-| 11.25–20.65 | answer       | 'I found 13 bug issues …'; an issue list streams in with status icons                                            | hard cuts       |
-| 20.65–23.97 | plan prompt  | 'Make a plan to refactor data loading to be optimistic' sent; 'Project spec'; 'Optimistic loading'               | hard cuts       |
-| 23.97–35.07 | doc          | 'Optimistic loading refactor' being written; an 'At a glance' table; a flow diagram                              | hard cuts       |
-| 35.07–45.10 | back to chat | the doc beside related issues; 'I created the PRD around the issues you surfaced.'; 'What can I help with next?' | short dissolves |
-| 45.10–54.85 | cards, logo  | 'Linear' glowing; 'Linear. At your command.' drifting; the mark                                                  | end             |
+| Time (s)    | Length (s) | Framing      | What happens                                                                                                     | Out             |
+| ----------- | ---------- | ------------ | ---------------------------------------------------------------------------------------------------------------- | --------------- |
+| 0.00–4.87   | 4.87       | app, wide    | the Linear app tilted, a push toward 'Project spec'; a fade through an empty plane                               | hard cuts       |
+| 4.87–11.25  | 6.38       | query        | 'Find issues …' typed in the Ask Linear bar, on the plane                                                        | hard cut        |
+| 11.25–20.65 | 9.40       | answer       | 'I found 13 bug issues …'; an issue list streams in with status icons                                            | hard cuts       |
+| 20.65–23.97 | 3.32       | plan prompt  | 'Make a plan to refactor data loading to be optimistic' sent; 'Project spec'; 'Optimistic loading'               | hard cuts       |
+| 23.97–35.07 | 11.10      | doc          | 'Optimistic loading refactor' being written; an 'At a glance' table; a flow diagram                              | hard cuts       |
+| 35.07–45.10 | 10.03      | back to chat | the doc beside related issues; 'I created the PRD around the issues you surfaced.'; 'What can I help with next?' | short dissolves |
+| 45.10–54.85 | 9.75       | cards, logo  | 'Linear' glowing; 'Linear. At your command.' drifting; the mark                                                  | end             |
 
 ### By eye
 
@@ -58,6 +58,18 @@ Autofit left out 2 moves with a cut too close and 2 whose best fit was above 3% 
 - **Frame:** black void; the UI on a tilted plane with a vignette to black at the edges
 - **Aspect:** 2:1, 1440×720, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps. The picture is dark and tilted, so only large changes are countable.
+
+- **Cuts move along the plane, not off it.** At 17.10 s the issue list cuts to the same list about 30% further down the tilted plane, at the same angle and scale: a jump along one surface, which reads as the camera having travelled while we blinked.
+- **The drift never stops.** In every UI shot the plane slides about 0.1–0.2% of the frame per frame (24.02 s: a 'pan' of 1.7 s that is this drift). Text streams in on a surface that is itself moving, so nothing in the film is ever fully still.
+- **Blank plane as a rest.** At 4.87 s the frame holds an empty tilted plane with one small control at its edge for 10 frames or more before the query starts: the film's equivalent of a blank card.
+- **The wordmark arrives out of blur.** At 45.10 s the UI cuts to black and 'Linear' fades up from a heavy blur over more than 6 frames; 'Linear. At your command.' then types a character per frame (47.40 s) while the line drifts left about 3% to stay centred.
+- **Line → mark on frame 0** (50.40 s), same centre.
+
+**Eye at the cuts.** List → list (17.10 s): the rows keep their angle and the brightest row lands within about 10% of where the last one was. UI → wordmark (45.10 s): from the plane's centre-left (about 40%) to the centre, 10%, through black. Tagline → mark: 0%. 4 of 7 measured cuts are true edits; the rest are streaming text or drift.
 
 ## 2. Classify
 

@@ -39,12 +39,12 @@ Autofit left out 1 whose best fit was above 3% (the tracker, not a curve).
 
 ### Shot list
 
-| Time (s)    | Framing            | What happens                                                           | Out       |
-| ----------- | ------------------ | ---------------------------------------------------------------------- | --------- |
-| 0.00–3.83   | claim card         | 'Frontier intelligence at 60% lower cost'                              | hard cut  |
-| 3.83–7.60   | control            | the 'Auto' dropdown with 'Optimize for: Intelligence / Balance / Cost' | hard cut  |
-| 7.60–16.93  | diagram ×3         | task chip → Router → model, in three colours                           | hard cuts |
-| 16.93–21.90 | table, cards, logo | 'Cost per commit'; 'Cursor Router'; availability; logo                 | end       |
+| Time (s)    | Length (s) | Framing            | What happens                                                           | Out       |
+| ----------- | ---------- | ------------------ | ---------------------------------------------------------------------- | --------- |
+| 0.00–3.83   | 3.83       | claim card         | 'Frontier intelligence at 60% lower cost'                              | hard cut  |
+| 3.83–7.60   | 3.77       | control            | the 'Auto' dropdown with 'Optimize for: Intelligence / Balance / Cost' | hard cut  |
+| 7.60–16.93  | 9.33       | diagram ×3         | task chip → Router → model, in three colours                           | hard cuts |
+| 16.93–21.90 | 4.97       | table, cards, logo | 'Cost per commit'; 'Cursor Router'; availability; logo                 | end       |
 
 ### By eye
 
@@ -57,7 +57,16 @@ Autofit left out 1 whose best fit was above 3% (the tracker, not a curve).
 
 ### Frame-level beats
 
-- Each diagram reuses the same layout with a new colour, so the viewer only reads what changed.
+Read from 10-frame strips around 5 cuts, 1 dissolve and 3 moves; 1 f = 33 ms at 30 fps.
+
+- **Each diagram reuses the same layout with a new colour**, so the viewer only reads what changed.
+- **The diagram draws left to right, one node per beat.** Task chip, arrow, 'Router', arrow, model chip: each arrives about 0.3–0.4 s after the last (7.60–8.9 s), and the model chip fades in last in the task's colour. The order of drawing is the order of the claim.
+- **The dropdown opens, then holds.** At 6.13 s the 'Optimize for' menu is open beside 'Auto' and the frame drifts by under 2% over 10 frames: a locked shot with the smallest possible life in it.
+- **The diagram leaves by sliding up while the table rises.** At 12.33 s the green diagram moves up about 10% of the frame in 4 frames and the 'Cost per commit' table is in on the next frame; then the table's rows fade in one by one, top to bottom, about 2 frames a row.
+- **The answer is the last row and the only green one.** The table scrolls until 'Cursor Router $1.38' reaches the row beside the label (15.09 s) and holds there 5 frames before the cut to the name card.
+- **Cards build a word at a time on white**: 'Cursor' → 'Cursor Router'; a blank white frame for 2 frames, then 'Now' → 'Now available for' → '… Teams' (16.93–17.60 s).
+
+**Eye at the cuts.** Claim card → dropdown (3.83 s): centre to centre, 0–5%. Dropdown → diagram (7.60 s): from about 55% to the chip at about 25%, a 30% jump on a hard cut, the largest in the film. Table → name card (15.09 s): from the green price at about 85% to the centre, 35%. The diagram's own left-to-right draw then walks the eye back across.
 
 ## 2. Classify
 

@@ -34,13 +34,13 @@ Autofit left out 1 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing          | What happens                                                    | Out       |
-| ----------- | ---------------- | --------------------------------------------------------------- | --------- |
-| 0.00–7.56   | abstract         | dots stretch into rounded strokes that become the Face ID glyph | dissolves |
-| 7.56–9.14   | isolated control | 'Continue with Face ID'                                         | hard cut  |
-| 9.14–13.86  | phone            | the sign-in screen; Face ID confirms; the account screen        | hard cuts |
-| 13.86–16.30 | card             | 'Now' → 'Now in Clerk: Sign in with biometrics'                 | hard cut  |
-| 16.30–21.17 | logo             | Clerk                                                           | end       |
+| Time (s)    | Length (s) | Framing          | What happens                                                    | Out       |
+| ----------- | ---------- | ---------------- | --------------------------------------------------------------- | --------- |
+| 0.00–7.56   | 7.56       | abstract         | dots stretch into rounded strokes that become the Face ID glyph | dissolves |
+| 7.56–9.14   | 1.58       | isolated control | 'Continue with Face ID'                                         | hard cut  |
+| 9.14–13.86  | 4.72       | phone            | the sign-in screen; Face ID confirms; the account screen        | hard cuts |
+| 13.86–16.30 | 2.44       | card             | 'Now' → 'Now in Clerk: Sign in with biometrics'                 | hard cut  |
+| 16.30–21.17 | 4.87       | logo             | Clerk                                                           | end       |
 
 ### By eye
 
@@ -50,6 +50,19 @@ Autofit left out 1 moves with a cut too close.
 - **Frame:** white to lavender gradient; a phone with no bezel shadow
 - **Aspect:** 16:9, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 6 cuts, 1 dissolve and 1 move; 1 f = 16.7 ms at 59.94 fps.
+
+- **The abstract strokes grow, they don't cut.** The 'cuts' at 2.24 and 2.85 s are strokes lengthening in place; the frame is locked and only the shapes change.
+- **A cut on shape at 3.34 s.** The giant curved strokes cut, on frame −1, to the small, complete Face ID glyph: the strokes were its corners, so the cut resolves the abstraction into the icon.
+- **A fast pull reveals the label.** 'Continue with Face ID' starts cropped at about ×3 (only 'Cont…' shows) and pulls to the whole button within about 4 strip columns, then the button lightens as the shot ends: the read is the icon first, the words second.
+- **The confirmation is the product's.** On the phone (9.14 s) the Face ID glyph in the Dynamic Island turns into a check on one frame; the camera holds.
+- **A rest of 6 or more frames** of empty backdrop after the account screen (13.08 s), as in Clerk's B2B film: the house style puts a beat of nothing between product and card.
+- **The card builds a word every 4–5 frames.** 'Sign' → 'in' → 'with' each fade in grey and darken (about 80 ms a word), left-aligned at about 10% of the width.
+
+**Eye at the cuts.** Strokes → glyph (3.34 s): from the top left (about 30%) to the centre, a 20% jump bridged by the shape match. Left-aligned card → centred logo (16.30 s): about 30%. The instrument places 3 of 4 hard cuts one frame late.
 
 ## 2. Classify
 

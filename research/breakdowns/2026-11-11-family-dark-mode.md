@@ -27,15 +27,15 @@ Autofit left out 2 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing         | What happens                                                                               | Out                      |
-| ----------- | --------------- | ------------------------------------------------------------------------------------------ | ------------------------ |
-| 0.00–2.10   | toggle as title | a toggle on white; it widens into a pill and the backdrop dissolves to dark over 1.7 s     | dissolve                 |
-| 2.10–3.97   | title           | 'to the dark side' in the pill; stars burst off it                                         | dissolves                |
-| 3.97–5.43   | illustration    | a phone with a moon and stars, drawn                                                       | dissolve                 |
-| 5.43–7.50   | settings crop   | the settings list, then the Appearance row alone with a 'NEW!' badge and a tap on 'System' | dissolves                |
-| 7.50–9.97   | option tiles    | System, Light, Dark at ×3; the selection ring moves from System to Dark                    | dissolves                |
-| 9.97–13.33  | devices         | the app dark on one phone, then three phones side by side                                  | hard cut, short dissolve |
-| 13.33–17.33 | card, logo      | 'dark mode' with a moon; the Family logo                                                   | end                      |
+| Time (s)    | Length (s) | Framing         | What happens                                                                               | Out                      |
+| ----------- | ---------- | --------------- | ------------------------------------------------------------------------------------------ | ------------------------ |
+| 0.00–2.10   | 2.10       | toggle as title | a toggle on white; it widens into a pill and the backdrop dissolves to dark over 1.7 s     | dissolve                 |
+| 2.10–3.97   | 1.87       | title           | 'to the dark side' in the pill; stars burst off it                                         | dissolves                |
+| 3.97–5.43   | 1.46       | illustration    | a phone with a moon and stars, drawn                                                       | dissolve                 |
+| 5.43–7.50   | 2.07       | settings crop   | the settings list, then the Appearance row alone with a 'NEW!' badge and a tap on 'System' | dissolves                |
+| 7.50–9.97   | 2.47       | option tiles    | System, Light, Dark at ×3; the selection ring moves from System to Dark                    | dissolves                |
+| 9.97–13.33  | 3.36       | devices         | the app dark on one phone, then three phones side by side                                  | hard cut, short dissolve |
+| 13.33–17.33 | 4.00       | card, logo      | 'dark mode' with a moon; the Family logo                                                   | end                      |
 
 ### By eye
 
@@ -45,6 +45,17 @@ Autofit left out 2 moves with a cut too close.
 - **Frame:** starts on white, goes dark with the toggle and stays dark
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 1 dissolve and 2 moves (the film has no hard cut with 0.4 s of clear picture on both sides); 1 f = 33 ms at 30 fps.
+
+- **Scenes change by an illustrated wipe, not a cut.** At 3.58 s a scalloped dark shape recedes off the top over about 3 frames to reveal the phone on an orange field; at 3.97 s a dark shape begins to enter from the bottom left as the phone tilts. The transition is drawn in the brand's own shapes, and it travels the way the theme will (dark arriving over light).
+- **The phone tilts as it leaves.** Over the last 4 frames before the wipe the phone rotates about 8° and the stars around it rotate with it: anticipation for the exit, on the object, while the frame is locked.
+- **Stars pop on a stagger.** The four-point stars around the phone scale in one after another, about 2 frames (67 ms) apart, each with a small overshoot.
+- **The end card re-forms into the logo.** 'now in Family' holds about 0.8 s; then 'now in' breaks into dots that travel right and assemble as the Family mark over about 0.5 s while the wordmark slides left to meet it (15.18 s). The card's own letters become the logo, so there is no cut between message and brand.
+
+**Eye at the cuts.** Every scene keeps its subject on the vertical centre line (toggle, phone, tiles, phones, card), so each dissolve or wipe moves the eye under 10%. The instrument finds 2 'pans', both of them the wipes above.
 
 ## 2. Classify
 

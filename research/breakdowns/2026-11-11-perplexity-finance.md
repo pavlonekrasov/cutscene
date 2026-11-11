@@ -52,16 +52,16 @@ Autofit left out 9 moves with a cut too close and 8 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing       | What happens                                                                                                                         | Out             |
-| ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
-| 0.00–6.63   | cards         | 'Introducing Personal Finance on Computer'; the Plaid claim ringed by bank logos                                                     | dissolves       |
-| 6.63–13.77  | connect       | the 'Connect Accounts' button pushes from small to ×4, clicked; 'Secured by Plaid'; the Perplexity mark joins the Plaid mark by dots | dissolves       |
-| 13.77–17.03 | collage       | a grid of dark finance dashboards                                                                                                    | hard cut        |
-| 17.03–25.10 | prompt        | 'Computer' picked from a menu; 'Build a personalized budgeting tool that tracks…' typed and sent; the plan streams                   | hard cuts       |
-| 25.10–39.67 | tool 1        | the answer scrolls; a spending heatmap with a tooltip; a category breakdown                                                          | short dissolves |
-| 39.67–52.47 | tools 2 and 3 | 'Perfect, now pull my loans and debt…'; a debt payoff tool; a dark budget dashboard                                                  | cuts            |
-| 52.47–57.93 | card over app | 'All your finances in one place' above a finance app window that scrolls                                                             | dissolves       |
-| 57.93–63.33 | logo          | the Perplexity logo                                                                                                                  | end             |
+| Time (s)    | Length (s) | Framing       | What happens                                                                                                                         | Out             |
+| ----------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
+| 0.00–6.63   | 6.63       | cards         | 'Introducing Personal Finance on Computer'; the Plaid claim ringed by bank logos                                                     | dissolves       |
+| 6.63–13.77  | 7.14       | connect       | the 'Connect Accounts' button pushes from small to ×4, clicked; 'Secured by Plaid'; the Perplexity mark joins the Plaid mark by dots | dissolves       |
+| 13.77–17.03 | 3.26       | collage       | a grid of dark finance dashboards                                                                                                    | hard cut        |
+| 17.03–25.10 | 8.07       | prompt        | 'Computer' picked from a menu; 'Build a personalized budgeting tool that tracks…' typed and sent; the plan streams                   | hard cuts       |
+| 25.10–39.67 | 14.57      | tool 1        | the answer scrolls; a spending heatmap with a tooltip; a category breakdown                                                          | short dissolves |
+| 39.67–52.47 | 12.80      | tools 2 and 3 | 'Perfect, now pull my loans and debt…'; a debt payoff tool; a dark budget dashboard                                                  | cuts            |
+| 52.47–57.93 | 5.46       | card over app | 'All your finances in one place' above a finance app window that scrolls                                                             | dissolves       |
+| 57.93–63.33 | 5.40       | logo          | the Perplexity logo                                                                                                                  | end             |
 
 ### By eye
 
@@ -71,6 +71,20 @@ Autofit left out 9 moves with a cut too close and 8 whose best fit was above 3% 
 - **Frame:** cream for cards and prompts; the generated apps light or dark
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 33 ms at 30 fps.
+
+- **The title writes on, letter by letter, out of grey.** 'Personal Finance' gains about one letter per frame (0.67 s), each arriving at low contrast and darkening over the next 3 frames; the small 'Introducing' above it is already set. The whole title then fades to a blank field over 6 frames (3.20 s) and the field holds empty for 4 more.
+- **The pointer arrives on a held button.** 'Connect Accounts' with 'Secured by PLAID' beneath it sits centred and still (9.40 s) while the pointer travels up from the lower right to the button over about 10 frames, on a curved path. The button is at about ×4 its real size, so the pointer's target is half the frame wide.
+- **A collage assembles outward from one tile.** At 13.77 s a single dark dashboard is centred; over 10 frames it shrinks about 30% while eleven more tiles slide in from every edge with motion blur, ending as a grid. The first tile never leaves the centre.
+- **The prompt types in three measured 'cuts'** (18.97, 20.23, 21.90 s): the composer's box grows a line at a time and the frame holds; bold keywords arrive already bold. After the send (21.90 s) the composer fades out over 8 frames with the pointer still on the send button.
+- **The plan streams top-down while the frame scrolls** (25.95 s): one checklist line per 2–3 frames.
+- **A tab change swaps charts in place.** At 44.67 s the donut and stacked bars are replaced by a table on frame 0; the window's chrome and sidebar hold.
+- **The card types above the app.** 'All your finances in one place' builds a word per strip column while the app window rises from the bottom edge beneath it (52.67 s): text and proof arrive in the same shot.
+
+**Eye at the cuts.** Titles, the button, the collage's first tile and the composer are all centred: under 10% at each change. The streamed plan starts at the left margin (about 8% across), a 40% jump from the centred composer; the composer's fade-out softens it. 4 of 7 measured cuts are typing or tab changes.
 
 ## 2. Classify
 

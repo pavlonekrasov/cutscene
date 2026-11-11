@@ -22,13 +22,13 @@ Moves:
 
 ### Shot list
 
-| Time (s)    | Framing      | What happens                                                                                                                   | Out       |
-| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| 0.00–5.47   | dock montage | a different background and a different set of neighbours each cut, Notion fixed; cuts every 0.6–0.9 s with 0.3–0.6 s dissolves | dissolves |
-| 5.47–11.40  | dock, faster | hard cuts every 0.33–0.47 s, then 0.7–1.2 s                                                                                    | hard cuts |
-| 11.40–12.67 | anchor alone | the Notion icon alone on a pink blur                                                                                           | hard cut  |
-| 12.67–16.47 | cards        | 'Any tool. Any agent.' → 'Any tool. Any agent. Any stack.' → 'Works with everything.'                                          | hard cuts |
-| 16.47–18.70 | end          | the Notion icon, a pointer clicks it                                                                                           | end       |
+| Time (s)    | Length (s) | Framing      | What happens                                                                                                                   | Out       |
+| ----------- | ---------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| 0.00–5.47   | 5.47       | dock montage | a different background and a different set of neighbours each cut, Notion fixed; cuts every 0.6–0.9 s with 0.3–0.6 s dissolves | dissolves |
+| 5.47–11.40  | 5.93       | dock, faster | hard cuts every 0.33–0.47 s, then 0.7–1.2 s                                                                                    | hard cuts |
+| 11.40–12.67 | 1.27       | anchor alone | the Notion icon alone on a pink blur                                                                                           | hard cut  |
+| 12.67–16.47 | 3.80       | cards        | 'Any tool. Any agent.' → 'Any tool. Any agent. Any stack.' → 'Works with everything.'                                          | hard cuts |
+| 16.47–18.70 | 2.23       | end          | the Notion icon, a pointer clicks it                                                                                           | end       |
 
 ### By eye
 
@@ -41,7 +41,16 @@ Moves:
 
 ### Frame-level beats
 
-- Cut interval shortens from about 0.8 s to 0.35 s before the anchor stands alone (rhythm accelerates).
+Read from 10-frame strips around 8 cuts, 1 dissolve and 1 move; 1 f = 33 ms at 30 fps.
+
+- **Cut interval shortens from about 0.8 s to 0.35 s** before the anchor stands alone (rhythm accelerates).
+- **The Notion icon is at the same pixel across every cut.** In the wide dock shots it sits at about 48% of the width; when the dock is cropped closer (9.07 s on) it sits at about 45–50% and at the same size in each of the four consecutive shots (9.07, 9.53, 10.20 s). Wallpaper, neighbours and dock tint all change on frame 0; the icon doesn't move by more than its own width. This is a match cut on position held for 11 s.
+- **Scale steps up once, mid-montage.** The dock goes from the whole strip (icons at about 10% of the frame height) to a crop of five icons (about 30%) at the point where the cuts speed up: closer and faster together.
+- **The last neighbours leave by a cut.** At about 11.4 s the icon is alone on the pink blur, same position and size; at 12.67 s it cuts to 'Any tool.' on white.
+- **The card builds by cutting, not by animating.** 'Any tool.' → '… Any agent.' → '… Any stack.' each appear whole on frame 0, about 0.5 s apart, and the line re-centres at each step (13.63 s); then 'Works' → 'Works with everything.' (14.67 s).
+- **The film ends on an input, not a logo hold.** After the icon returns on off-white (16.47 s), a pointer enters from the lower right, reaches the icon in about 8 frames and presses it; the icon shrinks slightly (press feedback) on the last frames.
+
+**Eye at the cuts.** Dock → dock: 0–3%, by design. Icon → 'Any tool.' (12.67 s): from the centre to the line's start at about 45%, 5%. Card → icon (16.47 s): 0%. The whole film keeps the eye within 5% of the frame's centre across 20-odd cuts. All 7 hard cuts land on the measured frame.
 
 ## 2. Classify
 

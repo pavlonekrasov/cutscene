@@ -31,9 +31,9 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 ### Shot list
 
-| Time (s)   | Framing                        | What happens                                                                                                                               | Out |
-| ---------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | --- |
-| 0.00–11.60 | wide → ×1.99 → wide (one take) | push to the text panel (0.81), bullet colour picked from the style colours (4–8 s), pull-out ×0.50 (9.74) to the slide with orange bullets | —   |
+| Time (s)   | Length (s) | Framing                        | What happens                                                                                                                               | Out |
+| ---------- | ---------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | --- |
+| 0.00–11.60 | 11.60      | wide → ×1.99 → wide (one take) | push to the text panel (0.81), bullet colour picked from the style colours (4–8 s), pull-out ×0.50 (9.74) to the slide with orange bullets | —   |
 
 ### By eye
 
@@ -47,6 +47,16 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 ### Frame-level beats
 
 - The push starts 0.8 s in, after the wide has been seen; the hold lasts 8.2 s; the pull starts as the last colour is set.
+
+Read from 10-frame strips around 2 cuts, 1 dissolve and 2 moves; 1 f = 33 ms at 30 fps.
+
+- **The push lands in 3 columns and settles for 7.** In the 1.2 s push the window goes from about 80% of the frame to the working framing by column 3 (about 0.35 s), with the slide's image smeared at the left edge; columns 4–10 move by under 3%. The framing it stops on holds both things the task needs: the selected text box at the left and the text panel at the right.
+- **The pointer is already in the panel when the push starts**, at about 60% × 45%, and drifts down to the bullet controls (about 45% × 75%) as the frame settles: pointer and camera overlap for about 0.5 s.
+- **The colour row opens under the pointer** (6.47 s): six swatches in a row at the panel's lower half, the pointer on the fourth; nothing else in the frame changes for 10 frames.
+- **The result is a small change at the far side of the frame.** At 8.60 s the pointer is back over the slide's list, and the cut-like change is the panel swapping from Text to Slide options with the list's selection box gone: the bullets' new colour is about 1% of the frame at this size.
+- **The pull makes the result readable by context, not size.** In the 9.74 s pull the first column still shows the heading 'Capabilities' at about 30% of the frame wide; by column 5 the whole window is back with the violet backdrop, and the slide's bullets are about 3 px each. The pull is front-loaded like the push: columns 6–10 are a settle.
+
+**Eye at the cuts.** There are no edits. Panel → slide: the eye crosses about 35% of the frame from the swatches to the list, led by the pointer travelling back. Both measured cuts are panel changes.
 
 ## 2. Classify
 

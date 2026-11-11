@@ -37,13 +37,13 @@ Autofit left out 1 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing             | What happens                                                             | Out             |
-| ----------- | ------------------- | ------------------------------------------------------------------------ | --------------- |
-| 0.10–2.87   | detail ×4           | 'import { Agent } from "@cursor/sdk"' types                              | hard cut        |
-| 2.87–11.80  | detail → pull ×0.36 | Agent.create({...}) fills in; the camera pulls to the whole file         | hard cut        |
-| 11.80–19.27 | split               | the file left; 'bun run ./cursor-agent.ts' runs right; tool calls stream | dissolve 0.33 s |
-| 19.27–30.87 | detail, split       | the config switches to cloud; push ×1.5; the run repeats with a repo     | hard cuts       |
-| 30.87–35.03 | cards               | 'Cursor SDK'; logo                                                       | end             |
+| Time (s)    | Length (s) | Framing             | What happens                                                             | Out             |
+| ----------- | ---------- | ------------------- | ------------------------------------------------------------------------ | --------------- |
+| 0.10–2.87   | 2.77       | detail ×4           | 'import { Agent } from "@cursor/sdk"' types                              | hard cut        |
+| 2.87–11.80  | 8.93       | detail → pull ×0.36 | Agent.create({...}) fills in; the camera pulls to the whole file         | hard cut        |
+| 11.80–19.27 | 7.47       | split               | the file left; 'bun run ./cursor-agent.ts' runs right; tool calls stream | dissolve 0.33 s |
+| 19.27–30.87 | 11.60      | detail, split       | the config switches to cloud; push ×1.5; the run repeats with a repo     | hard cuts       |
+| 30.87–35.03 | 4.16       | cards               | 'Cursor SDK'; logo                                                       | end             |
 
 ### By eye
 
@@ -56,7 +56,17 @@ Autofit left out 1 moves with a cut too close.
 
 ### Frame-level beats
 
-- The pull starts after the import line is complete, so the line stays legible until it's part of the file.
+Read from 10-frame strips around 7 cuts, 1 dissolve and 3 moves; 1 f = 33 ms at 30 fps.
+
+- **The pull starts after the import line is complete**, so the line stays legible until it's part of the file.
+- **The frame follows the caret down the file.** The 'pan' at 3.62 s is the file scrolling up as code fills in below: the typed line stays in the middle third of the frame for 26 lines.
+- **The pull ends as the split.** The pull at 5.53 s (×0.36) shrinks the file toward the left while a dark terminal pane grows in from the right edge; by its last third the frame is the two-pane composition. One move changes both the scale and the layout, so no cut is needed to introduce the terminal.
+- **The second pull repeats the first exactly** (20.32 s): same start framing, same path, same end. The viewer has seen the move once, so the repeat reads as 'same again, now in the cloud'.
+- **An edit is shown as a highlight band.** The changed line ('local:' → 'cloud:') sits in a tinted row (19.27–19.90 s) and retypes at 1–2 characters a frame; the frame is locked while it does.
+- **The terminal streams while the frame holds.** 3 of the 7 measured cuts (11.80, 24.70, 27.10 s) are the terminal's output arriving, not edits.
+- **Split → card on frame 0** (30.87 s): 'Cursor' is centred and complete, then 'Cursor SDK', then the logo on black, each a hard cut.
+
+**Eye at the cuts.** Split → card (30.87 s): from the terminal's last line at about 60% to the centre, 10%. Card → logo: 0%. The film has 4 true cuts in 35 s; the rest of its changes are moves or in-UI.
 
 ## 2. Classify
 

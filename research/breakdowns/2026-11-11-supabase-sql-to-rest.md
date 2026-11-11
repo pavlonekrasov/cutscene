@@ -43,9 +43,9 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 ### Shot list
 
-| Time (s)   | Framing  | What happens                                                                                                                                                                                                      | Out |
-| ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| 0.00–35.00 | one take | push ×2.70 into the SQL input (0.14), type, pan 46% to the output (4.01), pull ×0.55 (9.57), push ×2.38 (11.21), type 'where', pull ×0.46 (14.0), push ×2.14 (17.91), pans, pull ×0.30 to the full window (32.81) | —   |
+| Time (s)   | Length (s) | Framing  | What happens                                                                                                                                                                                                      | Out |
+| ---------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| 0.00–35.00 | 35.00      | one take | push ×2.70 into the SQL input (0.14), type, pan 46% to the output (4.01), pull ×0.55 (9.57), push ×2.38 (11.21), type 'where', pull ×0.46 (14.0), push ×2.14 (17.91), pans, pull ×0.30 to the full window (32.81) | —   |
 
 ### By eye
 
@@ -59,6 +59,18 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 ### Frame-level beats
 
 - Holds of 1.97 s and 2.13 s on the shortest push-pull pairs: just long enough to read one typed line.
+
+Read from 10-frame strips around 6 cuts, 1 dissolve and 2 moves; 1 f = 33 ms at 30 fps. Dark UI: code is readable only in the closest framings.
+
+- **The first frame is already pushed in.** At 0.50 s the frame is on the 'Enter SQL to translate' label with an enlarged I-beam at about 55% × 30%; the output column is cut off at the right edge and slides out of frame over 10 frames as the push finishes.
+- **The pan carries the pointer from input to output.** In the 4.01 s pan (2.2 s) the frame travels right by 46%: the pointer starts at 85% of the frame, is passed by the frame, and ends on the language tabs at about 15% × 30%. Columns 1–6 move; 7–10 hold. The typed SQL leaves at the left as the generated request arrives.
+- **Tab presses change the output in place.** At 6.33 and 8.17 s the hand is on the tab row (cURL, HTTP, JavaScript) and the code block below it re-renders between two frames: one line, then two, then a five-line snippet. The block's top-left corner doesn't move, so the before and after are compared in one position.
+- **The pull crosses the page as it shrinks.** In the 9.57 s pull (1.46 s) columns 2–4 are smeared and nearly black; the two-column layout is back by column 5 with the I-beam in the input at about 60% × 45%. Most of the scale change happens in under 0.3 s.
+- **A dissolve is used once, to skip typing** (21.93 s): the close shot of the JavaScript output dims to about 30% over 5 frames before the next state.
+- **Autocomplete is the brightest row.** At 24.23 s a blue suggestion bar spans the input's lower edge and the output column is dimmed behind it; at 25.93 s it is gone after one press and the output fills in.
+- **The final state holds 10 frames with nothing moving** (28.87 s) before the last pull.
+
+**Eye at the cuts.** There are no edits apart from the dissolve (0–5%, same block). Input → output: 46% across, carried by the pan with the pointer as the fixed reference. 5 of 6 measured cuts are the output re-rendering or the suggestion bar.
 
 ## 2. Classify
 

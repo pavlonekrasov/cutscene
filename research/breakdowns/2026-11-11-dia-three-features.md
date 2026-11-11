@@ -17,14 +17,14 @@
 
 ### Shot list
 
-| Time (s)    | Framing            | What happens                                                                             | Out                        |
-| ----------- | ------------------ | ---------------------------------------------------------------------------------------- | -------------------------- |
-| 0.00–7.96   | command bar ×2     | '3 small things' types with live suggestions; '…to help solve your tab problems'         | hard cuts                  |
-| 7.96–9.63   | Dock               | Dia's icon in the Dock                                                                   | hard cut                   |
-| 9.63–17.25  | chapter 1          | card; a screenplay in Focus mode, ⌘ S key caps; a football stream                        | dissolves                  |
-| 17.25–26.42 | chapter 2          | card; a Meet call floats as picture-in-picture over a doc                                | hard cuts                  |
-| 26.42–45.46 | chapter 3          | card; Settings → Shortcuts; ⌘⇧A and ^C pressed, each shown as key caps while tabs switch | hard cuts, short dissolves |
-| 45.46–48.42 | closing card, logo | 'make a big difference.'; Dia                                                            | end                        |
+| Time (s)    | Length (s) | Framing            | What happens                                                                             | Out                        |
+| ----------- | ---------- | ------------------ | ---------------------------------------------------------------------------------------- | -------------------------- |
+| 0.00–7.96   | 7.96       | command bar ×2     | '3 small things' types with live suggestions; '…to help solve your tab problems'         | hard cuts                  |
+| 7.96–9.63   | 1.67       | Dock               | Dia's icon in the Dock                                                                   | hard cut                   |
+| 9.63–17.25  | 7.62       | chapter 1          | card; a screenplay in Focus mode, ⌘ S key caps; a football stream                        | dissolves                  |
+| 17.25–26.42 | 9.17       | chapter 2          | card; a Meet call floats as picture-in-picture over a doc                                | hard cuts                  |
+| 26.42–45.46 | 19.04      | chapter 3          | card; Settings → Shortcuts; ⌘⇧A and ^C pressed, each shown as key caps while tabs switch | hard cuts, short dissolves |
+| 45.46–48.42 | 2.96       | closing card, logo | 'make a big difference.'; Dia                                                            | end                        |
 
 ### By eye
 
@@ -37,7 +37,16 @@
 
 ### Frame-level beats
 
-- Key caps appear on the frame the shortcut fires and stay until its effect has landed (about 0.6–1 s).
+Read from 10-frame strips around 7 cuts and 1 dissolve; 1 f = 41.7 ms at 24 fps.
+
+- **Key caps appear on the frame the shortcut fires** and stay until its effect has landed (about 0.6–1 s).
+- **Chapter cards are one mono line, complete on frame 0.** '1. Focus in with ⌘S', '2. Keep meetings in view with GMeet PiP', '3. Go fast with custom shortcuts': white on black, centred, about 1.7 s each (9.63, 17.25, 24.63 s). No build, no fade.
+- **Card → screen on a hard cut, wide first.** After each card the whole screen appears at ×1 on frame 0 (9.63 → 11.3 s), then the next cut goes in; the order is always card, wide, detail.
+- **A cut-in of about ×2 on the same page.** At 13.08 s (read as a dissolve) the screenplay page at ×1 becomes the same page at ×2 on one frame, with the text's left edge kept at the same place in the frame: a jump in scale on a held anchor.
+- **The settings row highlights on the frame after the press.** At 29.63 s the pointer is on 'Search Tabs…' for 4 frames; the row turns blue on frame 0 and the recorder field opens beside it on the same frame. The UI's own state change is the cut point.
+- **The closing card finishes the opening sentence.** 'make a big difference.' holds 5 frames to the cut, then the logo on frame 0 (45.46 s).
+
+**Eye at the cuts.** Card → wide screen: centre to centre, 0–5%. Wide → cut-in (13.08 s): under 10% (anchored on the text's left edge). Card → logo: 0%. The fixed order of card, wide, detail keeps every cut in the film inside 10%. All 6 hard cuts land on the measured frame.
 
 ## 2. Classify
 

@@ -34,9 +34,9 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 ### Shot list
 
-| Time (s)   | Framing                        | What happens                                                                                                                                             | Out |
-| ---------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| 0.00–17.29 | wide → ×1.40 → wide (one take) | push (0.35), drag out a slot, the availability panel, recurrence menu (12 s), follow-pans (9.15 down 17%, 14.28 up 17%), pull ×0.72 (16.24) to the toast | —   |
+| Time (s)   | Length (s) | Framing                        | What happens                                                                                                                                             | Out |
+| ---------- | ---------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| 0.00–17.29 | 17.29      | wide → ×1.40 → wide (one take) | push (0.35), drag out a slot, the availability panel, recurrence menu (12 s), follow-pans (9.15 down 17%, 14.28 up 17%), pull ×0.72 (16.24) to the toast | —   |
 
 ### By eye
 
@@ -50,6 +50,18 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 ### Frame-level beats
 
 - The establishing wide is only 0.35 s: the window is already familiar from the first frame.
+
+Read from 10-frame strips around 5 cuts, 1 dissolve and 2 moves; 1 f = 41.7 ms at 24 fps.
+
+- **The push ends by column 3.** The window on its grey backdrop (2 columns) fills the frame by about 0.45 s; the pointer stays at about 50% × 70% of the frame through the move, so the push reads as the window coming to the pointer.
+- **A dragged slot is the one saturated block.** The new availability slot is drawn in orange-red at about 35% × 80% (4.44 s), against pale peach events; it is about 5% of the frame wide.
+- **The pan follows the pointer across the frame.** In the 4.44 s pan (1.1 s) the pointer travels from the slot (40% × 85%) up to the side panel (90% × 25%), and the frame shifts about 17% with it; a dark menu opens under the pointer in column 8, after the frame has stopped. The pointer is motion-blurred in columns 3–5.
+- **Dark menus on a white app.** Both menus (6.67 and 10.50 s) are near-black panels about 12% of the frame wide: the highest-contrast element when open. Each opens between two frames and closes between two frames (7.21, 12.92 s); the measured cuts are these.
+- **The pointer's travel inside a menu is under 5% of the frame**, at about 1 row every 3 frames.
+- **The panel's content changes after each menu closes**: a paragraph and a blue button appear at the top right (6.67 s), a field row at the bottom (12.92 s). The change is next to the menu that caused it, within 10%.
+- **The last press is at the top right corner** (15.71 s): the pointer rests on the blue button at about 95% × 12% for 10 frames; the pull starts 0.5 s later.
+
+**Eye at the cuts.** There are no edits. Slot → panel: 50% across and 60% up, led by the pointer over 1.1 s. Menu → result: within 10%. All 5 measured cuts are menus opening or closing.
 
 ## 2. Classify
 

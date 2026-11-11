@@ -38,15 +38,15 @@ Autofit left out 2 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing        | What happens                                                                                                                           | Out                  |
-| ----------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| 0.00–10.43  | prompt         | satin; a new window, 'What would you like to build?'; 'Wha…' typed at ×3; 'Okay, let's start building your app.'; 'Preparing project…' | hard cuts, dissolve  |
-| 10.43–17.77 | library        | 'My Library'; the Dock, a new red icon lands in it; a media library app                                                                | dissolves            |
-| 17.77–28.63 | apps           | a synthesiser; a timer controller; a launch dashboard                                                                                  | hard cuts, dissolves |
-| 28.63–37.90 | webcam         | a publish dialog; a webcam app, a man waves; he becomes a 3D avatar, then a chef                                                       | hard cuts            |
-| 37.90–46.37 | publish, store | 'Publish Pixel? Team Store / Public Store' → Publishing; a store of apps; the Dock fills; a pull from the Dock to the desktop          | dissolves            |
-| 46.37–51.77 | gathering      | every app made so far tiled on one desktop                                                                                             | cuts                 |
-| 51.77–56.43 | cards          | 'Desktop apps, reimagined by you.'; the Glaze logo                                                                                     | end                  |
+| Time (s)    | Length (s) | Framing        | What happens                                                                                                                           | Out                  |
+| ----------- | ---------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| 0.00–10.43  | 10.43      | prompt         | satin; a new window, 'What would you like to build?'; 'Wha…' typed at ×3; 'Okay, let's start building your app.'; 'Preparing project…' | hard cuts, dissolve  |
+| 10.43–17.77 | 7.34       | library        | 'My Library'; the Dock, a new red icon lands in it; a media library app                                                                | dissolves            |
+| 17.77–28.63 | 10.86      | apps           | a synthesiser; a timer controller; a launch dashboard                                                                                  | hard cuts, dissolves |
+| 28.63–37.90 | 9.27       | webcam         | a publish dialog; a webcam app, a man waves; he becomes a 3D avatar, then a chef                                                       | hard cuts            |
+| 37.90–46.37 | 8.47       | publish, store | 'Publish Pixel? Team Store / Public Store' → Publishing; a store of apps; the Dock fills; a pull from the Dock to the desktop          | dissolves            |
+| 46.37–51.77 | 5.40       | gathering      | every app made so far tiled on one desktop                                                                                             | cuts                 |
+| 51.77–56.43 | 4.66       | cards          | 'Desktop apps, reimagined by you.'; the Glaze logo                                                                                     | end                  |
 
 ### By eye
 
@@ -56,6 +56,19 @@ Autofit left out 2 moves with a cut too close and 1 whose best fit was above 3% 
 - **Frame:** black satin; windows float with soft shadows
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 1 move; 1 f = 33 ms at 30 fps.
+
+- **Window → its input at about ×4, on frame 0.** At 1.77 s the small 'What would you like to build?' window on satin cuts to the input field filling the width ('Describe your application…'), caret at the left. The caret is at about 45% of the width before the cut and 45% after: a cut-in anchored on the place typing will start.
+- **Every app is the same size in the same place.** The synthesiser, the timer controller and the next app each sit centred on the satin at about 25–55% of the frame width and cut on frame 0 (17.77, 19.93 s). The backdrop and position are constant, so each cut reads as 'another one'.
+- **An app flies in as oversized text.** At 22.73 s a dark window slides in from the left with its labels at about ×4 and motion blur, then settles to reading size over about 8 frames: scale-down as an entrance.
+- **The webcam transform is three cuts on one frame.** A pixelated tile (30.73 s), the avatar (32.90 s), the avatar with a blue cap, the chef's hat (34.90 s): the window never moves and each state replaces the last on frame 0.
+- **Store → dialog by a cut on the same centre** (36.07 s): the store window is replaced by the 'Publish Pixel?' sheet, centred, with its blue primary button at the lower right.
+- **The gathering pull.** From 45.28 s the frame pulls from the Dock's new icons at about ×5 back to the whole desktop over 1.6 s; app windows enter from the top and sides as the scale drops, and by the last 3 columns every app made in the film is on screen at once. Fast at first, then easing out.
+
+**Eye at the cuts.** Window → input (1.77 s): 0–5%. App → app: 0–5% (all centred). Store → dialog: under 5%. The pull does the only large reframe. The film's 30-odd cuts all keep the subject within 5% of centre. All 7 hard cuts land on the measured frame.
 
 ## 2. Classify
 

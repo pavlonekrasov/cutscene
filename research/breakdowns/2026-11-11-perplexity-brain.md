@@ -52,14 +52,14 @@ Autofit left out 5 moves with a cut too close and 4 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing     | What happens                                                                                                                                                 | Out             |
-| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
-| 0.00–5.47   | title       | bokeh particles; 'Introducing Brain for Perplexity Computer'; a 2.8 s pull                                                                                   | dissolve 4.2 s  |
-| 5.47–15.73  | graph       | a node graph ('Product Marketing' …) pulls back; dots scatter; 'Brain builds a context graph from your sessions, sources, and connections.'                  | hard cuts       |
-| 15.73–24.57 | memory      | a dot cloud with a pointer; a 'Messaging' doc; 'New tasks start with full context from Brain.'                                                               | short dissolves |
-| 24.57–42.80 | task        | 'Pick up the launch plan and get it ready for…' typed; 'Drafting launch plan PDF'; 'Launch plan is done and ready for review'; the plan's text scrolls       | short dissolves |
-| 42.80–58.97 | traceable   | 'Every entry is readable, searchable, and traceable.'; 'Workstreams / Entities: Acme Corp' with a 4 s push; a graph with 'Repeated tasks are more efficient' | short dissolves |
-| 58.97–66.43 | cards, logo | 'Available in Research Preview'; the logo                                                                                                                    | end             |
+| Time (s)    | Length (s) | Framing     | What happens                                                                                                                                                 | Out             |
+| ----------- | ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
+| 0.00–5.47   | 5.47       | title       | bokeh particles; 'Introducing Brain for Perplexity Computer'; a 2.8 s pull                                                                                   | dissolve 4.2 s  |
+| 5.47–15.73  | 10.26      | graph       | a node graph ('Product Marketing' …) pulls back; dots scatter; 'Brain builds a context graph from your sessions, sources, and connections.'                  | hard cuts       |
+| 15.73–24.57 | 8.84       | memory      | a dot cloud with a pointer; a 'Messaging' doc; 'New tasks start with full context from Brain.'                                                               | short dissolves |
+| 24.57–42.80 | 18.23      | task        | 'Pick up the launch plan and get it ready for…' typed; 'Drafting launch plan PDF'; 'Launch plan is done and ready for review'; the plan's text scrolls       | short dissolves |
+| 42.80–58.97 | 16.17      | traceable   | 'Every entry is readable, searchable, and traceable.'; 'Workstreams / Entities: Acme Corp' with a 4 s push; a graph with 'Repeated tasks are more efficient' | short dissolves |
+| 58.97–66.43 | 7.46       | cards, logo | 'Available in Research Preview'; the logo                                                                                                                    | end             |
 
 ### By eye
 
@@ -69,6 +69,19 @@ Autofit left out 5 moves with a cut too close and 4 whose best fit was above 3% 
 - **Frame:** cream; dark only for the opening particles
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 5 cuts, 1 dissolve and 3 moves; 1 f = 33 ms at 30 fps.
+
+- **A node is born, then the camera makes room.** At 5.47 s a second node fades and scales in beside 'Product Marketing' over about 6 frames with the frame locked; the pull that follows (5.53 s) widens only as far as each new node needs, and each edge is drawn as its node arrives. The pull is paced by the graph's growth, not by a fixed duration.
+- **Graph → dot field by pulling past legibility.** The second pull (9.41 s) continues until the labelled nodes shrink to dots and their edges fade; within 10 frames the frame holds about 30 unlabelled dots. The scale change is the message: a few sessions become a field.
+- **The field drifts under the caption.** At 11.30 s the dots move about 0.3% of the frame per frame; the caption ('Brain builds a context graph…') sits centred on top and fades out over about 8 frames while the dots gather into a dense cloud behind it (15.73 s).
+- **Serif captions queue in grey.** 'New tasks start with full context from Brain.' builds a word every 2–3 frames, each new word arriving grey and darkening (23.13 s), on a locked frame.
+- **The answer streams line by line while the frame scrolls.** From 34.60 s the reply's lines fade in one at a time, top to bottom, about 3 frames apart; the pan at 36.46 s moves the text block up as it grows so the newest line stays in the lower third.
+- **The card dissolves into the logo, in place.** 'Available in Research Preview' fades over about 5 frames while the mark fades up at the same centre (61.30 s); they overlap for 3 frames.
+
+**Eye at the cuts.** Every shot is centred on an off-white field with no window, so each cut and dissolve moves the eye under 10%. The exception is the streamed answer, which starts at the left margin (about 10% across): a 40% jump from the centred caption before it, softened by a short dissolve. 3 of 5 measured cuts are in-shot changes.
 
 ## 2. Classify
 

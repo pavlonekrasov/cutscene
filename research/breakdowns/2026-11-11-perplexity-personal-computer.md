@@ -35,15 +35,15 @@ Autofit left out 7 moves with a cut too close and 4 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing     | What happens                                                                                                                      | Out       |
-| ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| 0.00–4.83   | cards       | 'Personal Computer [icon] is now available'; 'to all Pro and Max subscribers on [Mac] Mac' builds                                 | hard cuts |
-| 4.83–7.95   | desktop     | 'Do anything…' on the wallpaper expands to 'secure access to local files, native Mac apps' with app tiles                         | dissolve  |
-| 7.95–15.80  | phone       | 'Remotely operate from your iPhone' over a blurred desk; a phone rises over the card; 'Take care of my to-do list in Notes' typed | dissolves |
-| 15.80–23.30 | hardware    | a Mac mini on a desk; a display with the app; a push in                                                                           | dissolves |
-| 23.30–28.68 | work        | 'Taking care of To-do list'; tasks stream: 'Fetching Shopify product inventory', 'Calling product update tool'                    | hard cuts |
-| 28.68–32.53 | payoff      | a lock screen at 7:00: 'Your to-do list is complete'                                                                              | hard cut  |
-| 32.53–42.32 | cards, logo | 'Download the new Perplexity Mac app …'; the logo                                                                                 | end       |
+| Time (s)    | Length (s) | Framing     | What happens                                                                                                                      | Out       |
+| ----------- | ---------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| 0.00–4.83   | 4.83       | cards       | 'Personal Computer [icon] is now available'; 'to all Pro and Max subscribers on [Mac] Mac' builds                                 | hard cuts |
+| 4.83–7.95   | 3.12       | desktop     | 'Do anything…' on the wallpaper expands to 'secure access to local files, native Mac apps' with app tiles                         | dissolve  |
+| 7.95–15.80  | 7.85       | phone       | 'Remotely operate from your iPhone' over a blurred desk; a phone rises over the card; 'Take care of my to-do list in Notes' typed | dissolves |
+| 15.80–23.30 | 7.50       | hardware    | a Mac mini on a desk; a display with the app; a push in                                                                           | dissolves |
+| 23.30–28.68 | 5.38       | work        | 'Taking care of To-do list'; tasks stream: 'Fetching Shopify product inventory', 'Calling product update tool'                    | hard cuts |
+| 28.68–32.53 | 3.85       | payoff      | a lock screen at 7:00: 'Your to-do list is complete'                                                                              | hard cut  |
+| 32.53–42.32 | 9.79       | cards, logo | 'Download the new Perplexity Mac app …'; the logo                                                                                 | end       |
 
 ### By eye
 
@@ -53,6 +53,18 @@ Autofit left out 7 moves with a cut too close and 4 whose best fit was above 3% 
 - **Frame:** cream for cards; a green-dune wallpaper; a rendered desk
 - **Aspect:** 16:9, 1280×720, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps.
+
+- **A blank field between two lines of one sentence.** 'Personal Computer [icon] is now available' cuts to an empty field at 2.02 s; 3 frames later 'to' fades in at the left, and the line builds from there ('to all Pro and Max subscribers on', 2.65 s). The pause is where a speaker would breathe.
+- **The search bar types its own claim.** On the wallpaper, 'Do anything…' is the placeholder; over 1.3 s it is replaced a word per strip column by '24/7 secure access to local files, native Mac apps' (5.89 s), and the bar widens to the right as the text grows. The 'pan' the instrument reads is the bar growing.
+- **The pull turns the screen into an object.** From 7.39 s the frame pulls back until the wallpaper is a display with a bezel and then a blurred screen on a desk; file tiles under the bar stay sharp until the last 3 columns. One move goes from UI to hardware, with blur added as the scale drops.
+- **The phone covers the card's middle.** 'Remotely … [y]our iPhone' sits behind a phone that fills the centre third (11.43 s); the phone types 'Take care of my to-do list in Notes' across three measured 'cuts' while the card text fades to grey behind it (12.08 s) and is gone by 12.88 s. The headline is allowed to be half-hidden because it has been read.
+- **The task label types itself, centred, as the sidebar leaves.** At 23.30 s the app's sidebar slides off to the left over 10 frames while 'Taking care of To-do list' types in the middle of an otherwise empty field; a first task line fades in beneath it 5 frames after it completes (24.33 s).
+
+**Eye at the cuts.** Card → blank → card (2.02 s): the next line starts at about 5% across, a 45% jump from the centred first line, bridged by the blank frames. Wallpaper → phone: centred, under 5%. The film keeps one centred element per shot apart from that left-anchored line. 5 of 7 measured cuts are typing.
 
 ## 2. Classify
 

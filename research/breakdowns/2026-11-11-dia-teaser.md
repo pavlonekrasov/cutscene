@@ -22,14 +22,14 @@ Moves:
 
 ### Shot list
 
-| Time (s)    | Framing                           | What happens                                                                                | Out                   |
-| ----------- | --------------------------------- | ------------------------------------------------------------------------------------------- | --------------------- |
-| 0.00–2.25   | macro, slow push ×1.13 over 2.0 s | the Dock on a laptop, Dia's icon in focus                                                   | hard cut              |
-| 2.25–3.25   | card                              | 'Tomorrow', white on black                                                                  | dissolve 0.42 s       |
-| 3.25–8.25   | macro inserts, ~0.9 s each        | the command bar's @-menu, a 'Write' chip, the composer, a button, each in a sliver of focus | hard cuts             |
-| 8.25–13.33  | card over picture                 | 'A new browser from The Browser Company' holds while three shots change under it            | dissolves 0.79, 0.5 s |
-| 13.33–17.63 | live action                       | a café interior; 'Available first to all Arc members' → 'June 11th'                         | hard cut              |
-| 17.63–18.00 | logo                              | Dia mark and wordmark                                                                       | end                   |
+| Time (s)    | Length (s) | Framing                           | What happens                                                                                | Out                   |
+| ----------- | ---------- | --------------------------------- | ------------------------------------------------------------------------------------------- | --------------------- |
+| 0.00–2.25   | 2.25       | macro, slow push ×1.13 over 2.0 s | the Dock on a laptop, Dia's icon in focus                                                   | hard cut              |
+| 2.25–3.25   | 1.00       | card                              | 'Tomorrow', white on black                                                                  | dissolve 0.42 s       |
+| 3.25–8.25   | 5.00       | macro inserts, ~0.9 s each        | the command bar's @-menu, a 'Write' chip, the composer, a button, each in a sliver of focus | hard cuts             |
+| 8.25–13.33  | 5.08       | card over picture                 | 'A new browser from The Browser Company' holds while three shots change under it            | dissolves 0.79, 0.5 s |
+| 13.33–17.63 | 4.30       | live action                       | a café interior; 'Available first to all Arc members' → 'June 11th'                         | hard cut              |
+| 17.63–18.00 | 0.37       | logo                              | Dia mark and wordmark                                                                       | end                   |
 
 ### By eye
 
@@ -42,7 +42,17 @@ Moves:
 
 ### Frame-level beats
 
-- The claim card holds across three picture cuts (8.25–13.33 s), so the text reads for 5 s while the picture keeps its 0.9 s rhythm.
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 41.7 ms at 24 fps.
+
+- **The claim card holds across three picture cuts** (8.25–13.33 s), so the text reads for 5 s while the picture keeps its 0.9 s rhythm.
+- **The opening push is barely a move.** ×1.13 over 2.0 s on the Dock: under 1% of scale per frame, linear to the eye. It ends on a hard cut to 'Tomorrow', not on a settle; the cut stops the move.
+- **Every card is complete on frame 0.** 'Tomorrow' (2.25 s) and 'A new browser from The Browser Company' (8.25 s) cut in whole, white on black, centred; no word-by-word build, unlike Dia's later films.
+- **The text stays; the ground changes.** At 8.83 s the black behind the claim is replaced by picture on one frame (read as a dissolve), and at 10.33 s the picture under the text cuts again. The text never moves or fades, so it is the fixed point across three cuts.
+- **Macro inserts cut on frame 0** (3.96, 4.83, 5.96 s), each a different control in a sliver of focus, each with a slow drift of under 1% per frame continuing through the shot.
+- **The logo assembles a letter at a time**: the orb, then 'D', 'i', 'a', about 2 frames (83 ms) a letter, in the last 0.4 s.
+
+**Eye at the cuts.** Macro → macro: the in-focus control sits at about 30%, 45% and 35% of the width in consecutive shots, so each cut moves the eye 10–15%. Card ↔ picture: 0% (the centred text persists). All 6 hard cuts land on the frame the instrument gives.
+
 - Shot length falls toward the date (trend −0.86): 2.25 s at the start, 0.4–0.9 s before 'June 11th'.
 
 ## 2. Classify

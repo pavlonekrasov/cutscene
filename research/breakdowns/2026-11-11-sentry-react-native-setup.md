@@ -48,9 +48,9 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 ### Shot list
 
-| Time (s)    | Framing       | What happens                                                                                                                 | Out |
-| ----------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- | --- |
-| 0.00–176.15 | one long take | IDE and iOS simulator; pushes onto the simulator at 23.0, 35.6, 70.9, 117.9, 128.2, 155.0, each pulled back 2.3–23.7 s later | —   |
+| Time (s)    | Length (s) | Framing       | What happens                                                                                                                 | Out |
+| ----------- | ---------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- | --- |
+| 0.00–176.15 | 176.15     | one long take | IDE and iOS simulator; pushes onto the simulator at 23.0, 35.6, 70.9, 117.9, 128.2, 155.0, each pulled back 2.3–23.7 s later | —   |
 
 ### By eye
 
@@ -64,6 +64,19 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 ### Frame-level beats
 
 - Six push-pull pairs, holds 2.3, 2.6, 5.9, 6.7, 8.6 and 23.7 s.
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps. A 3-minute tutorial with a presenter tile at the bottom left.
+
+- **The push goes to the simulator at the frame's right edge.** In the 1.29 s push (23.00 s) the IDE's file tree and code slide off to the left and the phone, purple, grows from about 5% to 9% of the frame wide; it is done by column 4 (about 0.5 s). The phone ends at about 85% across: the push keeps it off-centre, with dark editor filling the other 75%.
+- **The app is the only saturated object.** A purple phone screen on a near-black editor: the eye has one target in the frame whatever the framing.
+- **The tap's result is a screen change inside the phone** (24.40 s): purple hero to a white list between two frames, the pointer on the phone. The measured cut is this.
+- **The pull returns to the same wide** (30.94 s, 1.34 s): done by column 3, then a settle. The pointer stays over the phone.
+- **Editor events are the other cuts.** A dark panel with a blue and yellow header opens over the code (35.58 s) and closes (40.85 s); a selection highlights three lines in blue (90.02 s). Each changes under 30% of the frame, with the frame still.
+- **The app switch is a hard cut from dark to white** (97.90 s): the editor is replaced by Sentry's dashboard, white, between two frames. The presenter tile and the macOS dock stay in the same places: they are the continuity.
+- **Loading is left in** (105.88 s): the issue list is replaced by an empty grey page with a spinner for at least 6 frames.
+- **The replay is shown inside the dashboard** (126.12 s): the app's purple screen appears as a tile at about 25% of the frame wide, left of centre, and its content changes as the replay plays; at 165.13 s a grey timeline bar with a purple marker spans the top of the page.
+
+**Eye at the cuts.** There are no camera edits in the product section; the app switch at 97.90 s is the one true cut. Editor → dashboard: from the code column (about 35%) to the dashboard's table (about 50%): 15%, with a full flip of background brightness. Phone → replay tile: the same purple screen moves from 85% across (the simulator) to 40% (the replay): the product's own image is the link between the two apps. 1 of 7 measured cuts is a true edit.
 
 ## 2. Classify
 

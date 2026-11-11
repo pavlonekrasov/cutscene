@@ -52,15 +52,15 @@ Autofit left out 3 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing  | What happens                                                                                                                                                      | Out       |
-| ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| 0.00–2.85   | card     | 'Introducing HTML block'                                                                                                                                          | dissolve  |
-| 2.85–10.45  | examples | an onboarding page with an HTML block; a globe widget                                                                                                             | dissolves |
-| 10.45–21.52 | build    | 'History of Notion'; the slash menu, HTML; an HTML file uploaded; 'Generate an interactive timeline …' typed                                                      | dissolves |
-| 21.52–36.98 | timeline | the interactive timeline in the page, explored with pushes                                                                                                        | hard cuts |
-| 36.98–42.82 | comment  | ×3: two avatars; Sarah: 'This is great… but it's missing what happened in Kyoto!'; James: 'Oops! Let's fix that.'                                                 | hard cuts |
-| 42.82–61.82 | fix      | ×3 on the AI prompt: 'Can you update the timeline so that includes what happened in Kyoto…'; the updated timeline, 'Notion rebuilds from scratch in Kyoto, Japan' | dissolves |
-| 61.82–67.57 | close    | the globe; the Notion logo                                                                                                                                        | end       |
+| Time (s)    | Length (s) | Framing  | What happens                                                                                                                                                      | Out       |
+| ----------- | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| 0.00–2.85   | 2.85       | card     | 'Introducing HTML block'                                                                                                                                          | dissolve  |
+| 2.85–10.45  | 7.60       | examples | an onboarding page with an HTML block; a globe widget                                                                                                             | dissolves |
+| 10.45–21.52 | 11.07      | build    | 'History of Notion'; the slash menu, HTML; an HTML file uploaded; 'Generate an interactive timeline …' typed                                                      | dissolves |
+| 21.52–36.98 | 15.46      | timeline | the interactive timeline in the page, explored with pushes                                                                                                        | hard cuts |
+| 36.98–42.82 | 5.84       | comment  | ×3: two avatars; Sarah: 'This is great… but it's missing what happened in Kyoto!'; James: 'Oops! Let's fix that.'                                                 | hard cuts |
+| 42.82–61.82 | 19.00      | fix      | ×3 on the AI prompt: 'Can you update the timeline so that includes what happened in Kyoto…'; the updated timeline, 'Notion rebuilds from scratch in Kyoto, Japan' | dissolves |
+| 61.82–67.57 | 5.75       | close    | the globe; the Notion logo                                                                                                                                        | end       |
 
 ### By eye
 
@@ -70,6 +70,21 @@ Autofit left out 3 moves with a cut too close and 2 whose best fit was above 3% 
 - **Frame:** the window on light grey
 - **Aspect:** 16:9, 1280×720, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 3 moves; 1 f = 16.7 ms at 60 fps.
+
+- **Card → window on frame 0, at the card's own grey.** 'Introducing HTML block' sits on an off-white that matches the window's backdrop; at 1.52 s the window is simply there. Because the ground doesn't change, the cut reads as the page appearing on the card.
+- **The push starts as the pointer starts.** At 3.94 s the frame pushes about ×1.7 toward the globe widget over about 0.9 s while the pointer travels to a marker; a tooltip card opens under the pointer 2 strip columns after the push settles. Order: camera and pointer together, then the UI responds.
+- **The upload panel is open for 3 s in a locked frame** (15.37–18.12 s): the prompt types inside it and nothing else moves; when it is sent, the panel is gone on frame 0 and the page's text reflows up.
+- **An empty page for 5 frames, then the result.** At 21.52 s the page under its title is blank; the timeline ('The history of Notion', a row of year tabs, the first card) is all there on the next frame. The generation wait is cut down to 83 ms of white.
+- **Then a slow scroll to place it.** The pan at 21.55 s moves the new timeline up to the upper third over about 1 s, easing out.
+- **A press, then a pull that reveals the page.** At 28.22 s a year tab is pressed and its card changes on the same frame; at 28.82 s the frame pulls back until the browser chrome and the share button show, with the pointer left where it pressed.
+- **The fix prompt is filmed at ×3** (46.43 s): 'Can you update the timeline so that includes what happened in Kyoto' types at about 1 character per 2 frames with the pointer parked on the send button the whole time.
+- **Window → logo through a blank frame** (64.18 s): 2 frames of the backdrop alone, then the Notion mark, centred.
+
+**Eye at the cuts.** Card → window (1.52 s): from the centred title to the page's heading at about 45% × 25%; under 10% sideways. Window → logo (64.18 s): the pointer on the globe at about 50% to the centre, 0–5%. The pushes and pulls carry every large reframe, so no cut moves the eye more than 10%. 3 of 7 measured cuts are in-UI changes.
 
 ## 2. Classify
 

@@ -28,14 +28,14 @@ Autofit left out 2 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing       | What happens                                                               | Out             |
-| ----------- | ------------- | -------------------------------------------------------------------------- | --------------- |
-| 0.00–5.47   | code, removed | mono code on a tilted plane; red markers appear in the gutter beside lines | hard cuts       |
-| 5.47–8.68   | code, flagged | a wider plane; red rows across a function                                  | hard cuts       |
-| 8.68–12.75  | code, fixed   | green rows replace the red; a glowing 'Merge' button                       | short dissolves |
-| 12.75–16.92 | pun card      | 'Think diff' in a glowing serif, fading through blur                       | dissolves       |
-| 16.92–22.28 | title         | 'Code reviews' / 'Available soon in Linear'                                | dissolve        |
-| 22.28–25.42 | logo          | the Linear mark, then the wordmark                                         | end             |
+| Time (s)    | Length (s) | Framing       | What happens                                                               | Out             |
+| ----------- | ---------- | ------------- | -------------------------------------------------------------------------- | --------------- |
+| 0.00–5.47   | 5.47       | code, removed | mono code on a tilted plane; red markers appear in the gutter beside lines | hard cuts       |
+| 5.47–8.68   | 3.21       | code, flagged | a wider plane; red rows across a function                                  | hard cuts       |
+| 8.68–12.75  | 4.07       | code, fixed   | green rows replace the red; a glowing 'Merge' button                       | short dissolves |
+| 12.75–16.92 | 4.17       | pun card      | 'Think diff' in a glowing serif, fading through blur                       | dissolves       |
+| 16.92–22.28 | 5.36       | title         | 'Code reviews' / 'Available soon in Linear'                                | dissolve        |
+| 22.28–25.42 | 3.14       | logo          | the Linear mark, then the wordmark                                         | end             |
 
 ### By eye
 
@@ -45,6 +45,19 @@ Autofit left out 2 moves with a cut too close.
 - **Frame:** black void; code glows with bloom
 - **Aspect:** 4:3, 960×720, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps. The film is 4:3.
+
+- **One line, then the file.** The film opens at macro scale on a single red-marked line ('declare func…', line 3) and pulls back over 1.8 s (1.01 s) until dozens of lines on a steeper plane fill the frame. The first 2.4 s teach what a red marker is on one line before showing many.
+- **Cut from flat to steep.** At 2.42 s the near-flat macro cuts, on frame 0, to a plane tilted about 30° with several red rows: the angle change and the scale change happen in the cut, not in a move.
+- **Red exits, green enters, in one pan.** The pan at 4.08 s travels down the plane for 1.8 s and its last column lands on the first green rows: the colour change is placed at the end of a move, so the move has an arrival.
+- **Green holds in a near-locked frame** (6.23–7.75 s): the same three green rows sit in place for about 1.5 s with a drift of under 1% per 10 frames, the longest rest in the code section.
+- **The 'Merge' button is revealed by a cut to a lower angle** (7.75 s): the plane tips further back and the glowing button sits at the bottom centre, the only saturated blue in the frame.
+- **The subtitle types under a fixed title.** 'Code reviews' holds while 'Available soon in Linear' types beneath it, about 1 character per 2 frames (16.92–18.02 s). Both measured 'cuts' in the card are that typing.
+
+**Eye at the cuts.** Macro → steep plane (2.42 s): the red marker moves from about 25% to about 30% of the width, inside 10%. Green rows → 'Merge' (7.75 s): from about 45% × 50% to 50% × 80%; sideways travel under 10%. The red and green rows act as the eye's anchor across every cut in the code section. 4 of 7 measured cuts are true edits.
 
 ## 2. Classify
 

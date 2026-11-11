@@ -27,14 +27,14 @@ Autofit left out 3 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing             | What happens                                                                | Out             |
-| ----------- | ------------------- | --------------------------------------------------------------------------- | --------------- |
-| 0.00–3.02   | card                | 'Introducing ⚡ Previews'                                                   | dissolve        |
-| 3.02–11.21  | phone + text        | a signing request sheet; the sentence builds beside it, one word per ~0.3 s | dissolves       |
-| 11.21–16.33 | phone turns edge-on | the phone rotates to its edge and back into dark mode                       | dissolve 1.45 s |
-| 16.33–21.82 | three phones        | three transaction kinds side by side, icons beneath                         | dissolves       |
-| 21.82–28.87 | phone + text        | 'Understand your actions.'; 'Experience Ethereum safely, with Family.'      | hard cuts       |
-| 28.87–30.72 | logo                | a lock icon                                                                 | end             |
+| Time (s)    | Length (s) | Framing             | What happens                                                                | Out             |
+| ----------- | ---------- | ------------------- | --------------------------------------------------------------------------- | --------------- |
+| 0.00–3.02   | 3.02       | card                | 'Introducing ⚡ Previews'                                                   | dissolve        |
+| 3.02–11.21  | 8.19       | phone + text        | a signing request sheet; the sentence builds beside it, one word per ~0.3 s | dissolves       |
+| 11.21–16.33 | 5.12       | phone turns edge-on | the phone rotates to its edge and back into dark mode                       | dissolve 1.45 s |
+| 16.33–21.82 | 5.49       | three phones        | three transaction kinds side by side, icons beneath                         | dissolves       |
+| 21.82–28.87 | 7.05       | phone + text        | 'Understand your actions.'; 'Experience Ethereum safely, with Family.'      | hard cuts       |
+| 28.87–30.72 | 1.85       | logo                | a lock icon                                                                 | end             |
 
 ### By eye
 
@@ -47,7 +47,17 @@ Autofit left out 3 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Frame-level beats
 
-- Each word lands on its own beat while the phone holds still, so the viewer reads the claim, then the screen.
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps.
+
+- **Each word lands on its own beat while the phone holds still**, so the viewer reads the claim, then the screen.
+- **The sheet changes before the camera does.** On the centred phone the signing sheet expands in place over about 0.6 s (3.28 s); only after it settles does the frame push ×1.6 and slide the phone to the right third (4.52 s, about 0.7 s). UI motion and camera motion never overlap.
+- **The push makes room for the sentence.** As the phone reaches the right third, 'Unprecedented' fades in on the left over 3 frames, at the same height as the sheet's first row. The move's end and the text's start are 2 frames apart.
+- **Words queue in grey.** 'level of' arrives dark and 'control' arrives grey, then darkens about 6 frames later (6.43 s): the next word is on screen at low contrast before it is 'said', which keeps the line from jumping.
+- **A second phone fades up edge-on.** At 13.82 s a ghost of a phone appears beside the dark one and rotates toward its edge over 10 frames: the turn is how the film changes scene without cutting.
+- **Three phones differ only in their sheet** (17.88 s): same angle, same size, same spacing, icons beneath; the third sheet scrolls while the other two hold.
+- **Closing lines build on white, then one hard cut to the lock** (28.87 s), centred, on frame 0.
+
+**Eye at the cuts.** Text → lock: 0% (centred). Inside the phone-and-text shots the eye moves between the left third (text) and the right third (phone), about 45% apart, but by reading order rather than by a cut. 3 of 7 measured cuts are words arriving.
 
 ## 2. Classify
 

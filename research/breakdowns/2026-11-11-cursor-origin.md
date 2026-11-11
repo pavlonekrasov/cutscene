@@ -34,15 +34,15 @@ Autofit left out 5 moves with a cut too close and 3 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing             | What happens                                                                              | Out             |
-| ----------- | ------------------- | ----------------------------------------------------------------------------------------- | --------------- |
-| 0.00–3.93   | detail, card        | the sidebar's 'Codebase' item; 'Introducing Code Hosting'                                 | dissolve 0.43 s |
-| 3.93–8.80   | type with inline UI | 'Create a repo and start a [+ New]'; the button is pressed                                | dissolve 0.67 s |
-| 8.80–13.57  | isolated controls   | a name field and 'Create Repo'; 'Or'; 'Sync from GitHub'                                  | hard cuts       |
-| 13.57–16.33 | window              | the repo list on violet; push ×1.24                                                       | hard cut        |
-| 16.33–23.80 | code, merge         | 'Review and Merge'; a diff with an 'Ask Cursor' menu; 'Ready to Merge' → 'Squash & Merge' | dissolves       |
-| 23.80–28.53 | black cards         | 'Run CI from Buildkite', 'Push to deploy with Vercel', 'Git hosting, at agent scale'      | hard cuts       |
-| 28.53–30.90 | logo                | ORIGIN on violet                                                                          | end             |
+| Time (s)    | Length (s) | Framing             | What happens                                                                              | Out             |
+| ----------- | ---------- | ------------------- | ----------------------------------------------------------------------------------------- | --------------- |
+| 0.00–3.93   | 3.93       | detail, card        | the sidebar's 'Codebase' item; 'Introducing Code Hosting'                                 | dissolve 0.43 s |
+| 3.93–8.80   | 4.87       | type with inline UI | 'Create a repo and start a [+ New]'; the button is pressed                                | dissolve 0.67 s |
+| 8.80–13.57  | 4.77       | isolated controls   | a name field and 'Create Repo'; 'Or'; 'Sync from GitHub'                                  | hard cuts       |
+| 13.57–16.33 | 2.76       | window              | the repo list on violet; push ×1.24                                                       | hard cut        |
+| 16.33–23.80 | 7.47       | code, merge         | 'Review and Merge'; a diff with an 'Ask Cursor' menu; 'Ready to Merge' → 'Squash & Merge' | dissolves       |
+| 23.80–28.53 | 4.73       | black cards         | 'Run CI from Buildkite', 'Push to deploy with Vercel', 'Git hosting, at agent scale'      | hard cuts       |
+| 28.53–30.90 | 2.37       | logo                | ORIGIN on violet                                                                          | end             |
 
 ### By eye
 
@@ -55,7 +55,17 @@ Autofit left out 5 moves with a cut too close and 3 whose best fit was above 3% 
 
 ### Frame-level beats
 
-- The '+ New' chip in the sentence becomes the pressable button in the next frames: the type hands off to the UI with no cut.
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 33 ms at 30 fps.
+
+- **The '+ New' chip in the sentence becomes the pressable button**: the type hands off to the UI with no cut.
+- **The sentence builds a word every 2–3 frames** ('Create' → 'a' → 'repo' → 'and', about 80 ms a word), left-anchored, so the line grows rightward toward where the chip will land.
+- **A scale cut onto the chip.** At 6.30 s (read as a dissolve) the sentence at reading size cuts, on one frame, to the same chip at about ×6 with the hand pointer already on it. The chip keeps its screen position (about 50% across), so the cut reads as a push with no frames spent on travel.
+- **One word as a cut.** 'Or' sits alone on the backdrop for about 1 s between 'Create Repo' and 'Sync from GitHub' (8.80–9.83 s); each control appears complete on frame 0 at the same centre.
+- **The press and the cut share a frame.** The hand is on 'Sync from GitHub' for the 5 frames before 11.43 s; the window on violet is complete on frame 0. The press is implied by the cut (a match on action).
+- **The only camera move starts on the first frame of its shot.** The push ×1.24 on the repo list begins at the cut and runs about 1 s; it never starts from a held frame.
+- **A blank white frame precedes 'Review'** (13.57 s), as in Cursor's other films; the black cards swap by sliding the old line up over 4 frames while the next fades in below (23.80 s).
+
+**Eye at the cuts.** Sentence → chip close-up: 0% (same position). Control → 'Or' → control: 0% (all centred). Button → window (11.43 s): from the centre to the window's content at about 45%, inside 10%. Detail → card (3.93 s): the sidebar item at about 15% to the card's first word at about 10%, inside 10%. The instrument places 6 of 7 hard cuts on the right frame.
 
 ## 2. Classify
 

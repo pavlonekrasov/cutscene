@@ -26,13 +26,13 @@ Autofit left out 1 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing          | What happens                                                                       | Out       |
-| ----------- | ---------------- | ---------------------------------------------------------------------------------- | --------- |
-| 0.00–4.42   | macro nav        | 'Billing', 'Logs', 'Configure' at huge scale; the 'Logs' underline slides in       | dissolve  |
-| 4.42–9.33   | tilted UI, drift | the Logs page with event filters, in perspective                                   | hard cut  |
-| 9.33–12.91  | tilted table     | rows scroll past; one row highlights                                               | hard cuts |
-| 12.91–20.64 | highlight, cards | 'payment_intent.succeeded' in lavender; 'Audit every action'; 'Now in Clerk: Logs' | hard cut  |
-| 20.64–24.76 | logo             | Clerk on dark                                                                      | end       |
+| Time (s)    | Length (s) | Framing          | What happens                                                                       | Out       |
+| ----------- | ---------- | ---------------- | ---------------------------------------------------------------------------------- | --------- |
+| 0.00–4.42   | 4.42       | macro nav        | 'Billing', 'Logs', 'Configure' at huge scale; the 'Logs' underline slides in       | dissolve  |
+| 4.42–9.33   | 4.91       | tilted UI, drift | the Logs page with event filters, in perspective                                   | hard cut  |
+| 9.33–12.91  | 3.58       | tilted table     | rows scroll past; one row highlights                                               | hard cuts |
+| 12.91–20.64 | 7.73       | highlight, cards | 'payment_intent.succeeded' in lavender; 'Audit every action'; 'Now in Clerk: Logs' | hard cut  |
+| 20.64–24.76 | 4.12       | logo             | Clerk on dark                                                                      | end       |
 
 ### By eye
 
@@ -45,7 +45,17 @@ Autofit left out 1 moves with a cut too close.
 
 ### Frame-level beats
 
-- The tab underline moves to 'Logs' in the first shot: the film starts on the navigation that leads to the feature.
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 59.94 fps.
+
+- **Label first, underline second.** In the macro nav, 'Logs' fades in between 'Billing' and 'Configure', and its underline grows under it over about 0.5 s after: the film starts on the navigation that leads to the feature.
+- **A 4.4 s drift with one event.** The pan at 5.25 s crosses the tilted table at a constant slow rate; the lavender highlight on one row appears about 3.5 s in, so the drift has a destination.
+- **A match on the highlight.** At 10.33 s the tilted table cuts, on frame −1, to a flatter close-up of the same highlighted row ('payment_intent.succeeded'), and the row stays at about the same height and centre (within 10%): the cut reads as a step closer, not a new place.
+- **Table → card on frame 0.** 'Audit every action' is complete on the first frame (12.91 s), left-aligned, with no build.
+- **3 of 7 measured cuts are drift**, not edits (4.42, 9.33, 11.70 s): a perspective camera reads as cuts to the instrument.
+
+**Eye at the cuts.** Table → close-up (10.33 s): under 10% (the highlight row holds its place). Row → left-aligned card (12.91 s) and card → centred logo (20.64 s): 25–30% each, carried by the change from UI to type.
+
+## 2. Classify
 
 ## 2. Classify
 

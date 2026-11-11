@@ -38,15 +38,15 @@ Autofit left out 3 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing        | What happens                                                                                                                                                                 | Out       |
-| ----------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| 0.00–7.50   | prompt         | a site on the Make canvas; a region selected; 'What do you want to make?'; the 'Store data and manage users' card, Create                                                    | dissolves |
-| 7.50–10.00  | card           | 'Build with real data and content' on black                                                                                                                                  | hard cut  |
-| 10.00–14.75 | navigation     | the site with chat; ×4 on the tabs, Content clicked; Collections; Posts; a post editor                                                                                       | cuts      |
-| 14.75–20.17 | split frame    | form right, card left: 'Turn pre-loved finds into sales' (Vintage, Decor), 'Deals on electron…' (Tech), 'The Y2K nostalgia edi…' (Trends), each typed while the card updates | cuts      |
-| 20.17–30.71 | generated form | the blog panel; 'Create a stylized, multi-step, sign-up form for buyers' typed; a skeleton; the form modal on the site                                                       | dissolves |
-| 30.71–35.00 | payoff         | the form filled; 'Create your account →' at ×4; 'Grace grace@pickup.com'; pull back to the Users table                                                                       | cuts      |
-| 35.00–39.71 | card, logo     | 'Your full-stack framework'; the Figma logo                                                                                                                                  | end       |
+| Time (s)    | Length (s) | Framing        | What happens                                                                                                                                                                 | Out       |
+| ----------- | ---------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| 0.00–7.50   | 7.50       | prompt         | a site on the Make canvas; a region selected; 'What do you want to make?'; the 'Store data and manage users' card, Create                                                    | dissolves |
+| 7.50–10.00  | 2.50       | card           | 'Build with real data and content' on black                                                                                                                                  | hard cut  |
+| 10.00–14.75 | 4.75       | navigation     | the site with chat; ×4 on the tabs, Content clicked; Collections; Posts; a post editor                                                                                       | cuts      |
+| 14.75–20.17 | 5.42       | split frame    | form right, card left: 'Turn pre-loved finds into sales' (Vintage, Decor), 'Deals on electron…' (Tech), 'The Y2K nostalgia edi…' (Trends), each typed while the card updates | cuts      |
+| 20.17–30.71 | 10.54      | generated form | the blog panel; 'Create a stylized, multi-step, sign-up form for buyers' typed; a skeleton; the form modal on the site                                                       | dissolves |
+| 30.71–35.00 | 4.29       | payoff         | the form filled; 'Create your account →' at ×4; 'Grace grace@pickup.com'; pull back to the Users table                                                                       | cuts      |
+| 35.00–39.71 | 4.71       | card, logo     | 'Your full-stack framework'; the Figma logo                                                                                                                                  | end       |
 
 ### By eye
 
@@ -56,6 +56,19 @@ Autofit left out 3 moves with a cut too close and 1 whose best fit was above 3% 
 - **Frame:** a pink-violet gradient behind the app
 - **Aspect:** 16:9, 1280×720, 24 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 6 cuts, 1 dissolve and 1 move; 1 f = 41.7 ms at 24 fps.
+
+- **Hover, press, cut.** The pointer reaches 'Posts' and the tile turns grey 3 frames later (12.88 s); 5 frames after the press the post editor is on screen, complete, on frame 0 (13.67 s). The navigation costs under 1 s and shows no loading state.
+- **The split frame updates on the same frame as the keystroke.** In 'form right, card left' (15.63 s) the Title field gains a character every 1–2 frames ('Turn' → 'Turn p' → 'Turn pre-loved f') and the card's title on the left shows the same string on the same frame. The image on the card pops in 3 frames after typing starts. Cause and effect are 0 frames apart.
+- **A tag is the second proof.** 'Vintage ×' appears in the Tags field and the card's tag chip follows (16.21 s) while the title keeps typing: two fields, each mirrored, in under 1 s.
+- **The prompt types alone on white** at ×4, 1–2 characters a frame, the line wrapping in place (22.75 s); no window, no backdrop.
+- **The payoff pull starts on the row.** At 32.92 s the frame opens on 'Grace grace@pickup.com' at about ×4, holds 4 frames, then pulls to the Users table and on to the whole window on its pink backdrop over about 2.2 s (×0.2 in all). The row stays visible for the entire move; the pull answers 'where did the entry go'.
+- **Card → logo on a hard cut** (36.75 s): 'Your full-stack framework' cuts to the mark's first shape, and coloured tiles add 2–3 frames apart.
+
+**Eye at the cuts.** Collections → editor (13.67 s): the pointer holds its place across the cut (about 45% × 60%), 0%. Editor → split frame (15.63 s): to the Title field at about 60%, 15%. Prompt → next shot and card → logo: centred, under 10%. The instrument places all 6 hard cuts on the right frame.
 
 ## 2. Classify
 

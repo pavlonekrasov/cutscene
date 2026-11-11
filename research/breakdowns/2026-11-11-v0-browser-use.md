@@ -62,13 +62,13 @@ Autofit left out 2 moves with a cut too close and 4 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing | What happens                                                                                                                                                 | Out                   |
-| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- |
-| 0.00–1.83   | title   | 'Introducing v0 Browser Use'                                                                                                                                 | hard cuts             |
-| 1.83–19.83  | task 1  | 'Build a SaaS ap…' typed; 'I'll build Glide…'; screenshots of sign-up, a sprint board, the mobile layout; 'Glide is functional'                              | dissolves             |
-| 19.83–34.50 | task 2  | 'Clone vercel.com'; vercel.com opened; design tokens captured; 'the gradient triangle is missing'; fixed; 'Clone matches the original.'                      | cuts, short dissolves |
-| 34.50–51.83 | task 3  | 'Test this game and find bugs'; geist-tetris opened; controls tested; GAME OVER; 'Logged reset bug'; 'All controls working. Reset bug found and documented.' | cuts                  |
-| 51.83–53.90 | card    | 'Try it at v0.app'                                                                                                                                           | end                   |
+| Time (s)    | Length (s) | Framing | What happens                                                                                                                                                 | Out                   |
+| ----------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- |
+| 0.00–1.83   | 1.83       | title   | 'Introducing v0 Browser Use'                                                                                                                                 | hard cuts             |
+| 1.83–19.83  | 18.00      | task 1  | 'Build a SaaS ap…' typed; 'I'll build Glide…'; screenshots of sign-up, a sprint board, the mobile layout; 'Glide is functional'                              | dissolves             |
+| 19.83–34.50 | 14.67      | task 2  | 'Clone vercel.com'; vercel.com opened; design tokens captured; 'the gradient triangle is missing'; fixed; 'Clone matches the original.'                      | cuts, short dissolves |
+| 34.50–51.83 | 17.33      | task 3  | 'Test this game and find bugs'; geist-tetris opened; controls tested; GAME OVER; 'Logged reset bug'; 'All controls working. Reset bug found and documented.' | cuts                  |
+| 51.83–53.90 | 2.07       | card    | 'Try it at v0.app'                                                                                                                                           | end                   |
 
 ### By eye
 
@@ -78,6 +78,19 @@ Autofit left out 2 moves with a cut too close and 4 whose best fit was above 3% 
 - **Frame:** pure black; the chat column alone
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 3 moves; 1 f = 33 ms at 30 fps. UI at about 60% of the frame on black, so small text isn't readable in the strips.
+
+- **Each task starts with the same shot.** The composer with its typed task sits at the top ('Build a SaaS app', 3.60 s; 'Clone vercel.com', 21.53 s), fades out over about 6 frames, and the same text returns as a sent chip at the right 4 frames later (4.97 s). The repeat is the film's chapter marker; it needs no card.
+- **The transcript grows downward and the frame follows.** 'Thought for 9s', the agent's first sentence, then checklist lines arrive one at a time, about 1 s apart (4.97–7.07 s); when the next item would leave the frame, the whole column moves up by one row over about 5 frames (the measured dissolve at 7.07 s is that step).
+- **Screenshots enter as cards in the transcript**, about 40% of the column wide, and scroll through with it (15.70 s): the phone-width capture passes in 1 s while its caption line types beneath.
+- **Before and after share a frame, then a cut removes the before.** In task 2 the original site's hero (a red, green and blue gradient) and the clone's empty hero are stacked in the transcript (26.84 s); the fixed clone then cuts in at the same place and size as the original was (31.17 s): the comparison is made by position.
+- **The game is the only moving picture.** In task 3 the Tetris board plays inside its card (42.07 s) while the transcript holds; pieces move 2–3 frames a step.
+- **The last line lands 5 frames before black** (51.83 s): 'All controls working. Reset bug found and documented.' then a cut to black and the end card.
+
+**Eye at the cuts.** The transcript's left edge is at about 5% of the frame in every shot, and the newest line is always in the lower third: reading position is constant for 50 s. Task → task: the composer returns to the same top-left slot, 0%. 5 of 7 measured cuts are transcript lines arriving.
 
 ## 2. Classify
 

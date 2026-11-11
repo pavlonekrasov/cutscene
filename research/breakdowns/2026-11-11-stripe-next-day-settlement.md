@@ -31,11 +31,11 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 ### Shot list
 
-| Time (s)  | Framing              | What happens                                                                       | Out                  |
-| --------- | -------------------- | ---------------------------------------------------------------------------------- | -------------------- |
-| 0.00–2.38 | wide → working ×1.64 | the pointer moves to 'Next-day settlement'; push from 1.84                         | the modal opens (UI) |
-| 2.38–5.30 | working              | the modal; the pointer reads down it and presses 'Turn on next-day settlement'     | UI                   |
-| 5.30–6.32 | working → wide       | pull-out ×0.87 with motion blur; the toast 'Next-day settlement turned on' appears | loops                |
+| Time (s)  | Length (s) | Framing              | What happens                                                                       | Out                  |
+| --------- | ---------- | -------------------- | ---------------------------------------------------------------------------------- | -------------------- |
+| 0.00–2.38 | 2.38       | wide → working ×1.64 | the pointer moves to 'Next-day settlement'; push from 1.84                         | the modal opens (UI) |
+| 2.38–5.30 | 2.92       | working              | the modal; the pointer reads down it and presses 'Turn on next-day settlement'     | UI                   |
+| 5.30–6.32 | 1.02       | working → wide       | pull-out ×0.87 with motion blur; the toast 'Next-day settlement turned on' appears | loops                |
 
 ### By eye
 
@@ -50,6 +50,16 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 - The push starts at 1.84 s and settles at ~2.37 s; the modal opens at 2.38 s, on the frame the camera comes to rest.
 - The pull-out starts 0.1 s after the confirming press, and the toast arrives during it.
+
+Read from 10-frame strips around 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps.
+
+- **The push travels toward the pointer, and the window's margin goes first.** In the 0.95 s push the gradient backdrop is gone by column 4: the window's left edge and sidebar leave the frame while the settings column, with the pointer on it, moves from about 30% to 35% across. The pointer barely changes position in the frame while everything around it grows.
+- **The modal arrives in the push's last third.** From column 8 the page dims to about 50% and the modal fades and scales up at the right of centre; it is complete in column 10, the frame the camera stops on. The dim layer does the isolating: the camera doesn't zoom further for the modal.
+- **The modal's primary button is the one saturated element**: a violet bar at the modal's bottom right; the pointer sits on it for the whole 5.30 s strip, its hotspot on the button's left third.
+- **The press is shown by the modal leaving.** In the last 3 columns of the 5.30 s strip the modal fades with the dim layer over about 4 frames; no button state is visible at this size.
+- **The pull is a hard start with blur.** In the 1.06 s pull the first column is smeared over the whole frame and the window is back at wide by column 2 (under 0.15 s for most of the scale); the remaining columns are a slow settle of a few percent. The toast, a dark pill at the bottom centre, is in place from column 3 and the pointer rests above it.
+
+**Eye at the cuts.** There are no cuts. Pointer → modal: about 15% right, inside the push. Modal button → toast: the toast appears about 10% below where the button was pressed, so the confirmation is read without a search.
 
 ## 2. Classify
 

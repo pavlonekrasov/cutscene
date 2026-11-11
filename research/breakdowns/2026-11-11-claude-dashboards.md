@@ -52,15 +52,15 @@ Autofit left out 7 moves with a cut too close and 3 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing             | What happens                                                                                                 | Out                 |
-| ----------- | ------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------- |
-| 0.00–5.71   | full-frame artifact | an isometric city with bike-dock markers and a '6:10 am' clock, pulling out to a player window               | dissolves           |
-| 5.71–18.04  | player window       | a presenter; comment threads appear beside the video ('Nate', 'Design', '17')                                | hard cuts           |
-| 22.75–30.58 | logo row, dashboard | connector icons (AWS, Salesforce, Snowflake…) settle in a row; a 'System overview' dashboard                 | dissolves           |
-| 39.67–53.04 | dashboard → city    | a scatter becomes a 3D city grid ('Projecting dashboard coordinates into a 3D city grid'); push ×1.7 into it | dissolves 0.7–0.9 s |
-| 53.04–69.46 | artifact, comments  | the city at 6:10, 6:15, 6:55 am; a comment: 'Hold on the empty dock a beat longer'; the edit lands           | dissolves           |
-| 69.46–77.00 | export              | an 'Export' button; app icons orbit it                                                                       | hard cuts           |
-| 77.00–81.58 | end cards           | 'Claude makes it.' → selected → 'Claude makes it. You steer it.'; logo                                       | end                 |
+| Time (s)    | Length (s) | Framing             | What happens                                                                                                 | Out                 |
+| ----------- | ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------- |
+| 0.00–5.71   | 5.71       | full-frame artifact | an isometric city with bike-dock markers and a '6:10 am' clock, pulling out to a player window               | dissolves           |
+| 5.71–18.04  | 12.33      | player window       | a presenter; comment threads appear beside the video ('Nate', 'Design', '17')                                | hard cuts           |
+| 22.75–30.58 | 7.83       | logo row, dashboard | connector icons (AWS, Salesforce, Snowflake…) settle in a row; a 'System overview' dashboard                 | dissolves           |
+| 39.67–53.04 | 13.37      | dashboard → city    | a scatter becomes a 3D city grid ('Projecting dashboard coordinates into a 3D city grid'); push ×1.7 into it | dissolves 0.7–0.9 s |
+| 53.04–69.46 | 16.42      | artifact, comments  | the city at 6:10, 6:15, 6:55 am; a comment: 'Hold on the empty dock a beat longer'; the edit lands           | dissolves           |
+| 69.46–77.00 | 7.54       | export              | an 'Export' button; app icons orbit it                                                                       | hard cuts           |
+| 77.00–81.58 | 4.58       | end cards           | 'Claude makes it.' → selected → 'Claude makes it. You steer it.'; logo                                       | end                 |
 
 ### By eye
 
@@ -73,7 +73,15 @@ Autofit left out 7 moves with a cut too close and 3 whose best fit was above 3% 
 
 ### Frame-level beats
 
-- The comment asking to 'hold a beat longer' is followed by the shot that holds: the direction and its result share one cut.
+Read from 10-frame strips around 8 cuts, 1 dissolve and 3 moves; 1 f = 41.7 ms at 24 fps.
+
+- **The comment asking to 'hold a beat longer'** is followed by the shot that holds: the direction and its result share one cut.
+- **Most 'cuts' are the UI talking.** At 11.33 s the highlight steps from 'Claude Dashboards' to 'Claude Motion' in the title; at 16.38 and 18.04 s comment cards pop in beside the presenter within 2 frames; at 39.67 s the request ('turn this into an animation for all hands…') streams in word by word. The frame never moves while text arrives.
+- **Scroll, then push, then speak.** The dashboard scrolls up 34.44 s to bring the station scatter in; the push at 38.32 s (×1.7) settles before the comment popover opens on the map, about 70% into the strip.
+- **A clock as the cut.** In the city shot (53.04 s) nothing dissolves: the '6:15 am' label flips to '6:20 am' on one frame while the city holds. Time passes by changing one label, not by cutting.
+- **Panels move in 2 frames.** The comment panel slides out of frame in 2 frames (61.75 s), and 'Show all comments' opens its panel on the frame after the press (63.54 s): the product's own panels are near-instant while the camera is slow.
+
+**Eye at the cuts.** The film has few true hard cuts: of 8 measured, 6 are in-UI changes. Where the comment box opens (57.25 s), it opens at the dock the pointer is on, so the eye doesn't travel.
 
 ## 2. Classify
 

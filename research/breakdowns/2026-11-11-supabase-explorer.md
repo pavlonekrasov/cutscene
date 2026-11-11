@@ -29,15 +29,15 @@ Autofit left out 2 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing   | What happens                                                                                             | Out                 |
-| ----------- | --------- | -------------------------------------------------------------------------------------------------------- | ------------------- |
-| 0.00–10.65  | wireframe | the dashboard as a line drawing, tilted; it fills with the real 'User growth' chart; a ×8.4 push into it | hard cuts, dissolve |
-| 10.65–16.95 | title     | 'Explorer' → 'Meet Explorer'; 'A unified workspace …' builds                                             | short dissolves     |
-| 16.95–28.15 | query     | 'Query your database and your logs from one editor' beside the editor; results held 9 s                  | hard cut            |
-| 28.15–36.02 | save      | 'Save your queries, charts, and notes in one place' beside 'Monthly Signups', a stepped green chart      | hard cuts           |
-| 36.02–49.73 | ask       | 'Ask in plain language, keep the SQL' beside a chat that writes SQL; held 13 s                           | dissolve            |
-| 49.73–55.65 | local     | 'Keep notebooks in your local repo' beside a terminal: 'supabase notebooks pull'                         | dissolve            |
-| 55.65–58.25 | card      | 'Explorer & Notebooks' with where to enable it                                                           | end                 |
+| Time (s)    | Length (s) | Framing   | What happens                                                                                             | Out                 |
+| ----------- | ---------- | --------- | -------------------------------------------------------------------------------------------------------- | ------------------- |
+| 0.00–10.65  | 10.65      | wireframe | the dashboard as a line drawing, tilted; it fills with the real 'User growth' chart; a ×8.4 push into it | hard cuts, dissolve |
+| 10.65–16.95 | 6.30       | title     | 'Explorer' → 'Meet Explorer'; 'A unified workspace …' builds                                             | short dissolves     |
+| 16.95–28.15 | 11.20      | query     | 'Query your database and your logs from one editor' beside the editor; results held 9 s                  | hard cut            |
+| 28.15–36.02 | 7.87       | save      | 'Save your queries, charts, and notes in one place' beside 'Monthly Signups', a stepped green chart      | hard cuts           |
+| 36.02–49.73 | 13.71      | ask       | 'Ask in plain language, keep the SQL' beside a chat that writes SQL; held 13 s                           | dissolve            |
+| 49.73–55.65 | 5.92       | local     | 'Keep notebooks in your local repo' beside a terminal: 'supabase notebooks pull'                         | dissolve            |
+| 55.65–58.25 | 2.60       | card      | 'Explorer & Notebooks' with where to enable it                                                           | end                 |
 
 ### By eye
 
@@ -47,6 +47,19 @@ Autofit left out 2 moves with a cut too close and 1 whose best fit was above 3% 
 - **Frame:** near-black; the panel slightly tilted; green accents
 - **Aspect:** 16:9, 1280×720, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps. Low contrast on dark, so only framing and large changes are countable.
+
+- **The wireframe section is cut, not flown.** At 2.00, 3.25 and 4.52 s the line-drawn dashboard cuts between angles and scales on frame 0 (tilted wide → flatter close → centred), each with a slow push continuing through it (2.11 s, 1.5 s long). The pushes are under 1% of scale per frame; the cuts do the reframing.
+- **One push from the chart to a single word.** From 9.04 s the frame goes from the whole dashboard with its green bar chart to the sidebar's 'Explorer' label filling the frame: ×8.4 over 2.1 s. The strip shows the scale roughly doubling every 3 columns, a constant rate in log-zoom, and the last 2 columns blur the label as it becomes the title. It is the deepest move in the 67 references, and it lands on a word, not on a control.
+- **Caption left, tilted panel right, held.** In each chapter the caption sits at about 8–25% of the width, complete from frame 0, and the panel occupies the right 70% on a slight tilt (18.98 s). The chapter shots hold 6–13 s with only the panel's content changing.
+- **Chapters change by cutting the panel and the caption together** (29.83, 36.87 s): the caption is replaced whole on frame 0 at the same left position, so the eye returns to the same place for each new claim.
+- **Inside a chapter, the panel crossfades** (36.02 s): the chart fades to the chat over about 6 frames while the caption stays, then the caption changes on the next cut.
+- **The last chapter fades to black from the caption first** (55.65 s): the caption dims over 4 frames, then the panel over 6 more.
+
+**Eye at the cuts.** Chapter → chapter: the caption's first word is at about 8% across in every chapter, 0% travel. Wireframe → wireframe: the plane's centre shifts 10–15% per cut. Push → title card (10.65 s): the word 'Explorer' ends the push at about 50% and the card's 'Explorer' is centred, 0%: a match on the word. 5 of 7 measured cuts are true edits.
 
 ## 2. Classify
 

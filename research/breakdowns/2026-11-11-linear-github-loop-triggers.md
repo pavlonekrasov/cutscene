@@ -24,14 +24,14 @@ Moves:
 
 ### Shot list
 
-| Time (s)    | Framing                            | What happens                                                                                                                                                                                                                                   | Out                    |
-| ----------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| 0.00–0.32   | fade in from black                 | —                                                                                                                                                                                                                                              | fade                   |
-| 0.32–7.78   | the Slack composer, centred, ~2.5× | a three-line prompt typed; the box grows a line at a time and stays centred (the candidate at 3.43 is that growth, not an edit)                                                                                                                | 5-frame crossfade      |
-| 7.78–19.87  | the thread, ~2.5×                  | the post lands (7.78); Linear's reply (10.12); scroll 44% of the height in 440 ms, peak 0.50 (12.15); a merge message (12.93); scroll 53%, 440 ms (14.50); another (15.15); scroll 42%, 320 ms, 5% overshoot (17.11); a third fades in (17.47) | fade to black, ~0.65 s |
-| 20.52–23.45 | card                               | 'GitHub loop triggers'; leaves by scaling to ×0.95 and fading, 400 ms, speed peak 0.92                                                                                                                                                         | hard                   |
-| 23.45–25.45 | card                               | 'Now available'; leaves the same way, 450 ms                                                                                                                                                                                                   | hard                   |
-| 25.45–29.67 | logo card                          | held 4.2 s                                                                                                                                                                                                                                     | end                    |
+| Time (s)    | Length (s) | Framing                            | What happens                                                                                                                                                                                                                                   | Out                    |
+| ----------- | ---------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| 0.00–0.32   | 0.32       | fade in from black                 | —                                                                                                                                                                                                                                              | fade                   |
+| 0.32–7.78   | 7.46       | the Slack composer, centred, ~2.5× | a three-line prompt typed; the box grows a line at a time and stays centred (the candidate at 3.43 is that growth, not an edit)                                                                                                                | 5-frame crossfade      |
+| 7.78–19.87  | 12.09      | the thread, ~2.5×                  | the post lands (7.78); Linear's reply (10.12); scroll 44% of the height in 440 ms, peak 0.50 (12.15); a merge message (12.93); scroll 53%, 440 ms (14.50); another (15.15); scroll 42%, 320 ms, 5% overshoot (17.11); a third fades in (17.47) | fade to black, ~0.65 s |
+| 20.52–23.45 | 2.93       | card                               | 'GitHub loop triggers'; leaves by scaling to ×0.95 and fading, 400 ms, speed peak 0.92                                                                                                                                                         | hard                   |
+| 23.45–25.45 | 2.00       | card                               | 'Now available'; leaves the same way, 450 ms                                                                                                                                                                                                   | hard                   |
+| 25.45–29.67 | 4.22       | logo card                          | held 4.2 s                                                                                                                                                                                                                                     | end                    |
 
 ### By eye
 
@@ -47,6 +47,16 @@ Moves:
 - Each new message lands, then the thread scrolls 1.6–2.0 s later (10.12 → 12.15, 12.93 → 14.50, 15.15 → 17.11): the new line is read before the frame moves.
 - Scrolls are symmetric (speed peak 0.49–0.50); card exits accelerate away (peak 0.70–0.92). Arrival and departure get different curves.
 - Product story 0–19.9 s (67%), black gap 0.65 s, cards 20.5–29.7 s (31%).
+
+Read again from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps.
+
+- **Typing is a character every 1–2 frames.** In the 3.43 s strip the second line gains 3 characters in 10 frames ('Check the lin' → 'Check the linked'): about 20–30 characters a second, faster than a hand, and the composer's height changes between two frames with no animation.
+- **A reply fades in from 30% to full over about 8 frames** (10.12 s): avatar, name and text together, in the place it will stay. It doesn't slide.
+- **The scroll and the next message overlap by half.** In the 12.15 s move (0.94 s) the thread travels up in the first 5 columns; the new message's card is already fading in beneath it from column 6, before the scroll has stopped. Old content leaves the top at full brightness: nothing dims to make room.
+- **The scroll puts the new message in the lower half.** After each scroll the newest card's top edge is at about 50% of the height, with the previous message above it for context: the frame always holds one read message and one new one.
+- **Cards fade, they never cut on.** 'GitHub loop triggers' loses about 60% of its brightness across the 10 frames before 22.55 s; 'Now available' is at full brightness for 10 frames at 23.45 s and dims over the 10 before 24.88 s; the logo comes up from 20% to full in 5 frames (25.45 s), mark and wordmark together.
+
+**Eye at the cuts.** Composer → thread: the prompt's first line is at about 12% × 40% in both, 0–5%, across a 5-frame crossfade. Thread → card: from the left-aligned message (about 15%) to centred type (about 45%): 30%, across a 0.65 s fade to black. Card → card → logo: all centred, 0%. 3 of 7 measured cuts are true edits (the three cards); the rest are messages arriving.
 
 ## 2. Classify
 

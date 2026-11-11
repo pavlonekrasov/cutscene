@@ -35,14 +35,14 @@ Autofit left out 1 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing    | What happens                                                                                                               | Out            |
-| ----------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 0.00–2.73   | wide       | the agent chat in the window on the landscape                                                                              | hard cut       |
-| 2.73–5.63   | detail     | ×3.5 on 'to see how cohorts and job roles are wired'; the two words selected in orange; 'Add to Side Chat'                 | hard cuts      |
-| 5.63–6.83   | wide       | the side chat opens at the right of the window                                                                             | hard cut       |
-| 6.83–8.73   | detail     | ×3 on the side chat input: the 'job roles' chip, 'what kind of data do we have on' typed, the frame panning with the caret | short dissolve |
-| 8.73–10.77  | wide       | the side chat answers                                                                                                      | hard cut       |
-| 10.77–17.13 | card, logo | 'Side Chats Available Now'; the logo spins                                                                                 | end            |
+| Time (s)    | Length (s) | Framing    | What happens                                                                                                               | Out            |
+| ----------- | ---------- | ---------- | -------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| 0.00–2.73   | 2.73       | wide       | the agent chat in the window on the landscape                                                                              | hard cut       |
+| 2.73–5.63   | 2.90       | detail     | ×3.5 on 'to see how cohorts and job roles are wired'; the two words selected in orange; 'Add to Side Chat'                 | hard cuts      |
+| 5.63–6.83   | 1.20       | wide       | the side chat opens at the right of the window                                                                             | hard cut       |
+| 6.83–8.73   | 1.90       | detail     | ×3 on the side chat input: the 'job roles' chip, 'what kind of data do we have on' typed, the frame panning with the caret | short dissolve |
+| 8.73–10.77  | 2.04       | wide       | the side chat answers                                                                                                      | hard cut       |
+| 10.77–17.13 | 6.36       | card, logo | 'Side Chats Available Now'; the logo spins                                                                                 | end            |
 
 ### By eye
 
@@ -52,6 +52,20 @@ Autofit left out 1 moves with a cut too close.
 - **Frame:** a painterly landscape backdrop
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** silent (an audio track at −91 dB)
+
+### Frame-level beats
+
+Read from 10-frame strips around 5 cuts, 1 dissolve and 1 move; 1 f = 33 ms at 30 fps.
+
+- **Wide → detail is one hard cut, ×3.5, on frame 0.** At 2.73 s the window on the landscape cuts to one line of text filling the width; the line drifts left about 2% a frame for the first 5 frames, a settle that stands in for a push.
+- **The selection is dragged at about 2 characters a frame.** The orange highlight grows from 'c' to 'cohorts and job roles' over about 12 frames (3.43–3.85 s) with the I-beam leading it; the frame is locked while it grows.
+- **Selection ends, then the menu, then the hand.** 'Add to Side Chat' appears 2 frames after the drag stops (4.07 s) and the pointer changes to a hand 1 frame later; the press comes about 1.5 s after, so the label is read before it is used.
+- **The press is on screen for 9 frames, then the cut.** The hand sits on 'Add to Side Chat' through 5.63 s; the wide shot that follows already shows the side chat open. The opening itself is skipped.
+- **Wide → composer, mid-word.** At 6.83 s the cut lands on the side chat's input with the chip in place and 'what kind of' already typed; typing continues at about 1 character a frame (30 a second).
+- **The frame pans with the caret** (7.06 s): it moves left to right about 12% of the width over 1.6 s, slower than the typing, so the caret travels from 35% to 55% of the frame, never pinned to one spot.
+- **Wide → card on frame 0** (10.77 s): 'Side' on white, building to 'Side Chats Available Now'.
+
+**Eye at the cuts.** Wide → detail (2.73 s): the line sat at about 55% × 45% in the window; in the close-up the words to be selected start at about 45%, inside 10%. Detail → wide (5.63 s): from the hand at about 50% to the side chat at about 75% of the frame, 25%. Wide → composer (6.83 s): from 75% to the chip at about 15%, 60% across; the widest jump in the film, on the cut into typing. All 5 hard cuts land on the frame the instrument gives.
 
 ## 2. Classify
 

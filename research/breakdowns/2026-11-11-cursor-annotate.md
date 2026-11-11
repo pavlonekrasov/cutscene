@@ -17,15 +17,15 @@
 
 ### Shot list
 
-| Time (s)    | Framing    | What happens                                                                               | Out       |
-| ----------- | ---------- | ------------------------------------------------------------------------------------------ | --------- |
-| 0.00–5.90   | cards      | 'New in Cursor / Annotate'; 'Open your app in' → '… the browser'                           | hard cuts |
-| 5.90–8.93   | browser    | localhost typed; the Lumen site loads; the Annotate button                                 | hard cuts |
-| 8.93–15.57  | comment    | 'Leave comments for your agents'; the headline selected; a comment typed; sent             | hard cuts |
-| 15.57–22.53 | styles     | 'Dial in your styles, live'; a style panel on the button; its colour changes               | hard cuts |
-| 22.53–33.23 | sketch     | 'Sketch what you want to build'; a box drawn in red; the agent builds a newsletter section | hard cuts |
-| 33.23–40.57 | responsive | 'Check responsiveness across every screen size'; a device list; the page at phone width    | dissolves |
-| 40.57–43.57 | logo       | the Cursor logo on black                                                                   | end       |
+| Time (s)    | Length (s) | Framing    | What happens                                                                               | Out       |
+| ----------- | ---------- | ---------- | ------------------------------------------------------------------------------------------ | --------- |
+| 0.00–5.90   | 5.90       | cards      | 'New in Cursor / Annotate'; 'Open your app in' → '… the browser'                           | hard cuts |
+| 5.90–8.93   | 3.03       | browser    | localhost typed; the Lumen site loads; the Annotate button                                 | hard cuts |
+| 8.93–15.57  | 6.64       | comment    | 'Leave comments for your agents'; the headline selected; a comment typed; sent             | hard cuts |
+| 15.57–22.53 | 6.96       | styles     | 'Dial in your styles, live'; a style panel on the button; its colour changes               | hard cuts |
+| 22.53–33.23 | 10.70      | sketch     | 'Sketch what you want to build'; a box drawn in red; the agent builds a newsletter section | hard cuts |
+| 33.23–40.57 | 7.34       | responsive | 'Check responsiveness across every screen size'; a device list; the page at phone width    | dissolves |
+| 40.57–43.57 | 3.00       | logo       | the Cursor logo on black                                                                   | end       |
 
 ### By eye
 
@@ -35,6 +35,19 @@
 - **Frame:** a blurred photographic backdrop (teal and orange)
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** none: no audio track
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts and 1 dissolve; 1 f = 33 ms at 30 fps.
+
+- **One empty white frame before each chapter card.** At 15.57 s the window cuts to plain white, and 'Dial in' appears on the next frame; 'your' follows 4 frames (133 ms) later. Cards build phrase by phrase at about 130 ms a step.
+- **The window is smaller after a card than before it.** Before the 'styles' card the window fills the frame (wide); after it (17.57 s) the same window sits at about 60% of the frame on a photo backdrop, with the pointer already travelling to the button. The card hides the change of framing, so no camera move is needed.
+- **The pointer is moving on frame 0.** After each card the pointer is mid-travel on the first frame and reaches its target 4–5 frames later: the cut lands inside the action, not before it.
+- **Panels close in 3 frames.** The style panel fades out over 3 frames (20.87 s) and the button's new colour is already applied underneath.
+- **The agent's build is one layout shift.** At 29.23 s the window slides right by about 10% of the frame over 2 frames as the agent panel opens at its left; the sketch (a red box) stays visible through it, so the drawing and its result share a frame.
+- **3 of 7 measured cuts are in-UI changes** (26.23, 27.50, 30.93 s): the red sketch strokes and the built section arriving.
+
+**Eye at the cuts.** Card → window (17.57 s): from the centred card line to the pointer at about 55%, inside 10%. Window → card (15.57 s): the pointer was at about 60%; the card text starts at the centre, inside 10%. The locked framing keeps every card ↔ window cut inside 10%.
 
 ## 2. Classify
 

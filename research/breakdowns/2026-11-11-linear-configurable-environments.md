@@ -21,11 +21,11 @@ Moves:
 
 ### Shot list
 
-| Time (s)    | Framing                  | What happens                                                                      | Out             |
-| ----------- | ------------------------ | --------------------------------------------------------------------------------- | --------------- |
-| 0.00–12.57  | three config cards in 3D | one continuous camera glide from 'Web app' through 'Go backend' to 'Data service' | hard            |
-| 12.57–15.63 | type card                | the tagline, fading out                                                           | dissolve 0.17 s |
-| 15.63–17.17 | logo card                | held 1.5 s                                                                        | end             |
+| Time (s)    | Length (s) | Framing                  | What happens                                                                      | Out             |
+| ----------- | ---------- | ------------------------ | --------------------------------------------------------------------------------- | --------------- |
+| 0.00–12.57  | 12.57      | three config cards in 3D | one continuous camera glide from 'Web app' through 'Go backend' to 'Data service' | hard            |
+| 12.57–15.63 | 3.06       | type card                | the tagline, fading out                                                           | dissolve 0.17 s |
+| 15.63–17.17 | 1.54       | logo card                | held 1.5 s                                                                        | end             |
 
 ### By eye
 
@@ -39,6 +39,16 @@ Moves:
 ### Frame-level beats
 
 - The move never stops between the three cards: each passes through focus and out again, about 4 s apiece.
+
+Read from 10-frame strips around 3 cuts, 1 dissolve and 1 move; 1 f = 33 ms at 30 fps.
+
+- **Each card's title enters the frame first.** Across the 12.2 s glide the cards rise from the bottom edge, tilted about 15°, and what is sharp first is the title ('Web app', 'Go backend', 'Data service') at about 10–15% of the frame wide; the fields below (Agent, Runtime version, Variables) come into focus as the card climbs.
+- **Two cards overlap for about 1 s at each handover.** In columns 3–4 'Web app' is leaving at the top, dim and soft, while 'Go backend' is entering below at a different tilt: there are no cuts in the product section, and the handover is depth of field, not opacity.
+- **Selected values are the brightest marks on each card.** The agent chip and the runtime version pills are white on grey; the rest of the card is under 30% brightness.
+- **The tagline fades up over the last card.** At 12.57 s 'The right environment for every session.' is at about 40% brightness over a still-visible card and reaches full by 13.13 s while the card fades out beneath it: about 0.6 s of overlap, type above UI in the same place.
+- **The tagline fades out over 5 frames; the logo fades up over 6** (15.20, 15.63 s), on a field that lightens slightly behind it.
+
+**Eye at the cuts.** Last card → tagline: the card's title is at about 40% × 30%, the tagline at about 50% × 50%: 10%, across an overlap. Tagline → logo: both centred, 0%. All 3 measured cuts are fades.
 
 ## 2. Classify
 

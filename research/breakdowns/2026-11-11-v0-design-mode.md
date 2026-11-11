@@ -37,14 +37,14 @@ Autofit left out 1 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing | What happens                                                                | Out            |
-| ----------- | ------- | --------------------------------------------------------------------------- | -------------- |
-| 0.00–0.88   | card    | 'Introducing v0 Design mode'                                                | dissolve       |
-| 0.88–4.77   | prompt  | ×2.5 on the prompt; v0 replies; pull ×0.45                                  | hard cuts      |
-| 4.77–7.38   | result  | the generated 'Bring Nature Home' page                                      | short dissolve |
-| 7.38–16.87  | edit    | Design Mode: the typography panel; the font changes and the heading updates | short dissolve |
-| 16.87–20.05 | final   | the finished page with its plant image; pull ×0.5                           | dissolves      |
-| 20.05–23.97 | logo    | the v0 mark                                                                 | end            |
+| Time (s)    | Length (s) | Framing | What happens                                                                | Out            |
+| ----------- | ---------- | ------- | --------------------------------------------------------------------------- | -------------- |
+| 0.00–0.88   | 0.88       | card    | 'Introducing v0 Design mode'                                                | dissolve       |
+| 0.88–4.77   | 3.89       | prompt  | ×2.5 on the prompt; v0 replies; pull ×0.45                                  | hard cuts      |
+| 4.77–7.38   | 2.61       | result  | the generated 'Bring Nature Home' page                                      | short dissolve |
+| 7.38–16.87  | 9.49       | edit    | Design Mode: the typography panel; the font changes and the heading updates | short dissolve |
+| 16.87–20.05 | 3.18       | final   | the finished page with its plant image; pull ×0.5                           | dissolves      |
+| 20.05–23.97 | 3.92       | logo    | the v0 mark                                                                 | end            |
 
 ### By eye
 
@@ -54,6 +54,19 @@ Autofit left out 1 moves with a cut too close and 2 whose best fit was above 3% 
 - **Frame:** full-bleed white, no window
 - **Aspect:** 16:9, 1280×720, 60 fps
 - **Sound:** none: no audio track
+
+### Frame-level beats
+
+Read from 10-frame strips around 3 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps.
+
+- **The prompt holds with an attachment chip as its only colour.** At 3.02 s the composer at ×2.5 sits still; the green logo chips at its top left are the one saturated element. Nothing moves for 10 frames.
+- **The result arrives by pulling out of it.** From 4.81 s the frame starts inside the generated page at about ×4, blurred, with 'Nature Home' filling the width, and pulls ×0.45 to the whole page in about 0.9 s; the picture sharpens as the scale drops, and most of the travel is in the first half. The reveal is a move, not a cut: the page is read heading first, then layout.
+- **The panel opens as the frame pulls.** From 9.64 s the Design Mode panel slides in at the left while the frame pulls back just enough to fit panel and page together (about ×0.85); the typography controls fill in over the next 4 columns and a dropdown opens last, under the pointer. Camera and UI finish within 2–3 frames of each other.
+- **The heading re-renders in place** as the font changes; the page doesn't reflow around it in the strip.
+- **The final frame holds with a brand-coloured pointer** (18.07 s): a blue arrow rests below the heading for 10 frames or more while the page is still.
+- **The logo draws itself and undraws itself.** The v0 mark's strokes complete over about 10 frames (20.70 s) and thin out again at the end (23.18 s).
+
+**Eye at the cuts.** Prompt → result: the pull starts on the heading at about 35% × 30%, where the prompt's text was (about 40% × 45%): inside 10%. Page → logo: from the pointer at about 45% to the centre, 5%. All 3 measured cuts are the logo's strokes; the film's reframes are all moves or dissolves.
 
 ## 2. Classify
 

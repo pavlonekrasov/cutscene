@@ -28,15 +28,15 @@ Autofit left out 3 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing   | What happens                                                                          | Out       |
-| ----------- | --------- | ------------------------------------------------------------------------------------- | --------- |
-| 0.00–3.17   | title     | 'Personal Access Tokens with more permission control'                                 | dissolve  |
-| 3.17–7.80   | expiry    | 'Set when it expires' beside the expiry picker (7 days); 'Limit what…' builds         | hard cuts |
-| 7.80–10.15  | reach     | 'Limit what it can reach' beside the project list (analytics, mobile-app, storefront) | hard cut  |
-| 10.15–14.57 | abilities | 'Limit what it can do' beside permission presets set from 'No access'                 | dissolve  |
-| 14.57–18.15 | review    | 'Review the blast radius' beside the capability summary; 'Create token' clicked       | dissolve  |
-| 18.15–22.07 | result    | 'Token created' with Copy; a push ×1.23                                               | dissolve  |
-| 22.07–26.30 | card      | 'Now generally available', Supabase, on white                                         | end       |
+| Time (s)    | Length (s) | Framing   | What happens                                                                          | Out       |
+| ----------- | ---------- | --------- | ------------------------------------------------------------------------------------- | --------- |
+| 0.00–3.17   | 3.17       | title     | 'Personal Access Tokens with more permission control'                                 | dissolve  |
+| 3.17–7.80   | 4.63       | expiry    | 'Set when it expires' beside the expiry picker (7 days); 'Limit what…' builds         | hard cuts |
+| 7.80–10.15  | 2.35       | reach     | 'Limit what it can reach' beside the project list (analytics, mobile-app, storefront) | hard cut  |
+| 10.15–14.57 | 4.42       | abilities | 'Limit what it can do' beside permission presets set from 'No access'                 | dissolve  |
+| 14.57–18.15 | 3.58       | review    | 'Review the blast radius' beside the capability summary; 'Create token' clicked       | dissolve  |
+| 18.15–22.07 | 3.92       | result    | 'Token created' with Copy; a push ×1.23                                               | dissolve  |
+| 22.07–26.30 | 4.23       | card      | 'Now generally available', Supabase, on white                                         | end       |
 
 ### By eye
 
@@ -46,6 +46,18 @@ Autofit left out 3 moves with a cut too close.
 - **Frame:** near-black; the panel slightly tilted; white for the last card
 - **Aspect:** 16:9, 1280×720, 60 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 4 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 60 fps.
+
+- **Captions roll, they don't cut.** The title slides up and out over about 3 strip columns while the tilted form fades up on the right; then 'Set when it expires' rolls in from below at the left, line by line (3.48 s, 0.9 s in all). At 5.86 s it rolls out upward and 'Limit what it can reach' rolls in the same way. The caption column behaves like a ticker: out the top, in from the bottom.
+- **The panel scrolls while the caption rolls.** During each caption change the form on the right moves up to its next section over the same 1.0 s, so text and UI travel in the same direction at the same time.
+- **The pointer is always mid-task.** In every held chapter (4.52, 7.80, 13.93, 15.38 s) the pointer drifts toward or rests on the control the caption names: the expiry field, a project row, a permission dropdown, then 'Create token'. It moves about 1% of the width per frame, slower than a real hand, so it reads at feed size.
+- **The pressed control lights green.** The selected dropdown and the primary button are the only green elements on a grey panel; the caption is white. Three levels: white claim, green action, grey context.
+- **The result tilts the other way.** 'Token created' sits on a plane tilted opposite to the form's (22.07 s), and the end card's white bars wipe down from the top left over 10 frames to cover it.
+
+**Eye at the cuts.** Caption → caption: 0% (same left position, about 5–25% across). Pointer → pointer across a chapter change: within about 10%, because the form scrolls under a pointer that stays near the same place in the frame. All 4 measured cuts are pointer or panel changes; the film has no hard cut between its title and its end card.
 
 ## 2. Classify
 

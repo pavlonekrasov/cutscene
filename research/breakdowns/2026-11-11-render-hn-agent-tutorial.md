@@ -43,9 +43,9 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 ### Shot list
 
-| Time (s)   | Framing                  | What happens                                                                                            | Out |
-| ---------- | ------------------------ | ------------------------------------------------------------------------------------------------------- | --- |
-| 0.00–48.00 | one take, then the inbox | push ×1.89 (0.04), add an interest, add a question, preview, then the agent's email in the inbox (44.6) | —   |
+| Time (s)   | Length (s) | Framing                  | What happens                                                                                            | Out |
+| ---------- | ---------- | ------------------------ | ------------------------------------------------------------------------------------------------------- | --- |
+| 0.00–48.00 | 48.00      | one take, then the inbox | push ×1.89 (0.04), add an interest, add a question, preview, then the agent's email in the inbox (44.6) | —   |
 
 ### By eye
 
@@ -59,6 +59,18 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 ### Frame-level beats
 
 - The payoff (the email arriving) is the last shot, after a cut to another app.
+
+Read from 10-frame strips around 8 cuts and 2 moves; 1 f = 33 ms at 30 fps. A form on a cream page with an orange header bar; body text is not readable in the strips.
+
+- **The push crops the browser away in 2 columns.** From 0.04 s the window on its violet backdrop becomes the page alone by column 3 (about 0.3 s); the orange bar stays along the top edge as the only chrome. The pointer moves to the first input (about 20% × 25%) in the last 2 columns, and the input takes a blue focus ring.
+- **Orange marks every primary action.** The header and the two 'Add' buttons at the right of each form row are the same orange; the rest is black text on cream. After the push the buttons sit at about 90% across.
+- **The pull is used to show a row arriving.** At 5.02 s the frame pulls back to the whole window (done by column 6) as the new interest is added to the list: the row is about 2% of the frame at that size, so the pull shows that the page changed, not what changed.
+- **The frequency menu opens under the pointer** (14.83 s): a 4-row dropdown at about 70% × 35%, with the blue selected field beside it; it opens between two frames, 4 frames after the pointer stops.
+- **The preview is shown by scrolling to it, then pushing.** At 17.93 s the frame goes from the window to the page (columns 5–7); at 35.47 s the Preview block (a bordered box of numbered results) fills the frame with the pointer at its top; the text is about 5 px in the strip.
+- **The app switch is a white flash.** At 41.63 s the form holds 5 frames, the frame is blank white for 1, then the inbox loads over the next 4: a browser tab change left as recorded.
+- **The email opens in place** (44.63 s): the inbox list is replaced by the message between two frames; its subject line is at about 15% × 20%, where the list's first row was.
+
+**Eye at the cuts.** Form → inbox: from the question row at about 40% × 40% to the inbox's unread row at about 30% × 35%: 10%, across one white frame. Inbox row → open email: within 10%. Inside the form the pointer leads every change. 2 of 8 measured cuts are true changes of place; 6 are form and page changes.
 
 ## 2. Classify
 

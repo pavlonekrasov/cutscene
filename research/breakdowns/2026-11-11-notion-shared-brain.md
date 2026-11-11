@@ -35,15 +35,15 @@ Autofit left out 1 whose best fit was above 3% (the tracker, not a curve).
 
 ### Shot list
 
-| Time (s)    | Framing         | What happens                                                                                                                                    | Out                  |
-| ----------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| 0.00–2.42   | card            | 'One s…' builds to 'One shared brain for every agent'                                                                                           | dissolve             |
-| 2.42–4.75   | system          | terminal, phone and Notion Memories in one frame, arrows from both to the page                                                                  | dissolve             |
-| 4.75–7.42   | card            | 'Save your memories and skills to Notion'                                                                                                       | hard cut             |
-| 7.42–16.00  | terminal → page | the terminal agent saves a preference; 'Let's also push the website launch to next Friday' typed; the Memories page gains the entry beside it   | hard cuts, dissolves |
-| 16.00–18.42 | card            | 'Bring them with you to any agent'                                                                                                              | hard cut             |
-| 18.42–31.25 | page → phone    | 'Can you write a website project update for t…' typed on the phone; Memories with an arrow to the phone; the phone's answer uses the saved date | dissolves            |
-| 31.25–36.46 | logo            | the Notion logo, held 5.2 s                                                                                                                     | end                  |
+| Time (s)    | Length (s) | Framing         | What happens                                                                                                                                    | Out                  |
+| ----------- | ---------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| 0.00–2.42   | 2.42       | card            | 'One s…' builds to 'One shared brain for every agent'                                                                                           | dissolve             |
+| 2.42–4.75   | 2.33       | system          | terminal, phone and Notion Memories in one frame, arrows from both to the page                                                                  | dissolve             |
+| 4.75–7.42   | 2.67       | card            | 'Save your memories and skills to Notion'                                                                                                       | hard cut             |
+| 7.42–16.00  | 8.58       | terminal → page | the terminal agent saves a preference; 'Let's also push the website launch to next Friday' typed; the Memories page gains the entry beside it   | hard cuts, dissolves |
+| 16.00–18.42 | 2.42       | card            | 'Bring them with you to any agent'                                                                                                              | hard cut             |
+| 18.42–31.25 | 12.83      | page → phone    | 'Can you write a website project update for t…' typed on the phone; Memories with an arrow to the phone; the phone's answer uses the saved date | dissolves            |
+| 31.25–36.46 | 5.21       | logo            | the Notion logo, held 5.2 s                                                                                                                     | end                  |
 
 ### By eye
 
@@ -53,6 +53,18 @@ Autofit left out 1 whose best fit was above 3% (the tracker, not a curve).
 - **Frame:** warm off-white; windows with soft shadows; drawn arrows between them
 - **Aspect:** 16:9, 1280×720, 24 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 1 move; 1 f = 41.7 ms at 24 fps.
+
+- **The system shot holds for 2.3 s with only its arrows alive** (3.29–4.75 s): the terminal (top left), the phone (bottom left) and the Memories page (right) sit in one frame; arrows from the two agents to the page are the only thing that changes.
+- **Card → the same layout, closer.** At 7.42 s 'Save your memories and skills to Notion' cuts on frame 0 to the terminal at the left with the Memories page at the right edge, both larger than in the system shot and in the same left/right order. The map shot taught where things are; the close shot keeps them there.
+- **The terminal types while the page waits.** In three consecutive 'cuts' (9.38, 10.71, 11.88 s) the frame is locked and only the terminal's text advances a block at a time; the page at the right gains its entry after the last one. The measured cuts are the agent's output, not edits.
+- **Card → phone, rising.** At 18.42 s 'Bring them with you to any agent' cuts to the phone, which slides up about 10% over 5 frames with its composer below; the device enters already moving.
+- **Phone → logo on frame 0, then the wordmark slides out.** The mark is centred at 31.25 s; about 0.4 s later it moves left about 4% as 'Notion' fades in to its right (31.60 s), and the lockup holds for 5 s.
+
+**Eye at the cuts.** Card → terminal (7.42 s): from the centre to the terminal at about 40%, 10%. Card → phone (18.42 s): centre to centre, 0%. Phone → logo (31.25 s): 0%. Inside the paired shot the eye crosses about 45% from terminal to page, by an arrow drawn on screen rather than by a cut. 3 of 7 measured cuts are true edits, all on the measured frame.
 
 ## 2. Classify
 

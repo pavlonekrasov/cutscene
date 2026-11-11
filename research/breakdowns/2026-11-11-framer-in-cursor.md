@@ -35,13 +35,13 @@ Autofit left out 3 moves with a cut too close.
 
 ### Shot list
 
-| Time (s)    | Framing     | What happens                                                                                         | Out                        |
-| ----------- | ----------- | ---------------------------------------------------------------------------------------------------- | -------------------------- |
-| 0.00–1.83   | live action | overhead: hands typing on a laptop keyboard                                                          | dissolves of 1.5 and 1.0 s |
-| 1.83–5.33   | prompt      | 'Update Fr…' typed at ×3; pull back over 2.3 s as it completes: 'Update Framer CMS with the latest…' | dissolve                   |
-| 5.33–9.25   | result      | a CMS table, rows highlighting in blue as the agent updates them; the agent panel at right           | dissolve                   |
-| 9.25–13.88  | card        | 'Framer is now in Cursor'                                                                            | hard cut                   |
-| 13.88–15.96 | lockup      | Cursor × Framer                                                                                      | end                        |
+| Time (s)    | Length (s) | Framing     | What happens                                                                                         | Out                        |
+| ----------- | ---------- | ----------- | ---------------------------------------------------------------------------------------------------- | -------------------------- |
+| 0.00–1.83   | 1.83       | live action | overhead: hands typing on a laptop keyboard                                                          | dissolves of 1.5 and 1.0 s |
+| 1.83–5.33   | 3.50       | prompt      | 'Update Fr…' typed at ×3; pull back over 2.3 s as it completes: 'Update Framer CMS with the latest…' | dissolve                   |
+| 5.33–9.25   | 3.92       | result      | a CMS table, rows highlighting in blue as the agent updates them; the agent panel at right           | dissolve                   |
+| 9.25–13.88  | 4.63       | card        | 'Framer is now in Cursor'                                                                            | hard cut                   |
+| 13.88–15.96 | 2.08       | lockup      | Cursor × Framer                                                                                      | end                        |
 
 ### By eye
 
@@ -51,6 +51,17 @@ Autofit left out 3 moves with a cut too close.
 - **Frame:** black; the app dark
 - **Aspect:** 16:9, 1280×720, 24 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 1 cut, 1 dissolve and 1 move; 1 f = 41.7 ms at 24 fps.
+
+- **The UI is superimposed on the hands before the cut away.** During the dissolve at 1.83 s the composer's 'Auto' model chip and the top bar ('main', 'Cloud') sit over the overhead shot of the keyboard for about 10 frames, drifting left: for 0.4 s the hands are typing 'into' the interface.
+- **The pull runs while the prompt types.** From 3.45 s the frame pulls ×0.58 over 2.3 s and the prompt gains about one word per strip column ('Update Framer CMS with' → '… the latest launch from…'). The typing sets the pace of the camera: the move ends when the sentence does.
+- **A motion-blurred insert ends the shot.** In the last 2 frames a large blurred word sweeps in from the left over the prompt (the transition to the result), the only blur in the film.
+- **Card → lockup on frame 0** (13.88 s): 'Framer is now in Cursor' cuts to the two marks with '×' between them, centred, no build.
+
+**Eye at the cuts.** Card → lockup: 0% (both centred). Hands → prompt: the hands sit at the centre and the prompt's text begins at about 40%, inside 10%, across a 1.5 s dissolve. The film has one true hard cut; it lands on the measured frame.
 
 ## 2. Classify
 
@@ -71,7 +82,7 @@ Hybrid launch film (live action into screen) for an integration. Conventions: ha
 
 ## 5. Critique
 
-- **I like:** Cutting from hands to the prompt carries the typing across the cut, so the prompt feels authored.
+- **I like:** Cutting from hands to the prompt carries the typing across the cut, so the prompt is read as something a person just typed, not text that was already there.
 - **I wish:** The result shot is dark and small; the rows changing are hard to read at feed size.
 - **I wonder:** Could act.type open on a key-cap overlay that hands off to the on-screen text in one cut?
 

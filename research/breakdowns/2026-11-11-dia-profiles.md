@@ -41,13 +41,13 @@ Autofit left out 2 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing           | What happens                                                                                                                    | Out       |
-| ----------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| 0.00–7.33   | live              | a laptop keyboard, a hand, the trackpad; the screen with profiles; 'Profiles make context switching easy.'                      | dissolves |
-| 7.33–13.50  | swipe → work      | the glowing trackpad, 'All it takes is a swipe.'; the browser in the green Work profile; 'Catch me up on the homepage redesign' | hard cuts |
-| 13.50–23.03 | swipe → freelance | the trackpad; the Freelance profile; 'What are the invoicing instructions…'; a report                                           | dissolves |
-| 23.03–35.20 | swipe → personal  | the trackpad; the pink Personal profile; mail and a question                                                                    | dissolves |
-| 35.20–39.67 | close             | hands swipe, 'Swipe away.'; diabrowser.com                                                                                      | end       |
+| Time (s)    | Length (s) | Framing           | What happens                                                                                                                    | Out       |
+| ----------- | ---------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| 0.00–7.33   | 7.33       | live              | a laptop keyboard, a hand, the trackpad; the screen with profiles; 'Profiles make context switching easy.'                      | dissolves |
+| 7.33–13.50  | 6.17       | swipe → work      | the glowing trackpad, 'All it takes is a swipe.'; the browser in the green Work profile; 'Catch me up on the homepage redesign' | hard cuts |
+| 13.50–23.03 | 9.53       | swipe → freelance | the trackpad; the Freelance profile; 'What are the invoicing instructions…'; a report                                           | dissolves |
+| 23.03–35.20 | 12.17      | swipe → personal  | the trackpad; the pink Personal profile; mail and a question                                                                    | dissolves |
+| 35.20–39.67 | 4.47       | close             | hands swipe, 'Swipe away.'; diabrowser.com                                                                                      | end       |
 
 ### By eye
 
@@ -57,6 +57,19 @@ Autofit left out 2 moves with a cut too close and 2 whose best fit was above 3% 
 - **Frame:** live macro shots; UI on a bokeh-green photo backdrop
 - **Aspect:** 4:3, 960×720, 30 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 33 ms at 30 fps.
+
+- **The swipe is the cut.** At 7.33 s the glowing trackpad with 'All it takes is a swipe.' cuts on frame 0 to the browser window, complete, on a green bokeh backdrop: the gesture on one side of the cut, its result on the other (a match on action), with no transition effect between them.
+- **Composer → sent, in one cut.** At 9.37 and 15.03 s the centred composer with the typed question cuts to the same page with the question as a sent bubble at the top right; the frame and the page hold, only the message has moved. The send and the wait are skipped.
+- **Live screen → clean capture of the same page.** At 18.40 s a macro of the laptop's display (tilted, shallow focus) cuts to the flat capture of the same 'Homepage Redesign Report'; the report keeps its place in the frame, so the cut reads as the picture sharpening.
+- **A cut-in on the same window.** At 19.13 s the window at ×1 cuts to its right-hand chat at about ×2.2, straight on, no move.
+- **A scroll, then a push onto the composer.** The page scrolls up about 8% (25.56 s) and the frame then pushes ×1.5 toward the composer over about 0.9 s (27.37 s) while a prompt is typed; the push ends with the composer's send button at the centre.
+- **The close mirrors the open.** At 35.20 s (a dissolve) a hand enters the frame over the glowing trackpad within 5 frames: the same shot as the first swipe, now with the hand shown.
+
+**Eye at the cuts.** Trackpad → window (7.33 s): both centred, 0–5%. Composer → sent bubble (9.37 s): centre to about 80% across, 30%; the only thing that changed is the thing the eye follows. Laptop macro → capture (18.40 s): under 10%. The instrument places all 7 hard cuts on the right frame.
 
 ## 2. Classify
 

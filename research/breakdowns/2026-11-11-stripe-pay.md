@@ -32,12 +32,12 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 ### Shot list
 
-| Time (s)    | Framing  | What happens                                                                                | Out            |
-| ----------- | -------- | ------------------------------------------------------------------------------------------- | -------------- |
-| 0.00–6.37   | command  | 'stripe pay @elementara_ai 10.0' typed at ×4                                                | hard cut       |
-| 6.37–11.37  | output   | pull ×0.76 to the request details and 'Your transfer requires explicit approval'            | short dissolve |
-| 11.37–15.80 | approval | a light dialog: 'Requesting to pay $10.00', the agent's account, Decline / Approve          | hard cut       |
-| 15.80–22.80 | receipt  | the terminal: 'Request approved', 'Transfer sent $10.00 USD → @elementara_ai'; a pull ×0.74 | end            |
+| Time (s)    | Length (s) | Framing  | What happens                                                                                | Out            |
+| ----------- | ---------- | -------- | ------------------------------------------------------------------------------------------- | -------------- |
+| 0.00–6.37   | 6.37       | command  | 'stripe pay @elementara_ai 10.0' typed at ×4                                                | hard cut       |
+| 6.37–11.37  | 5.00       | output   | pull ×0.76 to the request details and 'Your transfer requires explicit approval'            | short dissolve |
+| 11.37–15.80 | 4.43       | approval | a light dialog: 'Requesting to pay $10.00', the agent's account, Decline / Approve          | hard cut       |
+| 15.80–22.80 | 7.00       | receipt  | the terminal: 'Request approved', 'Transfer sent $10.00 USD → @elementara_ai'; a pull ×0.74 | end            |
 
 ### By eye
 
@@ -47,6 +47,18 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 - **Frame:** terminal dark navy; the approval dialog on a lavender field
 - **Aspect:** 1:1, 720×720, 30 fps
 - **Sound:** none: no audio track
+
+### Frame-level beats
+
+Read from 10-frame strips around 2 cuts, 1 dissolve and 2 moves; 1 f = 33 ms at 30 fps. The film is vertical.
+
+- **The output fades in block by block as the frame pulls.** After the command runs (6.37 s) the 'Recipient found' line is there on frame 0; the detail rows and the boxed description then fade up over about 5 frames each, top to bottom, while the frame pulls ×0.76 over 1.3 s (6.41 s). The pull is paced so each new block enters the frame as it appears.
+- **The dialog arrives light over dark.** At 11.37 s (read as a dissolve) the dark terminal is covered within 1 frame by a pale scrim and the white approval dialog fades up over 2 more: the change of luminance is the alert. 'Approve' is the only saturated element, at the lower right of the dialog.
+- **The dialog holds 4.4 s with nothing moving.** No pointer is shown on 'Approve'; the next cut is the consequence.
+- **Dialog → terminal on frame 0** (15.80 s), back to the dark terminal at the same framing as before the dialog, now with 'Request approved' added below. Same frame, one more line: the cut reads as time passing.
+- **The closing pull reveals the window.** From 19.55 s the frame pulls ×0.74 over 1.5 s until the terminal is a window with traffic lights on a white backdrop: the film ends by showing that what we watched was one small window.
+
+**Eye at the cuts.** Terminal → dialog: from the terminal's last line (about 50% × 75%) to the dialog's title at 50% × 35%: no sideways travel, 40% vertical. Dialog → terminal: from 'Approve' at about 62% across to 'Request approved' at about 20%, a 40% jump, the widest in the film, on the cut that carries the result. Both hard cuts land on the measured frame.
 
 ## 2. Classify
 

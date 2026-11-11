@@ -30,12 +30,12 @@ Autofit left out 2 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing             | What happens                                                                                      | Out                  |
-| ----------- | ------------------- | ------------------------------------------------------------------------------------------------- | -------------------- |
-| 0.00–8.14   | 3D object           | violet slabs fold into the Clerk app icon                                                         | dissolves 0.3, 2.3 s |
-| 8.14–11.29  | logo                | the icon shrinks to a small mark                                                                  | dissolve             |
-| 11.29–25.98 | macro travel        | the camera slides along the tilted menu: account, organizations, '+ Add Organization', 'Settings' | hard cuts            |
-| 25.98–32.90 | flat menu, end card | the whole menu, flat; then 'Components 2.0 / <UserButton />' and the logo                         | end                  |
+| Time (s)    | Length (s) | Framing             | What happens                                                                                      | Out                  |
+| ----------- | ---------- | ------------------- | ------------------------------------------------------------------------------------------------- | -------------------- |
+| 0.00–8.14   | 8.14       | 3D object           | violet slabs fold into the Clerk app icon                                                         | dissolves 0.3, 2.3 s |
+| 8.14–11.29  | 3.15       | logo                | the icon shrinks to a small mark                                                                  | dissolve             |
+| 11.29–25.98 | 14.69      | macro travel        | the camera slides along the tilted menu: account, organizations, '+ Add Organization', 'Settings' | hard cuts            |
+| 25.98–32.90 | 6.92       | flat menu, end card | the whole menu, flat; then 'Components 2.0 / <UserButton />' and the logo                         | end                  |
 
 ### By eye
 
@@ -48,7 +48,17 @@ Autofit left out 2 moves with a cut too close and 2 whose best fit was above 3% 
 
 ### Frame-level beats
 
-- The flat frame of the whole menu comes after the macro travel, so the viewer has read each row before seeing them together.
+Read from 10-frame strips around 7 cuts, 1 dissolve and 2 moves; 1 f = 16.7 ms at 59.94 fps.
+
+- **The flat frame of the whole menu comes after the macro travel**, so the viewer has read each row before seeing them together.
+- **Scale cuts on a fixed centre.** The icon cuts from full size to a small mark at 6.01 s (about ×6), then back up to about ×1.5 at 8.14 s, each on one frame and on the same centre: a match cut on position used as a zoom.
+- **Macro drifts are slow and short.** The pulls at 10.72 and 11.35 s move a row's width over 1–2 s; each macro shot holds one row ('Clerk ⌄', 'cameron@clerk.com', 'Acme', 'Settings') in focus and cuts before the next row arrives.
+- **Each macro cut jumps rows, not travels.** At 13.01 and 17.00 s the next row is on screen on frame 0 or −1, at the same tilt: the edit does the scrolling.
+- **The flat frame is small.** At 21.97 s the macro cuts straight to the whole menu at about 15% of the frame width, in a violet glow, then (25.98 s) to the centred 'Components 2.0 / <UserButton />' card.
+
+**Eye at the cuts.** Icon → mark → icon: 0% (same centre). Macro row → macro row: within about 10% (rows enter at the same tilt and place). Macro → flat menu (21.97 s): from the left half to the centre, about 20%. 4 of 7 measured 'cuts' are true edits; the instrument places half of them one frame late.
+
+## 2. Classify
 
 ## 2. Classify
 

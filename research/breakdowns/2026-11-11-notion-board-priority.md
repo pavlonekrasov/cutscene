@@ -35,9 +35,9 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 
 ### Shot list
 
-| Time (s)   | Framing                        | What happens                                                                                                                                                | Out |
-| ---------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| 0.00–12.87 | wide → ×1.24 → wide (one take) | pan down to the board (0.63), push (2.80), set 'Medium' from the priority menu (3.0–4.0), follow-pans (5.80, 9.00), pull-out ×0.72 to the List view (11.45) | —   |
+| Time (s)   | Length (s) | Framing                        | What happens                                                                                                                                                | Out |
+| ---------- | ---------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| 0.00–12.87 | 12.87      | wide → ×1.24 → wide (one take) | pan down to the board (0.63), push (2.80), set 'Medium' from the priority menu (3.0–4.0), follow-pans (5.80, 9.00), pull-out ×0.72 to the List view (11.45) | —   |
 
 ### By eye
 
@@ -51,6 +51,17 @@ RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own 
 ### Frame-level beats
 
 - Each follow-pan starts as the pointer heads for the next card and settles before it arrives.
+
+Read from 10-frame strips around 2 cuts, 1 dissolve and 2 moves; 1 f = 41.7 ms at 24 fps.
+
+- **The opening pan grows the window as it moves.** In the first 0.5 s the window goes from about 70% of the frame, with the page's cover image at the top, to full width with the board's three columns in view; the grey backdrop is gone by column 3. The pointer is in the frame from the first column, at about 55% × 40%.
+- **The push follows the pointer down and left.** From 2.80 s the pointer travels to the first column's card (about 30% × 65%) and the frame scales ×1.24 around it over about 1.2 s; a small dark tooltip appears beside the pointer at column 2, before the push has ended.
+- **The menu opens under the pointer after the camera has stopped**, and the choice is 2 rows down: the pointer moves about 5% of the frame to reach it.
+- **The changed card is tinted.** After the choice the first column's card carries a blue wash (4.83 s) for at least 10 frames, where the neighbouring columns stay white and yellow: the result is marked by colour, in place, without a camera move.
+- **The measured cuts are in-UI changes**: the menu closing (4.83 s), a second card taking a grey hover wash across 5 frames (7.29 s), and its property chip changing (8.25 s). Each is under 5% of the frame.
+- **The pointer is about 4% of the frame high**: an enlarged black arrow with a white edge, legible in every 176 px strip cell.
+
+**Eye at the cuts.** There are no edits; the film is one take. Card 1 → card 2: about 25% right, led by the pointer, with a follow-pan of a few percent. All 2 measured cuts are UI changes.
 
 ## 2. Classify
 

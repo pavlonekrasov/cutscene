@@ -30,16 +30,16 @@ Autofit left out 3 moves with a cut too close and 1 whose best fit was above 3% 
 
 ### Shot list
 
-| Time (s)    | Framing            | What happens                                                                                                            | Out                |
-| ----------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| 0.00–3.33   | cards              | 'Getting into crypto'; 'Just got' builds to 'Just got easier'; a mascot flies through                                   | dissolves          |
-| 3.33–10.27  | sign-up chapter    | 'Sign up your way'; 'Phone or Email' on blue; the phone form, an email typed; 'Verify that it's you'; a code typed      | dissolves          |
-| 10.27–17.47 | account chapter    | 'Your Phrase' pills; 'One self-custody account'; 'All your wallets'; 'Now available in your browser'                    | dissolves          |
-| 17.47–21.87 | the desktop window | the wallet in a browser window on purple, the only full window in the film                                              | dissolve           |
-| 21.87–28.07 | send chapter       | 'Send tokens'; a send card picks a token, enters an amount, confirms; 'Transaction Sent' with a check                   | cuts and dissolves |
-| 28.07–31.93 | NFT chapter        | 'Send NFTs'; a cat NFT card; quantity 1 → 3                                                                             | cuts               |
-| 31.93–40.73 | sign-in chapter    | 'Sign in with Family' on teal; a site's 'Connect' button tapped; the connection request; 'One seamless … for every app' | dissolves          |
-| 40.73–47.27 | close              | a security check; 'Your Control'; the logo with family.co                                                               | end                |
+| Time (s)    | Length (s) | Framing            | What happens                                                                                                            | Out                |
+| ----------- | ---------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| 0.00–3.33   | 3.33       | cards              | 'Getting into crypto'; 'Just got' builds to 'Just got easier'; a mascot flies through                                   | dissolves          |
+| 3.33–10.27  | 6.94       | sign-up chapter    | 'Sign up your way'; 'Phone or Email' on blue; the phone form, an email typed; 'Verify that it's you'; a code typed      | dissolves          |
+| 10.27–17.47 | 7.20       | account chapter    | 'Your Phrase' pills; 'One self-custody account'; 'All your wallets'; 'Now available in your browser'                    | dissolves          |
+| 17.47–21.87 | 4.40       | the desktop window | the wallet in a browser window on purple, the only full window in the film                                              | dissolve           |
+| 21.87–28.07 | 6.20       | send chapter       | 'Send tokens'; a send card picks a token, enters an amount, confirms; 'Transaction Sent' with a check                   | cuts and dissolves |
+| 28.07–31.93 | 3.86       | NFT chapter        | 'Send NFTs'; a cat NFT card; quantity 1 → 3                                                                             | cuts               |
+| 31.93–40.73 | 8.80       | sign-in chapter    | 'Sign in with Family' on teal; a site's 'Connect' button tapped; the connection request; 'One seamless … for every app' | dissolves          |
+| 40.73–47.27 | 6.54       | close              | a security check; 'Your Control'; the logo with family.co                                                               | end                |
 
 ### By eye
 
@@ -49,6 +49,20 @@ Autofit left out 3 moves with a cut too close and 1 whose best fit was above 3% 
 - **Frame:** flat colour fields with soft shapes, a new colour per chapter (cream, blue, purple, yellow, teal)
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** an audio track with rhythmic onsets (not listened to)
+
+### Frame-level beats
+
+Read from 10-frame strips around 5 cuts, 1 dissolve and 2 moves; 1 f = 33 ms at 30 fps.
+
+- **A panel never sits level while it waits.** The verification-code panel (10.27 s) rotates about 3° over 10 frames as its shot ends: every floating panel drifts or tilts slightly, so a held shot is never a frozen one.
+- **Rows arrive one per 3 frames.** In the desktop window (18.23 s) the wallet rows fill in top to bottom ('Saving', 'Spending', 'Investment'), about 100 ms apart: a stagger of the product's own list, on a locked frame.
+- **The result replaces the form in place.** At 26.57 s the send card slides left out of its panel over 3 frames and 'Transaction Confirmed' takes its place in the same panel, same position: the frame, the panel and the backdrop hold, only the content changes.
+- **A stepper counted in frames.** The NFT quantity goes 1 → 2 → 3 with about 4 frames between presses (31.23 s); the cat card above it doesn't move.
+- **Card → window by a rising wipe.** 'Sign in with Family across the web' is pushed up and out by the teal backdrop and the site's window over about 3 frames (33.78 s), then the window holds while its ring chart draws for 0.8 s.
+- **Words swap inside the card.** 'Your Crypto' → 'Your Control': 'Crypto' rolls up and out while 'Control' rolls in from below, in teal, over about 4 frames (42.85 s); 'Your' doesn't move.
+- **The logo types itself.** The mark, then the wordmark letter by letter from the right ('y', 'ily', 'amily', 'Family'), about 2 frames a step (45.00 s).
+
+**Eye at the cuts.** Each chapter's panel is centred, and each chapter card is centred: 0–10% at every chapter change. The one off-centre moment is the rolled word ('Control' at about 55%), and it is the word the film wants read. 3 of 5 measured cuts are in-panel changes.
 
 ## 2. Classify
 

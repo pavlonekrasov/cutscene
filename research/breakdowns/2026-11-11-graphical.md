@@ -17,12 +17,12 @@
 
 ### Shot list
 
-| Time (s)    | Framing   | What happens                                                                       | Out                        |
-| ----------- | --------- | ---------------------------------------------------------------------------------- | -------------------------- |
-| 0.00–5.18   | grid      | a bento grid of components in green, then purple, then red                         | dissolves                  |
-| 5.18–14.20  | theme     | the dark Theme panel at right; the colour slider dragged; the whole grid re-themes | hard cuts, short dissolves |
-| 14.20–23.72 | component | a Volume slider; its Thumb panel; the thumb and track restyled                     | hard cuts                  |
-| 23.72–38.95 | card      | 'Available Today' with icons orbiting                                              | end                        |
+| Time (s)    | Length (s) | Framing   | What happens                                                                       | Out                        |
+| ----------- | ---------- | --------- | ---------------------------------------------------------------------------------- | -------------------------- |
+| 0.00–5.18   | 5.18       | grid      | a bento grid of components in green, then purple, then red                         | dissolves                  |
+| 5.18–14.20  | 9.02       | theme     | the dark Theme panel at right; the colour slider dragged; the whole grid re-themes | hard cuts, short dissolves |
+| 14.20–23.72 | 9.52       | component | a Volume slider; its Thumb panel; the thumb and track restyled                     | hard cuts                  |
+| 23.72–38.95 | 15.23      | card      | 'Available Today' with icons orbiting                                              | end                        |
 
 ### By eye
 
@@ -32,6 +32,17 @@
 - **Frame:** full-bleed, light
 - **Aspect:** 16:9, 1280×720, 60 fps
 - **Sound:** none: no audio track
+
+### Frame-level beats
+
+Read from 10-frame strips around 6 cuts and 1 dissolve; 1 f = 16.7 ms at 60 fps.
+
+- **A theme change fades tile by tile.** At 2.68 s the bento grid's lower row loses its ink over about 6 frames while the top row holds; the new theme then comes up in the same tiles. The grid's geometry never changes, so the eye compares colour and type only.
+- **A label grows in place, live.** In the component shot (17.47 s) the 'Volume' label above the slider scales up over 10 frames as its size is dragged in the dark panel at the right; the label in the second tile grows with it. Control and result share one locked frame, about 60% of the width apart.
+- **The end card is 15 s of one orbit.** From 23.72 s 'Available Today' sits centred with about twelve component icons circling it at a few degrees a second; all five 'cuts' measured after 26.78 s are the orbit, not edits. The card is 39% of the film.
+- **No pointer is visible in the strips.** Changes happen to the panel's values and to the component at once; the hand is implied.
+
+**Eye at the cuts.** No true hard cut with clear picture on both sides was found after the theme sequence: the film is locked frames joined by fades. Inside a shot the eye travels from the panel (right, about 85%) to the component (left, about 25–45%) and back, by reading, not by cutting.
 
 ## 2. Classify
 
