@@ -1,8 +1,8 @@
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
-import { writeFile } from "node:fs/promises";
+import { copyFile, link, mkdir, rm } from "node:fs/promises";
 import { createRequire } from "node:module";
-import { join } from "node:path";
+import { extname, join } from "node:path";
 import type { Frame } from "./capture";
 import { layout } from "./frame";
 import type { Format } from "./formats";
@@ -151,30 +151,37 @@ export async function encode({
   workDir: string;
   file: string;
 }) {
-  const quote = (path: string) => `'${path.replaceAll("\\", "/").replaceAll("'", "'\\''")}'`;
-  const lines = ["ffconcat version 1.0"];
-  for (const entry of entries)
-    lines.push(`file ${quote(entry.file)}`, `duration ${entry.duration.toFixed(4)}`);
-  // The concat demuxer drops the last duration unless the last file is listed once more. How long
-  // that repeat then plays depends on the ffmpeg build (a 2026 nightly plays it as long as the entry
-  // before it, doubling a held end), so the output is cut at the timeline's own length below.
-  lines.push(`file ${quote(entries.at(-1)!.file)}`);
-  const length = entries.reduce((sum, entry) => sum + Number(entry.duration.toFixed(4)), 0);
-  const list = join(workDir, "frames.ffconcat");
-  await writeFile(list, lines.join("\n"));
+  // One file per frame of the video, read at 60 per second: at each 60th, the frame the timeline
+  // shows then (a repeated frame is a hard link). Not an ffconcat list with durations: its image
+  // times sit on a 1/25 s clock, so 60 paints a second came out as 25 and motion stepped.
+  const length = entries.reduce((sum, entry) => sum + entry.duration, 0);
+  const total = Math.max(1, Math.round(length * 60));
+  const sequence = join(workDir, "sequence");
+  await rm(sequence, { recursive: true, force: true });
+  await mkdir(sequence, { recursive: true });
+  const kind = extname(entries[0]!.file);
+  let at = 0;
+  let shown = 0;
+  for (let n = 0; n < total; n++) {
+    // Half a frame of slack: a frame shows from the 60th nearest its start.
+    while (at < entries.length - 1 && shown + entries[at]!.duration <= n / 60 + 1 / 120)
+      shown += entries[at++]!.duration;
+    const frame = join(sequence, `${String(n).padStart(6, "0")}${kind}`);
+    await link(entries[at]!.file, frame).catch(() => copyFile(entries[at]!.file, frame));
+  }
 
   const { x, y, canvas } = layout(format);
   const yuv =
     "scale=out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p";
   const filter = framePng
-    ? `[0:v]fps=60,format=gbrp,pad=${canvas.width}:${canvas.height}:${x}:${y}[app];` +
+    ? `[0:v]format=gbrp,pad=${canvas.width}:${canvas.height}:${x}:${y}[app];` +
       `[app][1:v]overlay=0:0:format=gbrp,${yuv}[out]`
-    : `[0:v]fps=60,format=gbrp,${yuv}[out]`;
+    : `[0:v]format=gbrp,${yuv}[out]`;
   ffmpeg([
-    ...["-f", "concat", "-safe", "0", "-i", list],
+    ...["-framerate", "60", "-start_number", "0", "-i", join(sequence, `%06d${kind}`)],
     ...(framePng ? ["-i", framePng] : []),
     ...["-filter_complex", filter, "-map", "[out]"],
-    ...["-c:v", "libx264", "-preset", "slow", "-crf", "16", "-r", "60", "-t", length.toFixed(4)],
+    ...["-c:v", "libx264", "-preset", "slow", "-crf", "16", "-r", "60", "-frames:v", String(total)],
     ...["-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "iec61966-2-1"],
     ...["-color_range", "tv", "-movflags", "+faststart", file],
   ]);
