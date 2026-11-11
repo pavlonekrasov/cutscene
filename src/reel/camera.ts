@@ -21,11 +21,14 @@ export type CameraSettings = {
   cutOver: { zoom: number; pan: number };
 };
 
+// The pace of 50 launch films measured on X (research/craft.md, rule 14): fitted with this file's
+// `ease`, their pushes take 0.75 s, pulls 1.0 s and pans 0.86 s at the median. 0.3.0's 0.5 s push
+// rested on an older script's reading of 400–570 ms.
 export const CAMERA: CameraSettings = {
   working: 1.5,
-  push: 0.5,
-  pull: 0.6,
-  pan: [0.5, 0.8],
+  push: 0.75,
+  pull: 1.0,
+  pan: [0.7, 1.0],
   lead: 0.3,
   deadZone: 0.6,
   cutOver: { zoom: 1.8, pan: 0.5 },

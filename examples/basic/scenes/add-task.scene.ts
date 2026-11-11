@@ -22,7 +22,8 @@ scene("Add a task", async ({ act }) => {
   await expect(main.getByRole("checkbox").first()).toBeChecked();
   await act.focus(main.getByRole("listitem").first(), 2);
   act.mark("done");
-  await act.wait(800);
+  // The reel's push to ×2 takes 0.75 s; the rest is the 1.5 s hold measured reels give a result.
+  await act.wait(2300);
   await act.caption(null);
   act.wide();
 });

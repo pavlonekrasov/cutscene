@@ -277,8 +277,9 @@ reel file; `--project <name>` shoots another format. `CUTSCENE_THEME`, `CUTSCENE
 zoom (1.5). For each click, hover or typed field outside the middle 60% of the shot it glides just
 far enough to bring the action in, starting 300 ms before the pointer sets off and still when the
 press lands. It never moves while the page scrolls, and never overshoots
-(`cubic-bezier(0.65, 0, 0.35, 1)`; push-in 500 ms, pull-back 600 ms, pans 500–800 ms). A reframe
-beyond ×1.8, or across more than half the shot, is a cut. Between clips it's always a hard cut.
+(`cubic-bezier(0.65, 0, 0.35, 1)`; push-in 750 ms, pull-back 1 s, pans 700 ms–1 s, the median pace
+of 50 measured launch films). A reframe beyond ×1.8, or across more than half the shot, is a cut.
+Between clips it's always a hard cut.
 
 Where the automatic camera isn't what you want, say so in the scene. Both do nothing when a scene
 records on its own:
