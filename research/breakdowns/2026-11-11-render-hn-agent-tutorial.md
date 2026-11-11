@@ -7,17 +7,16 @@
 
 **Why it's here.** A 48 s walk-through that ends on its payoff in another app (the agent's email), with pushes on each form field.
 
-**What the instrument can read.** Good on the moves; page changes read as cuts.
+## 1. Describe
 
-## Measured
+### Measured
 
-48 s, 1280×720, 30 fps. Camera still 80% of the time. 9 cut candidates; 16 moves.
+48 s, 1280×720, 30 fps. Camera still 80% of the time. 10 shots, median 3.37 s. 9 cuts (0 dissolves); 16 moves.
 
 Moves:
 
 - 0.04 s push ×1.888 (pan -8.5, -12.2%), 2–98% 720 ms, 10–90% 400 ms, peak 0.12
 - 5.02 s pull ×0.561 (pan 7.4, 10.6%), 2–98% 430 ms, 10–90% 330 ms, peak 0.43, overshoot 3%
-- 5.57 s pull ×0.933 (pan 1.4, 2%), 2–98% 590 ms, 10–90% 360 ms, peak 0.11, overshoot 2%
 - 6.74 s push ×1.471 (pan -0.1, 9.6%), 2–98% 650 ms, 10–90% 380 ms, peak 0.1
 - 16.88 s pull ×0.509 (pan 0.1, -31.5%), 2–98% 710 ms, 10–90% 470 ms, peak 0.17, overshoot 2%
 - 17.97 s push ×1.614 (pan 0, 5.2%), 2–98% 700 ms, 10–90% 390 ms, peak 0.09
@@ -29,22 +28,26 @@ Moves:
 - 41.33 s pull ×0.69 (pan -0.3, -17.4%), 2–98% 230 ms, 10–90% 180 ms, peak 0.59, overshoot 13%
 - 41.95 s push ×1.685 (pan -0.3, -17%), 2–98% 730 ms, 10–90% 400 ms, peak 0.07
 - 44.91 s pull ×0.759 (pan 15.7, 21.9%), 2–98% 810 ms, 10–90% 480 ms, peak 0.15
-- (2 more under 150 ms: blur or UI changes, not camera moves)
+- (3 more under 150 ms, ×1.1 or 5% of the frame: blur, UI changes or tracker noise)
 
-Curve fits (RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own push at 0.16%):
+**What the instrument can read.** Good on the moves; page changes read as cuts.
 
-| Move                | Best fit                 | Next                                           | cutscene 0.3.0's curve |
+### Curve fits
+
+RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own push at 0.16%.
+
+| Move                | Best fit                 | Next other curve                               | cutscene 0.3.0's curve |
 | ------------------- | ------------------------ | ---------------------------------------------- | ---------------------- |
 | push ×1.77 at 17.97 | out-expo 1224 ms (1.01%) | out-quint (1.45%); spring ζ 1, ω 8.9/s (1.87%) | 4.29%                  |
 | push ×1.75 at 41.95 | out-expo 1299 ms (2.25%) | spring ζ 1, ω 9.1/s (2.62%)                    | 5.16%                  |
 
-## Shot list
+### Shot list
 
 | Time (s)   | Framing                  | What happens                                                                                            | Out |
 | ---------- | ------------------------ | ------------------------------------------------------------------------------------------------------- | --- |
 | 0.00–48.00 | one take, then the inbox | push ×1.89 (0.04), add an interest, add a question, preview, then the agent's email in the inbox (44.6) | —   |
 
-By eye:
+### By eye
 
 - **Zoom:** working ×1.5–1.9
 - **Cards:** none
@@ -53,17 +56,27 @@ By eye:
 - **Aspect:** 16:9, 1280×720, 30 fps
 - **Sound:** none
 
-## Frame-level beats
+### Frame-level beats
 
 - The payoff (the email arriving) is the last shot, after a cut to another app.
 
-## Why it works
+## 2. Classify
 
-- Ending on the outcome in the place the user would see it.
+Tutorial walkthrough that ends on its payoff in another app.
 
-## What it teaches
+## 3. Diagnose
+
+- The last shot is the agent's email in the inbox. → End on the outcome where the user would see it.
+
+## 4. Prescribe
 
 - _confirms_: End on the result. (reel structure)
+
+## 5. Critique
+
+- **I like:** Ending in the inbox proves the agent ran.
+- **I wish:** No establishing wide; it starts zoomed.
+- **I wonder:** Could a multi-scene reel end in a second app's scene?
 
 ## Not for us
 

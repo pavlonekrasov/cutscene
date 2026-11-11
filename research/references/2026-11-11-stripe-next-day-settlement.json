@@ -27,6 +27,55 @@
       "cutscene030": "3.28%"
     }
   ],
+  "classify": "Screen Studio clip: a window on a gradient with an automatic follow camera. Conventions: push to the action, hold, pull to the result, loop.",
+  "diagnose": [
+    {
+      "observation": "The push settles on the frame the modal opens.",
+      "principle": "Anticipation: the camera is still before the new content appears."
+    },
+    {
+      "observation": "The push is a slightly under-damped spring (ζ 0.9) settling in 0.52 s.",
+      "principle": "Screen Studio's front-loaded spring: fast arrival, soft settle."
+    },
+    {
+      "observation": "It pulls out as the toast arrives and ends there.",
+      "principle": "End on the outcome, wide enough to show where it happened."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "contradicts",
+      "text": "Camera curve: a fast, slightly under-damped spring, not a symmetric ease-in-out.",
+      "setting": "camera.ease"
+    },
+    {
+      "tag": "new",
+      "text": "End wide on the result.",
+      "setting": "reel structure"
+    },
+    {
+      "tag": "confirms",
+      "text": "The camera settles before the press lands (here, before the modal opens).",
+      "setting": "CAMERA.lead"
+    }
+  ],
+  "critique": {
+    "like": "Every move finishes before something new appears, so nothing is read in motion.",
+    "wish": "The saturated gradient pulls the eye from the window at the edges of the frame.",
+    "wonder": "Could cutscene time its pull-out to the first toast after the last action?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "colour",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 6.32,
     "width": 1276,

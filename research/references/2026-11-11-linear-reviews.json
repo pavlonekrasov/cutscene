@@ -1,0 +1,470 @@
+{
+  "slug": "linear-reviews",
+  "title": "Linear: code reviews (coming soon)",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2013642911011749889/vid/avc1/960x720/isaXnHl2x8NLwbmP.mp4?tag=21",
+    "foundOn": "https://x.com/linear/status/2013643099147248054",
+    "maker": "Linear",
+    "posted": "2026-01-20"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 25 s teaser with no product UI: code drawn as glowing mono text on a 3D plane, the camera drifting over it while red markers flag lines, green ones replace them and a 'Merge' button lights. Then a glowing serif pun card, 'Think diff', and 'Code reviews: available soon in Linear'.",
+  "instrument": "4:3 (960×720), 60 fps. The camera drifts in 1.0–1.3 s moves with almost no overshoot, but on a perspective plane the tracker's zoom is unreliable; autofit skips the two it finds.",
+  "byEye": {
+    "zoom": "code lines filling the frame at a steep angle; the camera drifts along them",
+    "cards": "'Think diff'; 'Code reviews' / 'Available soon in Linear'; logo",
+    "cursor": "none",
+    "frame": "black void; code glows with bloom",
+    "aspect": "4:3, 960×720, 60 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [],
+  "classify": "Abstract motion-graphics teaser for an unreleased feature. Conventions: perspective code planes, diff colours as story, a pun title card, 'available soon'.",
+  "diagnose": [
+    {
+      "observation": "Red gutter markers, then green rows, then a lit 'Merge'.",
+      "principle": "Semantic colour as narrative: the diff's own red/green code tells problem → fix → merge with no copy."
+    },
+    {
+      "observation": "Static code on a tilted plane with a slow drifting camera.",
+      "principle": "Parallax and depth create motion when the subject itself doesn't move."
+    },
+    {
+      "observation": "The pun card fades through blur over about 4 s.",
+      "principle": "Pacing: the slowest moment in the film is the line of copy, not the product."
+    },
+    {
+      "observation": "Half the film (12.7 s) is cards and logo.",
+      "principle": "A teaser's job is the name and the date; the picture is mood."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Lay a frame on a slightly tilted plane for an opening or closing shot.",
+      "setting": "renderer tilt (not built)"
+    },
+    {
+      "tag": "new",
+      "text": "Use the product's own semantic colours (diff red/green, status colours) as the story's beats.",
+      "setting": "reel script (skill)"
+    }
+  ],
+  "critique": {
+    "like": "The red and green line markers tell before and after without a word of copy.",
+    "wish": "'Think diff' takes about 4 s to blur away, longer than any code shot.",
+    "wonder": "Could the reel renderer tilt a recorded frame a few degrees for the opening shot, as this does with code?"
+  },
+  "tags": {
+    "genre": "3d",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "detail",
+    "end": "cards+logo",
+    "endSec": 12.7,
+    "cards": 2,
+    "backdrop": "dark",
+    "cursor": "none",
+    "tilt": true
+  },
+  "grammar": {
+    "duration": 25.42,
+    "width": 960,
+    "height": 720,
+    "fps": 60,
+    "shots": 22,
+    "shotLength": {
+      "mean": 1.16,
+      "median": 1.05
+    },
+    "cuts": [
+      {
+        "t": 0.63,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 0.97,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 2.42,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 3.28,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 3.63,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 4.03,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 5.47,
+        "kind": "dissolve",
+        "over": 0.12
+      },
+      {
+        "t": 6.23,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 6.7,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.75,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 8.68,
+        "kind": "dissolve",
+        "over": 0.28
+      },
+      {
+        "t": 11.25,
+        "kind": "dissolve",
+        "over": 0.73
+      },
+      {
+        "t": 12.75,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 13.05,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 15.28,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 15.63,
+        "kind": "dissolve",
+        "over": 0.45
+      },
+      {
+        "t": 16.92,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 18.02,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 19.7,
+        "kind": "dissolve",
+        "over": 0.62
+      },
+      {
+        "t": 22.28,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 22.68,
+        "kind": "dissolve",
+        "over": 0.08
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pull",
+        "at": 0.03,
+        "over": 0.56,
+        "core": 0.45,
+        "zoom": 0.953,
+        "pan": [
+          0,
+          1.3
+        ],
+        "peak": 0.75,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "pan",
+        "at": 0.66,
+        "over": 0.27,
+        "core": 0.22,
+        "zoom": 0.978,
+        "pan": [
+          0,
+          0.7
+        ],
+        "peak": 0.95,
+        "overshoot": 0.07
+      },
+      {
+        "kind": "pull",
+        "at": 1.01,
+        "over": 1.33,
+        "core": 1.1,
+        "zoom": 0.894,
+        "pan": [
+          0,
+          3.3
+        ],
+        "peak": 0.65,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pan",
+        "at": 2.45,
+        "over": 0.78,
+        "core": 0.65,
+        "zoom": 0.991,
+        "pan": [
+          0.8,
+          3.1
+        ],
+        "peak": 0.92,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pan",
+        "at": 4.08,
+        "over": 1.32,
+        "core": 1.1,
+        "zoom": 0.986,
+        "pan": [
+          1.3,
+          5.2
+        ],
+        "peak": 0.97,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "pan",
+        "at": 5.6,
+        "over": 0.59,
+        "core": 0.49,
+        "zoom": 1.002,
+        "pan": [
+          0.9,
+          3.3
+        ],
+        "peak": 0.2,
+        "overshoot": 0.03
+      },
+      {
+        "kind": "pan",
+        "at": 6.26,
+        "over": 0.4,
+        "core": 0.33,
+        "zoom": 1.003,
+        "pan": [
+          0.6,
+          2.3
+        ],
+        "peak": 0.65,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "pan",
+        "at": 6.74,
+        "over": 0.96,
+        "core": 0.8,
+        "zoom": 1,
+        "pan": [
+          1.4,
+          5.4
+        ],
+        "peak": 0.61,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pan",
+        "at": 9.98,
+        "over": 1.19,
+        "core": 1,
+        "zoom": 1,
+        "pan": [
+          2.5,
+          -0.1
+        ],
+        "peak": 0.12,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 11.72,
+        "over": 0.1,
+        "core": 0.09,
+        "zoom": 1.56,
+        "pan": [
+          2.8,
+          0.9
+        ],
+        "peak": 0.67,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pull",
+        "at": 12,
+        "over": 0.7,
+        "core": 0.57,
+        "zoom": 0.824,
+        "pan": [
+          0,
+          -0.2
+        ],
+        "peak": 0.05,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pull",
+        "at": 12.77,
+        "over": 0.24,
+        "core": 0.2,
+        "zoom": 0.952,
+        "pan": [
+          0,
+          -0.1
+        ],
+        "peak": 0.94,
+        "overshoot": 0.07
+      },
+      {
+        "kind": "pan",
+        "at": 13.07,
+        "over": 0.13,
+        "core": 0.1,
+        "zoom": 0.979,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.78,
+        "overshoot": 0.16
+      },
+      {
+        "kind": "pull",
+        "at": 15.4,
+        "over": 0.19,
+        "core": 0.09,
+        "zoom": 0.905,
+        "pan": [
+          -0.2,
+          -0.1
+        ],
+        "peak": 0.86,
+        "overshoot": 0.12
+      },
+      {
+        "kind": "push",
+        "at": 15.66,
+        "over": 0.08,
+        "core": 0.06,
+        "zoom": 1.138,
+        "pan": [
+          0.9,
+          0
+        ],
+        "peak": 0.69,
+        "overshoot": 0.12
+      },
+      {
+        "kind": "pan",
+        "at": 16.09,
+        "over": 0.53,
+        "core": 0.35,
+        "zoom": 0.977,
+        "pan": [
+          0,
+          2.6
+        ],
+        "peak": 0.52,
+        "overshoot": 0.03
+      },
+      {
+        "kind": "pan",
+        "at": 20.16,
+        "over": 0.1,
+        "core": 0.07,
+        "zoom": 0.973,
+        "pan": [
+          0.3,
+          0.1
+        ],
+        "peak": 0.87,
+        "overshoot": 0.5
+      },
+      {
+        "kind": "pull",
+        "at": 20.35,
+        "over": 0.71,
+        "core": 0.61,
+        "zoom": 0.427,
+        "pan": [
+          0.4,
+          -0.4
+        ],
+        "peak": 0.2,
+        "overshoot": 0.07
+      },
+      {
+        "kind": "pull",
+        "at": 22.43,
+        "over": 0.14,
+        "core": 0.05,
+        "zoom": 0.93,
+        "pan": [
+          10.6,
+          0.1
+        ],
+        "peak": 0.36,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.59,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        0.63,
+        0.34,
+        1.45,
+        0.86,
+        0.35,
+        0.4,
+        1.44,
+        0.76,
+        0.47,
+        1.05,
+        0.93,
+        2.57,
+        1.5,
+        0.3,
+        2.23,
+        0.35,
+        1.29,
+        1.1,
+        1.68,
+        2.58,
+        0.4,
+        2.74
+      ],
+      "trend": 1.02,
+      "accelerates": false
+    }
+  }
+}

@@ -20,6 +20,55 @@
     "sound": "an audio track with sparse onsets (11 in 30 s); 2 of 14 cuts within 50 ms of its beat grid (chance 16%); the logo cut lands 34 ms from an onset"
   },
   "curveFits": [],
+  "classify": "Motion-designed changelog film with the UI rebuilt as a mock-up. Conventions: one fragment at a time at reading size, a locked frame, claim and logo cards on near-black.",
+  "diagnose": [
+    {
+      "observation": "The UI is rebuilt at about ×2.5 and the frame never moves (still 93%).",
+      "principle": "Legibility by scale, not zoom: the fragment is the frame, so text is readable with no camera."
+    },
+    {
+      "observation": "Each new message gets 1.6–2.0 s before the thread scrolls.",
+      "principle": "Read time before motion: nothing moves while something is still being read."
+    },
+    {
+      "observation": "Scrolls peak at 0.50; card exits peak at 0.70–0.92.",
+      "principle": "Arrival and departure get different curves: symmetric for moves on screen, ease-in for exits."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Lock the camera while the app's own content moves (typing, posting, scrolling): still 93% of the time.",
+      "setting": "camera: no push while a scene's content changes in place"
+    },
+    {
+      "tag": "new",
+      "text": "Give new content 1.6–2.0 s to be read before the next motion.",
+      "setting": "hold"
+    },
+    {
+      "tag": "new",
+      "text": "End on a claim card (1.4–2.0 s) and a logo card (4.2 s); cards leave by scaling to ×0.95 and fading, accelerating out over ~0.4 s.",
+      "setting": "CARD.close, CARD.leave"
+    }
+  ],
+  "critique": {
+    "like": "Every motion is information arriving, so the eye never has to choose between the camera and the content.",
+    "wish": "The logo card holds 4.2 s, 14% of the runtime, longer than any product beat.",
+    "wonder": "Could cutscene hold a scene's camera until new text has had its reading time, then move?"
+  },
+  "tags": {
+    "genre": "motion",
+    "reframe": "locked",
+    "isolate": true,
+    "typing": true,
+    "open": "detail",
+    "end": "cards+logo",
+    "endSec": 9.8,
+    "cards": 3,
+    "backdrop": "dark",
+    "cursor": "none"
+  },
   "grammar": {
     "duration": 29.67,
     "width": 1920,

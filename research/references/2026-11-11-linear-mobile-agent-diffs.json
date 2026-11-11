@@ -20,6 +20,42 @@
     "sound": "an audio track (71 onsets); 4 of 12 cut candidates on its grid (chance 19%)"
   },
   "curveFits": [],
+  "classify": "Cinematic phone-UI film at 24 fps: close framings cut together. Conventions: tilted phone, depth of field, keyboard close-ups, a logo card.",
+  "diagnose": [
+    {
+      "observation": "Hard cuts between close framings (diff, composer, keyboard, status).",
+      "principle": "Cut-not-move: each detail is its own shot, so the phone's small text is legible at 1080p."
+    },
+    {
+      "observation": "24 fps with depth of field.",
+      "principle": "Film grammar signals 'cinema', not 'screen recording'."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "24 fps for a filmic piece (also Notion and Notion Calendar's clips).",
+      "setting": "formats: fps (not proposed)"
+    }
+  ],
+  "critique": {
+    "like": "Close framings make a phone's 13 px text readable without a single camera move.",
+    "wish": "The tilt and blur that make it filmic also hide most of each screen.",
+    "wonder": "Could cutscene's phone format cut between locator crops of one recording, as this cuts between close framings?"
+  },
+  "tags": {
+    "genre": "3d",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": true,
+    "open": "detail",
+    "end": "logo",
+    "endSec": 3.5,
+    "cards": 0,
+    "backdrop": "dark",
+    "cursor": "none",
+    "tilt": true
+  },
   "grammar": {
     "duration": 20.83,
     "width": 1920,

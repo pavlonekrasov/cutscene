@@ -39,6 +39,37 @@
       "cutscene030": "3.65%"
     }
   ],
+  "classify": "Tutorial recorded in Screen Studio; kept for its repeated camera curve, not its craft.",
+  "diagnose": [
+    {
+      "observation": "The same push and pull recur six times.",
+      "principle": "Repetition pins down the tool's curve: out-quint/out-expo pushes, ζ 1 spring pulls."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "contradicts",
+      "text": "Push and pull curves (as Pitch); n for the curve, not for showreel craft.",
+      "setting": "camera.ease"
+    }
+  ],
+  "critique": {
+    "like": "Six repetitions of one move make the curve measurable.",
+    "wish": "As a film it is a tutorial: long, narrated, webcam.",
+    "wonder": "Are Screen Studio's defaults the same across every clip on its wall?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": true,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "none",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 176.15,
     "width": 1308,

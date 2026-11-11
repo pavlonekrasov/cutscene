@@ -33,6 +33,46 @@
       "cutscene030": "4.59%"
     }
   ],
+  "classify": "Screen Studio clip that holds one zoom and follows with slow pans. Conventions: window on light grey, an end on the success message.",
+  "diagnose": [
+    {
+      "observation": "One zoom for 15 s; pans as a ζ 1 spring, ω 6.6/s.",
+      "principle": "Continuity: following at the push's own pace keeps orientation."
+    },
+    {
+      "observation": "It ends wide on 'Snippet copied to clipboard'.",
+      "principle": "End on the outcome."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "contradicts",
+      "text": "Follow-pans: critically damped spring, ω ~6.6/s.",
+      "setting": "camera.ease, CAMERA.pan"
+    },
+    {
+      "tag": "confirms",
+      "text": "End wide on the result.",
+      "setting": "reel structure"
+    }
+  ],
+  "critique": {
+    "like": "The calmest camera in the set: nothing reframes that doesn't have to.",
+    "wish": "The success message is small in the wide end frame.",
+    "wonder": "Could the end frame push slightly toward the toast instead of pulling fully wide?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "light",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 17.29,
     "width": 1280,

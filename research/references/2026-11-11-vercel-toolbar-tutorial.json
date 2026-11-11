@@ -20,6 +20,32 @@
     "sound": "voice"
   },
   "curveFits": [],
+  "classify": "Narrated tutorial; kept for its frame, not as a reel model.",
+  "diagnose": [
+    {
+      "observation": "Captions highlight the current word.",
+      "principle": "Karaoke captions track the narration word by word."
+    }
+  ],
+  "teaches": [],
+  "critique": {
+    "like": "The highlighted word keeps the viewer's place in the narration.",
+    "wish": "1:47 long, narrated: a tutorial, not a reel.",
+    "wonder": "Could a reel caption highlight words in time with a voice-over?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "colour",
+    "cursor": "large",
+    "captions": true
+  },
   "grammar": {
     "duration": 106.57,
     "width": 1004,

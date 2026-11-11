@@ -1,0 +1,585 @@
+{
+  "slug": "notion-html-block",
+  "title": "Notion: HTML block",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2072353512512745472/vid/avc1/1280x720/RdwMxEtYRY7urifj.mp4?tag=28",
+    "foundOn": "https://x.com/NotionHQ/status/2072354853821755822",
+    "maker": "Notion",
+    "posted": "2026-07-01"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 68 s walkthrough with a follow camera. An HTML block in an onboarding page, then the main story: a 'History of Notion' page gets an interactive timeline. A teammate comments at ×3, 'This is great… but it's missing what happened in Kyoto!', the AI is asked to add it, and the timeline updates.",
+  "instrument": "60 fps. The big moves are hand-keyed in-out quart on linear scale. Push ×1.5 in 1.02 s (rms 0.49%), push ×3.3 in 0.91 s (0.45%), pull ×0.5 in 0.72 s (0.76%). Two small nudges fit a ζ 1 spring at 0.47 s (1.4–1.6%). cutscene 0.3.0 fits the big moves at 1.3–1.5%.",
+  "byEye": {
+    "zoom": "working ≈ ×1.4–1.5; ×3 for the comments and the prompt",
+    "cards": "'Introducing HTML block'; the logo",
+    "cursor": "an enlarged macOS arrow with motion blur",
+    "frame": "the window on light grey",
+    "aspect": "16:9, 1280×720, 60 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [
+    {
+      "move": "push ×1.5 at 3.94",
+      "best": "in-out-quart on linear scale, 1024 ms (0.49%)",
+      "others": "spring ζ=0.8, ω 7.1/s, 530 ms (3.06%)",
+      "cutscene030": "1.27% (858 ms)"
+    },
+    {
+      "move": "pan 9% at 21.55",
+      "best": "out-expo, 910 ms (0.86%)",
+      "others": "spring ζ=1, ω 12.4/s, 470 ms (2.25%)",
+      "cutscene030": "6.15% (475 ms)"
+    },
+    {
+      "move": "pan 30% at 28.82",
+      "best": "spring ζ=1, ω 12.4/s, 470 ms (1.36%)",
+      "others": "out-quint, 762 ms (1.57%)",
+      "cutscene030": "2.68% (658 ms)"
+    },
+    {
+      "move": "push ×3.32 at 34.36",
+      "best": "in-out-quart on linear scale, 910 ms (0.45%)",
+      "others": "spring ζ=0.8, ω 7.7/s, 486 ms (3.18%)",
+      "cutscene030": "1.33% (762 ms)"
+    },
+    {
+      "move": "pull ×0.5 at 48.65",
+      "best": "in-out-quart on linear scale, 719 ms (0.76%)",
+      "others": "ease, 489 ms (2.05%)",
+      "cutscene030": "1.46% (620 ms)"
+    },
+    {
+      "move": "pan 79% at 59.38",
+      "best": "ease-in-out, 1024 ms (2.3%)",
+      "others": "ease-out, 809 ms (3.87%)",
+      "cutscene030": "2.53% (1377 ms)"
+    },
+    {
+      "move": "pull ×0.77 at 62.43",
+      "best": "spring ζ=1, ω 12.4/s, 470 ms (1.6%)",
+      "others": "out-quint, 809 ms (1.66%)",
+      "cutscene030": "3.24% (638 ms)"
+    }
+  ],
+  "classify": "Walkthrough with a follow camera and chapter cuts, on light grey. Conventions: a title card, an enlarged pointer, ×3 crops for comments and prompts, a logo end card.",
+  "diagnose": [
+    {
+      "observation": "Big moves fit in-out quart on linear scale at 0.7–1.0 s, small nudges a ζ 1 spring.",
+      "principle": "Two curves by move size: keyed in-out for reframes, a spring for nudges."
+    },
+    {
+      "observation": "A teammate's comment asks for Kyoto; the next scene adds it.",
+      "principle": "Motivated action: the second demo answers a request, so it reads as story, not repetition."
+    },
+    {
+      "observation": "Comments and the prompt at ×3.",
+      "principle": "Typing and reading close-ups: the words are the content."
+    },
+    {
+      "observation": "Seven seconds of side examples before the main story.",
+      "principle": "Delayed setup: the film's question arrives late."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "confirms",
+      "text": "Hand-keyed in-out quart on linear scale for big reframes (0.7–1.0 s).",
+      "setting": "camera curve (Part 3)"
+    },
+    {
+      "tag": "new",
+      "text": "Motivate a scene with a comment or request shown at ×3; the next scene answers it.",
+      "setting": "reel script (skill)"
+    },
+    {
+      "tag": "new",
+      "text": "Pick the curve by move size: in-out for reframes, a ζ 1 spring for small nudges.",
+      "setting": "camera curve per move (Part 3)"
+    }
+  ],
+  "critique": {
+    "like": "Sarah's comment gives the AI edit a reason, so the second half is an answer, not a second demo.",
+    "wish": "The onboarding and globe examples delay the main story by about 7 s.",
+    "wonder": "Could a reel's camera choose its curve per move: in-out quart above ×1.3, a ζ 1 spring below?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "both",
+    "isolate": false,
+    "typing": true,
+    "open": "card",
+    "end": "logo",
+    "endSec": 2.4,
+    "cards": 1,
+    "backdrop": "light",
+    "cursor": "large"
+  },
+  "grammar": {
+    "duration": 67.57,
+    "width": 1280,
+    "height": 720,
+    "fps": 60,
+    "shots": 29,
+    "shotLength": {
+      "mean": 2.33,
+      "median": 1.92
+    },
+    "cuts": [
+      {
+        "t": 0.2,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 1.52,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 2.85,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 7.35,
+        "kind": "dissolve",
+        "over": 0.28
+      },
+      {
+        "t": 7.92,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.45,
+        "kind": "dissolve",
+        "over": 0.27
+      },
+      {
+        "t": 12.65,
+        "kind": "dissolve",
+        "over": 0.12
+      },
+      {
+        "t": 15.37,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 18.12,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 20.48,
+        "kind": "dissolve",
+        "over": 0.22
+      },
+      {
+        "t": 21.52,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 28.22,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 36.98,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 37.65,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 39.68,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 40.43,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 41,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 41.42,
+        "kind": "dissolve",
+        "over": 0.22
+      },
+      {
+        "t": 42.82,
+        "kind": "dissolve",
+        "over": 0.05
+      },
+      {
+        "t": 46.43,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 48.5,
+        "kind": "dissolve",
+        "over": 0.08
+      },
+      {
+        "t": 50.42,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 51.27,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 52.28,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 53.25,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 61.82,
+        "kind": "dissolve",
+        "over": 0.4
+      },
+      {
+        "t": 64.18,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 65.2,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 0.25,
+        "over": 0.34,
+        "core": 0.18,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.1
+        ],
+        "peak": 0.3,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 2.77,
+        "over": 0.04,
+        "core": 0.04,
+        "zoom": 1,
+        "pan": [
+          0,
+          4.6
+        ],
+        "peak": 0.75,
+        "overshoot": 0.36
+      },
+      {
+        "kind": "pan",
+        "at": 3.05,
+        "over": 0.16,
+        "core": 0.13,
+        "zoom": 1.003,
+        "pan": [
+          -0.1,
+          8.8
+        ],
+        "peak": 0.24,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 3.94,
+        "over": 0.71,
+        "core": 0.37,
+        "zoom": 1.493,
+        "pan": [
+          -0.3,
+          12.8
+        ],
+        "peak": 0.52,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 7.04,
+        "over": 0.26,
+        "core": 0.2,
+        "zoom": 1,
+        "pan": [
+          0,
+          13.8
+        ],
+        "peak": 0.65,
+        "overshoot": 0.06
+      },
+      {
+        "kind": "pan",
+        "at": 7.38,
+        "over": 0.13,
+        "core": 0.1,
+        "zoom": 1,
+        "pan": [
+          0,
+          25.4
+        ],
+        "peak": 0.8,
+        "overshoot": 0.13
+      },
+      {
+        "kind": "pan",
+        "at": 7.64,
+        "over": 0.24,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          0,
+          7.8
+        ],
+        "peak": 0.18,
+        "overshoot": 0.15
+      },
+      {
+        "kind": "pan",
+        "at": 7.94,
+        "over": 0.23,
+        "core": 0.2,
+        "zoom": 1,
+        "pan": [
+          0,
+          11.1
+        ],
+        "peak": 0.18,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "pan",
+        "at": 9.83,
+        "over": 0.02,
+        "core": 0.01,
+        "zoom": 1,
+        "pan": [
+          0,
+          -6.3
+        ],
+        "peak": 0,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 19.97,
+        "over": 0.02,
+        "core": 0.01,
+        "zoom": 1,
+        "pan": [
+          0,
+          -2.4
+        ],
+        "peak": 0,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 21.55,
+        "over": 0.51,
+        "core": 0.31,
+        "zoom": 1,
+        "pan": [
+          0,
+          10.7
+        ],
+        "peak": 0.17,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 28.82,
+        "over": 0.54,
+        "core": 0.3,
+        "zoom": 1,
+        "pan": [
+          0,
+          -29.6
+        ],
+        "peak": 0.29,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 34.36,
+        "over": 0.63,
+        "core": 0.34,
+        "zoom": 3.322,
+        "pan": [
+          41.2,
+          -2.6
+        ],
+        "peak": 0.55,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 40.62,
+        "over": 0.34,
+        "core": 0.25,
+        "zoom": 0.999,
+        "pan": [
+          0,
+          13.2
+        ],
+        "peak": 0.96,
+        "overshoot": 0.1
+      },
+      {
+        "kind": "pan",
+        "at": 41.64,
+        "over": 0.29,
+        "core": 0.21,
+        "zoom": 0.971,
+        "pan": [
+          -0.6,
+          12
+        ],
+        "peak": 0.11,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 48.65,
+        "over": 0.48,
+        "core": 0.27,
+        "zoom": 0.505,
+        "pan": [
+          -31.8,
+          -47.4
+        ],
+        "peak": 0.45,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 51.58,
+        "over": 0.51,
+        "core": 0.27,
+        "zoom": 0.867,
+        "pan": [
+          -20.9,
+          -24.9
+        ],
+        "peak": 0.5,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 59.38,
+        "over": 0.9,
+        "core": 0.57,
+        "zoom": 0.999,
+        "pan": [
+          -0.7,
+          -79.4
+        ],
+        "peak": 0.64,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 61.65,
+        "over": 0.15,
+        "core": 0.09,
+        "zoom": 0.956,
+        "pan": [
+          -1.4,
+          -0.2
+        ],
+        "peak": 0.97,
+        "overshoot": 0.3
+      },
+      {
+        "kind": "pull",
+        "at": 61.85,
+        "over": 0.09,
+        "core": 0.07,
+        "zoom": 0.944,
+        "pan": [
+          -3.8,
+          -1.4
+        ],
+        "peak": 0.77,
+        "overshoot": 0.32
+      },
+      {
+        "kind": "pull",
+        "at": 62.43,
+        "over": 0.53,
+        "core": 0.3,
+        "zoom": 0.769,
+        "pan": [
+          0,
+          0.1
+        ],
+        "peak": 0.28,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.89,
+    "held": 0.06,
+    "rhythm": {
+      "lengths": [
+        0.2,
+        1.32,
+        1.33,
+        4.5,
+        0.57,
+        2.53,
+        2.2,
+        2.72,
+        2.75,
+        2.36,
+        1.04,
+        6.7,
+        8.76,
+        0.67,
+        2.03,
+        0.75,
+        0.57,
+        0.42,
+        1.4,
+        3.61,
+        2.07,
+        1.92,
+        0.85,
+        1.01,
+        0.97,
+        8.57,
+        2.36,
+        1.02,
+        2.37
+      ],
+      "trend": 0.15,
+      "accelerates": false
+    }
+  }
+}

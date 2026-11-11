@@ -20,6 +20,41 @@
     "sound": "none"
   },
   "curveFits": [],
+  "classify": "Screen Studio launch page read like a document: a typographic open, then a long scroll. Conventions: animated title, reading-speed scroll, deep pushes.",
+  "diagnose": [
+    {
+      "observation": "A steady scroll at about 0.85 screens/s, not eased.",
+      "principle": "Linear motion for constant activity: a scroll at reading speed reads as reading."
+    },
+    {
+      "observation": "Text flies in with motion blur at the open.",
+      "principle": "Template motion: blur on type costs legibility for energy."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "A long scroll runs at a steady reading speed (~0.85 screens/s), not eased.",
+      "setting": "act.scroll pace (not proposed)"
+    }
+  ],
+  "critique": {
+    "like": "The steady scroll makes a changelog feel read, not presented.",
+    "wish": "The blurred fly-in title is hard to read and looks like a preset.",
+    "wonder": "Should long scrolls in cutscene be linear at reading speed instead of eased?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "card",
+    "end": "none",
+    "endSec": 0,
+    "cards": 1,
+    "backdrop": "colour",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 30.58,
     "width": 1106,

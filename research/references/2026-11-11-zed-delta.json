@@ -1,0 +1,421 @@
+{
+  "slug": "zed-delta",
+  "title": "delta: Claude Code is now multiplayer",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/2115134961762062336/pu/vid/avc1/1280x720/7Lme38qw0t7n9oIP.mp4?tag=12",
+    "foundOn": "https://x.com/zeddotdev/status/2115135016233509239",
+    "maker": "Zed (delta)",
+    "posted": "2026-10-27"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 68 s film told as a short story in subtitles: 'Anant has spent the afternoon in Claude Code.' 'Hard stop at six.' 'It's 2:44 on the West Coast. Joseph runs /delta join.' The app's windows sit on a cream page with a serif subtitle under them in the same place every shot. Two sessions run side by side as the second agent works, and 'Joseph picks up the thread and lands it.'",
+  "instrument": "30 fps, still 98%, 37 shots at a 1.07 s median: progress is shown by jump cuts between states of the same window. The one clean move, a 24% pan, fits cutscene 0.3.0's curve at 0.79 s (rms 0.38%).",
+  "byEye": {
+    "zoom": "windows at about ×0.6 on the page; never cropped",
+    "cards": "a subtitle line under every shot; 'Claude Code is now multiplayer' with the commands",
+    "cursor": "none",
+    "frame": "cream page; dark windows centred; a small 'delta' mark bottom right",
+    "aspect": "16:9, 1280×720, 30 fps",
+    "sound": "silent (an audio track at −91 dB)"
+  },
+  "curveFits": [
+    {
+      "move": "pan 24% at 10.20",
+      "best": "cutscene 0.3.0, 785 ms (0.38%)",
+      "others": "spring ζ=0.8, ω 7.5/s, 500 ms (2.09%)",
+      "cutscene030": "0.38% (785 ms)"
+    }
+  ],
+  "classify": "Narrative product film: named people, clock times, a deadline, subtitled like a short story. Conventions: a caption track, locked windows, jump cuts, side-by-side sessions, an end card with commands.",
+  "diagnose": [
+    {
+      "observation": "Subtitles name people, times and a deadline.",
+      "principle": "Story structure (setup, conflict, resolution): the use case is a scene with stakes, not a feature list."
+    },
+    {
+      "observation": "The subtitle sits in the same place under the window every shot.",
+      "principle": "A consistent caption track: the viewer always knows where to read, so cuts never cost orientation."
+    },
+    {
+      "observation": "Two sessions side by side while the second agent works.",
+      "principle": "Parallel action without a cut (Cursor, Family, Figma, Notion, Zed)."
+    },
+    {
+      "observation": "Jump cuts between states of one locked window, 98% still.",
+      "principle": "Progress shown by cuts, not camera: the frame holds and time jumps."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "A caption track: one subtitle line per shot, under the frame, same position every shot.",
+      "setting": "renderer caption (not built)"
+    },
+    {
+      "tag": "new",
+      "text": "Tell the use case as a story with a person, a time and a deadline.",
+      "setting": "reel script (skill)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Side-by-side windows for parallel action.",
+      "setting": "split frame (Part 2)"
+    },
+    {
+      "tag": "confirms",
+      "text": "cutscene 0.3.0's curve matches a hand-made 0.79 s pan (rms 0.38%).",
+      "setting": "camera curve (exists)"
+    }
+  ],
+  "critique": {
+    "like": "'Hard stop at six' gives a developer tool a deadline, which makes a sync feature feel like relief.",
+    "wish": "The windows are small on the page, so the subtitles carry the story and the UI is mostly texture.",
+    "wonder": "Could each reel scene carry one subtitle line from its scene file, set in a fixed caption track under the frame?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "cut",
+    "isolate": false,
+    "typing": false,
+    "open": "wide",
+    "end": "card",
+    "endSec": 4,
+    "cards": 1,
+    "backdrop": "light",
+    "cursor": "none",
+    "captions": true
+  },
+  "grammar": {
+    "duration": 67.73,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 37,
+    "shotLength": {
+      "mean": 1.83,
+      "median": 1.07
+    },
+    "cuts": [
+      {
+        "t": 5.33,
+        "kind": "dissolve",
+        "over": 0.5
+      },
+      {
+        "t": 6.23,
+        "kind": "dissolve",
+        "over": 0.27
+      },
+      {
+        "t": 6.87,
+        "kind": "dissolve",
+        "over": 0.5
+      },
+      {
+        "t": 7.9,
+        "kind": "dissolve",
+        "over": 0.67
+      },
+      {
+        "t": 8.8,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 9.17,
+        "kind": "dissolve",
+        "over": 0.6
+      },
+      {
+        "t": 11.13,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 11.93,
+        "kind": "dissolve",
+        "over": 0.27
+      },
+      {
+        "t": 12.87,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 13.67,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 14.43,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 19.6,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 25.57,
+        "kind": "dissolve",
+        "over": 1.17
+      },
+      {
+        "t": 29.93,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 30.73,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 34,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 35.7,
+        "kind": "dissolve",
+        "over": 0.7
+      },
+      {
+        "t": 36.7,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 39.27,
+        "kind": "dissolve",
+        "over": 0.17
+      },
+      {
+        "t": 43.1,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 43.7,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 44.7,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 45.33,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 46.43,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 47.03,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 47.57,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 48,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 48.43,
+        "kind": "dissolve",
+        "over": 0.13
+      },
+      {
+        "t": 49.83,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 50.9,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 52.27,
+        "kind": "dissolve",
+        "over": 0.33
+      },
+      {
+        "t": 53.57,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 55.03,
+        "kind": "dissolve",
+        "over": 0.63
+      },
+      {
+        "t": 60.6,
+        "kind": "dissolve",
+        "over": 0.13
+      },
+      {
+        "t": 62.23,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 63.77,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 5.26,
+        "over": 0.05,
+        "core": 0.05,
+        "zoom": 1,
+        "pan": [
+          0,
+          -2.3
+        ],
+        "peak": 0.8,
+        "overshoot": 1.24
+      },
+      {
+        "kind": "pan",
+        "at": 5.86,
+        "over": 0.12,
+        "core": 0.06,
+        "zoom": 1,
+        "pan": [
+          0,
+          -7.6
+        ],
+        "peak": 0.36,
+        "overshoot": 0.07
+      },
+      {
+        "kind": "pan",
+        "at": 6.9,
+        "over": 0.13,
+        "core": 0.12,
+        "zoom": 1,
+        "pan": [
+          0,
+          -2.1
+        ],
+        "peak": 0.77,
+        "overshoot": 0.27
+      },
+      {
+        "kind": "pan",
+        "at": 10.2,
+        "over": 0.53,
+        "core": 0.33,
+        "zoom": 1,
+        "pan": [
+          24.2,
+          0.5
+        ],
+        "peak": 0.5,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 43.53,
+        "over": 0.14,
+        "core": 0.14,
+        "zoom": 1.01,
+        "pan": [
+          0,
+          2.4
+        ],
+        "peak": 0.69,
+        "overshoot": 0.49
+      },
+      {
+        "kind": "pan",
+        "at": 43.97,
+        "over": 0.23,
+        "core": 0.22,
+        "zoom": 1.004,
+        "pan": [
+          0,
+          2.1
+        ],
+        "peak": 0.43,
+        "overshoot": 0.45
+      },
+      {
+        "kind": "pan",
+        "at": 55.67,
+        "over": 0.34,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          12.5,
+          -0.4
+        ],
+        "peak": 0.18,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.98,
+    "held": 0.07,
+    "rhythm": {
+      "lengths": [
+        5.33,
+        0.9,
+        0.64,
+        1.03,
+        0.9,
+        0.37,
+        1.96,
+        0.8,
+        0.94,
+        0.8,
+        0.76,
+        5.17,
+        5.97,
+        4.36,
+        0.8,
+        3.27,
+        1.7,
+        1,
+        2.57,
+        3.83,
+        0.6,
+        1,
+        0.63,
+        1.1,
+        0.6,
+        0.54,
+        0.43,
+        0.43,
+        1.4,
+        1.07,
+        1.37,
+        1.3,
+        1.46,
+        5.57,
+        1.63,
+        1.54,
+        3.96
+      ],
+      "trend": -0.01,
+      "accelerates": false
+    }
+  }
+}

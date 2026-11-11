@@ -1,0 +1,796 @@
+{
+  "slug": "family-ethereum",
+  "title": "Family: Ethereum wallet in the browser",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/1907434459151867905/pu/vid/avc1/1280x720/XJPcxJXEDwm5O_3h.mp4?tag=14",
+    "foundOn": "https://x.com/family/status/1907436623286960220",
+    "maker": "Family",
+    "posted": "2025-04-02"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 47 s platform launch in chapters. Each chapter is a verb card ('Sign up your way', 'Verify that it's you', 'Send tokens', 'Send NFTs', 'Sign in with Family') followed by one floating panel doing exactly that, on a backdrop colour of its own. 41 shots, median 1.0 s.",
+  "instrument": "Still 82%: the motion is panels sliding in and cards building, mostly next to cuts. The one fitted pan (33.78) is a panel entering, rms 7.6%: too loose to count.",
+  "byEye": {
+    "zoom": "panels shown whole and floating (a phone screen, a send card, a connect dialog); typed values at about ×2",
+    "cards": "about 12: 'Getting into crypto', 'Just got easier', 'Sign up your way', 'Verify that it's you', 'One self-custody account', 'All your wallets', 'Now available in your browser', 'Send tokens', 'Send NFTs', 'Sign in with Family', 'One seamless … for every app', 'Your Control'",
+    "cursor": "a yellow tap dot",
+    "frame": "flat colour fields with soft shapes, a new colour per chapter (cream, blue, purple, yellow, teal)",
+    "aspect": "16:9, 1280×720, 30 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [],
+  "classify": "Motion-designed launch film for a new product surface (a browser wallet). Conventions: verb chapter cards, single-panel UI demos, illustrated mascots, a logo with the URL.",
+  "diagnose": [
+    {
+      "observation": "Every chapter opens on a verb card, then one panel performs that verb.",
+      "principle": "Claim then proof, chunked: one action per chapter keeps 47 s legible without narration."
+    },
+    {
+      "observation": "Each chapter has its own backdrop colour.",
+      "principle": "Colour as a chapter marker (wayfinding): the colour change says 'next feature' before the card is read."
+    },
+    {
+      "observation": "The UI is shown as single floating panels; the full window appears once, for 'in your browser'.",
+      "principle": "Isolation by default; context only where context is the claim."
+    },
+    {
+      "observation": "41 shots at a 1.0 s median but 82% still.",
+      "principle": "Fast cutting of held frames: the rhythm comes from the cuts, not from camera movement."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Give each chapter of a multi-scene reel its own backdrop tint, so the colour change marks the chapter.",
+      "setting": "renderer backdrop per scene (not built)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Isolate the component: one panel per action on a plain field.",
+      "setting": "camera / renderer (not built)"
+    },
+    {
+      "tag": "confirms",
+      "text": "A verb card before each scene names what the scene proves.",
+      "setting": "cards (not built)"
+    }
+  ],
+  "critique": {
+    "like": "The verb cards name the action the next shot proves, so the film never needs a voice-over.",
+    "wish": "At 47 s it repeats the card-then-panel unit eight times at the same pace; the send and NFT chapters could be one.",
+    "wonder": "Could the reel derive chapter tints from the app's own palette, stepping hue in OKLCH at fixed lightness?"
+  },
+  "tags": {
+    "genre": "motion",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": true,
+    "open": "card",
+    "end": "cards+logo",
+    "endSec": 4.5,
+    "cards": 12,
+    "backdrop": "colour",
+    "cursor": "touch"
+  },
+  "grammar": {
+    "duration": 47.27,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 41,
+    "shotLength": {
+      "mean": 1.15,
+      "median": 1
+    },
+    "cuts": [
+      {
+        "t": 0.07,
+        "kind": "dissolve",
+        "over": 1.1
+      },
+      {
+        "t": 1.47,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 1.8,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 2.53,
+        "kind": "dissolve",
+        "over": 0.43
+      },
+      {
+        "t": 3.33,
+        "kind": "dissolve",
+        "over": 0.5
+      },
+      {
+        "t": 4.67,
+        "kind": "dissolve",
+        "over": 0.37
+      },
+      {
+        "t": 5.47,
+        "kind": "dissolve",
+        "over": 1.03
+      },
+      {
+        "t": 6.9,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.27,
+        "kind": "dissolve",
+        "over": 0.7
+      },
+      {
+        "t": 8.6,
+        "kind": "dissolve",
+        "over": 0.57
+      },
+      {
+        "t": 9.53,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 10.27,
+        "kind": "dissolve",
+        "over": 1.77
+      },
+      {
+        "t": 12.27,
+        "kind": "dissolve",
+        "over": 1.23
+      },
+      {
+        "t": 14,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 14.93,
+        "kind": "dissolve",
+        "over": 0.57
+      },
+      {
+        "t": 15.93,
+        "kind": "dissolve",
+        "over": 0.77
+      },
+      {
+        "t": 17.47,
+        "kind": "dissolve",
+        "over": 0.37
+      },
+      {
+        "t": 18.23,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 21.87,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 22.87,
+        "kind": "dissolve",
+        "over": 0.97
+      },
+      {
+        "t": 24.67,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 25.03,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 25.47,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 26.57,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 27.27,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 28.07,
+        "kind": "dissolve",
+        "over": 0.57
+      },
+      {
+        "t": 29.33,
+        "kind": "dissolve",
+        "over": 0.43
+      },
+      {
+        "t": 30.4,
+        "kind": "dissolve",
+        "over": 0.53
+      },
+      {
+        "t": 31.23,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 31.93,
+        "kind": "dissolve",
+        "over": 1.1
+      },
+      {
+        "t": 33.67,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 34.6,
+        "kind": "dissolve",
+        "over": 0.17
+      },
+      {
+        "t": 35.47,
+        "kind": "dissolve",
+        "over": 0.37
+      },
+      {
+        "t": 37.87,
+        "kind": "dissolve",
+        "over": 1.1
+      },
+      {
+        "t": 39.33,
+        "kind": "dissolve",
+        "over": 0.97
+      },
+      {
+        "t": 40.73,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 42.8,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 44.07,
+        "kind": "dissolve",
+        "over": 0.5
+      },
+      {
+        "t": 45,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 46.7,
+        "kind": "dissolve",
+        "over": 0.37
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 1.54,
+        "over": 0.23,
+        "core": 0.17,
+        "zoom": 1,
+        "pan": [
+          11,
+          0
+        ],
+        "peak": 0.27,
+        "overshoot": 0.05
+      },
+      {
+        "kind": "pull",
+        "at": 1.86,
+        "over": 0.54,
+        "core": 0.35,
+        "zoom": 0.957,
+        "pan": [
+          1.9,
+          0
+        ],
+        "peak": 0.14,
+        "overshoot": 0.07
+      },
+      {
+        "kind": "pan",
+        "at": 2.98,
+        "over": 0.27,
+        "core": 0.25,
+        "zoom": 1.03,
+        "pan": [
+          -14.3,
+          2.6
+        ],
+        "peak": 0.8,
+        "overshoot": 0.1
+      },
+      {
+        "kind": "push",
+        "at": 4.33,
+        "over": 0.26,
+        "core": 0.14,
+        "zoom": 1.093,
+        "pan": [
+          0,
+          0.2
+        ],
+        "peak": 0.79,
+        "overshoot": 0.24
+      },
+      {
+        "kind": "push",
+        "at": 4.71,
+        "over": 0.14,
+        "core": 0.13,
+        "zoom": 1.104,
+        "pan": [
+          0,
+          0.4
+        ],
+        "peak": 0.62,
+        "overshoot": 0.09
+      },
+      {
+        "kind": "push",
+        "at": 6.26,
+        "over": 0.13,
+        "core": 0.08,
+        "zoom": 1.129,
+        "pan": [
+          0,
+          3.2
+        ],
+        "peak": 0.56,
+        "overshoot": 0.27
+      },
+      {
+        "kind": "pan",
+        "at": 8.37,
+        "over": 0.09,
+        "core": 0.08,
+        "zoom": 1.002,
+        "pan": [
+          0,
+          2
+        ],
+        "peak": 0.67,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "pan",
+        "at": 9.18,
+        "over": 0.21,
+        "core": 0.14,
+        "zoom": 1,
+        "pan": [
+          0,
+          2.2
+        ],
+        "peak": 0.42,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 14.25,
+        "over": 0.66,
+        "core": 0.05,
+        "zoom": 0.972,
+        "pan": [
+          -0.1,
+          2
+        ],
+        "peak": 0.98,
+        "overshoot": 1.7
+      },
+      {
+        "kind": "pan",
+        "at": 15.84,
+        "over": 0.07,
+        "core": 0.01,
+        "zoom": 0.969,
+        "pan": [
+          0.2,
+          1.9
+        ],
+        "peak": 0.84,
+        "overshoot": 1.83
+      },
+      {
+        "kind": "pan",
+        "at": 17.85,
+        "over": 0.14,
+        "core": 0.13,
+        "zoom": 0.999,
+        "pan": [
+          0,
+          3.5
+        ],
+        "peak": 0.64,
+        "overshoot": 0.26
+      },
+      {
+        "kind": "pull",
+        "at": 20.05,
+        "over": 0.09,
+        "core": 0.03,
+        "zoom": 0.866,
+        "pan": [
+          1,
+          3.3
+        ],
+        "peak": 0.25,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 21.78,
+        "over": 0.05,
+        "core": 0.01,
+        "zoom": 1.002,
+        "pan": [
+          0.4,
+          -2.5
+        ],
+        "peak": 0.94,
+        "overshoot": 0.05
+      },
+      {
+        "kind": "pan",
+        "at": 23.31,
+        "over": 0.13,
+        "core": 0.12,
+        "zoom": 1,
+        "pan": [
+          0,
+          -3
+        ],
+        "peak": 0.67,
+        "overshoot": 0.25
+      },
+      {
+        "kind": "pan",
+        "at": 23.8,
+        "over": 0.84,
+        "core": 0.4,
+        "zoom": 1.035,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.4,
+        "overshoot": 0.71
+      },
+      {
+        "kind": "push",
+        "at": 26.77,
+        "over": 0.42,
+        "core": 0.01,
+        "zoom": 1.057,
+        "pan": [
+          -0.9,
+          -1.7
+        ],
+        "peak": 0.87,
+        "overshoot": 0.71
+      },
+      {
+        "kind": "push",
+        "at": 27.38,
+        "over": 0.19,
+        "core": 0.08,
+        "zoom": 1.071,
+        "pan": [
+          0,
+          -2.7
+        ],
+        "peak": 0.46,
+        "overshoot": 0.22
+      },
+      {
+        "kind": "pan",
+        "at": 29.73,
+        "over": 0.64,
+        "core": 0.46,
+        "zoom": 1.023,
+        "pan": [
+          0.5,
+          3.4
+        ],
+        "peak": 0.41,
+        "overshoot": 0.78
+      },
+      {
+        "kind": "pan",
+        "at": 30.66,
+        "over": 0.14,
+        "core": 0.08,
+        "zoom": 0.995,
+        "pan": [
+          0,
+          -2.4
+        ],
+        "peak": 0.53,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "push",
+        "at": 30.98,
+        "over": 0.17,
+        "core": 0.14,
+        "zoom": 1.04,
+        "pan": [
+          -0.1,
+          0.7
+        ],
+        "peak": 0.12,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "pan",
+        "at": 31.83,
+        "over": 0.08,
+        "core": 0.07,
+        "zoom": 1.027,
+        "pan": [
+          -0.2,
+          -0.1
+        ],
+        "peak": 0.86,
+        "overshoot": 1.34
+      },
+      {
+        "kind": "pan",
+        "at": 33.78,
+        "over": 0.39,
+        "core": 0.27,
+        "zoom": 1,
+        "pan": [
+          0,
+          13.9
+        ],
+        "peak": 0.23,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 34.44,
+        "over": 0.08,
+        "core": 0.02,
+        "zoom": 1.036,
+        "pan": [
+          2.2,
+          -1.8
+        ],
+        "peak": 0.31,
+        "overshoot": 0.45
+      },
+      {
+        "kind": "pan",
+        "at": 34.78,
+        "over": 0.13,
+        "core": 0.08,
+        "zoom": 1.035,
+        "pan": [
+          2.1,
+          -1.8
+        ],
+        "peak": 0.68,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 35.24,
+        "over": 0.15,
+        "core": 0.14,
+        "zoom": 0.944,
+        "pan": [
+          -2.4,
+          0.5
+        ],
+        "peak": 0.64,
+        "overshoot": 0.23
+      },
+      {
+        "kind": "pan",
+        "at": 37.52,
+        "over": 0.33,
+        "core": 0.24,
+        "zoom": 1.026,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.87,
+        "overshoot": 0.31
+      },
+      {
+        "kind": "pan",
+        "at": 40.31,
+        "over": 0.19,
+        "core": 0.14,
+        "zoom": 1,
+        "pan": [
+          -15,
+          0
+        ],
+        "peak": 0.47,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "pan",
+        "at": 41.64,
+        "over": 0.23,
+        "core": 0.22,
+        "zoom": 1.03,
+        "pan": [
+          -1.1,
+          -0.3
+        ],
+        "peak": 0.71,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "pull",
+        "at": 42.53,
+        "over": 0.19,
+        "core": 0.13,
+        "zoom": 0.826,
+        "pan": [
+          0.3,
+          0.4
+        ],
+        "peak": 0.72,
+        "overshoot": 0.24
+      },
+      {
+        "kind": "pull",
+        "at": 42.85,
+        "over": 0.42,
+        "core": 0.36,
+        "zoom": 0.782,
+        "pan": [
+          3.4,
+          -0.1
+        ],
+        "peak": 0.84,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 43.91,
+        "over": 0.08,
+        "core": 0.06,
+        "zoom": 0.893,
+        "pan": [
+          -4.1,
+          0.3
+        ],
+        "peak": 0.33,
+        "overshoot": 0.45
+      },
+      {
+        "kind": "pull",
+        "at": 44.07,
+        "over": 0.19,
+        "core": 0.19,
+        "zoom": 0.935,
+        "pan": [
+          3.8,
+          -2.6
+        ],
+        "peak": 0.71,
+        "overshoot": 0.45
+      },
+      {
+        "kind": "pan",
+        "at": 45,
+        "over": 0.37,
+        "core": 0.07,
+        "zoom": 0.999,
+        "pan": [
+          5.7,
+          0
+        ],
+        "peak": 0.55,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 46.5,
+        "over": 0.24,
+        "core": 0.17,
+        "zoom": 0.997,
+        "pan": [
+          -2.1,
+          0
+        ],
+        "peak": 0.97,
+        "overshoot": 0.69
+      },
+      {
+        "kind": "pan",
+        "at": 46.83,
+        "over": 0.14,
+        "core": 0.12,
+        "zoom": 0.991,
+        "pan": [
+          -2,
+          0
+        ],
+        "peak": 0.04,
+        "overshoot": 0.23
+      }
+    ],
+    "still": 0.82,
+    "held": 0.36,
+    "rhythm": {
+      "lengths": [
+        0.07,
+        1.4,
+        0.33,
+        0.73,
+        0.8,
+        1.34,
+        0.8,
+        1.43,
+        0.37,
+        1.33,
+        0.93,
+        0.74,
+        2,
+        1.73,
+        0.93,
+        1,
+        1.54,
+        0.76,
+        3.64,
+        1,
+        1.8,
+        0.36,
+        0.44,
+        1.1,
+        0.7,
+        0.8,
+        1.26,
+        1.07,
+        0.83,
+        0.7,
+        1.74,
+        0.93,
+        0.87,
+        2.4,
+        1.46,
+        1.4,
+        2.07,
+        1.27,
+        0.93,
+        1.7,
+        0.57
+      ],
+      "trend": 0.4,
+      "accelerates": false
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "slug": "cursor-annotate",
+  "title": "Cursor: Annotate (design mode)",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2115159554040504320/vid/avc1/1280x720/GuPJK_rCwUlPsrBU.mp4?tag=16",
+    "foundOn": "https://x.com/cursor_ai/status/2115159585548021814",
+    "maker": "Cursor",
+    "posted": "2026-10-27"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 44 s chaptered film. A one-line card names each feature ('Open your app in the browser', 'Leave comments for your agents', 'Dial in your styles, live', 'Sketch what you want to build', 'Check responsiveness across every screen size'), then one or two locked shots of the window show it. The camera never moves.",
+  "instrument": "30 fps, still 100%, no moves: every framing change is a cut.",
+  "byEye": {
+    "zoom": "wide 1.0, or working ≈ ×1.4 with the window cropped by the frame edge",
+    "cards": "6: 'New in Cursor / Annotate' and five feature lines, each built word by word; the logo",
+    "cursor": "native arrow, native size",
+    "frame": "a blurred photographic backdrop (teal and orange)",
+    "aspect": "16:9, 1280×720, 30 fps",
+    "sound": "none: no audio track"
+  },
+  "curveFits": [],
+  "classify": "Hand-edited chaptered feature film, locked frame. Conventions: card → proof per feature, word-by-word card builds, a window cropped by the frame edge on a blurred backdrop.",
+  "diagnose": [
+    {
+      "observation": "Five chapters, each a card then one or two locked shots.",
+      "principle": "Chunking: one claim and one proof per chapter keeps five features distinct."
+    },
+    {
+      "observation": "Card text builds word by word.",
+      "principle": "Stagger as pacing: the build sets reading speed."
+    },
+    {
+      "observation": "No camera movement in 44 s.",
+      "principle": "Locked frame: the UI's own changes (a panel, a sketch, a resize) are the only motion."
+    },
+    {
+      "observation": "Every chapter has the same rhythm (card ~2 s, shots ~4 s).",
+      "principle": "Rhythm without development: nothing builds toward the end."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "confirms",
+      "text": "Card → proof per chapter.",
+      "setting": "cards (not built)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Cut-not-move; lock the frame when the UI moves.",
+      "setting": "camera off per scene (exists: act.wide)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Working zoom ≈ 1.4 with the window cropped by the frame edge.",
+      "setting": "working zoom (exists)"
+    }
+  ],
+  "critique": {
+    "like": "Five features in 44 s stay distinct because each gets its own card.",
+    "wish": "Every chapter keeps the same pace; shortening the later ones would give the film a build.",
+    "wonder": "Could a reel generate a chapter card from each scene's title and cut straight to a locked working shot?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "locked",
+    "isolate": false,
+    "typing": true,
+    "open": "card",
+    "end": "logo",
+    "endSec": 3,
+    "cards": 6,
+    "backdrop": "photo",
+    "cursor": "system"
+  },
+  "grammar": {
+    "duration": 43.57,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 29,
+    "shotLength": {
+      "mean": 1.5,
+      "median": 1.6
+    },
+    "cuts": [
+      {
+        "t": 3.73,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 4.37,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 5.9,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 6.43,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 8.93,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 9.27,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.93,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 11.33,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 12.37,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 15.57,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 17.57,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 18.57,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 20.87,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 22.53,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 22.87,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 24.53,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 25.07,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 26.23,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 27.5,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 29.23,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 30.93,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 33.23,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 33.57,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 35.4,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 36.3,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 36.57,
+        "kind": "dissolve",
+        "over": 0.4
+      },
+      {
+        "t": 38.17,
+        "kind": "dissolve",
+        "over": 0.67
+      },
+      {
+        "t": 40.57,
+        "kind": "dissolve",
+        "over": 0.13
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 35.8,
+        "over": 0.15,
+        "core": 0.09,
+        "zoom": 1,
+        "pan": [
+          0,
+          -4.8
+        ],
+        "peak": 0.67,
+        "overshoot": 0
+      }
+    ],
+    "still": 1,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        3.73,
+        0.64,
+        1.53,
+        0.53,
+        2.5,
+        0.34,
+        1.66,
+        0.4,
+        1.04,
+        3.2,
+        2,
+        1,
+        2.3,
+        1.66,
+        0.34,
+        1.66,
+        0.54,
+        1.16,
+        1.27,
+        1.73,
+        1.7,
+        2.3,
+        0.34,
+        1.83,
+        0.9,
+        0.27,
+        1.6,
+        2.4,
+        3
+      ],
+      "trend": 0.01,
+      "accelerates": false
+    }
+  }
+}

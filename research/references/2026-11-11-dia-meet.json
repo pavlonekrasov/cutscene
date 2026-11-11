@@ -1,0 +1,310 @@
+{
+  "slug": "dia-meet",
+  "title": "Dia: Meet Dia",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/1932797057959448576/vid/avc1/1156x720/FYt5eccPeFtHlZ_p.mp4?tag=21",
+    "foundOn": "https://x.com/browsercompany/status/1932800009860272494",
+    "maker": "The Browser Company",
+    "posted": "2025-06-11"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "Dia's composer is lifted out of the window and floats alone on a painted sunburst, so each prompt ('Chat with your homework', 'Compare', 'Shorter, warmer…') reads as the subject; the window only appears at the very end. 24 s.",
+  "instrument": "The measured pulls (×0.17–0.48) are the rising sun and the composer scaling in, content motion, not a camera.",
+  "byEye": {
+    "zoom": "the composer at about ×3 (its pill spans a third of the width); tab chips peek up from a strip of the tab bar at the bottom edge",
+    "cards": "a small presenter line ('The Browser Company of New York'), the logo orb rising as a sun; no claim cards",
+    "cursor": "none: the prompts type themselves",
+    "frame": "no window until the last shot; components float on a painted sunburst in Dia's palette",
+    "aspect": "1156×720, 60 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [
+    {
+      "move": "pull ×0.16 at 0.62",
+      "best": "AE easy ease, 1418 ms (0.81%)",
+      "others": "spring ζ=0.8 on linear scale, ω 3.2/s, 1180 ms (0.9%)",
+      "cutscene030": "2.63% (2145 ms)"
+    }
+  ],
+  "classify": "Motion-designed launch film: the UI rebuilt as isolated, floating components on an illustrated backdrop. Conventions: a title sequence, a logo reveal, typed prompts, one wide shot of the real window at the end.",
+  "diagnose": [
+    {
+      "observation": "The composer floats alone, at three times its size.",
+      "principle": "Isolation: removing the window strips every competing element, so the input is the only thing to read."
+    },
+    {
+      "observation": "The window is withheld until the last shot.",
+      "principle": "Delayed reveal: the viewer meets the behaviour before the product, then the window answers 'where is this'."
+    },
+    {
+      "observation": "Dissolves of 0.1–0.5 s between prompts.",
+      "principle": "Crossfades read as the same place, different moment: time passes, the location doesn't."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Isolate the component: render one element's box alone on the backdrop at large scale.",
+      "setting": "camera / renderer (not built)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Typing is the shot; the field is large.",
+      "setting": "camera: typing zoom"
+    },
+    {
+      "tag": "new",
+      "text": "Dissolves, not cuts, between beats that happen in the same place.",
+      "setting": "transitions"
+    }
+  ],
+  "critique": {
+    "like": "The prompts are the script: you learn what Dia does from what's typed, with no claim cards at all.",
+    "wish": "Nothing shows a real page being read; the tab chips are the only link to the browser.",
+    "wonder": "Could cutscene screenshot a locator's box from the real app and float it on the backdrop, so isolation stays the real UI?"
+  },
+  "tags": {
+    "genre": "motion",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": true,
+    "open": "card",
+    "end": "result",
+    "endSec": 3.7,
+    "cards": 1,
+    "backdrop": "illustrated",
+    "cursor": "none"
+  },
+  "grammar": {
+    "duration": 24,
+    "width": 1156,
+    "height": 720,
+    "fps": 60,
+    "shots": 18,
+    "shotLength": {
+      "mean": 1.33,
+      "median": 0.92
+    },
+    "cuts": [
+      {
+        "t": 1.95,
+        "kind": "dissolve",
+        "over": 0.25
+      },
+      {
+        "t": 2.58,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 3.35,
+        "kind": "dissolve",
+        "over": 0.07
+      },
+      {
+        "t": 4.13,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.13,
+        "kind": "dissolve",
+        "over": 0.83
+      },
+      {
+        "t": 8.83,
+        "kind": "dissolve",
+        "over": 0.55
+      },
+      {
+        "t": 9.75,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.4,
+        "kind": "dissolve",
+        "over": 0.37
+      },
+      {
+        "t": 11.93,
+        "kind": "dissolve",
+        "over": 0.38
+      },
+      {
+        "t": 12.55,
+        "kind": "dissolve",
+        "over": 0.22
+      },
+      {
+        "t": 13.42,
+        "kind": "dissolve",
+        "over": 0.12
+      },
+      {
+        "t": 14.17,
+        "kind": "dissolve",
+        "over": 0.48
+      },
+      {
+        "t": 15.72,
+        "kind": "dissolve",
+        "over": 0.48
+      },
+      {
+        "t": 17.07,
+        "kind": "dissolve",
+        "over": 0.42
+      },
+      {
+        "t": 19.62,
+        "kind": "dissolve",
+        "over": 0.37
+      },
+      {
+        "t": 20.33,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 20.88,
+        "kind": "dissolve",
+        "over": 1.4
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pull",
+        "at": 0.62,
+        "over": 1.13,
+        "core": 0.87,
+        "zoom": 0.166,
+        "pan": [
+          1.6,
+          325.2
+        ],
+        "peak": 0.42,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 1.98,
+        "over": 0.18,
+        "core": 0.14,
+        "zoom": 1.055,
+        "pan": [
+          -0.2,
+          0.1
+        ],
+        "peak": 0.52,
+        "overshoot": 0.09
+      },
+      {
+        "kind": "push",
+        "at": 2.23,
+        "over": 0.31,
+        "core": 0.25,
+        "zoom": 1.072,
+        "pan": [
+          -0.3,
+          0.1
+        ],
+        "peak": 0.23,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "pull",
+        "at": 3.29,
+        "over": 0.07,
+        "core": 0.06,
+        "zoom": 0.939,
+        "pan": [
+          0,
+          3.7
+        ],
+        "peak": 0.4,
+        "overshoot": 0.05
+      },
+      {
+        "kind": "pull",
+        "at": 3.43,
+        "over": 0.65,
+        "core": 0.55,
+        "zoom": 0.481,
+        "pan": [
+          0.3,
+          41.7
+        ],
+        "peak": 0.19,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "pull",
+        "at": 4.17,
+        "over": 2.95,
+        "core": 2.34,
+        "zoom": 0.352,
+        "pan": [
+          0.6,
+          36.4
+        ],
+        "peak": 1,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "pull",
+        "at": 7.31,
+        "over": 0.05,
+        "core": 0.04,
+        "zoom": 0.955,
+        "pan": [
+          0,
+          0.5
+        ],
+        "peak": 0.76,
+        "overshoot": 0.14
+      },
+      {
+        "kind": "pan",
+        "at": 7.77,
+        "over": 0.04,
+        "core": 0.04,
+        "zoom": 0.971,
+        "pan": [
+          -0.6,
+          0.6
+        ],
+        "peak": 0.77,
+        "overshoot": 0.72
+      }
+    ],
+    "still": 0.78,
+    "held": 0.06,
+    "rhythm": {
+      "lengths": [
+        1.95,
+        0.63,
+        0.77,
+        0.78,
+        3,
+        1.7,
+        0.92,
+        0.65,
+        1.53,
+        0.62,
+        0.87,
+        0.75,
+        1.55,
+        1.35,
+        2.55,
+        0.71,
+        0.55,
+        3.12
+      ],
+      "trend": 0.27,
+      "accelerates": false
+    }
+  }
+}

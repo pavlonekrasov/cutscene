@@ -7,24 +7,21 @@
 
 **Why it's here.** The tool's own statement of its look: webcam bubble, word-by-word captions, motion blur on every move, a window on a dark wallpaper.
 
+## 1. Describe
+
+### Measured
+
+5.55 s, 1920×1080, 60 fps. Camera still 92% of the time. 6 shots, median 1.1 s. 5 cuts (4 dissolves); 5 moves.
+
 **What the instrument can read.** Motion blur on every move: cut candidates and moves are both unreliable.
 
-## Measured
-
-5.55 s, 1920×1080, 60 fps. Camera still 92% of the time. 5 cut candidates; 5 moves.
-
-Moves:
-
-- 0.30 s push ×1.08 (pan -0.6, -0.4%), 2–98% 160 ms, 10–90% 120 ms, peak 0.2, overshoot 4%
-- (4 more under 150 ms: blur or UI changes, not camera moves)
-
-## Shot list
+### Shot list
 
 | Time (s)  | Framing  | What happens                                                                                                   | Out |
 | --------- | -------- | -------------------------------------------------------------------------------------------------------------- | --- |
 | 0.00–5.55 | one take | Google Sheets: select a column, Format → Number → Accounting, the column reformats; pushes and pulls with blur | —   |
 
-By eye:
+### By eye
 
 - **Zoom:** ×1.5–2
 - **Cards:** none; captions word by word at the bottom centre
@@ -33,13 +30,24 @@ By eye:
 - **Aspect:** 16:9, 1920×1080, 60 fps
 - **Sound:** none in this file
 
-## Why it works
+## 2. Classify
 
-- Captions carry the narration when the clip plays muted.
+Screen Studio's own hero clip: its signature look. Conventions: webcam bubble, word-by-word captions, motion blur on moves.
 
-## What it teaches
+## 3. Diagnose
+
+- Captions word by word at the bottom centre. → Captions carry narration for muted autoplay.
+- Motion blur on every camera move. → Blur smooths fast moves at the cost of legibility in motion.
+
+## 4. Prescribe
 
 - _new_: Motion blur on camera moves (Screen Studio's default). (renderer (not built))
+
+## 5. Critique
+
+- **I like:** Captions make the clip work with the sound off.
+- **I wish:** The webcam bubble and blur are a recognisable template look.
+- **I wonder:** Could cutscene's caption track take word timings from a scene's script?
 
 ## Not for us
 

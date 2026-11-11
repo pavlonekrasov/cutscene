@@ -1,0 +1,349 @@
+{
+  "slug": "notion-dock",
+  "title": "Notion: works with everything",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2096006909119627266/vid/avc1/1280x720/a8niQoWLwgfgEVCz.mp4?tag=29",
+    "foundOn": "https://x.com/notionhq/status/2096007171582382382",
+    "maker": "Notion",
+    "posted": "2026-09-04"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "An 18.7 s montage: a dock of app icons over a new background every cut (paintings, the moon, sheep, tapestries), the Notion icon held at the same screen position while every neighbour changes. Cuts shorten from about 0.8 s to 0.35 s, then the Notion icon stands alone, and white cards build 'Any tool. Any agent. Any stack.' → 'Works with everything.'",
+  "instrument": "Still 87%, 25 shots at a 0.6 s median: a cut montage. No camera moves to fit.",
+  "byEye": {
+    "zoom": "the dock fills the frame width; icons at about ×3",
+    "cards": "'Any tool. Any agent.' → '… Any stack.'; 'Works with everything.'; the icon with a pointer",
+    "cursor": "a system pointer on the final icon",
+    "frame": "full-bleed photos and paintings behind the dock; white for the cards",
+    "aspect": "16:9, 1280×720, 30 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [],
+  "classify": "Montage teaser for an integration story. Conventions: an anchored element across cuts, accelerating cuts, an additive text build, the icon as logo.",
+  "diagnose": [
+    {
+      "observation": "Notion's icon keeps its screen position across 20 cuts while everything around it changes.",
+      "principle": "The invariant across a montage is the subject: a match cut on position turns 'works with everything' into a picture."
+    },
+    {
+      "observation": "Cut interval drops from ~0.8 s to ~0.35 s, then one 1.3 s hold.",
+      "principle": "Accelerating rhythm builds momentum; the first long hold after it lands as the payoff."
+    },
+    {
+      "observation": "Cards append a phrase per beat.",
+      "principle": "Additive build: each phrase is read alone before the next joins it."
+    },
+    {
+      "observation": "Backgrounds are arbitrary art and photos.",
+      "principle": "Novelty per cut keeps attention, but carries no meaning about the product."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Align consecutive shots on one shared element so every cut is a match cut on its position.",
+      "setting": "match cut on a locator (Part 2)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Accelerate the cut rhythm into the payoff.",
+      "setting": "rhythm (measure: accelerates)"
+    },
+    {
+      "tag": "new",
+      "text": "Additive card build: append one phrase per beat.",
+      "setting": "cards (not built)"
+    }
+  ],
+  "critique": {
+    "like": "Holding the icon still while 20 docks change around it says 'works with everything' with no UI at all.",
+    "wish": "The backgrounds bring novelty but no meaning; app screens behind the dock would carry the same rhythm and say more.",
+    "wonder": "Could cutscene align consecutive scenes on one locator's box, so the cut between two scenes becomes a match cut?"
+  },
+  "tags": {
+    "genre": "motion",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": false,
+    "open": "detail",
+    "end": "cards+logo",
+    "endSec": 7.3,
+    "cards": 3,
+    "backdrop": "photo",
+    "cursor": "system"
+  },
+  "grammar": {
+    "duration": 18.7,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 25,
+    "shotLength": {
+      "mean": 0.75,
+      "median": 0.6
+    },
+    "cuts": [
+      {
+        "t": 0.67,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 1.07,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 1.67,
+        "kind": "dissolve",
+        "over": 0.57
+      },
+      {
+        "t": 2.53,
+        "kind": "dissolve",
+        "over": 0.57
+      },
+      {
+        "t": 3.4,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 4,
+        "kind": "dissolve",
+        "over": 0.57
+      },
+      {
+        "t": 4.87,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 5.47,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 5.8,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 6.13,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 6.73,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.13,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.47,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.8,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 8.2,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 8.6,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 9.07,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 9.53,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.2,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 11.4,
+        "kind": "dissolve",
+        "over": 0.37
+      },
+      {
+        "t": 12.67,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 13.63,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 14.67,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 16.47,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 4.58,
+        "over": 0.21,
+        "core": 0.19,
+        "zoom": 1.021,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.74,
+        "overshoot": 0.11
+      },
+      {
+        "kind": "pan",
+        "at": 5.18,
+        "over": 0.21,
+        "core": 0.19,
+        "zoom": 1.022,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.74,
+        "overshoot": 0.1
+      },
+      {
+        "kind": "pan",
+        "at": 5.51,
+        "over": 0.21,
+        "core": 0.19,
+        "zoom": 1.021,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.42,
+        "overshoot": 0.1
+      },
+      {
+        "kind": "pan",
+        "at": 5.85,
+        "over": 0.21,
+        "core": 0.19,
+        "zoom": 1.021,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.42,
+        "overshoot": 0.09
+      },
+      {
+        "kind": "pan",
+        "at": 6.78,
+        "over": 0.27,
+        "core": 0.25,
+        "zoom": 1.022,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.32,
+        "overshoot": 0.07
+      },
+      {
+        "kind": "pan",
+        "at": 12.39,
+        "over": 0.2,
+        "core": 0.15,
+        "zoom": 0.969,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.73,
+        "overshoot": 0.27
+      },
+      {
+        "kind": "pan",
+        "at": 12.71,
+        "over": 0.74,
+        "core": 0.1,
+        "zoom": 0.972,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.12,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "push",
+        "at": 16.49,
+        "over": 0.37,
+        "core": 0.26,
+        "zoom": 1.116,
+        "pan": [
+          0,
+          -0.1
+        ],
+        "peak": 0.02,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.87,
+    "held": 0.27,
+    "rhythm": {
+      "lengths": [
+        0.67,
+        0.4,
+        0.6,
+        0.86,
+        0.87,
+        0.6,
+        0.87,
+        0.6,
+        0.33,
+        0.33,
+        0.6,
+        0.4,
+        0.34,
+        0.33,
+        0.4,
+        0.4,
+        0.47,
+        0.46,
+        0.67,
+        1.2,
+        1.27,
+        0.96,
+        1.04,
+        1.8,
+        2.23
+      ],
+      "trend": 1.12,
+      "accelerates": false
+    }
+  }
+}

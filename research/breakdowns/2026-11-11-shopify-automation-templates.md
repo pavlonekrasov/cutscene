@@ -7,11 +7,11 @@
 
 **Why it's here.** A brisk tour: it reframes every 2–5 s (push to act, pull to see) through four pages, and ends on the confirm dialog.
 
-**What the instrument can read.** Page changes read as cuts (13 candidates in 21.7 s); the moves are fine.
+## 1. Describe
 
-## Measured
+### Measured
 
-21.7 s, 980×720, 60 fps. Camera still 76% of the time. 13 cut candidates; 11 moves.
+21.7 s, 980×720, 60 fps. Camera still 76% of the time. 14 shots, median 1.49 s. 13 cuts (4 dissolves); 11 moves.
 
 Moves:
 
@@ -24,15 +24,17 @@ Moves:
 - 17.20 s push ×1.385 (pan 49.1, 0.7%), 2–98% 750 ms, 10–90% 320 ms, peak 0.55
 - 18.92 s push ×1.999 (pan 15.4, -14.6%), 2–98% 590 ms, 10–90% 340 ms, peak 0.13
 - 20.83 s pull ×0.503 (pan -37.2, 35.2%), 2–98% 660 ms, 10–90% 420 ms, peak 0.16
-- (2 more under 150 ms: blur or UI changes, not camera moves)
+- (2 more under 150 ms, ×1.1 or 5% of the frame: blur, UI changes or tracker noise)
 
-## Shot list
+**What the instrument can read.** Page changes read as cuts (13 candidates in 21.7 s); the moves are fine.
+
+### Shot list
 
 | Time (s)   | Framing              | What happens                                                                                                                                                                                                                        | Out |
 | ---------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | 0.00–21.70 | one take, four pages | 'Create automation' (starts zoomed), pull ×0.50 to the templates (1.67), push ×1.66 to a template (3.04), pull (5.02), push ×1.58 to the email (8.29), workflow canvas, push ×2.0 (18.92), pull ×0.50 to the confirm dialog (20.83) | —   |
 
-By eye:
+### By eye
 
 - **Zoom:** working ×1.6–2.0
 - **Cards:** none
@@ -41,18 +43,29 @@ By eye:
 - **Aspect:** ~1.36:1, 980×720, 60 fps
 - **Sound:** none
 
-## Frame-level beats
+### Frame-level beats
 
 - Shortest hold in the set: 1.55 s between the push settling (3.47) and the pull (5.02).
 
-## Why it works
+## 2. Classify
 
-- Each push frames one decision; each pull shows where it led.
+Screen Studio tour through four pages. Conventions: push to act, pull to see, a confirm dialog at the end.
 
-## What it teaches
+## 3. Diagnose
+
+- A reframe every 2–5 s, push for each decision and pull for its result. → Push to act, pull to see: the zoom tracks intent and consequence.
+- It starts zoomed in. → No establishing wide: the viewer lacks the page before the detail.
+
+## 4. Prescribe
 
 - _confirms_: Push to act, pull to see. (camera)
 - _adjusts_: Minimum hold after a push: 1.55 s here. (hold)
+
+## 5. Critique
+
+- **I like:** Each push frames one decision, so a four-page flow stays followable.
+- **I wish:** Without an opening wide, the first seconds have no context.
+- **I wonder:** Should cutscene enforce a minimum wide before the first push?
 
 ## Not for us
 

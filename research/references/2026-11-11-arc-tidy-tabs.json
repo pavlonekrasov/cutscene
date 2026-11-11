@@ -1,0 +1,297 @@
+{
+  "slug": "arc-tidy-tabs",
+  "title": "Arc: Tidy Tabs",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/1755252559692853249/pu/vid/avc1/1280x720/Hr1q8TgUdgmwTdsq.mp4?tag=12",
+    "foundOn": "https://x.com/browsercompany/status/1755252656078024976",
+    "maker": "The Browser Company",
+    "posted": "2024-02-07"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "One sentence is split across cards ('Don't worry' … 'Tab' … 'Tidy Tabs') with the proof between them, and the UI is cropped to the one component that changes, the sidebar, at about ×2.5. 20.5 s.",
+  "instrument": "The camera barely moves; what moves is a crop. The one pull (×0.45 at 6.25 s) reveals the page beside the sidebar.",
+  "byEye": {
+    "zoom": "the sidebar alone fills half the frame (about ×2.5 its size in a full window); one pull-back to sidebar plus page",
+    "cards": "5, bold white on Arc blue: 'Don't worry', 'Tab', 'Tidy Tabs', 'Now available in Arc', 'arc.net'; plus the logo; each 1.1–1.8 s",
+    "cursor": "native macOS pointer at the enlarged scale",
+    "frame": "the sidebar crop sits on a full-bleed photo (forest, clouds, salmon), the user's Arc theme",
+    "aspect": "16:9, 30 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [
+    {
+      "move": "pull ×0.45 at 6.25",
+      "best": "AE easy ease on linear scale, 1505 ms (2.21%)",
+      "others": "spring ζ=0.8 on linear scale, ω 3/s, 1250 ms (4.63%)",
+      "cutscene030": "4.13% (2209 ms)"
+    }
+  ],
+  "classify": "Hand-edited feature reel of real UI, cropped to a component and set on photo backdrops (Arc's themes). Conventions: brand-colour cards, cut-not-move, a URL end card.",
+  "diagnose": [
+    {
+      "observation": "Only the sidebar is on screen when it's the subject.",
+      "principle": "Crop to the component: the frame holds exactly the element that changes, so nothing competes for attention."
+    },
+    {
+      "observation": "The sentence 'Don't worry … Tab … Tidy Tabs' is interrupted by its own evidence.",
+      "principle": "Call and response: claim, proof, claim, proof keeps the viewer reading the UI as the answer to the card."
+    },
+    {
+      "observation": "Each theme change happens at a cut.",
+      "principle": "Continuity by component: the sidebar keeps its position across the cut while the backdrop changes, so the cut reads as the same object in a new context (a match cut on position)."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Crop to the component: frame one element's box at large scale instead of pushing into the whole window.",
+      "setting": "camera: focus a locator's box"
+    },
+    {
+      "tag": "confirms",
+      "text": "Hand-edited reels reframe by cutting, not by moving.",
+      "setting": "CAMERA.cutOver"
+    },
+    {
+      "tag": "new",
+      "text": "A sentence split across cards, interleaved with UI.",
+      "setting": "cards"
+    }
+  ],
+  "critique": {
+    "like": "Every UI shot answers the card before it; nothing is shown that the copy didn't promise.",
+    "wish": "The crop hides the page, so it's never clear which tab the user is on when the sidebar tidies.",
+    "wonder": "Would a match cut on the sidebar (same box, new theme) work as cutscene's transition between two scenes of one app?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": false,
+    "open": "card",
+    "end": "cards+logo",
+    "endSec": 1.8,
+    "cards": 5,
+    "backdrop": "photo",
+    "cursor": "native"
+  },
+  "grammar": {
+    "duration": 20.52,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 18,
+    "shotLength": {
+      "mean": 1.14,
+      "median": 1.17
+    },
+    "cuts": [
+      {
+        "t": 0.1,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 1.3,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 2.64,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 3.94,
+        "kind": "dissolve",
+        "over": 0.47
+      },
+      {
+        "t": 5.54,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 8.54,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 9.68,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.84,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 11.31,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 12.18,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 12.51,
+        "kind": "dissolve",
+        "over": 0.13
+      },
+      {
+        "t": 13.51,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 13.95,
+        "kind": "dissolve",
+        "over": 0.17
+      },
+      {
+        "t": 14.88,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 16.05,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 17.35,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 18.72,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 1.36,
+        "over": 1.18,
+        "core": 0.98,
+        "zoom": 1,
+        "pan": [
+          0,
+          20.3
+        ],
+        "peak": 0.49,
+        "overshoot": 0.03
+      },
+      {
+        "kind": "pan",
+        "at": 2.7,
+        "over": 1.57,
+        "core": 1.29,
+        "zoom": 1,
+        "pan": [
+          0,
+          27.3
+        ],
+        "peak": 0.36,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pull",
+        "at": 6.25,
+        "over": 1.11,
+        "core": 0.91,
+        "zoom": 0.446,
+        "pan": [
+          16.5,
+          84.8
+        ],
+        "peak": 0.95,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 8.61,
+        "over": 0.03,
+        "core": 0.02,
+        "zoom": 1.167,
+        "pan": [
+          0,
+          -0.1
+        ],
+        "peak": 0,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 11.4,
+        "over": 0.7,
+        "core": 0.57,
+        "zoom": 0.967,
+        "pan": [
+          0.9,
+          1.8
+        ],
+        "peak": 0.36,
+        "overshoot": 0.03
+      },
+      {
+        "kind": "pan",
+        "at": 12.66,
+        "over": 0.77,
+        "core": 0.64,
+        "zoom": 0.968,
+        "pan": [
+          0.8,
+          2.2
+        ],
+        "peak": 0.33,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "pan",
+        "at": 14.07,
+        "over": 0.73,
+        "core": 0.61,
+        "zoom": 0.973,
+        "pan": [
+          0.6,
+          2.5
+        ],
+        "peak": 0.7,
+        "overshoot": 0.04
+      }
+    ],
+    "still": 0.7,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        0.1,
+        1.2,
+        1.34,
+        1.3,
+        1.6,
+        3,
+        1.14,
+        1.16,
+        0.47,
+        0.87,
+        0.33,
+        1,
+        0.44,
+        0.93,
+        1.17,
+        1.3,
+        1.37,
+        1.8
+      ],
+      "trend": 0.04,
+      "accelerates": false
+    }
+  }
+}

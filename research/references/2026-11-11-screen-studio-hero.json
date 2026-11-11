@@ -20,6 +20,42 @@
     "sound": "none in this file"
   },
   "curveFits": [],
+  "classify": "Screen Studio's own hero clip: its signature look. Conventions: webcam bubble, word-by-word captions, motion blur on moves.",
+  "diagnose": [
+    {
+      "observation": "Captions word by word at the bottom centre.",
+      "principle": "Captions carry narration for muted autoplay."
+    },
+    {
+      "observation": "Motion blur on every camera move.",
+      "principle": "Blur smooths fast moves at the cost of legibility in motion."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Motion blur on camera moves (Screen Studio's default).",
+      "setting": "renderer (not built)"
+    }
+  ],
+  "critique": {
+    "like": "Captions make the clip work with the sound off.",
+    "wish": "The webcam bubble and blur are a recognisable template look.",
+    "wonder": "Could cutscene's caption track take word timings from a scene's script?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "dark",
+    "cursor": "large",
+    "captions": true
+  },
   "grammar": {
     "duration": 5.55,
     "width": 1920,

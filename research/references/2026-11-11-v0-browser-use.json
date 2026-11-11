@@ -1,0 +1,731 @@
+{
+  "slug": "v0-browser-use",
+  "title": "v0: Browser Use",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2055402558727077888/vid/avc1/1280x720/VHukx9p-rKJCK4Os.mp4?tag=14",
+    "foundOn": "https://x.com/v0/status/2055402612791669061",
+    "maker": "v0 (Vercel)",
+    "posted": "2026-05-15"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 54 s film of three prompts of rising difficulty: 'Build a SaaS app.', 'Clone vercel.com', 'Test this game and find bugs'. Each is followed by the agent's transcript, with its own browser screenshots inline as proof. The third ends on a bug found and documented, not a success.",
+  "instrument": "30 fps. The chat scrolls as messages arrive. Four large scrolls (72–74% of the frame) fit out-cubic at 0.68–0.70 s (rms 0.96–1.28%; cutscene 3.2–3.4%), and a short one fits out-cubic at 0.58 s (0.72%). A final pull to the logo fits easy ease (2.4%).",
+  "byEye": {
+    "zoom": "the chat column at about ×1.5, centred; screenshots inside it at reading size",
+    "cards": "'Introducing v0 Browser Use'; 'Try it at v0.app'",
+    "cursor": "none",
+    "frame": "pure black; the chat column alone",
+    "aspect": "16:9, 1280×720, 30 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [
+    {
+      "move": "pan 13% at 15.70",
+      "best": "out-cubic, 584 ms (0.72%)",
+      "others": "spring ζ=1, ω 11.3/s, 514 ms (1.2%)",
+      "cutscene030": "3.52% (719 ms)"
+    },
+    {
+      "move": "pan 74% at 26.84",
+      "best": "out-cubic, 698 ms (0.98%)",
+      "others": "spring ζ=1, ω 9.2/s, 632 ms (1.18%)",
+      "cutscene030": "3.23% (858 ms)"
+    },
+    {
+      "move": "pan 73% at 41.40",
+      "best": "out-cubic, 677 ms (1.28%)",
+      "others": "spring ζ=1, ω 9.8/s, 596 ms (1.62%)",
+      "cutscene030": "3.4% (858 ms)"
+    },
+    {
+      "move": "pan 74% at 44.34",
+      "best": "out-cubic, 698 ms (0.96%)",
+      "others": "spring ζ=1, ω 9.5/s, 614 ms (1.16%)",
+      "cutscene030": "3.21% (858 ms)"
+    },
+    {
+      "move": "pan 830% at 48.17",
+      "best": "AE easy ease on linear scale, 884 ms (2.4%)",
+      "others": "spring ζ=0.8 on linear scale, ω 5.4/s, 692 ms (5%)",
+      "cutscene030": "4.54% (1260 ms)"
+    }
+  ],
+  "classify": "Hand-edited agent demo: a centred chat column on black, three escalating tasks, proof inline. Conventions: typed prompts, 'Thought for 9s', inline screenshots, 'Try it at v0.app'.",
+  "diagnose": [
+    {
+      "observation": "Three tasks, each harder than the last; the third ends on a bug found.",
+      "principle": "Rule of three with escalation, and a credible ending: finding a flaw proves the tool looks."
+    },
+    {
+      "observation": "The agent's browser screenshots appear inside the transcript.",
+      "principle": "Proof in place: the film never leaves the chat, so there is one frame to read."
+    },
+    {
+      "observation": "Large scrolls fit out-cubic at 0.6–0.7 s.",
+      "principle": "A front-loaded scroll as content arrives: fast to the new message, a short settle."
+    },
+    {
+      "observation": "Transcript text is about 9 px at feed size.",
+      "principle": "Legibility: the screenshots carry the film; most of the text is texture."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Three tasks of rising difficulty in one reel; end on the hardest.",
+      "setting": "reel script (skill)"
+    },
+    {
+      "tag": "adjusts",
+      "text": "Scroll a growing feed on out-cubic at about 0.6–0.7 s.",
+      "setting": "camera pan curve (Part 3)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Prompt, then the artefact it produced.",
+      "setting": "reel script (skill)"
+    }
+  ],
+  "critique": {
+    "like": "Ending on 'Reset bug found and documented' is more convincing than a third success.",
+    "wish": "Most transcript lines are unreadable at feed size; trimming them to the step headers would lose nothing.",
+    "wonder": "Could the reel follow content arriving at the bottom of a feed with a scroll on out-cubic instead of a camera move?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "move",
+    "isolate": true,
+    "typing": true,
+    "open": "card",
+    "end": "card",
+    "endSec": 2.1,
+    "cards": 2,
+    "backdrop": "dark",
+    "cursor": "none"
+  },
+  "grammar": {
+    "duration": 53.9,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 25,
+    "shotLength": {
+      "mean": 2.16,
+      "median": 1.37
+    },
+    "cuts": [
+      {
+        "t": 0.47,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 1.83,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 3.6,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 4.97,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 6.17,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.07,
+        "kind": "dissolve",
+        "over": 0.87
+      },
+      {
+        "t": 10.67,
+        "kind": "dissolve",
+        "over": 0.8
+      },
+      {
+        "t": 14.6,
+        "kind": "dissolve",
+        "over": 0.73
+      },
+      {
+        "t": 19.83,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 21.53,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 22.73,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 23.13,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 23.6,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 30.4,
+        "kind": "dissolve",
+        "over": 0.5
+      },
+      {
+        "t": 31.17,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 34.5,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 35.2,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 38.3,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 39.57,
+        "kind": "dissolve",
+        "over": 0.1
+      },
+      {
+        "t": 40.3,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 42.07,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 47.9,
+        "kind": "dissolve",
+        "over": 0.27
+      },
+      {
+        "t": 49.17,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 51.83,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 2.07,
+        "over": 0.44,
+        "core": 0.27,
+        "zoom": 1.02,
+        "pan": [
+          0.1,
+          0.1
+        ],
+        "peak": 0.15,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 3.35,
+        "over": 0.17,
+        "core": 0.16,
+        "zoom": 0.916,
+        "pan": [
+          -1.3,
+          0.9
+        ],
+        "peak": 0.84,
+        "overshoot": 0.31
+      },
+      {
+        "kind": "pan",
+        "at": 6.43,
+        "over": 0.38,
+        "core": 0.25,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.7
+        ],
+        "peak": 0.26,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 8.3,
+        "over": 0.47,
+        "core": 0.3,
+        "zoom": 1,
+        "pan": [
+          0,
+          7.6
+        ],
+        "peak": 0.2,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 9.37,
+        "over": 0.89,
+        "core": 0.75,
+        "zoom": 1,
+        "pan": [
+          0,
+          13.1
+        ],
+        "peak": 0.11,
+        "overshoot": 2.69
+      },
+      {
+        "kind": "pan",
+        "at": 10.57,
+        "over": 0.09,
+        "core": 0.08,
+        "zoom": 1.008,
+        "pan": [
+          0.2,
+          27.9
+        ],
+        "peak": 0.69,
+        "overshoot": 0.27
+      },
+      {
+        "kind": "pan",
+        "at": 11.84,
+        "over": 0.45,
+        "core": 0.3,
+        "zoom": 1,
+        "pan": [
+          0,
+          13
+        ],
+        "peak": 0.21,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 13.24,
+        "over": 0.32,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.6
+        ],
+        "peak": 0.3,
+        "overshoot": 0.81
+      },
+      {
+        "kind": "pan",
+        "at": 13.64,
+        "over": 0.51,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.5
+        ],
+        "peak": 0.57,
+        "overshoot": 7.49
+      },
+      {
+        "kind": "pan",
+        "at": 14.44,
+        "over": 0.22,
+        "core": 0.18,
+        "zoom": 1.002,
+        "pan": [
+          0,
+          53.2
+        ],
+        "peak": 0.44,
+        "overshoot": 0.08
+      },
+      {
+        "kind": "pan",
+        "at": 15.7,
+        "over": 0.53,
+        "core": 0.3,
+        "zoom": 1,
+        "pan": [
+          0,
+          13.2
+        ],
+        "peak": 0.18,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 21.29,
+        "over": 0.18,
+        "core": 0.17,
+        "zoom": 0.917,
+        "pan": [
+          -1.3,
+          0.8
+        ],
+        "peak": 0.97,
+        "overshoot": 0.48
+      },
+      {
+        "kind": "pan",
+        "at": 22.84,
+        "over": 0.36,
+        "core": 0.27,
+        "zoom": 1.013,
+        "pan": [
+          -0.2,
+          35.4
+        ],
+        "peak": 0.18,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pan",
+        "at": 23.97,
+        "over": 0.44,
+        "core": 0.3,
+        "zoom": 1,
+        "pan": [
+          0,
+          7.6
+        ],
+        "peak": 0.22,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 25.04,
+        "over": 0.34,
+        "core": 0.23,
+        "zoom": 1.001,
+        "pan": [
+          0,
+          6.7
+        ],
+        "peak": 0.29,
+        "overshoot": 0.84
+      },
+      {
+        "kind": "pan",
+        "at": 25.63,
+        "over": 0.32,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.4
+        ],
+        "peak": 0.31,
+        "overshoot": 0.84
+      },
+      {
+        "kind": "pan",
+        "at": 26.06,
+        "over": 0.49,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.5
+        ],
+        "peak": 0.56,
+        "overshoot": 7.28
+      },
+      {
+        "kind": "pan",
+        "at": 26.84,
+        "over": 0.55,
+        "core": 0.36,
+        "zoom": 0.998,
+        "pan": [
+          0,
+          72.7
+        ],
+        "peak": 0.18,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 28.1,
+        "over": 0.46,
+        "core": 0.3,
+        "zoom": 1.001,
+        "pan": [
+          0,
+          7.6
+        ],
+        "peak": 0.21,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 29.17,
+        "over": 0.92,
+        "core": 0.76,
+        "zoom": 1.007,
+        "pan": [
+          0,
+          13.2
+        ],
+        "peak": 0.75,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 30.67,
+        "over": 0.13,
+        "core": 0.1,
+        "zoom": 1.007,
+        "pan": [
+          -0.2,
+          8.6
+        ],
+        "peak": 0.52,
+        "overshoot": 0.16
+      },
+      {
+        "kind": "pan",
+        "at": 31.64,
+        "over": 0.43,
+        "core": 0.3,
+        "zoom": 1.002,
+        "pan": [
+          0,
+          7.6
+        ],
+        "peak": 0.22,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 34.71,
+        "over": 0.36,
+        "core": 0.34,
+        "zoom": 1.031,
+        "pan": [
+          0.4,
+          0.1
+        ],
+        "peak": 0.17,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 38.07,
+        "over": 0.15,
+        "core": 0.12,
+        "zoom": 0.932,
+        "pan": [
+          -1.3,
+          0.8
+        ],
+        "peak": 0.82,
+        "overshoot": 0.3
+      },
+      {
+        "kind": "pan",
+        "at": 39.67,
+        "over": 0.45,
+        "core": 0.3,
+        "zoom": 1.001,
+        "pan": [
+          0,
+          37.4
+        ],
+        "peak": 0.14,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 40.8,
+        "over": 0.31,
+        "core": 0.23,
+        "zoom": 1.003,
+        "pan": [
+          0,
+          6.9
+        ],
+        "peak": 0.31,
+        "overshoot": 6.86
+      },
+      {
+        "kind": "pan",
+        "at": 41.4,
+        "over": 0.5,
+        "core": 0.34,
+        "zoom": 0.951,
+        "pan": [
+          1.3,
+          73.9
+        ],
+        "peak": 0.19,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 42.67,
+        "over": 0.38,
+        "core": 0.29,
+        "zoom": 1.004,
+        "pan": [
+          0,
+          7.6
+        ],
+        "peak": 0.25,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 43.74,
+        "over": 0.31,
+        "core": 0.24,
+        "zoom": 1.006,
+        "pan": [
+          0,
+          6.8
+        ],
+        "peak": 0.31,
+        "overshoot": 6.8
+      },
+      {
+        "kind": "pan",
+        "at": 44.34,
+        "over": 0.54,
+        "core": 0.36,
+        "zoom": 1,
+        "pan": [
+          0,
+          72
+        ],
+        "peak": 0.18,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 45.6,
+        "over": 0.35,
+        "core": 0.28,
+        "zoom": 1,
+        "pan": [
+          0,
+          7
+        ],
+        "peak": 0.27,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 46.67,
+        "over": 0.32,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.6
+        ],
+        "peak": 0.31,
+        "overshoot": 0.81
+      },
+      {
+        "kind": "pan",
+        "at": 47.07,
+        "over": 0.57,
+        "core": 0.26,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.6
+        ],
+        "peak": 0.52,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 48.17,
+        "over": 0.33,
+        "core": 0.23,
+        "zoom": 1.01,
+        "pan": [
+          -0.3,
+          13.1
+        ],
+        "peak": 0.2,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 49.14,
+        "over": 0.13,
+        "core": 0.11,
+        "zoom": 1.003,
+        "pan": [
+          0.1,
+          4.3
+        ],
+        "peak": 0.75,
+        "overshoot": 0.2
+      }
+    ],
+    "still": 0.74,
+    "held": 0.04,
+    "rhythm": {
+      "lengths": [
+        0.47,
+        1.36,
+        1.77,
+        1.37,
+        1.2,
+        0.9,
+        3.6,
+        3.93,
+        5.23,
+        1.7,
+        1.2,
+        0.4,
+        0.47,
+        6.8,
+        0.77,
+        3.33,
+        0.7,
+        3.1,
+        1.27,
+        0.73,
+        1.77,
+        5.83,
+        1.27,
+        2.66,
+        2.07
+      ],
+      "trend": 0.4,
+      "accelerates": false
+    }
+  }
+}

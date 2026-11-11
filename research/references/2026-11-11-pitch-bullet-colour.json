@@ -33,6 +33,51 @@
       "cutscene030": "3.92%"
     }
   ],
+  "classify": "Screen Studio clip: one push, one long hold, one pull. Conventions: window on violet, enlarged pointer.",
+  "diagnose": [
+    {
+      "observation": "×1.99 in, held 8 s, out.",
+      "principle": "One zoom per task: the frame does not change while the work does."
+    },
+    {
+      "observation": "Push out-quint 1.2 s; pull a ζ 1 spring settling in 1.0 s.",
+      "principle": "Out-family arrival and a critically damped departure: no symmetric ease."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "contradicts",
+      "text": "Pull-out: a critically damped spring, ω 5.7/s, settling in ~1.0 s.",
+      "setting": "camera.ease, CAMERA.pull"
+    },
+    {
+      "tag": "adjusts",
+      "text": "Working zoom ×1.99, against cutscene's ×1.5.",
+      "setting": "CAMERA.working"
+    },
+    {
+      "tag": "confirms",
+      "text": "End wide on the result.",
+      "setting": "reel structure"
+    }
+  ],
+  "critique": {
+    "like": "Holding the zoom for the whole job means the panel never leaves the frame.",
+    "wish": "Eight seconds at one framing with small option changes is long without a cut.",
+    "wonder": "Could cutscene default to one push per task and one pull at its end?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "colour",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 11.6,
     "width": 1280,

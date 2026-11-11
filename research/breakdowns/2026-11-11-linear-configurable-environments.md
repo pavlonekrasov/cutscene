@@ -7,17 +7,19 @@
 
 **Why it's here.** One continuous 12.6 s camera move across three parallel configurations (Web app, Go backend, Data service) instead of three shots: the comparison is made by the move itself.
 
-**What the instrument can read.** A perspective camera over tilted UI planes: the zoom-and-pan tracker can't model it, so only the cut times stand.
+## 1. Describe
 
-## Measured
+### Measured
 
-17.17 s, 1920×1440, 30 fps. Camera still 32% of the time. 4 cut candidates; 1 moves.
+17.17 s, 1920×1440, 30 fps. Camera still 32% of the time. 5 shots, median 1.54 s. 4 cuts (1 dissolves); 1 moves.
 
 Moves:
 
 - 0.53 s pan ×0.366 (pan 112.2, 681.8%), 2–98% 11650 ms, 10–90% 9250 ms, peak 0.69
 
-## Shot list
+**What the instrument can read.** A perspective camera over tilted UI planes: the zoom-and-pan tracker can't model it, so only the cut times stand.
+
+### Shot list
 
 | Time (s)    | Framing                  | What happens                                                                      | Out             |
 | ----------- | ------------------------ | --------------------------------------------------------------------------------- | --------------- |
@@ -25,7 +27,7 @@ Moves:
 | 12.57–15.63 | type card                | the tagline, fading out                                                           | dissolve 0.17 s |
 | 15.63–17.17 | logo card                | held 1.5 s                                                                        | end             |
 
-By eye:
+### By eye
 
 - **Zoom:** tilted cards in perspective, shallow depth of field
 - **Cards:** 'The right environment for every session.' ~2.6 s, the Linear logo 1.5 s
@@ -34,17 +36,28 @@ By eye:
 - **Aspect:** 4:3, 1920×1440, 30 fps (the only 4:3 film in the set)
 - **Sound:** an audio track (147 onsets); 1 of 4 cuts on its grid
 
-## Frame-level beats
+### Frame-level beats
 
 - The move never stops between the three cards: each passes through focus and out again, about 4 s apiece.
 
-## Why it works
+## 2. Classify
 
-- A single unbroken move says 'these are the same kind of thing' better than three cuts would.
+3D motion-design film: one continuous camera move across three parallel items. Conventions: tilted cards, depth of field, a claim card.
 
-## What it teaches
+## 3. Diagnose
+
+- One 12.6 s move crosses three configurations instead of three shots. → A 'oner' through siblings: continuity says 'these are the same kind of thing'.
+- Shallow depth of field on tilted cards. → Focus as a pointer: the sharp plane is the one to read, at the cost of the rest.
+
+## 4. Prescribe
 
 - _new_: A 'oner' through parallel items: one continuous move across siblings instead of a shot each. (camera: a scripted multi-point path (not built))
+
+## 5. Critique
+
+- **I like:** The single move turns three configurations into one comparison.
+- **I wish:** Depth of field blurs two-thirds of every frame; most of the text is never readable.
+- **I wonder:** Could a reel pan one continuous move across a row of sibling cards in a real page?
 
 ## Not for us
 

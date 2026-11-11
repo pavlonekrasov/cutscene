@@ -1,0 +1,522 @@
+{
+  "slug": "figma-payload",
+  "title": "Figma Make: Payload backend",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2110609643273883648/vid/avc1/1280x720/c3JXR0Htx09pu38a.mp4?tag=29",
+    "foundOn": "https://x.com/figma/status/2110610071424291119",
+    "maker": "Figma",
+    "posted": "2026-10-15"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 40 s workflow film for a backend in a site builder. Its centre is a split frame: a CMS form on the right, the card it feeds on the left, the card's title changing letter by letter as the form is typed. A generated sign-up form then takes an entry ('Grace'), and her row turns up in the Users table at the end.",
+  "instrument": "24 fps. The clean fit is the closing pull from Grace's row to the full table: ×0.68 over 1.7 s, out-quint (rms 2.2%; cutscene's in-out 8.2%). The push into the send button (23.83, ×1.7) sits against a cut.",
+  "byEye": {
+    "zoom": "the 'Browser / Files / Content' tabs at ×4; the split frame at ×2; 'Create your account' at ×4",
+    "cards": "'Build with real data and content' (2.5 s, mid-film); 'Your full-stack framework'; logo",
+    "cursor": "an enlarged pointer",
+    "frame": "a pink-violet gradient behind the app",
+    "aspect": "16:9, 1280×720, 24 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [
+    {
+      "move": "pull ×0.68 at 32.98",
+      "best": "out-quint, 1744 ms (2.24%)",
+      "others": "spring ζ=1, ω 5.6/s, 1044 ms (2.56%)",
+      "cutscene030": "8.16% (858 ms)"
+    }
+  ],
+  "classify": "Hand-edited workflow film: prompt → backend → content editing → generated UI → data. Conventions: prompt typing, a ×4 crop on navigation, split-frame cause and effect, a closing loop.",
+  "diagnose": [
+    {
+      "observation": "The form and the card it feeds share one frame; the card changes as each letter lands.",
+      "principle": "Juxtaposition of cause and effect: input and output together make the binding visible without a cut."
+    },
+    {
+      "observation": "Data entered at 31 s ('Grace') appears in the Users table at 33 s.",
+      "principle": "Setup and payoff: the film closes the loop it opened, which proves the backend is real."
+    },
+    {
+      "observation": "A ×4 crop on the 'Content' tab before the CMS.",
+      "principle": "Wayfinding: show where the feature lives before what it does."
+    },
+    {
+      "observation": "The closing pull is ×0.68 over 1.7 s with an out-quint curve.",
+      "principle": "Out-family deceleration for a reveal: fast start, long settle, the table arriving rather than travelling."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Show input and output in one frame: the field being typed beside the element it changes.",
+      "setting": "split frame (Part 2); confirms parallel action"
+    },
+    {
+      "tag": "new",
+      "text": "Close the loop: data entered in one scene appears in the next.",
+      "setting": "reel script (skill)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Open on the navigation to the feature.",
+      "setting": "reel script (skill)"
+    },
+    {
+      "tag": "adjusts",
+      "text": "A reveal pull can take the out family at 1.5–1.8 s.",
+      "setting": "camera pull curve (Part 3)"
+    }
+  ],
+  "critique": {
+    "like": "The split-frame typing makes 'CMS fields bind to components' visible in three seconds.",
+    "wish": "The 2.5 s black card at 7.5 s stops the film just after it starts.",
+    "wonder": "Could a reel lay two crops of one recording side by side (the input's box and the output's box) as a split frame, with no second take?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "both",
+    "isolate": false,
+    "typing": true,
+    "open": "wide",
+    "end": "card+logo",
+    "endSec": 4.7,
+    "cards": 2,
+    "backdrop": "colour",
+    "cursor": "large"
+  },
+  "grammar": {
+    "duration": 39.71,
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "shots": 28,
+    "shotLength": {
+      "mean": 1.42,
+      "median": 1.33
+    },
+    "cuts": [
+      {
+        "t": 0.08,
+        "kind": "dissolve",
+        "over": 0.46
+      },
+      {
+        "t": 1,
+        "kind": "dissolve",
+        "over": 0.25
+      },
+      {
+        "t": 1.92,
+        "kind": "dissolve",
+        "over": 1.13
+      },
+      {
+        "t": 5.33,
+        "kind": "dissolve",
+        "over": 0.29
+      },
+      {
+        "t": 7,
+        "kind": "dissolve",
+        "over": 0.12
+      },
+      {
+        "t": 7.5,
+        "kind": "dissolve",
+        "over": 1.12
+      },
+      {
+        "t": 10,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.33,
+        "kind": "dissolve",
+        "over": 0.79
+      },
+      {
+        "t": 11.33,
+        "kind": "dissolve",
+        "over": 1.13
+      },
+      {
+        "t": 12.88,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 13.67,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 14.75,
+        "kind": "dissolve",
+        "over": 0.29
+      },
+      {
+        "t": 15.63,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 16.21,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 17.33,
+        "kind": "dissolve",
+        "over": 0.63
+      },
+      {
+        "t": 18.75,
+        "kind": "dissolve",
+        "over": 0.62
+      },
+      {
+        "t": 20.17,
+        "kind": "dissolve",
+        "over": 0.62
+      },
+      {
+        "t": 21.5,
+        "kind": "dissolve",
+        "over": 0.21
+      },
+      {
+        "t": 22.75,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 24.42,
+        "kind": "dissolve",
+        "over": 1.29
+      },
+      {
+        "t": 26.25,
+        "kind": "dissolve",
+        "over": 1.46
+      },
+      {
+        "t": 30.71,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 31.08,
+        "kind": "dissolve",
+        "over": 0.13
+      },
+      {
+        "t": 31.58,
+        "kind": "dissolve",
+        "over": 0.46
+      },
+      {
+        "t": 32.92,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 35,
+        "kind": "dissolve",
+        "over": 0.13
+      },
+      {
+        "t": 36.75,
+        "kind": "dissolve",
+        "over": 1.54
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 3.8,
+        "over": 0.68,
+        "core": 0.27,
+        "zoom": 1.021,
+        "pan": [
+          -0.1,
+          -0.3
+        ],
+        "peak": 0.42,
+        "overshoot": 0.32
+      },
+      {
+        "kind": "pan",
+        "at": 5.1,
+        "over": 0.21,
+        "core": 0.01,
+        "zoom": 0.995,
+        "pan": [
+          0,
+          2.2
+        ],
+        "peak": 0.93,
+        "overshoot": 1.87
+      },
+      {
+        "kind": "pan",
+        "at": 6.58,
+        "over": 0.32,
+        "core": 0.19,
+        "zoom": 1.01,
+        "pan": [
+          0,
+          12.8
+        ],
+        "peak": 0.79,
+        "overshoot": 0.21
+      },
+      {
+        "kind": "pan",
+        "at": 7.14,
+        "over": 0.33,
+        "core": 0.26,
+        "zoom": 0.995,
+        "pan": [
+          2.7,
+          5.9
+        ],
+        "peak": 0.33,
+        "overshoot": 0.09
+      },
+      {
+        "kind": "push",
+        "at": 10.06,
+        "over": 0.18,
+        "core": 0.15,
+        "zoom": 1.08,
+        "pan": [
+          -1.5,
+          -3.9
+        ],
+        "peak": 0.61,
+        "overshoot": 0.24
+      },
+      {
+        "kind": "pull",
+        "at": 13.72,
+        "over": 0.35,
+        "core": 0.19,
+        "zoom": 0.926,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.32,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 14.54,
+        "over": 0.11,
+        "core": 0.09,
+        "zoom": 1.181,
+        "pan": [
+          -5,
+          4
+        ],
+        "peak": 0.75,
+        "overshoot": 0.37
+      },
+      {
+        "kind": "pan",
+        "at": 18.71,
+        "over": 0.01,
+        "core": 0.01,
+        "zoom": 0.976,
+        "pan": [
+          0.6,
+          0
+        ],
+        "peak": 0,
+        "overshoot": 1.98
+      },
+      {
+        "kind": "push",
+        "at": 21.72,
+        "over": 0.74,
+        "core": 0.34,
+        "zoom": 1.106,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.15,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 23.83,
+        "over": 0.5,
+        "core": 0.25,
+        "zoom": 1.7,
+        "pan": [
+          -11.9,
+          63.7
+        ],
+        "peak": 0.93,
+        "overshoot": 0.21
+      },
+      {
+        "kind": "pan",
+        "at": 25.47,
+        "over": 0.1,
+        "core": 0.09,
+        "zoom": 0.958,
+        "pan": [
+          6.7,
+          8
+        ],
+        "peak": 0.71,
+        "overshoot": 0.25
+      },
+      {
+        "kind": "pull",
+        "at": 25.73,
+        "over": 0.42,
+        "core": 0.39,
+        "zoom": 0.789,
+        "pan": [
+          2,
+          19.5
+        ],
+        "peak": 0.84,
+        "overshoot": 0.09
+      },
+      {
+        "kind": "pan",
+        "at": 26.31,
+        "over": 0.09,
+        "core": 0.09,
+        "zoom": 1,
+        "pan": [
+          0,
+          6.1
+        ],
+        "peak": 0.72,
+        "overshoot": 0.25
+      },
+      {
+        "kind": "pull",
+        "at": 27.39,
+        "over": 0.09,
+        "core": 0.09,
+        "zoom": 0.894,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.72,
+        "overshoot": 0.27
+      },
+      {
+        "kind": "pull",
+        "at": 27.72,
+        "over": 0.32,
+        "core": 0.24,
+        "zoom": 0.955,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.34,
+        "overshoot": 0.03
+      },
+      {
+        "kind": "pull",
+        "at": 31.38,
+        "over": 0.11,
+        "core": 0.09,
+        "zoom": 0.866,
+        "pan": [
+          0,
+          0.1
+        ],
+        "peak": 0.37,
+        "overshoot": 0.35
+      },
+      {
+        "kind": "pull",
+        "at": 32.09,
+        "over": 0.73,
+        "core": 0.7,
+        "zoom": 0.792,
+        "pan": [
+          1.7,
+          25.3
+        ],
+        "peak": 0.11,
+        "overshoot": 0.09
+      },
+      {
+        "kind": "pull",
+        "at": 32.98,
+        "over": 1.1,
+        "core": 0.66,
+        "zoom": 0.62,
+        "pan": [
+          2.8,
+          -8.3
+        ],
+        "peak": 0.1,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 35.14,
+        "over": 0.35,
+        "core": 0.25,
+        "zoom": 1,
+        "pan": [
+          0,
+          2.8
+        ],
+        "peak": 0.32,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.83,
+    "held": 0.4,
+    "rhythm": {
+      "lengths": [
+        0.08,
+        0.92,
+        0.92,
+        3.41,
+        1.67,
+        0.5,
+        2.5,
+        0.33,
+        1,
+        1.55,
+        0.79,
+        1.08,
+        0.88,
+        0.58,
+        1.12,
+        1.42,
+        1.42,
+        1.33,
+        1.25,
+        1.67,
+        1.83,
+        4.46,
+        0.37,
+        0.5,
+        1.34,
+        2.08,
+        1.75,
+        2.96
+      ],
+      "trend": 0.62,
+      "accelerates": false
+    }
+  }
+}

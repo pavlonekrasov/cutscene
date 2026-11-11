@@ -1,0 +1,418 @@
+{
+  "slug": "figma-specs",
+  "title": "Figma: Specs",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2110606045416660992/vid/avc1/1280x720/eMNekkqLEky0Sj4P.mp4?tag=29",
+    "foundOn": "https://x.com/figma/status/2110606384761069955",
+    "maker": "Figma",
+    "posted": "2026-10-15"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 41 s film that follows one document, a PRD for 'Bundled delivery at checkout', through its life: written with collaborators, filled from a data source by prompt, commented on, laid beside mobile designs, then handed to a coding agent as context. Named multiplayer cursors are in almost every shot.",
+  "instrument": "24 fps. One long move, a 1.8 s scroll down the table (6.12), and a drag (20.80); both sit next to cuts. The one fit that runs is loose (rms 11%) and is not counted. Dissolves run up to 2.4 s.",
+  "byEye": {
+    "zoom": "the 'Spec' button at ×4; prompts and comments at ×2–3; the document at reading size; the canvas wide",
+    "cards": "'Structure your context. Ship your intent.'; logo",
+    "cursor": "an enlarged pointer, plus named collaborator cursors (Brendon, Gabriela, Yeojin)",
+    "frame": "flat light grey; the app full frame",
+    "aspect": "16:9, 1280×720, 24 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [],
+  "classify": "Hand-edited feature film for a document product, told as one artefact's arc. Conventions: a hero button, typing close-ups, collaborator cursors, a two-line end card.",
+  "diagnose": [
+    {
+      "observation": "The same PRD is on screen, or referenced, in every chapter.",
+      "principle": "Continuity of subject: the viewer follows one object across cuts, so each cut reads as 'the same doc, a step later'."
+    },
+    {
+      "observation": "Named collaborator cursors move in the background of most shots.",
+      "principle": "Secondary action: the cursors say 'multiplayer' without a shot of their own."
+    },
+    {
+      "observation": "Prompts and comments are typed at ×2–3.",
+      "principle": "Typing close-up: the words are the content, so they get the frame."
+    },
+    {
+      "observation": "Cross-dissolves of 1.5–2.4 s between 1 s shots.",
+      "principle": "Pacing mismatch: the transition is longer than the shots it joins, so the blend becomes the slowest thing on screen."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Make one record the throughline of a multi-scene reel: every scene touches the same object.",
+      "setting": "reel script (skill)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Typing close-ups at ×2–3.",
+      "setting": "act.type framing (exists)"
+    },
+    {
+      "tag": "adjusts",
+      "text": "Keep dissolves shorter than the shots they join.",
+      "setting": "transition ≤ shot length (Part 2)"
+    }
+  ],
+  "critique": {
+    "like": "The spec is the throughline, so a film about four tools reads as one story.",
+    "wish": "The 2.4 s dissolves at 15.8, 18.0 and 21.2 s drag next to 1 s shots.",
+    "wonder": "Could a reel script pass one record id through every scene, so the story is that record's life?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": true,
+    "open": "detail",
+    "end": "card+logo",
+    "endSec": 4.3,
+    "cards": 1,
+    "backdrop": "light",
+    "cursor": "large"
+  },
+  "grammar": {
+    "duration": 40.75,
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "shots": 30,
+    "shotLength": {
+      "mean": 1.36,
+      "median": 1.17
+    },
+    "cuts": [
+      {
+        "t": 0.08,
+        "kind": "dissolve",
+        "over": 0.46
+      },
+      {
+        "t": 0.92,
+        "kind": "dissolve",
+        "over": 0.37
+      },
+      {
+        "t": 1.67,
+        "kind": "dissolve",
+        "over": 0.38
+      },
+      {
+        "t": 2.25,
+        "kind": "dissolve",
+        "over": 0.13
+      },
+      {
+        "t": 2.67,
+        "kind": "dissolve",
+        "over": 0.79
+      },
+      {
+        "t": 3.92,
+        "kind": "dissolve",
+        "over": 0.46
+      },
+      {
+        "t": 4.92,
+        "kind": "dissolve",
+        "over": 0.29
+      },
+      {
+        "t": 5.63,
+        "kind": "dissolve",
+        "over": 0.42
+      },
+      {
+        "t": 8.08,
+        "kind": "dissolve",
+        "over": 0.54
+      },
+      {
+        "t": 9,
+        "kind": "dissolve",
+        "over": 0.79
+      },
+      {
+        "t": 10.17,
+        "kind": "dissolve",
+        "over": 0.29
+      },
+      {
+        "t": 11.42,
+        "kind": "dissolve",
+        "over": 0.54
+      },
+      {
+        "t": 13.25,
+        "kind": "dissolve",
+        "over": 0.21
+      },
+      {
+        "t": 14.13,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 15,
+        "kind": "dissolve",
+        "over": 0.12
+      },
+      {
+        "t": 15.83,
+        "kind": "dissolve",
+        "over": 1.54
+      },
+      {
+        "t": 18,
+        "kind": "dissolve",
+        "over": 2.37
+      },
+      {
+        "t": 21.17,
+        "kind": "dissolve",
+        "over": 2.21
+      },
+      {
+        "t": 24,
+        "kind": "dissolve",
+        "over": 0.79
+      },
+      {
+        "t": 25.17,
+        "kind": "dissolve",
+        "over": 0.83
+      },
+      {
+        "t": 26.38,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 27.25,
+        "kind": "dissolve",
+        "over": 0.79
+      },
+      {
+        "t": 28.33,
+        "kind": "dissolve",
+        "over": 0.71
+      },
+      {
+        "t": 29.38,
+        "kind": "dissolve",
+        "over": 0.33
+      },
+      {
+        "t": 30.33,
+        "kind": "dissolve",
+        "over": 1.46
+      },
+      {
+        "t": 32.92,
+        "kind": "dissolve",
+        "over": 1.46
+      },
+      {
+        "t": 34.71,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 36.42,
+        "kind": "dissolve",
+        "over": 0.29
+      },
+      {
+        "t": 37.75,
+        "kind": "dissolve",
+        "over": 1.54
+      }
+    ],
+    "moves": [
+      {
+        "kind": "push",
+        "at": 0.56,
+        "over": 0.33,
+        "core": 0.32,
+        "zoom": 1.054,
+        "pan": [
+          0,
+          -0.1
+        ],
+        "peak": 0.33,
+        "overshoot": 0.29
+      },
+      {
+        "kind": "push",
+        "at": 1.31,
+        "over": 0.32,
+        "core": 0.24,
+        "zoom": 1.045,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.34,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "push",
+        "at": 2.4,
+        "over": 0.17,
+        "core": 0.1,
+        "zoom": 1.065,
+        "pan": [
+          1.9,
+          5.7
+        ],
+        "peak": 0.6,
+        "overshoot": 0.32
+      },
+      {
+        "kind": "push",
+        "at": 2.81,
+        "over": 0.09,
+        "core": 0.08,
+        "zoom": 1.093,
+        "pan": [
+          1.5,
+          5.5
+        ],
+        "peak": 0.73,
+        "overshoot": 0.13
+      },
+      {
+        "kind": "pull",
+        "at": 5.66,
+        "over": 0.15,
+        "core": 0.09,
+        "zoom": 0.944,
+        "pan": [
+          -1.9,
+          -1.4
+        ],
+        "peak": 0.91,
+        "overshoot": 0.83
+      },
+      {
+        "kind": "pan",
+        "at": 6.12,
+        "over": 1.84,
+        "core": 1.08,
+        "zoom": 0.907,
+        "pan": [
+          0,
+          38.9
+        ],
+        "peak": 0.48,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "pan",
+        "at": 10.81,
+        "over": 0.5,
+        "core": 0.33,
+        "zoom": 1,
+        "pan": [
+          0,
+          33.9
+        ],
+        "peak": 0.87,
+        "overshoot": 0.15
+      },
+      {
+        "kind": "pan",
+        "at": 20.8,
+        "over": 0.27,
+        "core": 0.19,
+        "zoom": 0.999,
+        "pan": [
+          0,
+          -22.8
+        ],
+        "peak": 0.75,
+        "overshoot": 0.17
+      },
+      {
+        "kind": "pull",
+        "at": 31.81,
+        "over": 0.34,
+        "core": 0.24,
+        "zoom": 0.936,
+        "pan": [
+          0,
+          0.1
+        ],
+        "peak": 0.32,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 36.14,
+        "over": 0.18,
+        "core": 0.1,
+        "zoom": 1,
+        "pan": [
+          0,
+          11
+        ],
+        "peak": 0.62,
+        "overshoot": 0.32
+      },
+      {
+        "kind": "pan",
+        "at": 36.47,
+        "over": 0.09,
+        "core": 0.08,
+        "zoom": 1,
+        "pan": [
+          0,
+          2.7
+        ],
+        "peak": 0.29,
+        "overshoot": 0.15
+      }
+    ],
+    "still": 0.89,
+    "held": 0.26,
+    "rhythm": {
+      "lengths": [
+        0.08,
+        0.84,
+        0.75,
+        0.58,
+        0.42,
+        1.25,
+        1,
+        0.71,
+        2.45,
+        0.92,
+        1.17,
+        1.25,
+        1.83,
+        0.88,
+        0.87,
+        0.83,
+        2.17,
+        3.17,
+        2.83,
+        1.17,
+        1.21,
+        0.87,
+        1.08,
+        1.05,
+        0.95,
+        2.59,
+        1.79,
+        1.71,
+        1.33,
+        3
+      ],
+      "trend": 0.95,
+      "accelerates": false
+    }
+  }
+}

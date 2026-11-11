@@ -1,0 +1,471 @@
+{
+  "slug": "cursor-origin",
+  "title": "Cursor: Origin (code hosting)",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2089397451237036032/vid/avc1/1280x720/NELTlGKos4P8-JKi.mp4?tag=29",
+    "foundOn": "https://x.com/cursor_ai/status/2089399057659596847",
+    "maker": "Cursor",
+    "posted": "2026-08-17"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "Kinetic type and real UI are one sentence: 'Create a repo and start a [+ New]' ends on the real button, which the cursor then presses; each step of the flow (create, sync, review, merge, CI, deploy) gets one shot. 30.9 s.",
+  "instrument": "Pushes of ×1.22–1.25 at 5.9, 11.5 and 15.5 s; one pull ×0.82 to the logo. The 0.3 s 'pans' with 25–46% overshoot are text slides.",
+  "byEye": {
+    "zoom": "isolated elements at ×2–3 (a 'Create Repo' field, 'Sync from GitHub', the merge card); one window on a violet gradient",
+    "cards": "'Introducing Code Hosting', 'Create a repo and start a [+ New]', 'Or', 'Review and [Merge]', 'Run CI from Buildkite', 'Push to deploy with Vercel', 'Git hosting, at agent scale'; Origin logo",
+    "cursor": "large macOS hand/arrow, pressing each control",
+    "frame": "white and warm grey; one window on a violet gradient; black for the CI and deploy beats",
+    "aspect": "16:9, 30 fps",
+    "sound": "none: no audio track"
+  },
+  "curveFits": [],
+  "classify": "Motion-designed launch film mixing kinetic type with isolated, real UI elements. Conventions: inline UI in a sentence, a flow told as one shot per step, a logo lockup on a gradient.",
+  "diagnose": [
+    {
+      "observation": "Real buttons sit inside the sentence.",
+      "principle": "Inline UI: the copy names the action and shows its control in the same line."
+    },
+    {
+      "observation": "One shot per step of the git flow.",
+      "principle": "A flow told as discrete beats is legible at any length; no step needs the one before it on screen."
+    },
+    {
+      "observation": "The press lands on a still frame.",
+      "principle": "Settle before the press, the same rule cutscene's `lead` follows."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Inline UI in a card: the sentence ends on the real control.",
+      "setting": "cards (not built)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Isolated controls at ×2–3 with a large cursor.",
+      "setting": "camera / overlay"
+    },
+    {
+      "tag": "confirms",
+      "text": "End on a logo lockup (2.4 s).",
+      "setting": "CARD.close"
+    }
+  ],
+  "critique": {
+    "like": "The film teaches the product's whole loop, create to deploy, in seven beats and 31 s.",
+    "wish": "The isolated controls are rebuilt cleanly; the one real window appears only once.",
+    "wonder": "A card whose last word is a screenshot of the real control from the scene: cheap, honest, and cutscene can make it."
+  },
+  "tags": {
+    "genre": "motion",
+    "reframe": "both",
+    "isolate": true,
+    "typing": false,
+    "open": "detail",
+    "end": "logo",
+    "endSec": 2.4,
+    "cards": 7,
+    "backdrop": "light",
+    "cursor": "large"
+  },
+  "grammar": {
+    "duration": 30.9,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 20,
+    "shotLength": {
+      "mean": 1.55,
+      "median": 1.6
+    },
+    "cuts": [
+      {
+        "t": 0.4,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 2,
+        "kind": "dissolve",
+        "over": 0.43
+      },
+      {
+        "t": 3.93,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 6.3,
+        "kind": "dissolve",
+        "over": 0.67
+      },
+      {
+        "t": 8.8,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 9.83,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 11.43,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 13.57,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 15.3,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 16.33,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 16.77,
+        "kind": "dissolve",
+        "over": 0.37
+      },
+      {
+        "t": 18.37,
+        "kind": "dissolve",
+        "over": 0.33
+      },
+      {
+        "t": 20.27,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 20.67,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 23.8,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 24.6,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 25.3,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 27.9,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 28.53,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 1.59,
+        "over": 0.38,
+        "core": 0.26,
+        "zoom": 1,
+        "pan": [
+          0,
+          3.5
+        ],
+        "peak": 0.99,
+        "overshoot": 0.43
+      },
+      {
+        "kind": "pan",
+        "at": 2.21,
+        "over": 0.12,
+        "core": 0.1,
+        "zoom": 1,
+        "pan": [
+          0,
+          16.8
+        ],
+        "peak": 0.77,
+        "overshoot": 0.21
+      },
+      {
+        "kind": "pan",
+        "at": 2.43,
+        "over": 0.26,
+        "core": 0.18,
+        "zoom": 1,
+        "pan": [
+          0,
+          3
+        ],
+        "peak": 0.27,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 3.59,
+        "over": 0.28,
+        "core": 0.17,
+        "zoom": 1,
+        "pan": [
+          4.8,
+          0
+        ],
+        "peak": 1,
+        "overshoot": 0.37
+      },
+      {
+        "kind": "pan",
+        "at": 3.97,
+        "over": 0.33,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          5,
+          0
+        ],
+        "peak": 0.2,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 5.95,
+        "over": 0.28,
+        "core": 0.18,
+        "zoom": 1.224,
+        "pan": [
+          5.5,
+          0.1
+        ],
+        "peak": 0.9,
+        "overshoot": 0.25
+      },
+      {
+        "kind": "pull",
+        "at": 6.64,
+        "over": 0.02,
+        "core": 0.02,
+        "zoom": 0.955,
+        "pan": [
+          0.3,
+          -0.3
+        ],
+        "peak": 0,
+        "overshoot": 1.02
+      },
+      {
+        "kind": "push",
+        "at": 6.97,
+        "over": 0.31,
+        "core": 0.21,
+        "zoom": 1.055,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.22,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 8.5,
+        "over": 0.09,
+        "core": 0.07,
+        "zoom": 0.879,
+        "pan": [
+          -2.2,
+          -0.1
+        ],
+        "peak": 0.71,
+        "overshoot": 0.19
+      },
+      {
+        "kind": "pan",
+        "at": 11.03,
+        "over": 0.33,
+        "core": 0.33,
+        "zoom": 0.975,
+        "pan": [
+          0.1,
+          -0.1
+        ],
+        "peak": 1,
+        "overshoot": 5.04
+      },
+      {
+        "kind": "push",
+        "at": 11.48,
+        "over": 1.17,
+        "core": 0.93,
+        "zoom": 1.25,
+        "pan": [
+          -1.8,
+          21.5
+        ],
+        "peak": 0.62,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 15.5,
+        "over": 0.37,
+        "core": 0.25,
+        "zoom": 1.237,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.19,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 18.29,
+        "over": 0.32,
+        "core": 0.19,
+        "zoom": 1.001,
+        "pan": [
+          10.6,
+          0
+        ],
+        "peak": 0.99,
+        "overshoot": 0.44
+      },
+      {
+        "kind": "pan",
+        "at": 18.7,
+        "over": 0.4,
+        "core": 0.27,
+        "zoom": 1,
+        "pan": [
+          11.8,
+          0
+        ],
+        "peak": 0.17,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 20.58,
+        "over": 0.19,
+        "core": 0.12,
+        "zoom": 1.002,
+        "pan": [
+          0,
+          4.7
+        ],
+        "peak": 0.98,
+        "overshoot": 0.57
+      },
+      {
+        "kind": "pan",
+        "at": 20.86,
+        "over": 0.3,
+        "core": 0.19,
+        "zoom": 1.004,
+        "pan": [
+          -0.1,
+          6.2
+        ],
+        "peak": 0.02,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 23.52,
+        "over": 0.22,
+        "core": 0.13,
+        "zoom": 0.996,
+        "pan": [
+          0.1,
+          12.5
+        ],
+        "peak": 0.99,
+        "overshoot": 0.46
+      },
+      {
+        "kind": "pan",
+        "at": 25.33,
+        "over": 0.37,
+        "core": 0.26,
+        "zoom": 1.001,
+        "pan": [
+          11.7,
+          0
+        ],
+        "peak": 0.18,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 27.51,
+        "over": 0.32,
+        "core": 0.18,
+        "zoom": 0.893,
+        "pan": [
+          0.1,
+          0.1
+        ],
+        "peak": 0.9,
+        "overshoot": 0.28
+      },
+      {
+        "kind": "pull",
+        "at": 27.95,
+        "over": 0.32,
+        "core": 0.28,
+        "zoom": 0.815,
+        "pan": [
+          7.9,
+          1.7
+        ],
+        "peak": 0.26,
+        "overshoot": 0.02
+      }
+    ],
+    "still": 0.79,
+    "held": 0.01,
+    "rhythm": {
+      "lengths": [
+        0.4,
+        1.6,
+        1.93,
+        2.37,
+        2.5,
+        1.03,
+        1.6,
+        2.14,
+        1.73,
+        1.03,
+        0.44,
+        1.6,
+        1.9,
+        0.4,
+        3.13,
+        0.8,
+        0.7,
+        2.6,
+        0.63,
+        2.37
+      ],
+      "trend": -0.01,
+      "accelerates": false
+    }
+  }
+}

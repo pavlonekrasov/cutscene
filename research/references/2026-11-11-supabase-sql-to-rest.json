@@ -39,6 +39,55 @@
       "cutscene030": "3.89%"
     }
   ],
+  "classify": "Screen Studio clip for a code tool: deep pushes to type, pulls to compare. Conventions: window on a photo, enlarged I-beam.",
+  "diagnose": [
+    {
+      "observation": "Queries are typed at ×2.1–2.7.",
+      "principle": "Typing close-up: code at about ×3 stays legible on a phone."
+    },
+    {
+      "observation": "Pull back so the input and the translated output share a frame.",
+      "principle": "Cause and effect in one frame."
+    },
+    {
+      "observation": "Reframes of ×2.4–3.3 move rather than cut.",
+      "principle": "Screen Studio moves where a hand edit would cut."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "contradicts",
+      "text": "Push and pull curves (as Pitch).",
+      "setting": "camera.ease"
+    },
+    {
+      "tag": "adjusts",
+      "text": "Working zoom ×2.1–2.7 for typing.",
+      "setting": "CAMERA.working"
+    },
+    {
+      "tag": "contradicts",
+      "text": "Reframes of ×2.4–3.3 move instead of cutting.",
+      "setting": "CAMERA.cutOver (×1.8)"
+    }
+  ],
+  "critique": {
+    "like": "Push to type, pull to compare: the input and its translation read together.",
+    "wish": "The landscape photo behind the window competes with the code.",
+    "wonder": "Could act.type always push to ×2.5 and pull back once output appears?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": true,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "photo",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 35,
     "width": 1280,

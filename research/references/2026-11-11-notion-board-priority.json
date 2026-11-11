@@ -27,6 +27,46 @@
       "cutscene030": "7.48%"
     }
   ],
+  "classify": "Screen Studio clip with a shallow zoom and follow-pans. Conventions: window on light grey, enlarged pointer, end wide.",
+  "diagnose": [
+    {
+      "observation": "Working zoom ×1.24 with pans that keep the card centred.",
+      "principle": "At shallow zoom, following beats reframing: the context stays in frame."
+    },
+    {
+      "observation": "Follow-pans fit out-quint at 1.35 s.",
+      "principle": "Front-loaded pans read as the camera catching up with the pointer."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "contradicts",
+      "text": "Follow-pans use the same front-loaded curve as the pushes.",
+      "setting": "camera.ease"
+    },
+    {
+      "tag": "confirms",
+      "text": "End wide on the result.",
+      "setting": "reel structure"
+    }
+  ],
+  "critique": {
+    "like": "The shallow zoom keeps the whole board readable while the pans follow the work.",
+    "wish": "At ×1.24 the priority labels stay small; the change is seen more than read.",
+    "wonder": "Is there a zoom below which cutscene should pan instead of reframing?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "light",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 12.87,
     "width": 1280,

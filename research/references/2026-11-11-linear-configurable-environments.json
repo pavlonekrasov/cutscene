@@ -20,6 +20,42 @@
     "sound": "an audio track (147 onsets); 1 of 4 cuts on its grid"
   },
   "curveFits": [],
+  "classify": "3D motion-design film: one continuous camera move across three parallel items. Conventions: tilted cards, depth of field, a claim card.",
+  "diagnose": [
+    {
+      "observation": "One 12.6 s move crosses three configurations instead of three shots.",
+      "principle": "A 'oner' through siblings: continuity says 'these are the same kind of thing'."
+    },
+    {
+      "observation": "Shallow depth of field on tilted cards.",
+      "principle": "Focus as a pointer: the sharp plane is the one to read, at the cost of the rest."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "A 'oner' through parallel items: one continuous move across siblings instead of a shot each.",
+      "setting": "camera: a scripted multi-point path (not built)"
+    }
+  ],
+  "critique": {
+    "like": "The single move turns three configurations into one comparison.",
+    "wish": "Depth of field blurs two-thirds of every frame; most of the text is never readable.",
+    "wonder": "Could a reel pan one continuous move across a row of sibling cards in a real page?"
+  },
+  "tags": {
+    "genre": "3d",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "detail",
+    "end": "cards+logo",
+    "endSec": 4.1,
+    "cards": 1,
+    "backdrop": "dark",
+    "cursor": "none",
+    "tilt": true
+  },
   "grammar": {
     "duration": 17.17,
     "width": 1920,

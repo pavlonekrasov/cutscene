@@ -1,0 +1,239 @@
+{
+  "slug": "clerk-biometrics",
+  "title": "Clerk: biometric sign-in",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2089754799927689219/vid/avc1/1280x720/wR5AsqCUenKEy6Z0.mp4?tag=29",
+    "foundOn": "https://x.com/clerk/status/2089756323965796604",
+    "maker": "Clerk",
+    "posted": "2026-08-18"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "An abstract opener (dots stretch into the Face ID glyph) resolves into the one button the feature adds, 'Continue with Face ID', isolated on white, before the phone screen shows it in place. 21.2 s.",
+  "instrument": "The two big 'moves' are the glyph assembling and the phone sliding up; content motion, not camera.",
+  "byEye": {
+    "zoom": "the button alone at ×3; the phone at about 70% of frame height",
+    "cards": "'Now' → 'Now in Clerk: Sign in with biometrics' (builds, left-aligned); logo 4.9 s",
+    "cursor": "none (touch)",
+    "frame": "white to lavender gradient; a phone with no bezel shadow",
+    "aspect": "16:9, 60 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [
+    {
+      "move": "pull ×0.18 at 4.54",
+      "best": "in-out-quint on linear scale, 1298 ms (0.73%)",
+      "others": "ease, 809 ms (1.47%)",
+      "cutscene030": "2.22% (1055 ms)"
+    }
+  ],
+  "classify": "Motion-designed micro-launch for a single control, on a phone. Conventions: a shape morph into an icon, the control isolated, then in context, a left-aligned claim that builds.",
+  "diagnose": [
+    {
+      "observation": "The control is shown alone before it's shown in a screen.",
+      "principle": "Introduce the part, then the whole: the viewer knows what to look for when the full screen arrives."
+    },
+    {
+      "observation": "The opener morphs into the feature's own icon.",
+      "principle": "Shape continuity: the abstract motion pays off as the button's glyph."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "confirms",
+      "text": "Isolate the component before showing it in context.",
+      "setting": "camera / renderer (not built)"
+    },
+    {
+      "tag": "confirms",
+      "text": "A claim card that builds, then the logo (4.9 s here).",
+      "setting": "CARD.close"
+    }
+  ],
+  "critique": {
+    "like": "A one-button feature gets a one-button film: nothing on screen is unrelated to Face ID.",
+    "wish": "Seven seconds of abstract shapes before any UI is long for 21 s.",
+    "wonder": "Could cutscene's phone format open on the one control a scene is about, then pull to the screen?"
+  },
+  "tags": {
+    "genre": "motion",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": false,
+    "open": "card",
+    "end": "cards+logo",
+    "endSec": 4.9,
+    "cards": 2,
+    "backdrop": "light",
+    "cursor": "none"
+  },
+  "grammar": {
+    "duration": 21.17,
+    "width": 1280,
+    "height": 720,
+    "fps": 59.9,
+    "shots": 12,
+    "shotLength": {
+      "mean": 1.76,
+      "median": 1.09
+    },
+    "cuts": [
+      {
+        "t": 0.8,
+        "kind": "dissolve",
+        "over": 0.07
+      },
+      {
+        "t": 1.15,
+        "kind": "dissolve",
+        "over": 0.75
+      },
+      {
+        "t": 2.24,
+        "kind": "dissolve",
+        "over": 0.27
+      },
+      {
+        "t": 2.85,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 3.34,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.56,
+        "kind": "dissolve",
+        "over": 0.15
+      },
+      {
+        "t": 9.14,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 12.01,
+        "kind": "dissolve",
+        "over": 0.17
+      },
+      {
+        "t": 13.08,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 13.86,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 16.3,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pull",
+        "at": 4.54,
+        "over": 0.86,
+        "core": 0.44,
+        "zoom": 0.173,
+        "pan": [
+          86.5,
+          2.9
+        ],
+        "peak": 0.44,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 6.14,
+        "over": 1.39,
+        "core": 0.68,
+        "zoom": 0.982,
+        "pan": [
+          0,
+          -5.4
+        ],
+        "peak": 0.78,
+        "overshoot": 0.21
+      },
+      {
+        "kind": "pan",
+        "at": 7.58,
+        "over": 0.08,
+        "core": 0.07,
+        "zoom": 0.97,
+        "pan": [
+          0,
+          -1.4
+        ],
+        "peak": 0.98,
+        "overshoot": 0.23
+      },
+      {
+        "kind": "pull",
+        "at": 7.74,
+        "over": 0.55,
+        "core": 0.34,
+        "zoom": 0.499,
+        "pan": [
+          0.2,
+          -43.6
+        ],
+        "peak": 0.24,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 9.51,
+        "over": 1.26,
+        "core": 1.04,
+        "zoom": 0.98,
+        "pan": [
+          0,
+          0.1
+        ],
+        "peak": 0.13,
+        "overshoot": 0.39
+      },
+      {
+        "kind": "pan",
+        "at": 12.1,
+        "over": 0.14,
+        "core": 0.11,
+        "zoom": 1,
+        "pan": [
+          0.2,
+          13.5
+        ],
+        "peak": 0.43,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.8,
+    "held": 0.16,
+    "rhythm": {
+      "lengths": [
+        0.8,
+        0.35,
+        1.09,
+        0.61,
+        0.49,
+        4.22,
+        1.58,
+        2.87,
+        1.07,
+        0.78,
+        2.44,
+        4.87
+      ],
+      "trend": 1.49,
+      "accelerates": false
+    }
+  }
+}

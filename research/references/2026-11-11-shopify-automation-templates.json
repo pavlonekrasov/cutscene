@@ -20,6 +20,46 @@
     "sound": "none"
   },
   "curveFits": [],
+  "classify": "Screen Studio tour through four pages. Conventions: push to act, pull to see, a confirm dialog at the end.",
+  "diagnose": [
+    {
+      "observation": "A reframe every 2–5 s, push for each decision and pull for its result.",
+      "principle": "Push to act, pull to see: the zoom tracks intent and consequence."
+    },
+    {
+      "observation": "It starts zoomed in.",
+      "principle": "No establishing wide: the viewer lacks the page before the detail."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "confirms",
+      "text": "Push to act, pull to see.",
+      "setting": "camera"
+    },
+    {
+      "tag": "adjusts",
+      "text": "Minimum hold after a push: 1.55 s here.",
+      "setting": "hold"
+    }
+  ],
+  "critique": {
+    "like": "Each push frames one decision, so a four-page flow stays followable.",
+    "wish": "Without an opening wide, the first seconds have no context.",
+    "wonder": "Should cutscene enforce a minimum wide before the first push?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "detail",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "colour",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 21.7,
     "width": 980,

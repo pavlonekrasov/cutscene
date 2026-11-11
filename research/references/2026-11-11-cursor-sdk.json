@@ -1,0 +1,264 @@
+{
+  "slug": "cursor-sdk",
+  "title": "Cursor: the Cursor SDK",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2049499813679403008/vid/avc1/1280x720/omgPVzLcUmiuzYSN.mp4?tag=21",
+    "foundOn": "https://x.com/cursor_ai/status/2049499866217185492",
+    "maker": "Cursor",
+    "posted": "2026-04-29"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A code film with one idea per shot: an import line types at huge scale, the file grows, then the editor splits so the script and its terminal run side by side, and the agent's output scrolls in. 35 s.",
+  "instrument": "Two clean cuts-with-moves: a pull ×0.36 at 5.5 s (from the import line to the whole file) and a push ×1.5 at 16.3 s. The 196% 'pan' at 3.6 s is the file scrolling.",
+  "byEye": {
+    "zoom": "the import line at ×4; the file at ×1.5; the split at ×1",
+    "cards": "'Cursor SDK' (2 s), logo on black (2.2 s)",
+    "cursor": "an I-beam in the editor",
+    "frame": "full-bleed editor, cream background; terminal on black at the right",
+    "aspect": "16:9, 30 fps",
+    "sound": "silent (an audio track at −91 dB)"
+  },
+  "curveFits": [
+    {
+      "move": "pan 196% at 3.62",
+      "best": "cutscene 0.3.0, 1644 ms (0.49%)",
+      "others": "spring ζ=0.8, ω 3.6/s, 1048 ms (2.38%)",
+      "cutscene030": "0.49% (1644 ms)"
+    },
+    {
+      "move": "pull ×0.36 at 5.53",
+      "best": "spring ζ=0.9 on linear scale, ω 6.3/s, 748 ms (0.51%)",
+      "others": "ease, 995 ms (0.92%)",
+      "cutscene030": "2.61% (1223 ms)"
+    },
+    {
+      "move": "pull ×0.51 at 20.32",
+      "best": "cutscene 0.3.0 on linear scale, 910 ms (0.5%)",
+      "others": "spring ζ=0.8 on linear scale, ω 6.9/s, 546 ms (1.94%)",
+      "cutscene030": "0.68% (938 ms)"
+    }
+  ],
+  "classify": "Hand-edited code film on a light editor theme. Conventions: typing close-up, a scale-down to context, split screen (code | output), a product-name card.",
+  "diagnose": [
+    {
+      "observation": "Input and output are side by side.",
+      "principle": "Cause and effect in one frame: the script and what it does share the screen, no cut between them."
+    },
+    {
+      "observation": "Typing at ×4, then a pull to context.",
+      "principle": "Push to act, pull to see, run on code."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Split screen: the input on one side, its result on the other.",
+      "setting": "parallel action (Part 2)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Typing close-up, then pull to context.",
+      "setting": "camera"
+    }
+  ],
+  "critique": {
+    "like": "Nothing in the film is not code or its output; developers can read every line.",
+    "wish": "The terminal half is small and fast; its result ('Added check-links.ts…') is hard to read before the cut.",
+    "wonder": "Split screen is parallel action without a second take: could cutscene show a scene's two windows (editor, browser) side by side?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "both",
+    "isolate": false,
+    "typing": true,
+    "open": "detail",
+    "end": "cards+logo",
+    "endSec": 2.2,
+    "cards": 1,
+    "backdrop": "light",
+    "cursor": "native"
+  },
+  "grammar": {
+    "duration": 35.03,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 12,
+    "shotLength": {
+      "mean": 2.92,
+      "median": 2.43
+    },
+    "cuts": [
+      {
+        "t": 0.1,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 2.53,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 2.87,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 11.8,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 16,
+        "kind": "dissolve",
+        "over": 0.33
+      },
+      {
+        "t": 19.27,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 19.9,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 24.7,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 27.1,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 30.87,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 32.8,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 3.62,
+        "over": 1.1,
+        "core": 0.69,
+        "zoom": 1,
+        "pan": [
+          0,
+          196.4
+        ],
+        "peak": 0.53,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 5.53,
+        "over": 0.74,
+        "core": 0.51,
+        "zoom": 0.363,
+        "pan": [
+          94.1,
+          -93.6
+        ],
+        "peak": 0.14,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 16.34,
+        "over": 0.38,
+        "core": 0.25,
+        "zoom": 1.5,
+        "pan": [
+          -17,
+          -10.7
+        ],
+        "peak": 0.16,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 20.32,
+        "over": 0.62,
+        "core": 0.39,
+        "zoom": 0.513,
+        "pan": [
+          51.3,
+          32.4
+        ],
+        "peak": 0.57,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 30.37,
+        "over": 0.43,
+        "core": 0.3,
+        "zoom": 1,
+        "pan": [
+          2.6,
+          0
+        ],
+        "peak": 1,
+        "overshoot": 0.3
+      },
+      {
+        "kind": "pan",
+        "at": 30.89,
+        "over": 0.24,
+        "core": 0.17,
+        "zoom": 0.999,
+        "pan": [
+          2.1,
+          0
+        ],
+        "peak": 0.03,
+        "overshoot": 1.51
+      },
+      {
+        "kind": "pan",
+        "at": 31.22,
+        "over": 0.44,
+        "core": 0.25,
+        "zoom": 1.001,
+        "pan": [
+          4.5,
+          0
+        ],
+        "peak": 0.63,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.89,
+    "held": 0.03,
+    "rhythm": {
+      "lengths": [
+        0.1,
+        2.43,
+        0.34,
+        8.93,
+        4.2,
+        3.27,
+        0.63,
+        4.8,
+        2.4,
+        3.77,
+        1.93,
+        2.23
+      ],
+      "trend": 0.12,
+      "accelerates": false
+    }
+  }
+}

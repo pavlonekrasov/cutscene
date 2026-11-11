@@ -1,0 +1,431 @@
+{
+  "slug": "supabase-explorer",
+  "title": "Supabase: Explorer and Notebooks",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/2116210954216058880/pu/vid/avc1/1280x720/hvhWW7h4GQtEB93I.mp4?tag=12",
+    "foundOn": "https://x.com/supabase/status/2116211044519485790",
+    "maker": "Supabase",
+    "posted": "2026-10-30"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 58 s film in the same house style as the tokens film (claim column left, tilted cropped panel right). It opens on the dashboard drawn as a line wireframe that fills with the real 'User growth' chart. The SQL and its results get holds of 9 and 13 s, and the end card says where to switch the feature on.",
+  "instrument": "60 fps. One long push fits: ×8.4 into the chart over 2.2 s, easy ease on linear scale (rms 3.0%; cutscene 7.7%). The other moves sit against cuts. Shots lengthen through the film (trend +1.57).",
+  "byEye": {
+    "zoom": "panels at about ×1.5, tilted, cropped off the right edge",
+    "cards": "'Meet Explorer', 'A unified workspace for interacting with your database and logs via SQL', four step claims, 'Explorer & Notebooks — Enable it under Feature Previews in the Dashboard'",
+    "cursor": "none",
+    "frame": "near-black; the panel slightly tilted; green accents",
+    "aspect": "16:9, 1280×720, 60 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [],
+  "classify": "Hand-edited feature film for a developer workspace. Conventions: a wireframe-to-real opening, caption column beside cropped panels, long reading holds, an end card with a menu path.",
+  "diagnose": [
+    {
+      "observation": "The dashboard starts as a wireframe and fills with real content.",
+      "principle": "Progressive reveal from structure to content: the new workspace is built in front of the viewer."
+    },
+    {
+      "observation": "The caption column and tilted crop repeat from the tokens film.",
+      "principle": "A house style: the same layout across launches makes the brand's films recognisable before the logo."
+    },
+    {
+      "observation": "Holds of 9 s and 13 s on SQL and results.",
+      "principle": "Reading time for code, at the cost of pace: shots lengthen through the film."
+    },
+    {
+      "observation": "The end card gives the menu path to switch the feature on.",
+      "principle": "Wayfinding as the call to action: the last thing said is where to go."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "confirms",
+      "text": "Caption column beside the crop (Supabase ×2).",
+      "setting": "renderer caption layout (not built)"
+    },
+    {
+      "tag": "new",
+      "text": "End card with the feature's menu path when it is opt-in.",
+      "setting": "cards (not built)"
+    },
+    {
+      "tag": "adjusts",
+      "text": "Keep reading holds under ~4 s; split long results into two shots.",
+      "setting": "shot length (Part 2)"
+    }
+  ],
+  "critique": {
+    "like": "The wireframe filling with the real chart makes 'a new workspace' a reveal instead of a screenshot.",
+    "wish": "The 9 s and 13 s holds double the film's length; the second half drags.",
+    "wonder": "Could a reel's end card take the feature's menu path from the scene's own navigation steps?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": true,
+    "open": "abstract",
+    "end": "card",
+    "endSec": 2.6,
+    "cards": 7,
+    "backdrop": "dark",
+    "cursor": "none",
+    "tilt": true
+  },
+  "grammar": {
+    "duration": 58.25,
+    "width": 1280,
+    "height": 720,
+    "fps": 60,
+    "shots": 19,
+    "shotLength": {
+      "mean": 3.07,
+      "median": 2
+    },
+    "cuts": [
+      {
+        "t": 2,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 3.25,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 4.52,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 5.75,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 6.37,
+        "kind": "dissolve",
+        "over": 0.65
+      },
+      {
+        "t": 10.65,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 11.15,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 13.37,
+        "kind": "dissolve",
+        "over": 0.27
+      },
+      {
+        "t": 13.93,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 16.95,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 18.98,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 28.15,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 28.47,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 29.83,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 36.02,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 36.87,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 49.73,
+        "kind": "dissolve",
+        "over": 0.43
+      },
+      {
+        "t": 55.65,
+        "kind": "dissolve",
+        "over": 0.78
+      }
+    ],
+    "moves": [
+      {
+        "kind": "push",
+        "at": 2.11,
+        "over": 1.03,
+        "core": 0.75,
+        "zoom": 1.059,
+        "pan": [
+          -7.5,
+          2.7
+        ],
+        "peak": 0.37,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 3.42,
+        "over": 0.57,
+        "core": 0.48,
+        "zoom": 1.019,
+        "pan": [
+          1.3,
+          2.8
+        ],
+        "peak": 0.64,
+        "overshoot": 0.51
+      },
+      {
+        "kind": "pan",
+        "at": 4.77,
+        "over": 0.88,
+        "core": 0.73,
+        "zoom": 1.029,
+        "pan": [
+          -1.3,
+          -0.9
+        ],
+        "peak": 0.18,
+        "overshoot": 0.02
+      },
+      {
+        "kind": "pan",
+        "at": 5.87,
+        "over": 0.46,
+        "core": 0.35,
+        "zoom": 0.996,
+        "pan": [
+          2.8,
+          1.6
+        ],
+        "peak": 0.98,
+        "overshoot": 0.05
+      },
+      {
+        "kind": "push",
+        "at": 9.04,
+        "over": 1.59,
+        "core": 1.32,
+        "zoom": 10.197,
+        "pan": [
+          -26.8,
+          -31.4
+        ],
+        "peak": 0.21,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "push",
+        "at": 10.85,
+        "over": 0.26,
+        "core": 0.19,
+        "zoom": 1.238,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.12,
+        "overshoot": 0.04
+      },
+      {
+        "kind": "push",
+        "at": 11.17,
+        "over": 0.22,
+        "core": 0.19,
+        "zoom": 1.054,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.13,
+        "overshoot": 0.05
+      },
+      {
+        "kind": "pan",
+        "at": 11.45,
+        "over": 0.64,
+        "core": 0.34,
+        "zoom": 1.025,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.05,
+        "overshoot": 0.09
+      },
+      {
+        "kind": "pull",
+        "at": 17.14,
+        "over": 0.06,
+        "core": 0.04,
+        "zoom": 0.936,
+        "pan": [
+          -0.8,
+          0.8
+        ],
+        "peak": 0.93,
+        "overshoot": 0.75
+      },
+      {
+        "kind": "push",
+        "at": 17.26,
+        "over": 0.24,
+        "core": 0.19,
+        "zoom": 1.102,
+        "pan": [
+          -7.4,
+          1.7
+        ],
+        "peak": 0.73,
+        "overshoot": 0.11
+      },
+      {
+        "kind": "pan",
+        "at": 28.02,
+        "over": 0.1,
+        "core": 0.09,
+        "zoom": 0.967,
+        "pan": [
+          0.9,
+          1.3
+        ],
+        "peak": 0.98,
+        "overshoot": 0.66
+      },
+      {
+        "kind": "pan",
+        "at": 28.49,
+        "over": 0.41,
+        "core": 0.32,
+        "zoom": 0.997,
+        "pan": [
+          0.1,
+          2.5
+        ],
+        "peak": 0.76,
+        "overshoot": 0.01
+      },
+      {
+        "kind": "pull",
+        "at": 36.12,
+        "over": 0.62,
+        "core": 0.43,
+        "zoom": 0.778,
+        "pan": [
+          -6.9,
+          -18
+        ],
+        "peak": 0.35,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 49.75,
+        "over": 0.12,
+        "core": 0.1,
+        "zoom": 0.973,
+        "pan": [
+          0.8,
+          0.9
+        ],
+        "peak": 0.95,
+        "overshoot": 0.99
+      },
+      {
+        "kind": "push",
+        "at": 50.21,
+        "over": 0.81,
+        "core": 0.8,
+        "zoom": 1.147,
+        "pan": [
+          -2.6,
+          1.9
+        ],
+        "peak": 0.4,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 55.51,
+        "over": 0.1,
+        "core": 0.04,
+        "zoom": 0.809,
+        "pan": [
+          2.6,
+          0.4
+        ],
+        "peak": 0.89,
+        "overshoot": 0.36
+      },
+      {
+        "kind": "pan",
+        "at": 55.93,
+        "over": 0.1,
+        "core": 0.07,
+        "zoom": 0.997,
+        "pan": [
+          0.1,
+          3.6
+        ],
+        "peak": 0.34,
+        "overshoot": 0.09
+      }
+    ],
+    "still": 0.86,
+    "held": 0.03,
+    "rhythm": {
+      "lengths": [
+        2,
+        1.25,
+        1.27,
+        1.23,
+        0.62,
+        4.28,
+        0.5,
+        2.22,
+        0.56,
+        3.02,
+        2.03,
+        9.17,
+        0.32,
+        1.36,
+        6.19,
+        0.85,
+        12.86,
+        5.92,
+        2.6
+      ],
+      "trend": 1.57,
+      "accelerates": false
+    }
+  }
+}

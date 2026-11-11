@@ -1,0 +1,298 @@
+{
+  "slug": "supabase-tokens",
+  "title": "Supabase: personal access tokens with permissions",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/2114817011553341440/pu/vid/avc1/1280x720/paXi05HUb_l3m_Ua.mp4?tag=12",
+    "foundOn": "https://x.com/supabase/status/2114817051634045080",
+    "maker": "Supabase",
+    "posted": "2026-10-26"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 26 s film for a settings flow, in a two-column layout: a bold claim on the left ('Set when it expires', 'Limit what it can reach', 'Limit what it can do', 'Review the blast radius') and that step of the real form on the right, cropped, slightly tilted and bleeding off the edge. It ends on a white 'Now generally available' card.",
+  "instrument": "60 fps, still 89%, 12 shots at a 2.8 s median. The moves are small panel slides beside cuts; autofit skips them.",
+  "byEye": {
+    "zoom": "the form step at about ×1.8, cropped so it runs off the right edge",
+    "cards": "'Personal Access Tokens with more permission control'; four step claims; 'Now generally available'",
+    "cursor": "the system pointer",
+    "frame": "near-black; the panel slightly tilted; white for the last card",
+    "aspect": "16:9, 1280×720, 60 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [],
+  "classify": "Hand-edited feature film for a multi-step form. Conventions: a caption column beside a cropped panel, one claim per form step, a palette flip for the end card.",
+  "diagnose": [
+    {
+      "observation": "Claim on the left, the matching form step cropped on the right.",
+      "principle": "Caption beside proof: the copy names the step the crop shows, so each shot is one promise."
+    },
+    {
+      "observation": "The crop bleeds off the right edge.",
+      "principle": "Partial framing implies a larger whole while giving the step the size to be read."
+    },
+    {
+      "observation": "The claims follow the form's own order.",
+      "principle": "The form's structure is the script."
+    },
+    {
+      "observation": "Grey subtext about 10 px under each claim.",
+      "principle": "Legibility: the subtext is decoration at feed size."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "A caption column beside the focus crop instead of a card over it.",
+      "setting": "renderer caption layout (not built)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Crop to region, letting the crop bleed off one edge.",
+      "setting": "camera framing (exists: act.focus)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Tilted plane (Linear ×3, Supabase).",
+      "setting": "renderer tilt (not built)"
+    }
+  ],
+  "critique": {
+    "like": "Each claim names a form step and the crop beside it is that step, so a four-step security form reads as four promises.",
+    "wish": "The grey subtext is unreadable on near-black at feed size.",
+    "wonder": "Could a reel place a scene's caption in a column beside the focus crop, using the scene's own step names?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": false,
+    "open": "card",
+    "end": "card",
+    "endSec": 4.2,
+    "cards": 6,
+    "backdrop": "dark",
+    "cursor": "system",
+    "tilt": true
+  },
+  "grammar": {
+    "duration": 26.3,
+    "width": 1280,
+    "height": 720,
+    "fps": 60,
+    "shots": 12,
+    "shotLength": {
+      "mean": 2.19,
+      "median": 2.77
+    },
+    "cuts": [
+      {
+        "t": 0.4,
+        "kind": "dissolve",
+        "over": 0.27
+      },
+      {
+        "t": 3.17,
+        "kind": "dissolve",
+        "over": 0.35
+      },
+      {
+        "t": 4.52,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 7.8,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.08,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 10.15,
+        "kind": "dissolve",
+        "over": 0.27
+      },
+      {
+        "t": 13.93,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 14.57,
+        "kind": "dissolve",
+        "over": 0.35
+      },
+      {
+        "t": 15.38,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 18.15,
+        "kind": "dissolve",
+        "over": 0.4
+      },
+      {
+        "t": 22.07,
+        "kind": "dissolve",
+        "over": 0.57
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 3.11,
+        "over": 0.2,
+        "core": 0.16,
+        "zoom": 1.001,
+        "pan": [
+          0,
+          2.7
+        ],
+        "peak": 0.99,
+        "overshoot": 0.2
+      },
+      {
+        "kind": "pan",
+        "at": 3.48,
+        "over": 0.4,
+        "core": 0.23,
+        "zoom": 0.942,
+        "pan": [
+          25.8,
+          5.3
+        ],
+        "peak": 0.12,
+        "overshoot": 0.03
+      },
+      {
+        "kind": "pan",
+        "at": 5.86,
+        "over": 0.59,
+        "core": 0.18,
+        "zoom": 0.96,
+        "pan": [
+          -2,
+          35.1
+        ],
+        "peak": 0.69,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 9.9,
+        "over": 0.16,
+        "core": 0.1,
+        "zoom": 1.046,
+        "pan": [
+          -1.2,
+          1.6
+        ],
+        "peak": 0.97,
+        "overshoot": 0.55
+      },
+      {
+        "kind": "pan",
+        "at": 10.17,
+        "over": 0.19,
+        "core": 0.13,
+        "zoom": 0.983,
+        "pan": [
+          1,
+          9.3
+        ],
+        "peak": 0.92,
+        "overshoot": 0.19
+      },
+      {
+        "kind": "pan",
+        "at": 10.42,
+        "over": 0.34,
+        "core": 0.2,
+        "zoom": 1.012,
+        "pan": [
+          -0.4,
+          3.3
+        ],
+        "peak": 0.09,
+        "overshoot": 0.07
+      },
+      {
+        "kind": "pan",
+        "at": 14.44,
+        "over": 0.16,
+        "core": 0.1,
+        "zoom": 0.996,
+        "pan": [
+          6,
+          -0.8
+        ],
+        "peak": 1,
+        "overshoot": 0.26
+      },
+      {
+        "kind": "push",
+        "at": 18.05,
+        "over": 0.18,
+        "core": 0.1,
+        "zoom": 1.07,
+        "pan": [
+          -1.7,
+          1.8
+        ],
+        "peak": 0.93,
+        "overshoot": 0.14
+      },
+      {
+        "kind": "push",
+        "at": 18.39,
+        "over": 0.11,
+        "core": 0.1,
+        "zoom": 1.061,
+        "pan": [
+          2.3,
+          -3.1
+        ],
+        "peak": 0.27,
+        "overshoot": 0.18
+      },
+      {
+        "kind": "push",
+        "at": 18.56,
+        "over": 0.46,
+        "core": 0.3,
+        "zoom": 1.229,
+        "pan": [
+          10.3,
+          -10.4
+        ],
+        "peak": 0.1,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.89,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        0.4,
+        2.77,
+        1.35,
+        3.28,
+        2.28,
+        0.07,
+        3.78,
+        0.64,
+        0.81,
+        2.77,
+        3.92,
+        4.23
+      ],
+      "trend": 0.86,
+      "accelerates": false
+    }
+  }
+}

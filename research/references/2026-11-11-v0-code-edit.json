@@ -33,6 +33,46 @@
       "cutscene030": "4.69%"
     }
   ],
+  "classify": "Screen Studio clip: one push onto the typed line, a long hold, one pull. Conventions: a dark editor full window.",
+  "diagnose": [
+    {
+      "observation": "×2 on the line held for 15.8 s while autocomplete works.",
+      "principle": "One zoom for one task."
+    },
+    {
+      "observation": "Push and pull are critically damped springs.",
+      "principle": "Screen Studio's camera: front-loaded and soft."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "contradicts",
+      "text": "Push and pull curves (as Pitch).",
+      "setting": "camera.ease"
+    },
+    {
+      "tag": "confirms",
+      "text": "Hold through the whole task.",
+      "setting": "hold"
+    }
+  ],
+  "critique": {
+    "like": "The frame stays fixed while the code changes, so the change is the only motion.",
+    "wish": "15.8 s at one framing is long for a showreel.",
+    "wonder": "Could a long hold be cut down to its first and last seconds in a reel?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": true,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "none",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 23.15,
     "width": 1252,

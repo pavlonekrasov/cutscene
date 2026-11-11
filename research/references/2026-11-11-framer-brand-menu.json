@@ -20,6 +20,46 @@
     "sound": "none"
   },
   "curveFits": [],
+  "classify": "Screen Studio clip: a deep fast push into a small menu. Conventions: full-bleed page, enlarged pointer, hover states.",
+  "diagnose": [
+    {
+      "observation": "×2.25 in 0.41 s into a three-item menu.",
+      "principle": "Zoom depth scales with the target: a small target gets a deep push."
+    },
+    {
+      "observation": "Held while each item is hovered.",
+      "principle": "The hover states are the content, so the frame waits for them."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "adjusts",
+      "text": "Zoom depth scales with the target: ×2.25 for a small menu.",
+      "setting": "CAMERA.working, CAMERA.cutOver"
+    },
+    {
+      "tag": "new",
+      "text": "Motion blur on fast camera moves.",
+      "setting": "renderer (not built)"
+    }
+  ],
+  "critique": {
+    "like": "A hidden menu becomes the subject because the push is sized to it.",
+    "wish": "The 0.41 s push is fast enough to need motion blur to read as smooth.",
+    "wonder": "Could cutscene set zoom depth from the target box's area?"
+  },
+  "tags": {
+    "genre": "screen",
+    "reframe": "move",
+    "isolate": false,
+    "typing": false,
+    "open": "wide",
+    "end": "none",
+    "endSec": 0,
+    "cards": 0,
+    "backdrop": "none",
+    "cursor": "large"
+  },
   "grammar": {
     "duration": 6.33,
     "width": 1016,

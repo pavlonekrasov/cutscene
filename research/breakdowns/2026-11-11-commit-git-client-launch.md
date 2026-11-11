@@ -7,11 +7,11 @@
 
 **Why it's here.** A launch page read like a document: a typographic open, then one long reading-speed scroll down the changelog with deep pushes into the screenshot.
 
-**What the instrument can read.** The long scroll fits no ease (it runs at a steady reading speed); motion blur splits the fast moves.
+## 1. Describe
 
-## Measured
+### Measured
 
-30.58 s, 1106×720, 60 fps. Camera still 56% of the time. 4 cut candidates; 10 moves.
+30.58 s, 1106×720, 60 fps. Camera still 56% of the time. 5 shots, median 5.4 s. 4 cuts (2 dissolves); 10 moves.
 
 Moves:
 
@@ -23,15 +23,17 @@ Moves:
 - 15.13 s pan ×0.716 (pan -205.5, 143.8%), 2–98% 1920 ms, 10–90% 1510 ms, peak 0.78
 - 22.39 s push ×1.406 (pan -2.1, 23.3%), 2–98% 860 ms, 10–90% 490 ms, peak 0.11
 - 27.85 s pull ×0.276 (pan 96.5, -64.3%), 2–98% 1120 ms, 10–90% 690 ms, peak 0.19
-- (2 more under 150 ms: blur or UI changes, not camera moves)
+- (2 more under 150 ms, ×1.1 or 5% of the frame: blur, UI changes or tracker noise)
 
-## Shot list
+**What the instrument can read.** The long scroll fits no ease (it runs at a steady reading speed); motion blur splits the fast moves.
+
+### Shot list
 
 | Time (s)   | Framing                          | What happens                                                                                                                                                                 | Out |
 | ---------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | 0.00–30.58 | title, then one take of the page | title open (0–1), wide page, slow push ×1.96 over 2.2 s, scroll 4 screens in 4.7 s (5.46), push ×3.47 into the screenshot (12.67), pull to the wide page with the panel open | —   |
 
-By eye:
+### By eye
 
 - **Zoom:** ×1.4–3.5
 - **Cards:** an animated title open ('Commit', 'Open-source Git client') with motion blur
@@ -40,17 +42,28 @@ By eye:
 - **Aspect:** ~1.54:1, 1106×720, 60 fps
 - **Sound:** none
 
-## Frame-level beats
+### Frame-level beats
 
 - The reading scroll covers 4 screen heights in 4.7 s, about 0.85 screens a second.
 
-## Why it works
+## 2. Classify
 
-- A steady scroll reads as reading, not as a camera move.
+Screen Studio launch page read like a document: a typographic open, then a long scroll. Conventions: animated title, reading-speed scroll, deep pushes.
 
-## What it teaches
+## 3. Diagnose
+
+- A steady scroll at about 0.85 screens/s, not eased. → Linear motion for constant activity: a scroll at reading speed reads as reading.
+- Text flies in with motion blur at the open. → Template motion: blur on type costs legibility for energy.
+
+## 4. Prescribe
 
 - _new_: A long scroll runs at a steady reading speed (~0.85 screens/s), not eased. (act.scroll pace (not proposed))
+
+## 5. Critique
+
+- **I like:** The steady scroll makes a changelog feel read, not presented.
+- **I wish:** The blurred fly-in title is hard to read and looks like a preset.
+- **I wonder:** Should long scrolls in cutscene be linear at reading speed instead of eased?
 
 ## Not for us
 

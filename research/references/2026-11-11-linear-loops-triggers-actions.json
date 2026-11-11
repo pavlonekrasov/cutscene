@@ -20,6 +20,46 @@
     "sound": "dense music (134 onsets in 28 s); 11 of 19 cuts within 40 ms of an onset, where chance gives about 38%; no fixed beat grid"
   },
   "curveFits": [],
+  "classify": "Abstract motion-design teaser with no product UI, cut to music. Conventions: a rotating dial of labels, an accelerating cut rhythm, a wordmark resolving out of blur.",
+  "diagnose": [
+    {
+      "observation": "Labels hold 1.6–1.9 s, then 0.4–0.9 s, then the wordmark.",
+      "principle": "Accelerating rhythm into a resolution: the last long hold lands as the payoff."
+    },
+    {
+      "observation": "11 of 19 cuts fall within 40 ms of a musical onset (chance about 38%).",
+      "principle": "Cutting on accents, not on a grid: the edit follows the music's phrasing."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "Cuts land on musical accents (onsets), not a beat grid; the evidence is weak (58% against 38% by chance, one film).",
+      "setting": "research-gated: beat snap"
+    },
+    {
+      "tag": "confirms",
+      "text": "Cards enter through a blur (the wordmark resolves out of a blur).",
+      "setting": "CARD.enter (4 px blur)"
+    }
+  ],
+  "critique": {
+    "like": "The cuts quicken with the music, so the wordmark's arrival feels inevitable.",
+    "wish": "There is no product in it; it names the feature but shows nothing of it.",
+    "wonder": "Could a reel with a licensed track place its cuts on the track's onsets within ±40 ms?"
+  },
+  "tags": {
+    "genre": "motion",
+    "reframe": "cut",
+    "isolate": false,
+    "typing": false,
+    "open": "abstract",
+    "end": "cards+logo",
+    "endSec": 6,
+    "cards": 2,
+    "backdrop": "dark",
+    "cursor": "none"
+  },
   "grammar": {
     "duration": 28.45,
     "width": 1920,

@@ -1,0 +1,315 @@
+{
+  "slug": "family-dark-mode",
+  "title": "Family: dark mode",
+  "source": {
+    "video": "https://video.twimg.com/ext_tw_video/1886815347056988161/pu/vid/avc1/1280x720/_fqsPagL9uhOQu07.mp4?tag=14",
+    "foundOn": "https://x.com/family/status/1886837603359478047",
+    "maker": "Family",
+    "posted": "2025-02-04"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "A 17 s launch for one setting. The film's title is the feature's own control: a toggle grows into a pill reading 'to the dark side' and the whole frame darkens as it flips. The setting is then shown in three crops (the Appearance row, the option tiles, the result on three phones).",
+  "instrument": "Few moves, and both clean ones sit next to cuts, so autofit skips them. The motion here is dissolves: 10 of 14 cuts are cross-dissolves of 0.5–1.7 s.",
+  "byEye": {
+    "zoom": "the Appearance row and the option tiles at about ×3; phones shown whole",
+    "cards": "'to the dark side' (inside the toggle), 'dark mode'; logo",
+    "cursor": "a yellow tap dot",
+    "frame": "starts on white, goes dark with the toggle and stays dark",
+    "aspect": "16:9, 1280×720, 30 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [],
+  "classify": "Motion-designed micro-launch for a single setting. Conventions: the control as title, a short path through settings, the result on devices, a word card and the logo.",
+  "diagnose": [
+    {
+      "observation": "The opening toggle flips and the backdrop goes dark with it.",
+      "principle": "A continuity transition driven by the feature: the scene change is the setting itself, so the claim and the cut are one gesture."
+    },
+    {
+      "observation": "The Appearance row is lifted out of the list with a 'NEW!' badge.",
+      "principle": "Isolation plus a signpost: one row on a plain field tells the viewer where the feature lives."
+    },
+    {
+      "observation": "The selection ring travels System → Dark across two shots.",
+      "principle": "State change shown in the native control at ×3, the smallest frame that keeps the three options legible."
+    },
+    {
+      "observation": "Dissolves of 0.5–1.7 s on 10 of 14 cuts, still 86%.",
+      "principle": "A long crossfade reads as a mood shift (light into dark) but it is also about half the runtime spent in blends."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "new",
+      "text": "When the feature changes the whole surface (theme, layout, density), hold the frame wide enough that the change fills it.",
+      "setting": "act.wide before the action (exists)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Isolate the component: one settings row on a plain field.",
+      "setting": "camera / renderer (not built)"
+    },
+    {
+      "tag": "confirms",
+      "text": "Open on the navigation to the feature (settings → row → option).",
+      "setting": "reel script (skill)"
+    }
+  ],
+  "critique": {
+    "like": "The toggle that becomes the title makes the claim and the transition the same 2 s gesture.",
+    "wish": "The dissolves average about 0.9 s on 1.2 s shots, so most shots are half-blended and none sit still long.",
+    "wonder": "cutscene already records every scene in light and dark: could a reel cross-dissolve between the two takes of one scene to show a theme change?"
+  },
+  "tags": {
+    "genre": "motion",
+    "reframe": "cut",
+    "isolate": true,
+    "typing": false,
+    "open": "card",
+    "end": "cards+logo",
+    "endSec": 4,
+    "cards": 2,
+    "backdrop": "dark",
+    "cursor": "touch"
+  },
+  "grammar": {
+    "duration": 17.4,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "shots": 15,
+    "shotLength": {
+      "mean": 1.16,
+      "median": 1.34
+    },
+    "cuts": [
+      {
+        "t": 0.07,
+        "kind": "dissolve",
+        "over": 1.7
+      },
+      {
+        "t": 2.1,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 2.47,
+        "kind": "dissolve",
+        "over": 1.1
+      },
+      {
+        "t": 3.97,
+        "kind": "dissolve",
+        "over": 1.03
+      },
+      {
+        "t": 5.43,
+        "kind": "dissolve",
+        "over": 1.03
+      },
+      {
+        "t": 6.77,
+        "kind": "dissolve",
+        "over": 0.47
+      },
+      {
+        "t": 7.5,
+        "kind": "dissolve",
+        "over": 0.83
+      },
+      {
+        "t": 8.63,
+        "kind": "dissolve",
+        "over": 0.97
+      },
+      {
+        "t": 9.97,
+        "kind": "dissolve",
+        "over": 0.6
+      },
+      {
+        "t": 11.6,
+        "kind": "dissolve",
+        "over": 0.87
+      },
+      {
+        "t": 12.97,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 13.33,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 14.73,
+        "kind": "dissolve",
+        "over": 0.3
+      },
+      {
+        "t": 17.33,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 3.18,
+        "over": 0.08,
+        "core": 0.07,
+        "zoom": 0.999,
+        "pan": [
+          2.8,
+          0
+        ],
+        "peak": 0.71,
+        "overshoot": 0.4
+      },
+      {
+        "kind": "pan",
+        "at": 3.58,
+        "over": 0.32,
+        "core": 0.23,
+        "zoom": 1,
+        "pan": [
+          0,
+          19.2
+        ],
+        "peak": 0.27,
+        "overshoot": 0.03
+      },
+      {
+        "kind": "pan",
+        "at": 5.34,
+        "over": 0.07,
+        "core": 0.05,
+        "zoom": 0.968,
+        "pan": [
+          0,
+          -3
+        ],
+        "peak": 0.85,
+        "overshoot": 1.71
+      },
+      {
+        "kind": "pan",
+        "at": 7.4,
+        "over": 0.08,
+        "core": 0.07,
+        "zoom": 1.02,
+        "pan": [
+          0.4,
+          2.6
+        ],
+        "peak": 0.86,
+        "overshoot": 0.93
+      },
+      {
+        "kind": "pull",
+        "at": 7.82,
+        "over": 0.14,
+        "core": 0.11,
+        "zoom": 0.953,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.06,
+        "overshoot": 0
+      },
+      {
+        "kind": "push",
+        "at": 9.73,
+        "over": 0.15,
+        "core": 0.13,
+        "zoom": 1.129,
+        "pan": [
+          0,
+          0
+        ],
+        "peak": 0.64,
+        "overshoot": 0.24
+      },
+      {
+        "kind": "pan",
+        "at": 13.12,
+        "over": 0.13,
+        "core": 0.08,
+        "zoom": 0.971,
+        "pan": [
+          0,
+          0.1
+        ],
+        "peak": 0.59,
+        "overshoot": 0.3
+      },
+      {
+        "kind": "pull",
+        "at": 13.38,
+        "over": 0.08,
+        "core": 0.07,
+        "zoom": 0.943,
+        "pan": [
+          0,
+          0.1
+        ],
+        "peak": 0.72,
+        "overshoot": 0.23
+      },
+      {
+        "kind": "pull",
+        "at": 13.58,
+        "over": 0.28,
+        "core": 0.14,
+        "zoom": 0.889,
+        "pan": [
+          0,
+          0.1
+        ],
+        "peak": 0.31,
+        "overshoot": 0
+      },
+      {
+        "kind": "pan",
+        "at": 15.18,
+        "over": 1.02,
+        "core": 0.78,
+        "zoom": 0.024,
+        "pan": [
+          1061.6,
+          176.8
+        ],
+        "peak": 0.61,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.86,
+    "held": 0.44,
+    "rhythm": {
+      "lengths": [
+        0.07,
+        2.03,
+        0.37,
+        1.5,
+        1.46,
+        1.34,
+        0.73,
+        1.13,
+        1.34,
+        1.63,
+        1.37,
+        0.36,
+        1.4,
+        2.6,
+        0.07
+      ],
+      "trend": 0.21,
+      "accelerates": false
+    }
+  }
+}

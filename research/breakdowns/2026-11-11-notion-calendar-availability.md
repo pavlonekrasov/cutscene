@@ -7,11 +7,11 @@
 
 **Why it's here.** Holds one zoom for 15 s and follows the work with slow, even pans rather than reframing: the calmest camera in the set, ending wide on 'Snippet copied to clipboard'.
 
-**What the instrument can read.** Good.
+## 1. Describe
 
-## Measured
+### Measured
 
-17.29 s, 1280×720, 24 fps. Camera still 77% of the time. 6 cut candidates; 5 moves.
+17.29 s, 1280×720, 24 fps. Camera still 77% of the time. 7 shots, median 2.42 s. 6 cuts (1 dissolves); 5 moves.
 
 Moves:
 
@@ -21,20 +21,24 @@ Moves:
 - 14.28 s pan ×1 (pan 0, -16.8%), 2–98% 880 ms, 10–90% 520 ms, peak 0.21
 - 16.24 s pull ×0.719 (pan -5.6, 11.2%), 2–98% 820 ms, 10–90% 520 ms, peak 0.22
 
-Curve fits (RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own push at 0.16%):
+**What the instrument can read.** Good.
 
-| Move                     | Best fit                                           | Next                                        | cutscene 0.3.0's curve |
+### Curve fits
+
+RMS error as % of the move's travel; the same fit recovers cutscene 0.3.0's own push at 0.16%.
+
+| Move                     | Best fit                                           | Next other curve                            | cutscene 0.3.0's curve |
 | ------------------------ | -------------------------------------------------- | ------------------------------------------- | ---------------------- |
 | push ×1.40 at 0.35       | out-quint 1406 ms (0.40%)                          | spring ζ 1, ω 7.0/s, settles 0.83 s (0.80%) | 4.48%                  |
 | follow-pan 17.2% at 9.15 | spring ζ 1, ω 6.6/s, settles 98% in 0.88 s (0.43%) | out-quint 1463 ms (0.67%)                   | 4.59%                  |
 
-## Shot list
+### Shot list
 
 | Time (s)   | Framing                        | What happens                                                                                                                                             | Out |
 | ---------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | 0.00–17.29 | wide → ×1.40 → wide (one take) | push (0.35), drag out a slot, the availability panel, recurrence menu (12 s), follow-pans (9.15 down 17%, 14.28 up 17%), pull ×0.72 (16.24) to the toast | —   |
 
-By eye:
+### By eye
 
 - **Zoom:** working ×1.40
 - **Cards:** none
@@ -43,15 +47,26 @@ By eye:
 - **Aspect:** 16:9, 1280×720, 24 fps
 - **Sound:** none
 
-## Frame-level beats
+### Frame-level beats
 
 - The establishing wide is only 0.35 s: the window is already familiar from the first frame.
 
-## Why it works
+## 2. Classify
 
-- Pans at the push's own pace keep the viewer oriented while the zoom stays in.
+Screen Studio clip that holds one zoom and follows with slow pans. Conventions: window on light grey, an end on the success message.
 
-## What it teaches
+## 3. Diagnose
+
+- One zoom for 15 s; pans as a ζ 1 spring, ω 6.6/s. → Continuity: following at the push's own pace keeps orientation.
+- It ends wide on 'Snippet copied to clipboard'. → End on the outcome.
+
+## 4. Prescribe
 
 - _contradicts_: Follow-pans: critically damped spring, ω ~6.6/s. (camera.ease, CAMERA.pan)
 - _confirms_: End wide on the result. (reel structure)
+
+## 5. Critique
+
+- **I like:** The calmest camera in the set: nothing reframes that doesn't have to.
+- **I wish:** The success message is small in the wide end frame.
+- **I wonder:** Could the end frame push slightly toward the toast instead of pulling fully wide?

@@ -1,0 +1,205 @@
+{
+  "slug": "dia-meeting-tabs",
+  "title": "Dia: meeting tab groups",
+  "source": {
+    "video": "https://video.twimg.com/amplify_video/2011907892404789248/vid/avc1/1090x720/qKalX_NEhS_yRzqL.mp4?tag=21",
+    "foundOn": "https://x.com/diabrowser/status/2011908234332844348",
+    "maker": "The Browser Company (@diabrowser)",
+    "posted": "2026-01-15"
+  },
+  "read": "2026-11-11",
+  "how": "ffmpeg streamed the video from its URL into cutscene's measure (256 px luma, every frame); nothing saved but these numbers and stills in scratch",
+  "kind": "launch film",
+  "whyTopTier": "Framed tight on the window's top-left corner, the one region where the feature lives: the calendar event, 'Join', then a tab group named after the meeting gathers Meet, notes, Figma and Linear while the speaker floats picture-in-picture. 22.2 s.",
+  "instrument": "Still 95%: one pull ×0.76 at 2.7 s; the rest is held framing and cuts.",
+  "byEye": {
+    "zoom": "the window's top-left quarter at ×2.5; the frame edge cuts through the page",
+    "cards": "none in the flow; logo, a blur-morph to 'diabrowser.com' (1.6 s)",
+    "cursor": "native pointer at ×2.5, so about 60 px",
+    "frame": "the crop is the frame: no backdrop visible",
+    "aspect": "1090×720, 60 fps",
+    "sound": "an audio track with rhythmic onsets (not listened to)"
+  },
+  "curveFits": [
+    {
+      "move": "pull ×0.76 at 2.68",
+      "best": "spring ζ=0.9, ω 8.4/s, 556 ms (0.22%)",
+      "others": "ease, 677 ms (0.49%)",
+      "cutscene030": "2.55% (809 ms)"
+    }
+  ],
+  "classify": "Hand-edited single-flow reel, cropped to a corner of the real window. Conventions: the frame cuts through the window, a large pointer, logo → URL end.",
+  "diagnose": [
+    {
+      "observation": "The frame cuts through the window instead of showing it whole.",
+      "principle": "Crop to the region: when the feature lives in one corner, the corner is the shot."
+    },
+    {
+      "observation": "The pointer is ~60 px.",
+      "principle": "Pointer scale tracks frame scale, so the pointer stays visible on a phone."
+    }
+  ],
+  "teaches": [
+    {
+      "tag": "confirms",
+      "text": "Crop to where the feature lives; a working zoom of ×2.5.",
+      "setting": "CAMERA.working"
+    },
+    {
+      "tag": "confirms",
+      "text": "Camera holds; the flow plays inside one framing (rule 5).",
+      "setting": "hold"
+    }
+  ],
+  "critique": {
+    "like": "Nothing outside the corner ever matters, so nothing outside it is shown.",
+    "wish": "The tab group's name is the payoff but is small text in the sidebar; a push to it would land it.",
+    "wonder": "Should cutscene's working zoom anchor to a corner region rather than centre on the target?"
+  },
+  "tags": {
+    "genre": "edit",
+    "reframe": "cut",
+    "isolate": false,
+    "typing": false,
+    "open": "detail",
+    "end": "logo+url",
+    "endSec": 1.3,
+    "cards": 0,
+    "backdrop": "none",
+    "cursor": "native"
+  },
+  "grammar": {
+    "duration": 22.22,
+    "width": 1090,
+    "height": 720,
+    "fps": 60,
+    "shots": 15,
+    "shotLength": {
+      "mean": 1.48,
+      "median": 0.99
+    },
+    "cuts": [
+      {
+        "t": 0.73,
+        "kind": "dissolve",
+        "over": 0.05
+      },
+      {
+        "t": 1.32,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 2.05,
+        "kind": "dissolve",
+        "over": 0.2
+      },
+      {
+        "t": 3.8,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 5.07,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 5.45,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 6.08,
+        "kind": "dissolve",
+        "over": 0.05
+      },
+      {
+        "t": 7.07,
+        "kind": "dissolve",
+        "over": 0.23
+      },
+      {
+        "t": 8.17,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 9.97,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 15.5,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 19.7,
+        "kind": "hard",
+        "over": 0
+      },
+      {
+        "t": 20.93,
+        "kind": "dissolve",
+        "over": 0.07
+      },
+      {
+        "t": 21.3,
+        "kind": "hard",
+        "over": 0
+      }
+    ],
+    "moves": [
+      {
+        "kind": "pan",
+        "at": 1.38,
+        "over": 0.52,
+        "core": 0.33,
+        "zoom": 1.001,
+        "pan": [
+          23.7,
+          -2.5
+        ],
+        "peak": 0.2,
+        "overshoot": 0
+      },
+      {
+        "kind": "pull",
+        "at": 2.68,
+        "over": 0.54,
+        "core": 0.34,
+        "zoom": 0.755,
+        "pan": [
+          -15,
+          3.3
+        ],
+        "peak": 0.19,
+        "overshoot": 0
+      }
+    ],
+    "still": 0.95,
+    "held": 0,
+    "rhythm": {
+      "lengths": [
+        0.73,
+        0.59,
+        0.73,
+        1.75,
+        1.27,
+        0.38,
+        0.63,
+        0.99,
+        1.1,
+        1.8,
+        5.53,
+        4.2,
+        1.23,
+        0.37,
+        0.92
+      ],
+      "trend": 0.96,
+      "accelerates": false
+    }
+  }
+}

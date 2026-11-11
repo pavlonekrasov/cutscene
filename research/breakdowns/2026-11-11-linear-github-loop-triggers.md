@@ -7,22 +7,22 @@
 
 **Why it's here.** Restraint: the UI is rebuilt at about 2.5× its size on a near-black canvas and the camera never moves; every motion is the product's own (typing, posting, scrolling), and each new line gets 1.6–2.0 s to be read before anything else moves.
 
-**What the instrument can read.** Cut candidates over-count: a message appearing or the composer growing reads as a cut. The scrolls bring in new content and the title exits fade and blur, so neither fits a camera model.
+## 1. Describe
 
-## Measured
+### Measured
 
-29.67 s, 1920×1080, 60 fps. Camera still 93% of the time. 14 cut candidates; 6 moves.
+29.67 s, 1920×1080, 60 fps. Camera still 93% of the time. 15 shots, median 2.22 s. 14 cuts (4 dissolves); 6 moves.
 
 Moves:
 
 - 12.15 s pan ×0.997 (pan 0, 43.6%), 2–98% 440 ms, 10–90% 280 ms, peak 0.5
 - 14.50 s pan ×0.945 (pan 1.3, 53%), 2–98% 440 ms, 10–90% 290 ms, peak 0.49
 - 17.11 s pan ×1.002 (pan 0, 41.9%), 2–98% 320 ms, 10–90% 220 ms, peak 0.71, overshoot 5%
-- 22.10 s pull ×0.953 (pan 0, 0.1%), 2–98% 400 ms, 10–90% 260 ms, peak 0.92
-- 24.40 s pull ×0.945 (pan -0.1, 0.1%), 2–98% 450 ms, 10–90% 250 ms, peak 0.7, overshoot 9%
-- (1 more under 150 ms: blur or UI changes, not camera moves)
+- (3 more under 150 ms, ×1.1 or 5% of the frame: blur, UI changes or tracker noise)
 
-## Shot list
+**What the instrument can read.** Cut candidates over-count: a message appearing or the composer growing reads as a cut. The scrolls bring in new content and the title exits fade and blur, so neither fits a camera model.
+
+### Shot list
 
 | Time (s)    | Framing                            | What happens                                                                                                                                                                                                                                   | Out                    |
 | ----------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
@@ -33,7 +33,7 @@ Moves:
 | 23.45–25.45 | card                               | 'Now available'; leaves the same way, 450 ms                                                                                                                                                                                                   | hard                   |
 | 25.45–29.67 | logo card                          | held 4.2 s                                                                                                                                                                                                                                     | end                    |
 
-By eye:
+### By eye
 
 - **Zoom:** one UI fragment at a time, about 2.5× native size; the composer spans ~85% of the frame width
 - **Cards:** 3: 'GitHub loop triggers' 2.0 s, 'Now available' 1.4 s, the Linear logo 4.2 s (14% of the runtime); white type centred on near-black
@@ -42,23 +42,33 @@ By eye:
 - **Aspect:** 16:9, 1920×1080, 60 fps
 - **Sound:** an audio track with sparse onsets (11 in 30 s); 2 of 14 cuts within 50 ms of its beat grid (chance 16%); the logo cut lands 34 ms from an onset
 
-## Frame-level beats
+### Frame-level beats
 
 - Each new message lands, then the thread scrolls 1.6–2.0 s later (10.12 → 12.15, 12.93 → 14.50, 15.15 → 17.11): the new line is read before the frame moves.
 - Scrolls are symmetric (speed peak 0.49–0.50); card exits accelerate away (peak 0.70–0.92). Arrival and departure get different curves.
 - Product story 0–19.9 s (67%), black gap 0.65 s, cards 20.5–29.7 s (31%).
 
-## Why it works
+## 2. Classify
 
-- One element at a time at reading size: the UI is the frame, so no zoom is needed to make text legible.
-- A locked camera keeps the eye on the text; the only motion is information arriving.
-- Read time is built in before each move, so nothing moves while something is still being read.
+Motion-designed changelog film with the UI rebuilt as a mock-up. Conventions: one fragment at a time at reading size, a locked frame, claim and logo cards on near-black.
 
-## What it teaches
+## 3. Diagnose
+
+- The UI is rebuilt at about ×2.5 and the frame never moves (still 93%). → Legibility by scale, not zoom: the fragment is the frame, so text is readable with no camera.
+- Each new message gets 1.6–2.0 s before the thread scrolls. → Read time before motion: nothing moves while something is still being read.
+- Scrolls peak at 0.50; card exits peak at 0.70–0.92. → Arrival and departure get different curves: symmetric for moves on screen, ease-in for exits.
+
+## 4. Prescribe
 
 - _new_: Lock the camera while the app's own content moves (typing, posting, scrolling): still 93% of the time. (camera: no push while a scene's content changes in place)
 - _new_: Give new content 1.6–2.0 s to be read before the next motion. (hold)
 - _new_: End on a claim card (1.4–2.0 s) and a logo card (4.2 s); cards leave by scaling to ×0.95 and fading, accelerating out over ~0.4 s. (CARD.close, CARD.leave)
+
+## 5. Critique
+
+- **I like:** Every motion is information arriving, so the eye never has to choose between the camera and the content.
+- **I wish:** The logo card holds 4.2 s, 14% of the runtime, longer than any product beat.
+- **I wonder:** Could cutscene hold a scene's camera until new text has had its reading time, then move?
 
 ## Not for us
 
