@@ -28,8 +28,11 @@ CUTSCENE_BROWSER=msedge npm run example -- --project=desktop   # another Chromiu
 
 A change to `src/reel/`, or to the hooks it reads: also `npm run reel` (the example's reel) and,
 for the camera or the renderer, `node bin/cutscene.mjs reel examples/basic/reels/pan-test.reel.ts`
-(a 4 s pan and push: look at consecutive frames, no stepping). The example's own numbers must not
-move: a reel never changes what a scene records.
+(a 4 s pan and push: look at consecutive frames, no stepping). The camera's curve: also
+`spring-test.reel.ts` (`cutscene measure` must find no overshoot). The edit (cuts, `cross`,
+`split`, cold open, matte, sound, delivery formats): also `parallel.reel.ts`, and read its stills
+in all three aspects. Compare each manifest's `craft` with the run before. The example's own
+numbers must not move: a reel never changes what a scene records.
 
 All must pass. Read the example's `check/contact.jpg` and mark stills before committing. A change
 to the pipeline (capture, timeline, encode, frame, check) needs the example to still pass the

@@ -16,7 +16,16 @@ export type ReelJob = {
   scale: number;
   /** Card lines, drawn in the app's own page so they take its typeface. */
   cards?: { open?: string[]; close?: string[] };
+  /** The pointer the takes move with: the scene's own glide (default), or a human hand's. */
+  pointer?: PointerModel;
 };
+
+/**
+ * A human hand's pointer: Fitts's law for how long a reach takes, a minimum-jerk speed profile, and
+ * a short correction at the end of a long reach to a small target. `"human"` uses published
+ * constants; `{ a, b }` (seconds, seconds per bit) a fit of someone's own hand.
+ */
+export type PointerModel = "human" | { a: number; b: number };
 
 let job: ReelJob | null | undefined;
 
@@ -58,7 +67,7 @@ export type TakeEvent =
   | { kind: "click"; t: number; box: Box; point: Point }
   | { kind: "hover"; t: number; box: Box; point: Point }
   /** From the first character to the last. */
-  | { kind: "type"; t0: number; t1: number; box: Box }
+  | { kind: "type"; t0: number; t1: number; box: Box; chars?: number }
   | { kind: "scroll"; t0: number; t1: number }
   | { kind: "hold"; t0: number; t1: number }
   /** `act.focus()`: frame this box, at this zoom when given. */
@@ -102,6 +111,8 @@ export type Take = {
   /** A lossless screenshot of the take's last moment, for the fidelity gate. */
   reference: string;
   cards: { open: CardLine[]; close: CardLine[] } | null;
+  /** The pointer the take moved with (`ReelJob.pointer`); null or absent is the scene's own. */
+  pointer?: PointerModel | null;
 };
 
 type Size = { width: number; height: number };

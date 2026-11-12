@@ -261,7 +261,8 @@ CUTSCENE_THEME=dark npx cutscene reel demo/reels/tour.reel.ts
 
 The reel lands in `<out>/<reel>-reel-<theme>/`: `<reel>.mp4`, `check/` (a still at each clip, shot
 and card, and `contact.jpg`) and `manifest.json` (every clip, shot and ramp with its time, the
-fidelity numbers, `passed`). `--config <path>` names the cutscene config when it isn't above the
+fidelity numbers, `passed`, every hard cut with how far the eye jumps across it, and `craft`, the
+critic's scores below). `--config <path>` names the cutscene config when it isn't above the
 reel file; `--project <name>` shoots another format. `CUTSCENE_THEME`, `CUTSCENE_BLUR`,
 `CUTSCENE_OUT` and `CUTSCENE_BROWSER` work as for scenes.
 
@@ -272,6 +273,12 @@ reel file; `--project <name>` shoots another format. `CUTSCENE_THEME`, `CUTSCENE
 | `density`                   | The takes' density. The deepest sharp zoom is `density / 2`: 3 (default) for 1.5, 4 for 2.                                                                                                                        |
 | `camera`, `speed`           | The defaults below, overridden.                                                                                                                                                                                   |
 | `project`, `pace`, `outDir` | The format (default `desktop`), the takes' slow motion, where the reel goes.                                                                                                                                      |
+| `cross`, `split`            | In place of a clip: two sessions of one flow cut together (below).                                                                                                                                                |
+| `coldOpen`                  | `true` or `{ length }`: open on the result (1.2 s), then cut to the start. Opt-in.                                                                                                                                |
+| `matte`                     | `true` or `{ aspect, over }`: letterboxed at 2.39:1 until the first action, then open over 700 ms. Opt-in.                                                                                                        |
+| `audio`                     | `{ track, gain }`, `{ riser }`: sound under the finished picture. Silent by default.                                                                                                                              |
+| `pointer`                   | `"human"` or `{ a, b }`: the takes' pointer reaches like a hand (Fitts's law, minimum jerk). Opt-in; scenes keep their own.                                                                                       |
+| `deliver`                   | Aspects to deliver, each its own reel: `"native"` (default), `"16:9"`, `"1:1"`, `"4:5"`, `"9:16"`.                                                                                                                |
 
 **The camera** is planned from what the scene did. A clip opens on its first action at the working
 zoom (1.5). For each click, hover or typed field outside the middle 60% of the shot it glides just
@@ -280,6 +287,18 @@ press lands. It never moves while the page scrolls, and never overshoots
 (`cubic-bezier(0.65, 0, 0.35, 1)`; push-in 750 ms, pull-back 1 s, pans 700 ms–1 s, the median pace
 of 50 measured launch films). A reframe beyond ×1.8, or across more than half the shot, is a cut.
 Between clips it's always a hard cut.
+
+**Eye trace.** At every hard cut, into a clip or inside one, the incoming shot is framed so its
+subject (where the next action lands, or the region a `focus` frames) sits where the viewer's eye
+already is: the pointer, the caret, the last thing acted on. It stays inside the middle of the shot
+and keeps a target that fits the shot whole, so the camera doesn't move straight off it. Measured
+launch films keep the eye within 10% of the width at 101 of 139 cuts (rule 27). `camera:
+{ eyeTrace: false }` frames every shot on its own subject instead.
+
+**Spring follow.** `camera: { follow: "spring" }` moves the camera on a critically damped spring
+instead of the in-out curve: it starts fast, reaches 98% of the way in the same push, pull and pan
+times, and never passes its target. That's the Screen Studio shape; the hand-edited X films push
+and pull on in-out curves, so it stays opt-in.
 
 Where the automatic camera isn't what you want, say so in the scene. Both do nothing when a scene
 records on its own:
@@ -305,6 +324,73 @@ a slow push moves between whole pixels instead of stepping across them.
 the encode, a browser's decode) at the whole frame and at the reel's deepest zoom, and is compared
 with a lossless screenshot resampled the same way. The same limits as a scene: 38 dB PSNR.
 
+### Two sessions: `cross` and `split`
+
+When one person's action changes another's screen (a suggestion sent, an approval landing), record
+each side as its own scene, give both the same marks at the moments the action reaches the other
+side, and cut them together:
+
+```ts
+clips: [
+  {
+    cross: [{ scene: "../scenes/suggest.scene.ts" }, { scene: "../scenes/approve.scene.ts" }],
+    at: ["sent", "approved"],
+  },
+  {
+    split: [
+      { scene: "../scenes/suggest.scene.ts", from: "sent" },
+      { scene: "../scenes/approve.scene.ts", from: "sent" },
+    ],
+    at: ["approved"],
+  },
+];
+```
+
+**`cross`** alternates full-frame shots, cause then effect, cutting 0.2 s after each shared mark.
+Each pair after the first is `shrink` (0.7) as long as the one before, down to 1.2 s, trimmed from
+its start so every shot still ends on its action; then the second session holds on the result
+(`hold`, 2 s). Each cut is framed by eye trace.
+
+**`split`** puts both sessions side by side on the backdrop (stacked in a square or a portrait
+frame), synced on the marks: one pane plays while the other holds its last frame. Each pane frames
+its own working region at `zoom` (1.25), with its own camera, not the whole window.
+
+### The opt-ins
+
+- **Cold open** (`coldOpen: true`): the reel's last 1.2 s first, then the opening card: here's where
+  we end up, here's how. None of the 50 measured films does it, so it's opt-in.
+- **Matte** (`matte: true`): the cards and the establishing shot letterboxed at 2.39:1, opening to
+  the full frame over 700 ms (in-out) as the pointer sets off for the first action. The bars are the
+  backdrop's colour. Landscape deliveries only.
+- **Human pointer** (`pointer: "human"`): a reel's takes reach for each target the way a hand does.
+  Fitts's law sets the time from the distance and the target's width along the approach, with
+  MacKenzie, Sellen and Buxton's (1991) mouse constants (−107 ms + 223 ms per bit), or a fit of your
+  own hand as `{ a, b }` in seconds. The speed rises and falls on a minimum-jerk profile (Flash and
+  Hogan, 1985), and a long reach to a small target lands about 7% short and corrects. Scenes keep
+  their own pointer.
+- **Sound** (`audio`): `track` is a file you hold the rights to, played from the first frame,
+  trimmed to the reel and faded over its last 1.5 s. Cuts aren't moved onto its beat: across 37
+  measured films with music, cuts land on beats no more often than chance (rule 13). `riser: true`
+  adds a generated Shepard–Risset rising tone (4 s) that stops exactly on the cut into the last
+  clip (`into` picks another). Sound goes in after the picture is encoded, with the video stream
+  copied, so nothing about the picture or its checks changes.
+- **Delivery formats** (`deliver: ["native", "1:1", "4:5"]`): the same edit in each aspect, the
+  camera re-planned for that frame from the same takes; each lands in `…-reel-<theme>-1x1/` and so
+  on, and costs a full render. A frame taller than wide of a desktop app shows working shots only:
+  the whole window isn't legible at that width. Cards shrink to fit.
+
+### The critic
+
+Every reel's `manifest.json` has a `craft` section: each property the instrument reads from the
+finished picture (push, pull and pan times, overshoot, the share of time the camera is still,
+stepped frames, median shot, length) and each the plan knows (eye travel at every hard cut, the
+hold after every push, typing speed on screen, dissolves against the shots they join, the end
+card, each take's motion fps), with the range measured launch films use and whether it's inside.
+Out of range is a warning, printed after the run; which warnings become failures is the owner's
+call. A reel tells the instrument where its own hard cuts are: a cut between two framings of one
+app can otherwise fit as one long move and skew the move, stillness and stepped numbers.
+`npx cutscene measure <file> --craft` scores any video from its picture alone.
+
 ### Measuring a video
 
 `cutscene measure` reads what a video's camera and cuts do: the instrument cutscene's reels and the
@@ -313,6 +399,7 @@ references they learn from are both measured with, so their numbers compare dire
 ```sh
 npx cutscene measure demo/out/tour-reel-light/tour.mp4           # a few lines to read
 npx cutscene measure tour.mp4 --json --out tour.grammar.json     # the numbers
+npx cutscene measure tour.mp4 --craft                            # scored against the references
 npx cutscene measure --page                                      # the in-page version
 ```
 
@@ -330,8 +417,8 @@ CORS can't be read this way; the call says so.
 Read the numbers as an instrument, not the truth. A strongly eased move spends a long time at its
 ends: from 2% to 98% of the way is about 70% of its nominal length (a 500 ms push reads 360 ms).
 At the slow ends of a long move, a reading 1% off in distance is several frames off in time, so
-compare the 10–90% figure when the ends matter. An in-app page change can read as a cut; check
-the frames.
+compare the 10–90% figure when the ends matter. An in-app page change can read as a cut, and a
+cut between two framings of the same app can read as a long move; check the frames.
 
 | File (`src/reel/`) | Role                                                                     |
 | ------------------ | ------------------------------------------------------------------------ |
@@ -343,6 +430,8 @@ the frames.
 | `render.ts`        | The canvas compositor and the encode.                                    |
 | `gate.ts`          | The fidelity gate under the camera.                                      |
 | `measure.ts`       | The instrument: a video's shots, cuts and camera moves.                  |
+| `craft.ts`         | The critic: the ranges measured launch films use, and a reel's scores.   |
+| `audio.ts`         | The riser, and sound laid under a finished reel.                         |
 
 ## For agents
 

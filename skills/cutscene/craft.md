@@ -5,8 +5,11 @@ frame by frame: 50 crafted films from X, 13 Screen Studio clips and 4 Linear cha
 them to judge a reel, and to set a reel's own `camera` when its owner asks for a look. The camera's
 pace already follows the X films; the other rules are proposals until the owner decides.
 
-Measure a finished reel with `npx cutscene measure <reel.mp4>`. It prints shots, cuts and camera
-moves in the same terms as the references, so the two compare directly.
+Every reel's `manifest.json` scores it against these numbers in `craft`: what the instrument reads
+from the picture, and what the edit knows (the eye's travel at each cut, the hold after each push,
+typing speed). `npx cutscene measure <reel.mp4> --craft` scores any video from its picture alone,
+in the same terms as the references, so the two compare directly. Out of range is a warning to
+weigh, not a failure.
 
 ## Structure (each seen in 4 or more references)
 
@@ -32,8 +35,8 @@ moves in the same terms as the references, so the two compare directly.
 ## Where the eye is (read frame by frame at 139 cuts)
 
 - **Keep the eye where it was.** At 101 of 139 cuts the point of interest (the pointer, the caret,
-  the one bright element) lands within 10% of the frame width of where it was before the cut. Frame
-  the next shot so its subject sits where the last one's did.
+  the one bright element) lands within 10% of the frame width of where it was before the cut.
+  cutscene frames every hard cut this way by default; a `focus` on the next subject helps it.
 - **Soften or lead a long jump.** When the subject must move more than a quarter of the frame, use a
   short dissolve, a few blank frames, or send the pointer there before the cut.
 - **Camera and UI take turns.** Let the camera stop, then open the menu or land the press. Let a
@@ -58,7 +61,7 @@ moves in the same terms as the references, so the two compare directly.
 cutscene's defaults follow the X films' pace. Give a result at least 1.5 s after the push that
 frames it (an `act.wait` after `act.focus`), or the reel cuts away as the camera settles. For the
 Screen Studio pace, set `camera: { working: 1.7, push: 0.8, pull: 1.0 }` with `density: 4` so
-×1.7 stays sharp. Its spring curve doesn't ship yet.
+×1.7 stays sharp, and `follow: "spring"` for its curve.
 
 ## Cuts and cards
 

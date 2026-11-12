@@ -5,13 +5,21 @@ import type { Recorder } from "./capture";
 import type { Mark, Span } from "./edit";
 import type { Format } from "./formats";
 import type { Page$ } from "./overlay";
-import type { Box, TakeLog } from "./reel/take";
+import type { Box, PointerModel, TakeLog } from "./reel/take";
 
 const sleep = (ms: number) => new Promise((done) => setTimeout(done, ms));
 const now = () => Date.now() / 1000;
 const ease = (k: number) => (k < 0.5 ? 4 * k * k * k : 1 - (-2 * k + 2) ** 3 / 2);
 /** The caption's fade in `overlay.ts` (240 ms) plus a paint. */
 const CAPTION_FADE_MS = 280;
+/**
+ * Fitts's law for a mouse, MT = a + b·log₂(D/W + 1): MacKenzie, Sellen & Buxton (1991), pointing
+ * with a mouse, a = −107 ms, b = 223 ms/bit (4.5 bits/s). Used until a fit of a real hand replaces
+ * it (`pointer: { a, b }` in a reel).
+ */
+const HAND = { a: -0.107, b: 0.223 };
+/** Minimum jerk (Flash & Hogan, 1985): the speed profile of an unhurried human reach. */
+const minimumJerk = (k: number) => k * k * k * (10 - 15 * k + 6 * k * k);
 
 /**
  * Whether the camera keeps what happens: on stage it does; off stage the time from `since` is cut
@@ -56,6 +64,8 @@ export class Act {
     private readonly pace: number,
     /** Set in a reel take only (`reel/take.ts`): what the camera and the ramps are planned from. */
     private readonly log?: TakeLog,
+    /** A reel take's pointer, when the reel asks for a human hand; the scene's own glide otherwise. */
+    private readonly hand?: PointerModel,
   ) {
     this.page = page;
     this.format = format;
@@ -121,7 +131,7 @@ export class Act {
     const point = at
       ? { x: box.x + at.x, y: box.y + at.y }
       : { x: box.x + Math.min(box.width / 2, 64), y: box.y + box.height / 2 };
-    await this.glide(point, duration);
+    await this.glide(point, duration, box);
     this.called(t0);
   }
 
@@ -173,7 +183,7 @@ export class Act {
       // A steady rhythm with a little variation, the same on every run.
       await this.beat(perChar * (0.7 + ((i++ * 7919) % 11) / 18) + (char === " " ? 40 : 0));
     }
-    if (box) this.log?.push({ kind: "type", t0: first, t1: now(), box });
+    if (box) this.log?.push({ kind: "type", t0: first, t1: now(), box, chars: [...text].length });
     await this.beat(after);
     this.called(t0);
   }
@@ -299,11 +309,12 @@ export class Act {
     this.log?.push({ kind: "scroll", t0, t1: now() });
   }
 
-  private async glide(to: { x: number; y: number }, duration?: number) {
+  private async glide(to: { x: number; y: number }, duration?: number, target?: Box) {
     // The first move comes in from the right edge, so nothing shows a hover the viewer didn't see
     // the pointer reach (the overlay keeps it hidden until then), however the page was loaded.
     const { width, height } = this.format.viewport;
     const from = this.pos ?? { x: width - 4, y: Math.round(height * 0.72) };
+    if (this.hand && duration === undefined) return this.reach(from, to, target);
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const distance = Math.hypot(dx, dy);
@@ -323,6 +334,65 @@ export class Act {
       if (k === 1) break;
       await sleep(6);
     }
+    this.pos = to;
+    this.log?.push({ kind: "glide", t0, t1: now(), from, to });
+  }
+
+  /**
+   * A human reach (a reel take with `pointer: "human"`). Its time follows Fitts's law from the
+   * distance and the target's width along the approach; its speed rises and falls on a minimum-jerk
+   * profile along a slight arc. A long reach to a small target (over 3 bits) lands about 7% short
+   * and slightly to one side, then corrects in a second, smaller movement: the optimised
+   * submovements of Meyer et al. (1988). Deterministic, so a take records the same way every time.
+   */
+  private async reach(from: { x: number; y: number }, to: { x: number; y: number }, target?: Box) {
+    const dx = to.x - from.x;
+    const dy = to.y - from.y;
+    const distance = Math.hypot(dx, dy);
+    const t0 = now();
+    if (distance < 1) {
+      this.pos = to;
+      return;
+    }
+    const ux = dx / distance;
+    const uy = dy / distance;
+    // The target's extent along the line of approach: what the reach has to stop inside.
+    const across = target
+      ? Math.min(
+          target.width / Math.max(Math.abs(ux), 1e-6),
+          target.height / Math.max(Math.abs(uy), 1e-6),
+        )
+      : 24;
+    const bits = Math.log2(distance / Math.max(8, across) + 1);
+    const { a, b } = this.hand === "human" ? HAND : this.hand!;
+    // Never faster than a quick flick, never slower than a careful reach.
+    const time = Math.min(1.4, Math.max(0.2, a + b * bits));
+    const corrects = bits > 3;
+    // The side it lands on: fixed by the target, the same on every run.
+    const side = (Math.round(to.x) * 31 + Math.round(to.y) * 17) % 2 ? 1 : -1;
+    const off = Math.min(across * 0.25, 6) * side;
+    const via = corrects
+      ? { x: from.x + dx * 0.93 - uy * off, y: from.y + dy * 0.93 + ux * off }
+      : to;
+    const move = async (p: typeof from, q: typeof from, seconds: number, arc: number) => {
+      const ms = seconds * 1000 * this.pace;
+      const length = Math.hypot(q.x - p.x, q.y - p.y) || 1;
+      const bend = Math.min(length * arc, 30);
+      const cx = (p.x + q.x) / 2 - ((q.y - p.y) / length) * bend;
+      const cy = (p.y + q.y) / 2 + ((q.x - p.x) / length) * bend;
+      const start = performance.now();
+      for (;;) {
+        const k = Math.min(1, (performance.now() - start) / ms);
+        const e = minimumJerk(k);
+        const x = (1 - e) ** 2 * p.x + 2 * (1 - e) * e * cx + e ** 2 * q.x;
+        const y = (1 - e) ** 2 * p.y + 2 * (1 - e) * e * cy + e ** 2 * q.y;
+        await this.page.mouse.move(x, y);
+        if (k === 1) break;
+        await sleep(6);
+      }
+    };
+    await move(from, via, corrects ? time * 0.8 : time, 0.06);
+    if (corrects) await move(via, to, time * 0.2, 0);
     this.pos = to;
     this.log?.push({ kind: "glide", t0, t1: now(), from, to });
   }

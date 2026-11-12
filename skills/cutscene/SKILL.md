@@ -162,5 +162,28 @@ npx cutscene reel demo/reels/tour.reel.ts --reuse   # re-cut without recording a
   `<out>/<reel>-reel-<theme>/check/`; in `manifest.json`, `passed` true, `fidelity.wide.psnr` and
   `fidelity.deepest.psnr` ≥ 38, each clip's `take.motionFps` ≥ 60 (raise `pace` if not). For a
   move that looks wrong, extract its frames with ffmpeg and look at them one by one.
-- `npx cutscene measure <reel.mp4>` reads the finished reel's cuts and camera moves: compare them
-  with what measured references do, in [craft.md](craft.md).
+- Read the manifest's `craft`: the reel's camera, cuts, holds and typing speed held against the
+  ranges measured launch films use. Out of range is a warning to weigh, not a failure; fix what
+  the scene can fix (a longer `act.wait` after a push, a `focus` that keeps the eye still across a
+  cut) and report the rest. `cuts` lists every hard cut with how far the eye jumps across it.
+- `npx cutscene measure <reel.mp4> --craft` reads any video's cuts and camera moves and scores
+  them the same way; [craft.md](craft.md) has what the references do.
+
+**Two sessions of one flow** (one person's action changes another's screen): give both scenes the
+same marks at the moments the action reaches the other side, then cut them together:
+
+```ts
+clips: [
+  { cross: [{ scene: "../scenes/suggest.scene.ts" }, { scene: "../scenes/approve.scene.ts" }],
+    at: ["sent", "approved"] },        // alternate full frame, cause then effect, shots shortening
+  { split: [{ scene: "../scenes/suggest.scene.ts", from: "sent" },
+            { scene: "../scenes/approve.scene.ts", from: "sent" }],
+    at: ["approved"] },                // side by side, one pane acting at a time
+],
+```
+
+The opt-ins, only when the owner asks for them: `coldOpen: true` (open on the result for 1.2 s),
+`matte: true` (letterboxed until the first action), `pointer: "human"` (Fitts's-law reaches in the
+takes), `camera: { follow: "spring" }` (the Screen Studio curve), `deliver: ["native", "1:1",
+"4:5"]` (each format adds a render of the whole reel), and `audio: { riser: true }` or
+`audio: { track: "<file>" }`, only with a track the owner holds the rights to.

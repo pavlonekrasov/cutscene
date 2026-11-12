@@ -187,8 +187,12 @@ export function tracker(W: number, H: number) {
 
   return {
     rows,
-    /** Adds a frame: `pixels` is gray (1 channel) or RGBA (4), W × H, at time `t` seconds. */
-    add(pixels: ArrayLike<number>, t: number, channels: 1 | 4) {
+    /**
+     * Adds a frame: `pixels` is gray (1 channel) or RGBA (4), W × H, at time `t` seconds. `cut`:
+     * the caller knows a hard cut lands on this frame. Two framings of one app can fit as a move,
+     * and then every frame after is fitted to the wrong anchor; a reel knows its own cuts.
+     */
+    add(pixels: ArrayLike<number>, t: number, channels: 1 | 4, cut = false) {
       const g = new Float32Array(N);
       if (channels === 1) for (let i = 0; i < N; i++) g[i] = pixels[i] as number;
       else
@@ -213,7 +217,7 @@ export function tracker(W: number, H: number) {
         lastRes = 0;
         rows.push({ t, d, cut: rows.length > 0, s: 1, tx: 0, ty: 0, res: 0 });
       };
-      if (!anchor || d > CUT) return startShot();
+      if (!anchor || cut || d > CUT) return startShot();
       if (flat) {
         // Something with edges appearing over a flat frame (a dissolve out of a card) starts a shot.
         const res = err(anchor, b, 1, 0, 0);
@@ -580,8 +584,14 @@ window.__cutsceneSheet.close = () => document.getElementById("__cutscene-sheet")
 })();`);
 }
 
-/** Measures a video file: ffmpeg decodes it to small gray frames, with each frame's own time. */
-export function measureFile(file: string, { width = WIDTH } = {}): Grammar {
+/**
+ * Measures a video file: ffmpeg decodes it to small gray frames, with each frame's own time.
+ * `cuts`: hard cuts the caller knows the video makes (see `grammar`).
+ */
+export function measureFile(
+  file: string,
+  { width = WIDTH, cuts }: { width?: number; cuts?: number[] } = {},
+): Grammar {
   const probe = spawnSync(ffmpegPath(), ["-hide_banner", "-i", file], { encoding: "utf8" });
   const size = /, (\d{2,5})x(\d{2,5})[\s,]/.exec(probe.stderr ?? "");
   if (!size) throw new Error(`${file}: not a video ffmpeg can read.`);
@@ -615,8 +625,12 @@ export function measureFile(file: string, { width = WIDTH } = {}): Grammar {
   const frame = W * H;
   const count = Math.floor(run.stdout.length / frame);
   const track = tracker(W, H);
+  const at = (i: number) => times[i] ?? i / 60;
+  // Half a frame's slack: a cut at 7.6 s lands on the frame shown from 7.6 s.
+  const cutOn = (i: number) =>
+    i > 0 && (cuts ?? []).some((c) => at(i - 1) < c - 0.008 && at(i) >= c - 0.008);
   for (let i = 0; i < count; i++)
-    track.add(run.stdout.subarray(i * frame, (i + 1) * frame), times[i] ?? i / 60, 1);
+    track.add(run.stdout.subarray(i * frame, (i + 1) * frame), at(i), 1, cutOn(i));
   const first = track.rows[0]?.t ?? 0;
   const last = track.rows.at(-1)?.t ?? 0;
   const step = count > 1 ? (last - first) / (count - 1) : 1 / 60;

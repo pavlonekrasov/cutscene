@@ -243,20 +243,29 @@ function reel() {
 function measure() {
   const lib = join(root, "dist", "reel", "measure.js");
   if (!existsSync(lib)) fail("cutscene isn't built here: run npm run build.");
-  const { describe, measureFile, pageSource } = createRequire(import.meta.url)(lib);
+  const require = createRequire(import.meta.url);
+  const { describe, measureFile, pageSource } = require(lib);
   if (flags.has("--page")) return say(pageSource());
   const file = args[0];
-  if (!file) fail("which video? cutscene measure <file.mp4> [--json] [--out <file.json>]");
+  if (!file)
+    fail("which video? cutscene measure <file.mp4> [--json] [--craft] [--out <file.json>]");
   const path = resolve(cwd, file);
   if (!existsSync(path)) fail(`${file} isn't there.`);
   const grammar = measureFile(path);
+  // The critic, from what the picture shows: a reel's own manifest adds what only its plan knows.
+  const craft = flags.has("--craft")
+    ? require(join(root, "dist", "reel", "craft.js")).critic(grammar, null)
+    : null;
+  const result = craft ? { ...grammar, craft } : grammar;
   if (option("out"))
     writeFileSync(
       resolve(cwd, option("out")),
-      `${JSON.stringify(grammar, null, 2)}
+      `${JSON.stringify(result, null, 2)}
 `,
     );
-  say(flags.has("--json") ? JSON.stringify(grammar, null, 2) : describe(grammar));
+  if (flags.has("--json")) return say(JSON.stringify(result, null, 2));
+  say(describe(grammar));
+  if (craft) say(require(join(root, "dist", "reel", "craft.js")).describeCraft(craft));
 }
 
 function help() {
@@ -279,6 +288,7 @@ Usage: npx ${own.name} <command>
     --project <name>  the format to shoot in (default: desktop)
   measure <file>  a video's shots, cuts and camera moves, as reels are judged
     --json            print the numbers as JSON
+    --craft           score them against the ranges measured launch films use
     --out <file>      also write them to a JSON file
     --page            print the in-page version, for a video playing in a browser
 

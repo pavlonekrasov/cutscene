@@ -132,7 +132,17 @@ export function createScene<Extra extends object = Record<never, never>>(
       await recorder.start();
       try {
         const log = job ? new TakeLog() : undefined;
-        const act = new Act(page, format, recorder, { ready, main }, draft, cdp, pace, log);
+        const act = new Act(
+          page,
+          format,
+          recorder,
+          { ready, main },
+          draft,
+          cdp,
+          pace,
+          log,
+          job?.pointer,
+        );
         const extra = options.extend?.(act) ?? ({} as Extra);
         for (const key of Object.keys(extra))
           if (key in act) throw new Error(`extend: "${key}" would shadow act.${key}.`);
@@ -197,6 +207,7 @@ export function createScene<Extra extends object = Record<never, never>>(
               events: onVideoClock(log.events, timeline.map),
               frame: framePng ? "frame.png" : null,
               cards,
+              pointer: job.pointer ?? null,
             },
             reference,
           );
