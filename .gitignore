@@ -4,3 +4,4 @@ playwright-report/
 examples/*/out/
 dist/
 *.tgz
+research/
