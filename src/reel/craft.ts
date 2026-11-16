@@ -38,10 +38,13 @@ export const CRAFT = {
     unit: "s",
     what: "pull-back, read from 2% to 98% of the way",
   },
+  // The 27 clean pan fits rule 14's pace came from, read 2–98%. Every pan over 5% in the X films
+  // reads 0.23–0.63 s (n = 202), but that set is mostly in-app motion (scrolls, slides), which
+  // flagged the camera's own default.
   pan: {
-    source: "rule 14",
-    n: 202,
-    range: [0.23, 0.63],
+    source: "rule 14 (clean pan fits)",
+    n: 27,
+    range: [0.51, 0.92],
     unit: "s",
     what: "pan, read from 2% to 98% of the way",
   },

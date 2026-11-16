@@ -152,6 +152,8 @@ type Anchor = {
   /** Where the action lands, on the canvas. */
   point?: Point;
   box?: Box;
+  /** The column the target sits in, in the take's viewport px. */
+  area?: Box;
   cam?: Cam;
   zoom?: number;
   over?: number;
@@ -234,10 +236,18 @@ export function planCamera(
           kind: "act",
           point: onCanvas(event.point),
           box: event.box,
+          area: event.area,
           why: event.kind,
         });
       else if (event.kind === "focus")
-        anchors.push({ t: event.t, kind: "hint", box: event.box, zoom: event.zoom, why: "focus" });
+        anchors.push({
+          t: event.t,
+          kind: "hint",
+          box: event.box,
+          area: event.area,
+          zoom: event.zoom,
+          why: "focus",
+        });
       else if (event.kind === "wide" && !options.workingOnly)
         anchors.push({ t: event.t, kind: "hint", cam: wide(), why: "wide" });
     }
@@ -259,15 +269,59 @@ export function planCamera(
   const subject = (anchor: Anchor): Point | null =>
     anchor.point ?? (anchor.box ? centre(anchor.box) : null);
 
+  // A frame that shows less than the take's canvas (a square or 4:5 of a desktop, a split's pane)
+  // would, at the working zoom, cut the target's column through its lines. There the zoom eases
+  // off until the column fits across, never below the frame's widest, and the shot keeps it whole.
+  // A column wider than even that is shown as far as it goes from its left edge, where lines
+  // start, shifted only as far as the target needs. A zoom the scene asked for is kept, and the
+  // take's whole canvas (the native delivery) is framed as before.
+  const cropped = frame.width < on.width - 1 || frame.height < on.height - 1;
+  const widest = frame.width / lowest;
+  /** The span of canvas x to keep whole, with up to 24 px of air each side if the frame has it. */
+  const columnOf = (anchor: Anchor) => {
+    if (!cropped || !anchor.area) return null;
+    const air = Math.min(24, Math.max(0, (widest - anchor.area.width) / 2));
+    const left = anchor.area.x + on.appX - air;
+    const right = anchor.area.x + anchor.area.width + on.appX + air;
+    return { left, right, fits: right - left <= widest + 0.5 };
+  };
+  const zoomFor = (anchor: Anchor) => {
+    const z = cap(anchor.zoom ?? settings.working);
+    const column = columnOf(anchor);
+    if (!column || anchor.zoom !== undefined) return z;
+    if (!column.fits) return lowest;
+    return Math.max(lowest, Math.min(z, frame.width / (column.right - column.left)));
+  };
+  /** `x` for a shot `width` wide, moved as little as keeps the column whole (see above). */
+  const keepColumn = (x: number, width: number, anchor: Anchor) => {
+    const column = columnOf(anchor);
+    if (!column) return x;
+    const lo = column.right - width / 2;
+    const hi = column.left + width / 2;
+    if (lo <= hi) return Math.min(hi, Math.max(lo, x));
+    // Too wide: from the left edge, then right just far enough for the target, 16 px clear (a
+    // target too wide for the shot itself only needs its start, like its column).
+    const box = anchor.box!;
+    const need = box.x + on.appX + (box.width + 32 <= width ? box.width : 0) + 16;
+    return Math.max(hi, need - width / 2);
+  };
+  /** Whether a shot already shows the anchor's whole column across. */
+  const showsColumn = (shown: { x: number; width: number }, anchor: Anchor) => {
+    const column = columnOf(anchor);
+    return Boolean(
+      column?.fits && shown.x <= column.left + 1 && shown.x + shown.width >= column.right - 1,
+    );
+  };
+
   /** The framing an anchor asks for. A target wider than the shot is framed on where it's pressed. */
   const frameFor = (anchor: Anchor, eye?: Point | null): Cam => {
     if (anchor.cam) return rest(anchor.cam, on, frame);
-    const z = cap(anchor.zoom ?? settings.working);
+    const z = zoomFor(anchor);
     const box = anchor.box!;
     const sized = view({ x: 0, y: 0, z }, on, frame);
     const fits = box.width <= sized.width * 0.8 && box.height <= sized.height * 0.8;
     const at = fits || !anchor.point ? centre(box) : anchor.point;
-    if (!eye) return rest({ ...at, z }, on, frame);
+    if (!eye) return rest({ x: keepColumn(at.x, sized.width, anchor), y: at.y, z }, on, frame);
     // Eye trace: put the subject where the eye is (inside the dead zone, so the camera doesn't
     // then move straight off it), as far as a target that fits the shot stays whole in it.
     const want = intoDeadZone(eye);
@@ -276,10 +330,15 @@ export function planCamera(
       lo <= hi ? Math.min(hi, Math.max(lo, c)) : c;
     const left = box.x + on.appX;
     const top = box.y + on.appY;
-    const x = keep(
-      poi.x + (0.5 - want.x) * sized.width,
-      left + box.width - sized.width / 2,
-      left + sized.width / 2,
+    // Whole lines win over where the eye was: the column is kept whole after the eye trace.
+    const x = keepColumn(
+      keep(
+        poi.x + (0.5 - want.x) * sized.width,
+        left + box.width - sized.width / 2,
+        left + sized.width / 2,
+      ),
+      sized.width,
+      anchor,
     );
     const y = keep(
       poi.y + (0.5 - want.y) * sized.height,
@@ -318,10 +377,14 @@ export function planCamera(
     if (anchor.kind === "act" && anchor.point) {
       // Inside the middle of the shot the camera stays put: no seasick micro-pans. A framing the
       // scene asked for (a hint) holds for anything inside it at all.
+      // Sideways, a column sets the framing, not the middle of the shot: one shown whole holds
+      // for any point in it, and one too wide to show whole sits where `keepColumn` puts it.
       const edge = hinted ? 0.04 : margin;
+      const column = columnOf(anchor);
+      const edgeX = showsColumn(shown, anchor) || (column && !column.fits) ? 0.04 : edge;
       const kx = (anchor.point.x - shown.x) / shown.width;
       const ky = (anchor.point.y - shown.y) / shown.height;
-      const calm = kx >= edge && kx <= 1 - edge && ky >= edge && ky <= 1 - edge;
+      const calm = kx >= edgeX && kx <= 1 - edgeX && ky >= edge && ky <= 1 - edge;
       if (calm && cam.z > lowest + 1e-3) {
         last = anchor.t;
         continue;
@@ -329,12 +392,16 @@ export function planCamera(
       // Already at the working zoom: glide just far enough to bring the action into the middle,
       // so what was in the shot (the result of the last action) stays in it.
       if (Math.abs(cam.z - to.z) < 1e-3) {
-        const into = (p: number, from: number, size: number) =>
-          Math.min(0, p - (from + edge * size)) + Math.max(0, p - (from + (1 - edge) * size));
+        const into = (p: number, from: number, size: number, e: number) =>
+          Math.min(0, p - (from + e * size)) + Math.max(0, p - (from + (1 - e) * size));
         to = rest(
           {
-            x: cam.x + into(anchor.point.x, shown.x, shown.width),
-            y: cam.y + into(anchor.point.y, shown.y, shown.height),
+            x: keepColumn(
+              cam.x + into(anchor.point.x, shown.x, shown.width, edgeX),
+              shown.width,
+              anchor,
+            ),
+            y: cam.y + into(anchor.point.y, shown.y, shown.height, edge),
             z: cam.z,
           },
           on,

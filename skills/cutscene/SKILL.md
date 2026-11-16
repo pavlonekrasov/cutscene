@@ -185,5 +185,6 @@ clips: [
 The opt-ins, only when the owner asks for them: `coldOpen: true` (open on the result for 1.2 s),
 `matte: true` (letterboxed until the first action), `pointer: "human"` (Fitts's-law reaches in the
 takes), `camera: { follow: "spring" }` (the Screen Studio curve), `deliver: ["native", "1:1",
-"4:5"]` (each format adds a render of the whole reel), and `audio: { riser: true }` or
+"4:5"]` (each format adds a render of the whole reel; in a square or 4:5 of a desktop app the
+camera zooms less, to keep the target's card or column whole), and `audio: { riser: true }` or
 `audio: { track: "<file>" }`, only with a track the owner holds the rights to.

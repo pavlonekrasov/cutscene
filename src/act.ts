@@ -241,7 +241,8 @@ export class Act {
     if (!this.log) return;
     await this.onstage();
     const box = await target.boundingBox();
-    if (box) this.log.push({ kind: "focus", t: now(), box, zoom });
+    if (box)
+      this.log.push({ kind: "focus", t: now(), box, zoom, area: await this.column(target, box) });
   }
 
   /** A camera hint for a reel: pull back to the whole window. Does nothing outside a reel take. */
@@ -411,6 +412,31 @@ export class Act {
       : this.format.pointer === "mouse" && this.pos
         ? this.pos
         : { x: box.x + box.width / 2, y: box.y + box.height / 2 };
-    return { box, point };
+    return { box, point, area: await this.column(target, box) };
+  }
+
+  /**
+   * The column a target sits in, for a reel take's log: its outermost ancestor narrower than 90%
+   * of the window (a card, a centred page, a main panel beside a sidebar). A frame narrower than
+   * the take (a square, a 4:5, a split's pane) keeps it whole rather than cut its lines mid-word.
+   * Measured from the target, so a target inside a frame lands right too.
+   */
+  private async column(target: Locator, box: Box): Promise<Box | undefined> {
+    const found = await target
+      .evaluate((node) => {
+        const own = node.getBoundingClientRect();
+        let best = own;
+        for (let el = node.parentElement; el; el = el.parentElement) {
+          if (el === document.body || el === document.documentElement) break;
+          const r = el.getBoundingClientRect();
+          if (r.width >= window.innerWidth * 0.9) break;
+          if (r.width > 0 && r.height > 0) best = r;
+        }
+        return { dx: best.x - own.x, dy: best.y - own.y, width: best.width, height: best.height };
+      })
+      .catch(() => null);
+    return found
+      ? { x: box.x + found.dx, y: box.y + found.dy, width: found.width, height: found.height }
+      : undefined;
   }
 }

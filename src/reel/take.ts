@@ -64,14 +64,15 @@ export type TakeEvent =
   /** One `act` call, start to end: time outside every call is the app being waited on. */
   | { kind: "call"; t0: number; t1: number }
   | { kind: "glide"; t0: number; t1: number; from: Point; to: Point }
-  | { kind: "click"; t: number; box: Box; point: Point }
-  | { kind: "hover"; t: number; box: Box; point: Point }
+  /** `area`: the column the target sits in (see `Act`), so a narrow frame can keep it whole. */
+  | { kind: "click"; t: number; box: Box; point: Point; area?: Box }
+  | { kind: "hover"; t: number; box: Box; point: Point; area?: Box }
   /** From the first character to the last. */
   | { kind: "type"; t0: number; t1: number; box: Box; chars?: number }
   | { kind: "scroll"; t0: number; t1: number }
   | { kind: "hold"; t0: number; t1: number }
   /** `act.focus()`: frame this box, at this zoom when given. */
-  | { kind: "focus"; t: number; box: Box; zoom?: number }
+  | { kind: "focus"; t: number; box: Box; zoom?: number; area?: Box }
   /** `act.wide()`: pull back to the whole window. */
   | { kind: "wide"; t: number };
 

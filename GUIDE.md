@@ -353,7 +353,8 @@ its start so every shot still ends on its action; then the second session holds 
 
 **`split`** puts both sessions side by side on the backdrop (stacked in a square or a portrait
 frame), synced on the marks: one pane plays while the other holds its last frame. Each pane frames
-its own working region at `zoom` (1.25), with its own camera, not the whole window.
+its own working region at `zoom` (1.25, eased off to keep the target's column whole), with its own
+camera, not the whole window.
 
 ### The opt-ins
 
@@ -377,7 +378,13 @@ its own working region at `zoom` (1.25), with its own camera, not the whole wind
 - **Delivery formats** (`deliver: ["native", "1:1", "4:5"]`): the same edit in each aspect, the
   camera re-planned for that frame from the same takes; each lands in `…-reel-<theme>-1x1/` and so
   on, and costs a full render. A frame taller than wide of a desktop app shows working shots only:
-  the whole window isn't legible at that width. Cards shrink to fit.
+  the whole window isn't legible at that width. Cards shrink to fit. In a frame that shows less
+  than the take's canvas (a square or 4:5 of a desktop app, a split's pane) the working zoom eases
+  off until the target's column (its outermost ancestor narrower than 90% of the window: a card, a
+  centred page, a main panel) fits across, never below the frame's widest, and the shot keeps that
+  column whole rather than cut its lines mid-word. A column wider than even the widest shot is
+  shown from its left edge, where lines start, shifted only as far as the target needs. A zoom
+  given to `focus` is kept.
 
 ### The critic
 
